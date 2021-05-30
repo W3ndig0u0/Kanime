@@ -50,10 +50,6 @@
   margin: 0.75rem 1.5rem 1.5rem 1.75rem;
 }
 
-.menu .right li a:nth-child(5) {
-  color: black;
-}
-
 .menu .left {
   display: block;
   text-align: center;

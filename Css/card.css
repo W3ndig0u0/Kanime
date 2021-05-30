@@ -1,5 +1,5 @@
 .newsCard {
-  height: 25rem;
+  height: 32rem;
   margin-top: -3rem;
   user-select: none;
 }
@@ -9,7 +9,7 @@
   border-radius: 32px;
   box-shadow: 20px 15px 0px -5px #00abff;
   max-width: 65%;
-  height: 22rem;
+  height: 28rem;
 
   margin: 1rem auto;
   overflow: hidden;
@@ -42,13 +42,14 @@
   margin: 10px 0;
   font-size: 2rem;
   display: flex;
-  margin-top: 1.5rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .img {
   background: url("https://i.pinimg.com/originals/5f/12/b9/5f12b974076736afe4bfe170b36b5e89.jpg");
   background-position: center top;
-  background-position-y: -150px;
+  background-position-y: -120px;
   zoom: 56%;
 }
 
