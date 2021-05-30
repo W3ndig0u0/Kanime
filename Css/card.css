@@ -1,13 +1,14 @@
 .newsCard {
-  height: 22rem;
+  height: 25rem;
+  margin-top: -3rem;
 }
 
 .card {
   background-color: #fff;
   border-radius: 32px;
-  box-shadow: 20px 20px 5px -5px rgba(55, 55, 55, 1);
+  box-shadow: 20px 15px 0px -5px #00abff;
   max-width: 65%;
-  height: 18rem;
+  height: 22rem;
 
   margin: 1rem auto;
   overflow: hidden;
@@ -22,21 +23,40 @@
   text-transform: uppercase;
 }
 
+.featured h6 {
+  padding: 10px;
+  border-radius: 16px;
+  background-color: #0583f2;
+  color: white;
+  opacity: 1;
+  display: unset;
+}
+
+.card h6 i {
+  color: #0583f2;
+}
+
 .card h2 {
   letter-spacing: 1px;
   margin: 10px 0;
   font-size: 2rem;
+  display: flex;
+  margin-top: 1.5rem;
 }
 
 .img {
   background: url("https://i.pinimg.com/originals/5f/12/b9/5f12b974076736afe4bfe170b36b5e89.jpg");
   background-position: center top;
-  background-position-y: -200px;
+  background-position-y: -150px;
   zoom: 56%;
 }
 
+.card.remove {
+  display: none;
+}
+
 .card-info {
-  padding: 30px;
+  padding: 40px;
   position: relative;
   width: 100%;
 }

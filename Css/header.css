@@ -1,13 +1,21 @@
 .menu {
   background: linear-gradient(
       to bottom,
-      rgba(5, 131, 242, 0.9),
-      rgba(5, 131, 242, 1)
+      rgba(5, 131, 242, 0.87),
+      rgba(5, 131, 242, 0.99)
     ),
     url("https://i.pinimg.com/originals/5f/12/b9/5f12b974076736afe4bfe170b36b5e89.jpg")
-      right top -20rem;
+      right top -18.5rem;
   transition: 400ms;
   width: 100vw;
+}
+
+.sticky {
+  position: fixed;
+  top: 0%;
+  height: 5rem;
+  transition: 500ms;
+  font-size: 1.1rem;
 }
 
 .menu-content {
@@ -17,7 +25,7 @@
 }
 
 .menu a {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: white;
   text-decoration: none;
   transition: 200ms;
@@ -57,4 +65,20 @@
 
 .menu .left:hover {
   color: #f27d16;
+}
+
+/* !Search */
+.cancel-btn {
+  visibility: hidden;
+}
+
+.validate {
+  visibility: hidden;
+}
+.cancel-btn.active {
+  visibility: visible;
+}
+
+.validate.active {
+  visibility: visible;
 }
