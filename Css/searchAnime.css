@@ -1,0 +1,45 @@
+.container {
+  margin: 0;
+}
+
+input[type="text"] {
+  width: 10%;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 10px;
+  transition: width 0.4s ease-in-out;
+  transition: 400ms;
+}
+
+input[type="text"]:focus {
+  width: 20%;
+}
+
+.img-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+.img-row > * {
+  flex-basis: 20rem;
+  flex-shrink: 0;
+}
+
+.img-row .card {
+  display: flex;
+  flex-direction: column;
+}
+
+.img-row .card > .card-content {
+  flex-grow: 1;
+}
+
+.img-row .card > .card-image {
+  flex-basis: 20rem;
+  flex-shrink: 0;
+  overflow-y: hidden;
+}
