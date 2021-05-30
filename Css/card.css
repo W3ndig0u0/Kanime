@@ -1,6 +1,7 @@
 .newsCard {
   height: 25rem;
   margin-top: -3rem;
+  user-select: none;
 }
 
 .card {

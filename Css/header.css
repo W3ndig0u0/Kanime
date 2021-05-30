@@ -22,6 +22,7 @@
   grid-gap: 0%;
   display: grid;
   grid-template-columns: 1fr 4fr;
+  user-select: none;
 }
 
 .menu a {
