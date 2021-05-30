@@ -1,0 +1,42 @@
+.newsCard {
+  height: 22rem;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 32px;
+  box-shadow: 20px 20px 5px -5px rgba(55, 55, 55, 1);
+  max-width: 65%;
+  height: 18rem;
+
+  margin: 1rem auto;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.card h6 {
+  opacity: 0.6;
+  margin: 0;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.card h2 {
+  letter-spacing: 1px;
+  margin: 10px 0;
+  font-size: 2rem;
+}
+
+.img {
+  background: url("https://i.pinimg.com/originals/5f/12/b9/5f12b974076736afe4bfe170b36b5e89.jpg");
+  background-position: center top;
+  background-position-y: -200px;
+  zoom: 56%;
+}
+
+.card-info {
+  padding: 30px;
+  position: relative;
+  width: 100%;
+}

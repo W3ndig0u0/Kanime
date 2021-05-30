@@ -1,9 +1,19 @@
 .menu {
+  background: linear-gradient(
+      to bottom,
+      rgba(5, 131, 242, 0.9),
+      rgba(5, 131, 242, 1)
+    ),
+    url("https://i.pinimg.com/originals/5f/12/b9/5f12b974076736afe4bfe170b36b5e89.jpg")
+      right top -20rem;
+  transition: 400ms;
+  width: 100vw;
+}
+
+.menu-content {
+  grid-gap: 0%;
   display: grid;
   grid-template-columns: 1fr 4fr;
-  grid-gap: 0%;
-  background-color: #0583f2;
-  transition: 400ms;
 }
 
 .menu a {
@@ -21,13 +31,23 @@
   float: left;
 }
 
-.menu .left li a {
+.menu .right {
+  padding-left: 32%;
+}
+
+.menu .right li a {
   display: block;
   text-align: center;
   margin: 0.75rem 1.5rem 1.5rem 1.75rem;
 }
 
-.menu .right {
+.menu .right li a:nth-child(5) {
+  color: black;
+}
+
+.menu .left {
+  display: block;
+  text-align: center;
   font-size: 1.8rem;
   margin: 1.15rem 1.5rem 1.5rem 1.75rem;
   color: white;
@@ -35,6 +55,6 @@
   cursor: pointer;
 }
 
-.menu .right:hover {
+.menu .left:hover {
   color: #f27d16;
 }
