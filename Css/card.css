@@ -1,20 +1,20 @@
 .newsCard {
-  height: 32rem;
-  margin-top: -3rem;
+  height: 33rem;
+  margin-top: -4rem;
   user-select: none;
 }
 
 .card {
   background-color: #fff;
   border-radius: 32px;
-  box-shadow: 20px 15px 0px -5px #00abff;
-  max-width: 65%;
-  height: 28rem;
+  box-shadow: 20px 20px 0px -5px #00abff;
+  max-width: 75%;
+  height: 27rem;
 
   margin: 1rem auto;
   overflow: hidden;
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 4fr 2.5fr;
 }
 
 .card h6 {
@@ -40,7 +40,7 @@
 .card h2 {
   letter-spacing: 1px;
   margin: 10px 0;
-  font-size: 2rem;
+  font-size: 2.2rem;
   display: flex;
   margin-top: 2.5rem;
   margin-bottom: 1.5rem;
@@ -48,9 +48,9 @@
 
 .img {
   background: url("https://i.pinimg.com/originals/5f/12/b9/5f12b974076736afe4bfe170b36b5e89.jpg");
-  background-position: center top;
-  background-position-y: -120px;
-  zoom: 56%;
+  background-position: center;
+  background-position-y: -220px;
+  zoom: 59%;
 }
 
 .card.remove {
@@ -61,4 +61,13 @@
   padding: 40px;
   position: relative;
   width: 100%;
+}
+
+.scroll {
+  width: 7%;
+  position: absolute;
+  top: 93%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
 }
