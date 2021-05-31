@@ -1,0 +1,11 @@
+@media screen and (max-width: 440px) {
+  .menu .right {
+    padding-left: 0;
+  }
+
+  .menu .right li a {
+    display: block;
+    text-align: center;
+    margin: 0;
+  }
+}
