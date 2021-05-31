@@ -65,17 +65,49 @@
 }
 
 /* !Search */
-/* .cancel-btn {
+.validate {
+  position: absolute;
+  top: 5%;
+  left: 105%;
   visibility: hidden;
+  transition: 500ms;
 }
 
-.validate {
-  visibility: hidden;
-}
-.cancel-btn.active {
+.menuLinks {
   visibility: visible;
 }
 
 .validate.active {
   visibility: visible;
-} */
+  position: absolute;
+  top: 3%;
+  left: 65%;
+}
+
+.menuLinks.active {
+  visibility: hidden;
+}
+
+.validate {
+  width: 20%;
+  padding: 10px;
+  border: 4px solid #111d5e;
+  border-radius: 10px 0 0 10px;
+  outline: none;
+  font-size: 20px;
+  color: white;
+  background: none;
+  z-index: 0;
+}
+
+.search-btn {
+  margin-bottom: 2rem;
+}
+
+.cancel-btn.active {
+  visibility: visible;
+}
+.cancel-btn {
+  font-size: 1.5rem;
+  visibility: hidden;
+}

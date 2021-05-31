@@ -1,30 +1,58 @@
 .container {
   margin: 0;
+  padding: 0;
+}
+
+.imgSection {
+  width: 90%;
+  margin: 1rem auto;
+}
+
+.imgSection h3 {
+  text-align: center;
+  font-size: 3rem;
+  padding-top: 2rem;
 }
 
 .imgRow {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  overflow-x: auto;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+  padding: 10px;
 }
 
-.imgRow > * {
-  flex-basis: 20rem;
-  flex-shrink: 0;
+.cardImage {
+  width: 100%;
+  margin-bottom: 6px;
+  transition-duration: 300ms;
+  cursor: pointer;
 }
 
-.imgRow .imgCard {
-  display: flex;
-  flex-direction: column;
+.cardImage:hover {
+  transform: scale(1.05);
 }
 
-.imgRow .imgCard > .cardContent {
-  flex-grow: 1;
+.cardImage img {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-.imgRow .imgCard > .Image {
-  flex-basis: 20rem;
-  flex-shrink: 0;
-  overflow-y: hidden;
+.cardTitle {
+  color: black;
+  margin-bottom: 1px;
+  font-size: 18px;
+}
+
+.cardScore {
+  text-transform: uppercase;
+  color: #525661;
+  font-size: 14px;
+}
+
+.cardSynopsis {
+  display: none;
+}
+
+.cardAction {
+  display: none;
 }
