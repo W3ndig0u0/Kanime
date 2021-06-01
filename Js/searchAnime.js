@@ -38,9 +38,11 @@ function updateDom(data){
                         <div class="cardImage">
                             <img src="${anime.image_url}">
                         </div>
-                            <span class="cardTitle">${anime.title}</span>
-                            <p class="cardSynopsis">${anime.synopsis}</p>
-                            <p class="cardScore">${anime.score}/10⭐</p>
+                    <div class="cardInfo">
+                        <span class="cardTitle">${anime.title}</span>
+                        <p class="cardSynopsis">${anime.synopsis}</p>
+                        <p class="cardScore">${anime.score}/10⭐</p>
+                    </div>
                         <div class="cardAction">
                             <a href="${anime.url}">Find out more</a>
                         </div>

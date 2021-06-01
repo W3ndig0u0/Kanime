@@ -11,42 +11,61 @@
 .imgSection h3 {
   text-align: center;
   font-size: 3rem;
-  padding-top: 2rem;
 }
 
 .imgRow {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 15px;
-  padding: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.imgCard {
+  position: relative;
+  border-radius: 10px;
+  margin-top: 3rem;
+  min-height: auto;
+}
+
+.imgCard:hover {
+  border: 4px solid #0583f2;
+  background-color: #0583f2;
+  transform: scale(1.06);
+  transition: 300ms;
+}
+
+.imgCard:hover > .cardInfo {
+  visibility: visible;
 }
 
 .cardImage {
-  width: 100%;
-  margin-bottom: 6px;
-  transition-duration: 300ms;
+  height: auto;
   cursor: pointer;
 }
 
-.cardImage:hover {
-  transform: scale(1.05);
-}
-
 .cardImage img {
+  padding: 0;
+  min-height: auto;
   border-radius: 10px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 100%;
 }
 
-.cardTitle {
-  color: black;
-  margin-bottom: 1px;
-  font-size: 18px;
+.cardInfo {
+  left: 0;
+  width: 100%;
+  height: max-content;
+  visibility: hidden;
+
+  padding: 8px;
+  color: white;
+
+  cursor: default;
+  font-family: sans-serif;
+  font-size: 16px;
+  text-align: center;
 }
 
 .cardScore {
-  text-transform: uppercase;
-  color: #525661;
-  font-size: 14px;
+  display: none;
 }
 
 .cardSynopsis {
