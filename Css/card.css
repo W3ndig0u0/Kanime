@@ -1,5 +1,5 @@
 .newsCard {
-  height: 33rem;
+  height: 24rem;
   margin-top: -4rem;
   user-select: none;
 }
@@ -9,7 +9,7 @@
   border-radius: 32px;
   box-shadow: 20px 20px 0px -5px #00abff;
   max-width: 75%;
-  height: 27rem;
+  height: 21rem;
 
   margin: 1rem auto;
   overflow: hidden;
@@ -33,6 +33,22 @@
   display: unset;
 }
 
+.featured .ova {
+  background-color: #8cf187;
+}
+
+.featured .sea {
+  background-color: #a90042;
+}
+
+.featured .news {
+  background-color: #8767cb;
+}
+
+.featured .movie {
+  background-color: #0048ac;
+}
+
 .card h6 i {
   color: #0583f2;
 }
@@ -40,17 +56,41 @@
 .card h2 {
   letter-spacing: 1px;
   margin: 10px 0;
-  font-size: 2.2rem;
+  font-size: 2.1rem;
   display: flex;
-  margin-top: 2.5rem;
+  margin-top: 2rem;
   margin-bottom: 1.5rem;
 }
 
-.img {
+.img1 {
   background: url("https://i.pinimg.com/originals/5f/12/b9/5f12b974076736afe4bfe170b36b5e89.jpg");
   background-position: center;
   background-position-y: -220px;
   zoom: 59%;
+}
+
+.img2 {
+  background: url("https://wallpapercave.com/wp/wp8335006.jpg");
+  background-position: center;
+  background-position-y: -90px;
+  background-position-x: -50px;
+  zoom: 56%;
+}
+
+.img3 {
+  background: url("https://wallpapercave.com/wp/wp8335006.jpg");
+  background-position: center;
+  background-position-y: -90px;
+  background-position-x: -50px;
+  zoom: 56%;
+}
+
+.img4 {
+  background: url("https://i1.wp.com/www.monstersandcritics.com/wp-content/uploads/2020/08/Miss-Kobayashis-Dragon-Maid-Season-2-release-date-2021-Kyoto-Animation-Kobayashi-san-Chi-no-Maid-S.jpg?fit=1200%2C675&ssl=1");
+  background-position: center;
+  background-position-y: -90px;
+  background-position-x: -150px;
+  zoom: 72%;
 }
 
 .card.remove {
@@ -70,4 +110,30 @@
   left: 50%;
 
   transform: translate(-50%, -50%);
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  margin-top: -22px;
+  padding: 14px;
+  color: white;
+  font-weight: bold;
+  font-size: 28px;
+  transition: 0.6s ease;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 9%;
+  border-radius: 0 3px 3px 0;
+}
+.prev {
+  left: 10%;
+  border-radius: 3px 0 0 3px;
 }

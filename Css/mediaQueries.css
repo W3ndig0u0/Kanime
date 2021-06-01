@@ -4,8 +4,11 @@
   }
 
   .menu .right li a {
-    display: block;
+    display: none;
     text-align: center;
     margin: 0;
+  }
+  html {
+    min-width: 100vw;
   }
 }
