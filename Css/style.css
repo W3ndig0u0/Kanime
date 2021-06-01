@@ -12,3 +12,8 @@ body {
 li {
   list-style-type: none;
 }
+
+::selection {
+  background-color: #f27d16;
+  color: #faeddf;
+}
