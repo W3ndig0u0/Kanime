@@ -70,19 +70,16 @@
 }
 
 .img2 {
-  background: url("https://wallpapercave.com/wp/wp8335006.jpg");
+  background: url("https://wallpaperaccess.com/full/5918531.jpg");
   background-position: center;
-  background-position-y: -90px;
-  background-position-x: -50px;
-  zoom: 56%;
+  zoom: 39%;
 }
 
 .img3 {
-  background: url("https://wallpapercave.com/wp/wp8335006.jpg");
+  background: url("https://www.funimationfilms.com/wp-content/uploads/2021/03/VioletEvergardenMovie_BackgroundwLogo.jpg");
   background-position: center;
-  background-position-y: -90px;
-  background-position-x: -50px;
-  zoom: 56%;
+  background-position-x: -100px;
+  zoom: 38%;
 }
 
 .img4 {
@@ -117,10 +114,9 @@
 .next {
   cursor: pointer;
   position: absolute;
-  top: 40%;
+  top: 38%;
   width: auto;
-  margin-top: -22px;
-  padding: 14px;
+  padding: 16px;
   color: white;
   font-weight: bold;
   font-size: 28px;
@@ -130,10 +126,14 @@
 
 /* Position the "next button" to the right */
 .next {
-  right: 9%;
-  border-radius: 0 3px 3px 0;
+  right: 8.55%;
+  border-radius: 0 8px 8px 0;
 }
 .prev {
-  left: 10%;
-  border-radius: 3px 0 0 3px;
+  left: 9.55%;
+  border-radius: 8px 0 0 8px;
+}
+.prev:hover,
+.next:hover {
+  background-color: #0048ac;
 }
