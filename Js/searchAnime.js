@@ -66,5 +66,4 @@ function pageLoaded(){
     form.addEventListener("submit", searchAnime);
 }
 
-
 window.addEventListener("load", pageLoaded);
