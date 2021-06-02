@@ -7,6 +7,7 @@ function plusSlides(n) {
 
 function showSlides(n) {
   var slides = document.getElementsByClassName("newsCard");
+  var card = document.getElementsByClassName("card");
   var menu = document.querySelector(".menu");  
 
   var colorOne = "rgba(5, 131, 242, 0.87)";  
@@ -20,8 +21,10 @@ function showSlides(n) {
 
   for (i = 0; i < slides.length; i++) {
       slides[i].style.display = "none";
+      card[i].className = card[i].className.replace(" ani", "");
   }
 
   menu.style.backgroundImage = "linear-gradient("+ orientation + ", " + colorOne + ", " + colorTwo + ")," + (imgUrl[slideIndex-1]);
   slides[slideIndex-1].style.display = "block";  
+  card[slideIndex-1].className += " ani";
 }

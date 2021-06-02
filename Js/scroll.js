@@ -1,7 +1,7 @@
 // window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
-  if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+  if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
     
     document.querySelector(".menu").classList.add("sticky");
     document.querySelector(".card ").classList.add("remove");

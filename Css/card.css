@@ -18,6 +18,10 @@
   grid-template-columns: 4fr 2.5fr;
 }
 
+.card.remove {
+  visibility: hidden;
+}
+
 .card h6 {
   opacity: 0.6;
   margin: 0;
@@ -132,6 +136,7 @@
   left: 9.55%;
   border-radius: 8px 0 0 8px;
 }
+
 .prev:hover,
 .next:hover {
   background-color: #0048ac;
@@ -152,4 +157,19 @@
   width: 15px;
   background-color: #0048ac;
   transition: 0.6s;
+}
+
+/* Fading animation */
+.ani {
+  animation-name: ani;
+  animation-duration: 600ms;
+}
+
+@keyframes ani {
+  from {
+    transform: scale(0.97);
+  }
+  to {
+    transform: scale(1);
+  }
 }
