@@ -1,9 +1,32 @@
-@media screen and (max-width: 1440px) {
+/* !Big Ass Computer */
+
+@media screen and (min-width: 2041px) {
+  .menu .right {
+    padding-left: 45vw;
+  }
+}
+
+@media screen and (max-width: 2040px) {
+  .menu .right {
+    padding-left: 30vw;
+  }
+}
+
+/* !Big Computer */
+@media screen and (max-width: 1640px) {
+  .menu .right {
+    padding-left: 25vw;
+  }
+}
+
+/* !Big laptop */
+@media screen and (max-width: 1439px) {
   .menu .right {
     padding-left: 15vw;
   }
 }
 
+/* !Mini Laptop */
 @media screen and (max-width: 1210px) {
   .menu .right {
     padding-left: 5vw;
@@ -20,29 +43,39 @@
   }
 
   .menu .right {
-    padding-left: 40vw;
+    padding-left: 45vw;
   }
 
   .menu .right li a {
     margin: 1rem;
   }
 }
-
-@media screen and (max-width: 670px) {
+/* !Ipad - Mobile */
+@media screen and (max-width: 700px) {
   .menu .right {
-    padding-left: 20vw;
+    padding-left: 30vw;
+  }
+  .hamburgerNavContent {
+    width: 30%;
   }
 }
 
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 560px) {
   .menu .right {
-    padding-left: 10vw;
+    padding-left: 15vw;
+  }
+  .hamburgerNavContent {
+    width: 35%;
   }
 }
 
+/* !Smoll */
 @media screen and (max-width: 460px) {
   .menu .right {
     padding-left: 0vw;
+  }
+  .hamburgerNavContent {
+    width: 40%;
   }
 }
 
@@ -57,7 +90,12 @@
     font-size: 2em !important;
     margin: 0 !important;
   }
+  .hamburgerNavContent {
+    width: 50%;
+  }
 }
+
+/* !min mobil */
 @media screen and (max-width: 300px) {
   .menu .right {
     padding-left: 0vw;
