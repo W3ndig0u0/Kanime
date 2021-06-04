@@ -169,7 +169,7 @@
 
 .hamburgerNav ul li:first-of-type {
   position: absolute;
-  top: -2%;
+  top: 0%;
   left: 2%;
 }
 
