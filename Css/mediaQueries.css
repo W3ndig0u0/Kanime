@@ -24,6 +24,10 @@
   .menu .right {
     padding-left: 15vw;
   }
+
+  .newsCards {
+    display: none;
+  }
 }
 
 /* !Mini Laptop */
