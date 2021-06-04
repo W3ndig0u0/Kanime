@@ -8,6 +8,7 @@
       right top -20rem;
   transition: 300ms;
   width: 100vw;
+  height: 5rem;
 }
 
 .sticky {
@@ -15,7 +16,6 @@
   top: 0%;
   height: 5rem;
   transition: 500ms;
-  font-size: 1.1rem;
 }
 
 .menu-content {
@@ -41,17 +41,19 @@
 }
 
 .menu .right {
-  padding-left: 32%;
+  padding-left: 25vw;
+  height: 5rem;
 }
 
 .menu .right li a {
-  display: block;
+  display: flex;
   text-align: center;
   margin: 0.75rem 1.5rem 1.5rem 1.75rem;
+  max-height: 1;
 }
 
 .menu .left {
-  display: block;
+  display: flex;
   text-align: center;
   font-size: 1.8rem;
   margin: 1.15rem 1.5rem 1.5rem 1.75rem;
@@ -69,29 +71,29 @@
   position: absolute;
   top: 5%;
   left: 105%;
-  visibility: hidden;
+  display: none;
   transition: 500ms;
 }
 
 .menuLinks {
-  visibility: visible;
+  display: unset;
+}
+
+.menuLinks.active {
+  display: none;
 }
 
 .validate.active {
-  visibility: visible;
+  display: unset;
   position: absolute;
   top: 3%;
   left: 65%;
 }
 
-.menuLinks.active {
-  visibility: hidden;
-}
-
 .validate {
   width: 20%;
   padding: 10px;
-  border: 4px solid #111d5e;
+  border: 4px solid white;
   border-radius: 10px 0 0 10px;
   outline: none;
   font-size: 20px;
@@ -105,9 +107,71 @@
 }
 
 .cancel-btn.active {
-  visibility: visible;
+  display: unset;
 }
+
 .cancel-btn {
   font-size: 1.5rem;
-  visibility: hidden;
+  display: none;
+  z-index: 1;
+}
+
+.cancel-btn-li {
+  display: none;
+}
+
+.cancel-btn-li.active {
+  display: unset;
+}
+
+/* !Media */
+.navButton {
+  display: none !important;
+  font-size: 1.5em !important;
+  margin: 0.55rem !important;
+  cursor: pointer;
+  transition: 300ms;
+  color: white;
+}
+
+.hamburgerNav {
+  display: none;
+  justify-content: left;
+  position: fixed;
+  z-index: 1;
+  background-color: black;
+  color: white;
+  top: 0%;
+  right: 0%;
+  width: 100%;
+  height: 100%;
+  transition: 500ms;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.hamburgerNav a {
+  color: white;
+  text-decoration: none;
+  font-family: "Aquire-Light";
+}
+
+.hamburgerNav li {
+  font-size: 2em;
+  list-style: none;
+  padding: 20px;
+}
+
+.hamburgerNav ul {
+  padding: 5px;
+}
+
+.closeButton {
+  font-size: 1.3em;
+  cursor: pointer;
+  color: white;
+  text-align: right;
+  position: absolute;
+  top: 2%;
+  right: 5%;
 }

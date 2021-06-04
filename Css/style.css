@@ -17,3 +17,7 @@ li {
   background-color: #f27d16;
   color: #faeddf;
 }
+
+body.active {
+  overflow: hidden;
+}

@@ -1,14 +1,65 @@
-@media screen and (max-width: 440px) {
+@media screen and (max-width: 1440px) {
   .menu .right {
-    padding-left: 0;
+    padding-left: 15vw;
+  }
+}
+
+@media screen and (max-width: 1210px) {
+  .menu .right {
+    padding-left: 5vw;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .navButton {
+    display: flex !important;
+  }
+
+  .menu .menuLinks {
+    display: none;
+  }
+
+  .menu .right {
+    padding-left: 40vw;
   }
 
   .menu .right li a {
-    display: none;
-    text-align: center;
-    margin: 0;
+    margin: 1rem;
   }
-  html {
-    min-width: 100vw;
+}
+
+@media screen and (max-width: 670px) {
+  .menu .right {
+    padding-left: 20vw;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .menu .right {
+    padding-left: 10vw;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .menu .right {
+    padding-left: 0vw;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .menu .menuExtra {
+    display: none;
+  }
+  .menu .right {
+    padding-left: 15vw;
+  }
+  .navButton {
+    font-size: 2em !important;
+    margin: 0 !important;
+  }
+}
+@media screen and (max-width: 300px) {
+  .menu .right {
+    padding-left: 0vw;
   }
 }

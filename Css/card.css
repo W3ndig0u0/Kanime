@@ -1,6 +1,9 @@
+.newsCards {
+  display: none;
+}
+
 .newsCard {
   height: 24rem;
-  margin-top: -4rem;
 }
 
 .card {

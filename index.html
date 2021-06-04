@@ -20,6 +20,7 @@
   <script defer src="Js/searchAnime.js"></script>
   <script defer src="Js/btn.js"></script>
   <script defer src="Js/slides.js"></script>
+  <script defer src="Js/menu.js"></script>
 
   <link
       rel="shortcut icon"
@@ -41,128 +42,149 @@
               <li> <a href="#">Community</a></li>
               <li> <a href="#">News</a></li>
             </div>
-            <li> <a href="#"><i class="fa fa-search search-btn" ></i> </a></li>
-            <li> <a href="#"><i class="fa fa-user" ></i> </a></li>
-            <li> <a href="#"><i class="fa fa-times cancel-btn" ></i> </a></li>
+          <div class="menuExtra">
 
-            <form id="search_form">
-              <div class="row">
+              <li> <a href="#"><i class="fa fa-search search-btn" ></i> </a></li>
+              <li> <a href="#"><i class="fa fa-user" ></i> </a></li>
+              <li class="cancel-btn-li"> <a href="#"><i class="fa fa-times cancel-btn" ></i> </a></li>
+              
+              <form id="search_form">
+                <div class="row">
                   <input placeholder="Search..." name="search" id="search" type="text" class="validate search-bar">
-              </div>
-            </form>
+                </div>
+              </form>
+            </div>
+              
+          <li> <a class="navButton" id="navButton" onclick="openNavbar()">&#9776;</a></li>
 
           </ul>
+
+          <div class="hamburgerNav" id="hamburgerNavbarLinks">
+            <div class="closeButton" id="closeButton" onclick="closeNavbar()">&#10006;</div>
+  
+            <div class="hamburgerNavContent">
+              <ul>
+                <li><a href="#">Model J</a></li>
+                <li><a href="#">Model I</a></li>
+                <li><a href="#">Model N</a></li>
+                <li><a href="#">Model G</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">Account</a></li>
+              </ul>
+            </div>
+          </div>
+
         </div>
       </nav>
 
-  <div class="newsCard">
-      <div class="card">
-        <div class="img img1"></div>
+    <div class="newsCards">
+      <div class="newsCard">
+          <div class="card">
+            <div class="img img1"></div>
 
-        <div class="card-info">
-          <div class="featured">
-            <h6>Featured</h6>            
-            <h6 class="news">News</h6>
-            <h6 class="ova">OVA</h6>
+            <div class="card-info">
+              <div class="featured">
+                <h6>Featured</h6>            
+                <h6 class="news">News</h6>
+                <h6 class="ova">OVA</h6>
+              </div>
+              <h2>'Fate/Grand Order' Special 'Fate/Grand Carnival' Gets An OVA </h2>
+              <h6><i class="fa fa-calendar" ></i> 12/13/2020</h6>
+              
+            <div>
+              <span class="dot dotActive" ></span> 
+              <span class="dot" ></span> 
+              <span class="dot" ></span> 
+              <span class="dot" ></span> 
+            </div>
+            
+            </div>
           </div>
-          <h2>'Fate/Grand Order' Special 'Fate/Grand Carnival' Gets An OVA </h2>
-          <h6><i class="fa fa-calendar" ></i> 12/13/2020</h6>
-          
-        <div>
-          <span class="dot dotActive" ></span> 
-          <span class="dot" ></span> 
-          <span class="dot" ></span> 
-          <span class="dot" ></span> 
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
         </div>
         
-        </div>
-      </div>
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-    </div>
-    
-    
-  <div class="newsCard">
-      <div class="card">
-        <div class="img img2"></div>
-
-        <div class="card-info">
-          <div class="featured">
-            <h6>Featured</h6>            
-            <h6 class="news">News</h6>
-            <h6 class="tv">Television</h6>
-          </div>
-          <h2>Part 2 of 'That Time I Got Reincarnated as a Slime Season 2</h2>
-          <h6><i class="fa fa-calendar" ></i> 12/5/2021</h6>
         
-          <div>
-            <span class="dot" ></span> 
-            <span class="dot dotActive" ></span> 
-            <span class="dot" ></span> 
-            <span class="dot" ></span> 
-        </div>
+      <div class="newsCard">
+          <div class="card">
+            <div class="img img2"></div>
 
+            <div class="card-info">
+              <div class="featured">
+                <h6>Featured</h6>            
+                <h6 class="news">News</h6>
+                <h6 class="tv">Television</h6>
+              </div>
+              <h2>Part 2 of 'That Time I Got Reincarnated as a Slime Season 2</h2>
+              <h6><i class="fa fa-calendar" ></i> 12/5/2021</h6>
+            
+              <div>
+                <span class="dot" ></span> 
+                <span class="dot dotActive" ></span> 
+                <span class="dot" ></span> 
+                <span class="dot" ></span> 
+            </div>
+
+            </div>
+          </div>
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        
+        <div class="newsCard">
+          <div class="card">
+            <div class="img img3"></div>
+
+            <div class="card-info">
+              <div class="featured">
+                <h6>Featured</h6>            
+                <h6 class="news">News</h6>
+                <h6 class="movie">Movie</h6>
+              </div>
+              <h2>'Violet Evergarden: The Movie Premieres on Sept 18'</h2>
+              <h6><i class="fa fa-calendar" ></i> 10/6/2021</h6>
+              <div>
+                <span class="dot" ></span> 
+                <span class="dot" ></span> 
+                <span class="dot dotActive" ></span> 
+                <span class="dot" ></span> 
+              </div>
+            </div>
+          </div>
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+              
+        <div class="newsCard">
+          <div class="card">
+            <div class="img img4"></div>
+
+            <div class="card-info">
+              <div class="featured">
+                <h6>Featured</h6>            
+                <h6 class="news">News</h6>
+                <h6 class="tv">Television</h6>
+              </div>
+              <h2>'Miss Kobayashi's Dragon Maid S' Gets A New Season </h2>
+              <h6><i class="fa fa-calendar" ></i> 10/5/2021</h6>
+              <div>
+                <span class="dot" ></span> 
+                <span class="dot" ></span> 
+                <span class="dot" ></span> 
+                <span class="dot dotActive" ></span> 
+              </div>
+            </div>
+          </div>
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
         </div>
       </div>
-      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-      <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
     </div>
-    
-    <div class="newsCard">
-      <div class="card">
-        <div class="img img3"></div>
+  </header>
 
-        <div class="card-info">
-          <div class="featured">
-            <h6>Featured</h6>            
-            <h6 class="news">News</h6>
-            <h6 class="movie">Movie</h6>
-          </div>
-          <h2>'Violet Evergarden: The Movie Premieres on Sept 18'</h2>
-          <h6><i class="fa fa-calendar" ></i> 10/6/2021</h6>
-          <div>
-            <span class="dot" ></span> 
-            <span class="dot" ></span> 
-            <span class="dot dotActive" ></span> 
-            <span class="dot" ></span> 
-          </div>
-        </div>
-      </div>
-      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-      <a class="next" onclick="plusSlides(1)">&#10095;</a>
-    </div>
-          
-    <div class="newsCard">
-      <div class="card">
-        <div class="img img4"></div>
-
-        <div class="card-info">
-          <div class="featured">
-            <h6>Featured</h6>            
-            <h6 class="news">News</h6>
-            <h6 class="tv">Television</h6>
-          </div>
-          <h2>'Miss Kobayashi's Dragon Maid S' Gets A New Season </h2>
-          <h6><i class="fa fa-calendar" ></i> 10/5/2021</h6>
-          <div>
-            <span class="dot" ></span> 
-            <span class="dot" ></span> 
-            <span class="dot" ></span> 
-            <span class="dot dotActive" ></span> 
-          </div>
-        </div>
-      </div>
-      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-      <a class="next" onclick="plusSlides(1)">&#10095;</a>
-    </div>
-      
-  </div>
-    
-</header>
-
-<div id="search-results" class="container"></div>
-
+<main>
+  <div id="search-results" class="container"></div>
+</main>
+  
 </body>
 </html>
