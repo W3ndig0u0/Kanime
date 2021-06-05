@@ -31,7 +31,7 @@ function searchAnime(event){
         .catch(err=>console.warn(err.message));
     }
 
-    const newUrl = new URL('../Search?=' + query + '?=' + query2, window.location.href);
+    const newUrl = new URL('../Kanime/Search?=' + query + '?=' + query2, window.location.href);
     history.pushState({}, null, newUrl);
 }
 
