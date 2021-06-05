@@ -17,10 +17,6 @@
   grid-template-columns: 4fr 2.5fr;
 }
 
-.card.remove {
-  visibility: hidden;
-}
-
 .card h6 {
   opacity: 0.6;
   margin: 0;
