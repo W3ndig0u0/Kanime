@@ -1,5 +1,5 @@
 const base_url = "https://api.jikan.moe/v3";
-
+const url = "https://w3ndig0u0.github.io/Kanime/";
 
 function searchAnime(event){
 
@@ -9,7 +9,7 @@ function searchAnime(event){
     const query = form.get("search");
     const query2 = form.get("searchMobile");
 
-    // !kollar om det e mobil eller vanlig e tom
+    // !kollar om det e mobil eller vanlig som e tom
     if (query === undefined || query === null) {
         fetch(`${base_url}/search/anime?q=${query2}&page=1`)
         .then(res=>res.json())
@@ -30,10 +30,13 @@ function searchAnime(event){
         .then(updateDom)
         .catch(err=>console.warn(err.message));
     }
+
+    const newUrl = new URL('../Search?=' + query + '?=' + query2, window.location.href);
+    history.pushState({}, null, newUrl);
 }
 
-function updateDom(data){
 
+function updateDom(data){
     const searchResults = document.querySelector('#search-results');
 
     const animeByCategories = data.results

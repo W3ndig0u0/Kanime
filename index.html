@@ -1,191 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="A website about Anime.">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A website about Anime." />
 
-  <title>Kanime</title>
+    <title>Kanime</title>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" >
-
-  <link rel="stylesheet" href="Css/style.css">
-  <link rel="stylesheet" href="Css/header.css">
-  <link rel="stylesheet" href="Css/card.css">
-  <link rel="stylesheet" href="Css/searchAnime.css">
-  <link rel="stylesheet" href="Css/mediaQueries.css">
-
-  <script defer src="Js/scroll.js"></script>
-  <script defer src="Js/searchAnime.js"></script>
-  <script defer src="Js/btn.js"></script>
-  <script defer src="Js/slides.js"></script>
-  <script defer src="Js/menu.js"></script>
-
-  <link
-      rel="shortcut icon"
-      href="Img/ghost.png"
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
     />
 
-</head>
-<body>
-  <header id="header">
-    <div class="menu fade">
+    <link rel="stylesheet" href="Css/style.css" />
+    <link rel="stylesheet" href="Css/header.css" />
+    <link rel="stylesheet" href="Css/card.css" />
+    <link rel="stylesheet" href="Css/searchAnime.css" />
+    <link rel="stylesheet" href="Css/mediaQueries.css" />
+    <link rel="stylesheet" href="Css/search.css" />
 
-      <nav class="menu-content">
-      <div class="left logo">Kanime</div>
-        <div class="right">
-          <ul>
-            <div class="menuLinks">
-              <li > <a href="#">Anime</a></li>
-              <li> <a href="#">Manga</a></li>
-              <li> <a href="#">Community</a></li>
-              <li> <a href="#">News</a></li>
-            </div>
-          <div class="menuExtra">
+    <script defer src="Js/scroll.js"></script>
+    <script defer src="Js/searchAnime.js"></script>
+    <script defer src="Js/slides.js"></script>
+    <script defer src="Js/menu.js"></script>
 
-              <li> <a href="#"><i class="fa fa-search search-btn" ></i> </a></li>
-              <li> <a href="#"><i class="fa fa-user" ></i> </a></li>
-              <li class="cancel-btn-li"> <a href="#"><i class="fa fa-times cancel-btn" ></i> </a></li>
-              
-              <form id="search_form">
-                  <input placeholder="Search..." name="search" id="search" type="text" class="validate search-bar">
-              </form>
-            </div>
-              
-          <li> <a class="navButton" id="navButton" onclick="openNavbar()">&#9776;</a></li>
-
-          </ul>
-
-          <div class="hamburgerNav" id="hamburgerNavbarLinks">
-            <div class="closeButton" id="closeButton" onclick="closeNavbar()">&#10006;</div>
-  
-            <div class="hamburgerNavContent">
-              <ul>
-                <li> <a href="#"><i class="fa fa-user" ></i> </a></li>
-                <li > <a href="#">Anime</a></li>
-                <li> <a href="#">Manga</a></li>
-                <li> <a href="#">Community</a></li>
-                <li> <a href="#">News</a></li>
-
-                <form id="searchFormMobil">
-                    <input placeholder="Search..." name="search" id="searchMobile" type="text" class="validate searchBarMobile">
-                </form>
-              </ul>
-            </div>
-          </div>
-
-        </div>
-      </nav>
-
-    <div class="newsCards">
-      <div class="newsCard">
-          <div class="card">
-            <div class="img img1"></div>
-
-            <div class="card-info">
-              <div class="featured">
-                <h6>Featured</h6>            
-                <h6 class="news">News</h6>
-                <h6 class="ova">OVA</h6>
+    <link rel="shortcut icon" href="Img/ghost.png" />
+  </head>
+  <body>
+    <header id="header">
+      <div class="menu fade">
+        <nav class="menu-content">
+          <div class="left logo"><a href="index.html">Kanime</a></div>
+          <div class="right">
+            <ul>
+              <div class="menuLinks">
+                <li><a href="#">Anime</a></li>
+                <li><a href="#">Manga</a></li>
+                <li><a href="#">Community</a></li>
+                <li><a href="#">News</a></li>
               </div>
-              <h2>'Fate/Grand Order' Special 'Fate/Grand Carnival' Gets An OVA </h2>
-              <h6><i class="fa fa-calendar" ></i> 12/13/2020</h6>
-              
-            <div>
-              <span class="dot dotActive" ></span> 
-              <span class="dot" ></span> 
-              <span class="dot" ></span> 
-              <span class="dot" ></span> 
-            </div>
-            
+              <div class="menuExtra">
+                <li>
+                  <a href="#"><i class="fa fa-search search-btn"></i> </a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa fa-user"></i> </a>
+                </li>
+
+                  <div id="myModal" class="modal">
+                    <div class="modal-content">
+                      <form id="search_form">
+                        <input
+                          placeholder="Search..."
+                          name="search"
+                          id="search"
+                          type="text"
+                          class="validate search-bar"
+                        />
+                      </form>
+                    </div>
+                </div>
+              </div>
+
+              <li>
+                <a class="navButton" id="navButton" onclick="openNavbar()"
+                  >&#9776;</a
+                >
+              </li>
+            </ul>
+
+            <div class="hamburgerNav" id="hamburgerNavbarLinks">
+              <div class="closeButton" id="closeButton" onclick="closeNavbar()">
+                &#10006;
+              </div>
+
+              <div class="hamburgerNavContent">
+                <ul>
+                  <li>
+                    <a href="#"><i class="fa fa-user"></i> </a>
+                  </li>
+                  <li><a href="#">Anime</a></li>
+                  <li><a href="#">Manga</a></li>
+                  <li><a href="#">Community</a></li>
+                  <li><a href="#">News</a></li>
+
+                  <form id="searchFormMobil">
+                    <input
+                      placeholder="Search..."
+                      name="search"
+                      id="searchMobile"
+                      type="text"
+                      class="validate searchBarMobile"
+                    />
+                  </form>
+                </ul>
+              </div>
             </div>
           </div>
+        </nav>
+
+        <div class="newsCards">
+          <div class="newsCard">
+            <div class="card">
+              <div class="img img1"></div>
+
+              <div class="card-info">
+                <div class="featured">
+                  <h6>Featured</h6>
+                  <h6 class="news">News</h6>
+                  <h6 class="ova">OVA</h6>
+                </div>
+                <h2>
+                  'Fate/Grand Order' Special 'Fate/Grand Carnival' Gets An OVA
+                </h2>
+                <h6><i class="fa fa-calendar"></i> 12/13/2020</h6>
+
+                <div>
+                  <span class="dot dotActive"></span>
+                  <span class="dot"></span>
+                  <span class="dot"></span>
+                  <span class="dot"></span>
+                </div>
+              </div>
+            </div>
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
             <a class="next" onclick="plusSlides(1)">&#10095;</a>
-        </div>
-        
-        
-      <div class="newsCard">
-          <div class="card">
-            <div class="img img2"></div>
-
-            <div class="card-info">
-              <div class="featured">
-                <h6>Featured</h6>            
-                <h6 class="news">News</h6>
-                <h6 class="tv">Television</h6>
-              </div>
-              <h2>Part 2 of 'That Time I Got Reincarnated as a Slime Season 2</h2>
-              <h6><i class="fa fa-calendar" ></i> 12/5/2021</h6>
-            
-              <div>
-                <span class="dot" ></span> 
-                <span class="dot dotActive" ></span> 
-                <span class="dot" ></span> 
-                <span class="dot" ></span> 
-            </div>
-
-            </div>
           </div>
-          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-          <a class="next" onclick="plusSlides(1)">&#10095;</a>
-        </div>
-        
-        <div class="newsCard">
-          <div class="card">
-            <div class="img img3"></div>
 
-            <div class="card-info">
-              <div class="featured">
-                <h6>Featured</h6>            
-                <h6 class="news">News</h6>
-                <h6 class="movie">Movie</h6>
-              </div>
-              <h2>'Violet Evergarden: The Movie Premieres on Sept 18'</h2>
-              <h6><i class="fa fa-calendar" ></i> 10/6/2021</h6>
-              <div>
-                <span class="dot" ></span> 
-                <span class="dot" ></span> 
-                <span class="dot dotActive" ></span> 
-                <span class="dot" ></span> 
+          <div class="newsCard">
+            <div class="card">
+              <div class="img img2"></div>
+
+              <div class="card-info">
+                <div class="featured">
+                  <h6>Featured</h6>
+                  <h6 class="news">News</h6>
+                  <h6 class="tv">Television</h6>
+                </div>
+                <h2>
+                  Part 2 of 'That Time I Got Reincarnated as a Slime Season 2
+                </h2>
+                <h6><i class="fa fa-calendar"></i> 12/5/2021</h6>
+
+                <div>
+                  <span class="dot"></span>
+                  <span class="dot dotActive"></span>
+                  <span class="dot"></span>
+                  <span class="dot"></span>
+                </div>
               </div>
             </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
           </div>
-          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-          <a class="next" onclick="plusSlides(1)">&#10095;</a>
-        </div>
-              
-        <div class="newsCard">
-          <div class="card">
-            <div class="img img4"></div>
 
-            <div class="card-info">
-              <div class="featured">
-                <h6>Featured</h6>            
-                <h6 class="news">News</h6>
-                <h6 class="tv">Television</h6>
-              </div>
-              <h2>'Miss Kobayashi's Dragon Maid S' Gets A New Season </h2>
-              <h6><i class="fa fa-calendar" ></i> 10/5/2021</h6>
-              <div>
-                <span class="dot" ></span> 
-                <span class="dot" ></span> 
-                <span class="dot" ></span> 
-                <span class="dot dotActive" ></span> 
+          <div class="newsCard">
+            <div class="card">
+              <div class="img img3"></div>
+
+              <div class="card-info">
+                <div class="featured">
+                  <h6>Featured</h6>
+                  <h6 class="news">News</h6>
+                  <h6 class="movie">Movie</h6>
+                </div>
+                <h2>'Violet Evergarden: The Movie Premieres on Sept 18'</h2>
+                <h6><i class="fa fa-calendar"></i> 10/6/2021</h6>
+                <div>
+                  <span class="dot"></span>
+                  <span class="dot"></span>
+                  <span class="dot dotActive"></span>
+                  <span class="dot"></span>
+                </div>
               </div>
             </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
           </div>
-          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+          <div class="newsCard">
+            <div class="card">
+              <div class="img img4"></div>
+
+              <div class="card-info">
+                <div class="featured">
+                  <h6>Featured</h6>
+                  <h6 class="news">News</h6>
+                  <h6 class="tv">Television</h6>
+                </div>
+                <h2>'Miss Kobayashi's Dragon Maid S' Gets A New Season</h2>
+                <h6><i class="fa fa-calendar"></i> 10/5/2021</h6>
+                <div>
+                  <span class="dot"></span>
+                  <span class="dot"></span>
+                  <span class="dot"></span>
+                  <span class="dot dotActive"></span>
+                </div>
+              </div>
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+          </div>
         </div>
       </div>
-    </div>
-  </header>
+    </header>
 
-<main>
-  <div id="search-results" class="container"></div>
-</main>
-  
-</body>
+    <main>
+      <div id="search-results" class="container"></div>
+    </main>
+  </body>
 </html>
