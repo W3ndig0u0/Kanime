@@ -53,9 +53,22 @@
   .menu .right li a {
     margin: 1rem;
   }
+  .newsRow {
+    display: unset;
+  }
+  .newsCardInfo {
+    font-size: 2vh;
+  }
 }
+
 /* !Ipad - Mobile */
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 800px) {
+  .imgRow {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+@media screen and (max-width: 720px) {
   .menu .right {
     padding-left: 30vw;
   }
@@ -71,6 +84,20 @@
   .hamburgerNavContent {
     width: 35%;
   }
+  .newsCardInfo {
+    font-size: 1vh;
+  }
+  .newsLetter {
+    height: 10rem;
+  }
+
+  .newsImg img {
+    height: 10rem;
+  }
+  .imgRow {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
 }
 
 /* !Smoll */
@@ -81,6 +108,10 @@
   .hamburgerNavContent {
     width: 40%;
   }
+  .imgRow {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media screen and (max-width: 400px) {
@@ -90,12 +121,19 @@
   .menu .right {
     padding-left: 15vw;
   }
+  .menu .logo {
+    font-size: smaller;
+  }
   .navButton {
     font-size: 2em !important;
     margin: 0 !important;
   }
   .hamburgerNavContent {
     width: 50%;
+  }
+  .imgRow {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 

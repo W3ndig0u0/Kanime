@@ -38,6 +38,10 @@ function searchAnime(event){
 
 function updateDom(data){
     const searchResults = document.querySelector('#search-results');
+    document.querySelector('.topManga').style.display = "none";
+    document.querySelector('.airing').style.display = "none";
+    document.querySelector('.news').style.display = "none";
+    document.querySelector('.upComing').style.display = "none";
 
     const animeByCategories = data.results
         .reduce((acc, anime)=>{
@@ -74,8 +78,7 @@ function updateDom(data){
 
             return `
                 <section class="imgSection">
-                    <h3>${key.toUpperCase()}</h3>
-                    <hr>
+                <h4><span>${key.toUpperCase()}</span></h4>
                     <div class="imgRow">${animesHTML}</div>
                 </section>
             `
@@ -88,6 +91,7 @@ function pageLoaded(){
 
     const formMobile = document.getElementById('searchFormMobil');
     formMobile.addEventListener("submit", searchAnime);
+
 }
 
 window.addEventListener("load", pageLoaded);
