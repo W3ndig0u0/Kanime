@@ -125,11 +125,11 @@
 
 /* Position the "next button" to the right */
 .next {
-  right: 10%;
+  right: 8.5%;
   border-radius: 0 8px 8px 0;
 }
 .prev {
-  left: 10%;
+  left: 9.5%;
   border-radius: 8px 0 0 8px;
 }
 
