@@ -154,7 +154,6 @@
   transition: 0.6s;
 }
 
-/* Fading animation */
 .ani {
   animation-name: ani;
   animation-duration: 600ms;

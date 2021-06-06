@@ -14,12 +14,23 @@
   margin-block-end: 0em;
 }
 
-section {
+.news,
+.topManga,
+.upComing,
+.shop,
+.miss {
   padding-top: 3rem;
 }
 
-.airing {
-  padding: 0;
+.miss {
+  padding-bottom: 6rem;
+}
+
+.miss {
+  text-align: center;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  word-wrap: break-word;
 }
 
 .imgSection h4 {
@@ -29,7 +40,7 @@ section {
 
 .imgRow {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
   gap: 1.5rem;
 }
 
@@ -50,22 +61,30 @@ section {
   border-radius: 10px;
   transition: 700ms;
   border: 1px solid black;
-  height: 12rem;
+  height: 11rem;
+  cursor: pointer;
 }
 
 .newsImg img {
   border-radius: 10px;
   width: 100%;
-  height: 12rem;
+  height: 11rem;
   object-fit: cover;
   box-sizing: border-box;
-  border-radius: 10px;
+  user-select: none;
 }
 
 .newsCardInfo {
   font-size: 0.7rem;
   opacity: 0.8;
   padding: 1rem;
+}
+
+.newsLetter:hover,
+.newsLetter:active {
+  border: 4px solid #0583f2;
+  transform: scale(1.05);
+  transition: 500ms;
 }
 
 .imgCard {
@@ -75,6 +94,7 @@ section {
   min-height: auto;
   transition: 700ms;
   width: auto;
+  user-select: none;
 }
 
 .imgCard:hover,
@@ -92,7 +112,7 @@ section {
 
 .imgCard:hover > .cardImage img,
 .imgCard:active > .cardImage img {
-  height: 16rem;
+  height: 12rem;
   transition: 500ms;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0);
 }
@@ -106,10 +126,11 @@ section {
 
 .cardImage img {
   width: 100%;
-  height: 19rem;
+  height: 15rem;
   object-fit: cover;
   box-sizing: border-box;
   border-radius: 10px;
+  user-select: none;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -125,7 +146,9 @@ section {
 
   cursor: default;
   font-family: sans-serif;
+  font-size: 1rem;
   text-align: center;
+  text-transform: capitalize;
 }
 
 .cardScore {
@@ -138,4 +161,49 @@ section {
 
 .cardAction {
   display: none;
+}
+
+.cardImage .tag {
+  position: absolute;
+  bottom: 4px;
+  color: #eee;
+  left: 0;
+  text-transform: uppercase;
+  border-radius: 0px 10px 0px 10px;
+  padding: 0.2rem;
+}
+
+.cardImage .new {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-image: url(https://myanimelist.net/images/manga_store/icon_new.png);
+  background-size: 60px 60px;
+  background-position: left top;
+  background-repeat: no-repeat;
+  width: 100px;
+  height: 100px;
+}
+
+.cardImage .movieTag {
+  background-color: #a90042;
+}
+.cardImage .tvTag {
+  background-color: #0583f2;
+}
+.cardImage .lnTag {
+  background-color: #845ec2;
+}
+.cardImage .mangaTag {
+  background-color: #ffa88b;
+}
+
+.cardImage .specialTag {
+  background-color: #fa474c;
+}
+.cardImage .ovaTag {
+  background-color: #0093ff;
+}
+.cardImage .onaTag {
+  background-color: #5fdd87;
 }

@@ -1,0 +1,107 @@
+footer {
+  bottom: 0;
+  width: 100%;
+  background: #111;
+  color: #d9d9d9;
+}
+
+.main-content {
+  display: flex;
+}
+
+.main-content .box {
+  flex-basis: 50%;
+  padding: 10px 20px;
+}
+
+.box h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: white;
+}
+
+.box .content {
+  margin: 24px 0 0 0;
+  position: relative;
+}
+
+ul {
+  padding-inline-start: 0px;
+}
+
+.left .content a {
+  padding: 0 2px;
+  color: white;
+  text-decoration: none;
+}
+
+.left .nav-link:hover {
+  opacity: 0.65;
+}
+.nav-link:focus {
+  opacity: 0.5;
+}
+
+.left .content span {
+  height: 40px;
+  width: 40px;
+  background: #3d3d3d;
+  line-height: 40px;
+  text-align: center;
+  font-size: 18px;
+  border-radius: 5px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.left .content a:hover {
+  opacity: 0.65;
+}
+
+.right .content .fas {
+  font-size: 1rem;
+  background: #3d3d3d;
+  height: 45px;
+  width: 45px;
+  line-height: 45px;
+  text-align: center;
+  border-radius: 50%;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.right .content .fas:hover {
+  opacity: 0.65;
+}
+
+.right .content .text {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #d9d9d9;
+}
+
+.right .content .phone {
+  margin: 15px 0;
+}
+
+.footer-nav {
+  display: inline-block;
+  vertical-align: top;
+}
+
+@media screen and (max-width: 900px) {
+  footer {
+    position: relative;
+    bottom: 0px;
+  }
+
+  .main-content {
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  .main-content .box {
+    margin: 5px 0;
+  }
+}

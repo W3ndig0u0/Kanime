@@ -42,6 +42,7 @@ function updateDom(data){
     document.querySelector('.airing').style.display = "none";
     document.querySelector('.news').style.display = "none";
     document.querySelector('.upComing').style.display = "none";
+    document.querySelector('.shop').style.display = "none";
 
     const animeByCategories = data.results
         .reduce((acc, anime)=>{
@@ -62,6 +63,7 @@ function updateDom(data){
                     <div class="imgCard">
                         <div class="cardImage">
                             <img src="${anime.image_url}">
+                            <div class="${key.toLowerCase()}Tag tag">${key.toUpperCase()}</div>
                         </div>
                     <div class="cardInfo">
                         <span class="cardTitle">${anime.title}</span>

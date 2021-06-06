@@ -68,6 +68,7 @@
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }
 }
+
 @media screen and (max-width: 720px) {
   .menu .right {
     padding-left: 30vw;
@@ -108,10 +109,6 @@
   .hamburgerNavContent {
     width: 40%;
   }
-  .imgRow {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
 @media screen and (max-width: 400px) {
@@ -131,9 +128,22 @@
   .hamburgerNavContent {
     width: 50%;
   }
+
   .imgRow {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+
+  .imgCard:hover > .cardImage img,
+  .imgCard:active > .cardImage img {
+    height: 10rem;
+  }
+
+  .cardInfo {
+    font-size: 0.5rem;
+  }
+
+  .cardImage img {
+    height: 12rem;
   }
 }
 
