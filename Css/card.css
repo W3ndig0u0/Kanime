@@ -1,5 +1,6 @@
 .newsCard {
   height: 24rem;
+  position: relative;
 }
 
 .card {
@@ -112,7 +113,7 @@
 .next {
   cursor: pointer;
   position: absolute;
-  top: 38%;
+  top: 30%;
   width: auto;
   padding: 16px;
   color: white;
@@ -124,11 +125,11 @@
 
 /* Position the "next button" to the right */
 .next {
-  right: 8.55%;
+  right: 10%;
   border-radius: 0 8px 8px 0;
 }
 .prev {
-  left: 9.55%;
+  left: 10%;
   border-radius: 8px 0 0 8px;
 }
 
