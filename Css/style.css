@@ -18,6 +18,18 @@ li {
   color: #faeddf;
 }
 
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: white;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #00abff;
+}
+
 body.active {
   overflow: hidden;
 }
@@ -41,4 +53,8 @@ h3:after {
   height: 0.5em;
   border-top: 2px solid #f27d16;
   z-index: -1;
+}
+
+.space2 {
+  padding-bottom: 6rem;
 }

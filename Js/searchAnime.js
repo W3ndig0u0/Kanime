@@ -2,7 +2,6 @@ const base_url = "https://api.jikan.moe/v3";
 const url = "https://w3ndig0u0.github.io/Kanime/";
 
 function searchAnime(event){
-
     event.preventDefault();
 
     const form = new FormData(this);
@@ -30,19 +29,19 @@ function searchAnime(event){
         .then(updateDom)
         .catch(err=>console.warn(err.message));
     }
-
-    const newUrl = new URL('../Kanime/Search?=' + query + '?=' + query2, window.location.href);
-    history.pushState({}, null, newUrl);
 }
 
+// const newUrl = new URL('../Kanime/Search?=' + query + '?=' + query2, window.location.href);
+// history.pushState({}, null, newUrl);
 
 function updateDom(data){
     const searchResults = document.querySelector('#search-results');
     document.querySelector('.topManga').style.display = "none";
     document.querySelector('.airing').style.display = "none";
-    document.querySelector('.news').style.display = "none";
     document.querySelector('.upComing').style.display = "none";
     document.querySelector('.shop').style.display = "none";
+    document.querySelector('.newsSection').style.display = "none";
+    document.querySelector('.miss').style.display = "none";
 
     const animeByCategories = data.results
         .reduce((acc, anime)=>{

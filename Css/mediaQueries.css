@@ -85,13 +85,12 @@
   .hamburgerNavContent {
     width: 35%;
   }
-  .newsCardInfo {
-    font-size: 1vh;
+  .newsCardInfo h2 {
+    font-size: 0.8rem;
   }
   .newsLetter {
     height: 10rem;
   }
-
   .newsImg img {
     height: 10rem;
   }
@@ -139,11 +138,16 @@
   }
 
   .cardInfo {
-    font-size: 0.5rem;
+    padding-top: 0;
+    font-size: 0.6rem;
   }
 
   .cardImage img {
     height: 12rem;
+  }
+
+  .newsCardInfo h2 {
+    font-size: 0.65rem;
   }
 }
 
@@ -151,5 +155,8 @@
 @media screen and (max-width: 300px) {
   .menu .right {
     padding-left: 0vw;
+  }
+  .newsCardInfo h2 {
+    font-size: 0.5rem;
   }
 }

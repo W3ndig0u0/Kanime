@@ -66,15 +66,29 @@
   display: flex;
   text-align: center;
   color: white;
-  transition: 500ms;
 }
 
 .logo a {
   font-size: 2em;
   margin: 1.25rem 1.5rem 1.5rem 1.75rem;
+  transition: 500ms;
 }
 
-.menu .left:hover {
+.menu .left a {
+  color: white;
+}
+
+.menu .left a:first-letter {
+  color: #f27d16;
+}
+
+.menu .left a:hover::first-letter,
+.menu .left a:active::first-letter {
+  color: white;
+}
+
+.menu .left a:hover,
+.menu .left a:active {
   color: #f27d16;
 }
 
