@@ -172,10 +172,15 @@
   text-transform: capitalize;
 }
 
+.cardTitle {
+  cursor: pointer;
+}
+
 .cardCost {
   color: #a90042;
   margin-block-start: 0.5em;
   margin-block-end: 0em;
+  cursor: pointer;
 }
 
 .cardCost2 {
@@ -203,6 +208,7 @@
   text-transform: uppercase;
   border-radius: 0px 10px 0px 10px;
   padding: 0.2rem;
+  font-size: 1rem;
 }
 
 .cardImage .new {
@@ -229,7 +235,6 @@
 .cardImage .mangaTag {
   background-color: #ffa88b;
 }
-
 .cardImage .specialTag {
   background-color: #fa474c;
 }

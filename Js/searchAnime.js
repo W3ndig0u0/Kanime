@@ -36,12 +36,6 @@ function searchAnime(event){
 
 function updateDom(data){
     const searchResults = document.querySelector('#search-results');
-    document.querySelector('.topManga').style.display = "none";
-    document.querySelector('.airing').style.display = "none";
-    document.querySelector('.upComing').style.display = "none";
-    document.querySelector('.shop').style.display = "none";
-    document.querySelector('.newsSection').style.display = "none";
-    document.querySelector('.miss').style.display = "none";
 
     const animeByCategories = data.results
         .reduce((acc, anime)=>{
@@ -50,7 +44,6 @@ function updateDom(data){
             if(acc[type] === undefined) acc[type] = [];
             acc[type].push(anime);
             return acc;
-
         }, {});
 
         searchResults.innerHTML = Object.keys(animeByCategories).map(key=>{
@@ -84,6 +77,13 @@ function updateDom(data){
                 </section>
             `
         }).join("");
+        
+    document.querySelector('.topManga').style.display = "none";
+    document.querySelector('.airing').style.display = "none";
+    document.querySelector('.upComing').style.display = "none";
+    document.querySelector('.shop').style.display = "none";
+    document.querySelector('.newsSection').style.display = "none";
+    document.querySelector('.miss').style.display = "none";
 }
 
 function pageLoaded(){
