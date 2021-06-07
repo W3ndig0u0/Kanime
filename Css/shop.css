@@ -1,0 +1,20 @@
+.preview {
+  position: relative;
+}
+
+.preview:hover > .previewButton {
+  display: unset;
+}
+
+.previewButton:hover {
+  transition: 400ms;
+  font-size: 20px;
+}
+
+.previewButton {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}

@@ -58,3 +58,25 @@ h3:after {
 .space2 {
   padding-bottom: 6rem;
 }
+
+.button {
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  text-align: center;
+  line-height: 21px;
+  font-size: 18px;
+  padding: 0.5rem;
+  text-decoration: none;
+  color: white;
+  background-color: #008cba;
+  border-radius: 10px;
+}
+
+.button:hover {
+  background-color: white;
+  color: #008cba;
+}

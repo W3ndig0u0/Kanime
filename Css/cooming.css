@@ -1,0 +1,42 @@
+.miss .grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.miss .grid h1 {
+  font-size: 4rem;
+}
+
+.miss .grid p {
+  font-size: 2rem;
+}
+
+.miss .p {
+  font-size: 18px !important;
+}
+
+.miss .img {
+  width: 25rem;
+}
+
+/* !min mobil */
+@media screen and (max-width: 800px) {
+  .miss .grid {
+    display: unset;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .miss .img {
+    width: 20rem;
+  }
+}
+
+@media screen and (max-width: 410px) {
+  .miss .img {
+    width: 10rem;
+  }
+  .miss .grid h1 {
+    font-size: 3rem;
+  }
+}
