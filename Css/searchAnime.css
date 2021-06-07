@@ -126,6 +126,11 @@
   transition: 800ms;
 }
 
+.imgCard:hover > .cardCost2,
+.imgCard:active > .cardCost2 {
+  display: none;
+}
+
 .imgCard:hover > .cardImage img,
 .imgCard:active > .cardImage img {
   height: 12rem;
@@ -165,6 +170,17 @@
   font-size: 1rem;
   text-align: center;
   text-transform: capitalize;
+}
+
+.cardCost {
+  color: #a90042;
+  margin-block-start: 0.5em;
+  margin-block-end: 0em;
+}
+
+.cardCost2 {
+  color: #a90042;
+  text-align: center;
 }
 
 .cardScore {

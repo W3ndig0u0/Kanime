@@ -76,7 +76,8 @@ h3:after {
   border-radius: 10px;
 }
 
-.button:hover {
+.button:hover,
+.button:active {
   background-color: white;
   color: #008cba;
 }

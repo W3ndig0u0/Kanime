@@ -2,11 +2,13 @@
   position: relative;
 }
 
-.preview:hover > .previewButton {
+.preview:hover > .previewButton,
+.preview:active > .previewButton {
   display: unset;
 }
 
-.previewButton:hover {
+.previewButton:hover,
+.previewButton:active {
   transition: 400ms;
   font-size: 20px;
 }
