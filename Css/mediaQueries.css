@@ -217,6 +217,11 @@
   .next {
     right: 0%;
   }
+
+  .imgCard:hover,
+  .imgCard:active {
+    border: 2px solid #0583f2;
+  }
 }
 
 /* !min mobil */

@@ -123,14 +123,7 @@
 }
 
 .hamburgerNav ul li a {
-  font-size: 3rem;
-}
-
-.hamburgerNav ul li:first-of-type {
-  position: absolute;
-  top: 0%;
-  left: 2%;
-  display: none;
+  font-size: 2.5rem;
 }
 
 .hamburgerNav ul li:nth-of-type(1) {
@@ -138,20 +131,22 @@
 }
 
 .closeButton {
-  font-size: 1.3em;
+  font-size: 2em;
   cursor: pointer;
   color: white;
   text-align: right;
   position: absolute;
-  top: 3%;
-  right: 5%;
+  top: 5%;
+  right: 10%;
 }
 
 .searchBarMobile {
   position: absolute;
-  top: 5%;
+  top: 80%;
   left: 30%;
-  width: 40%;
   transition: 500ms;
+}
+
+.hamburgerNav ul li:first-of-type {
   display: none;
 }

@@ -8,6 +8,6 @@ function scrollFunction() {
   }
   else {
     document.querySelector(".menu-content").classList.remove("sticky");
-      document.querySelector(".space ").classList.remove("big");
+    document.querySelector(".space ").classList.remove("big");
   }
 }
