@@ -5,6 +5,7 @@
 
 .card {
   position: relative;
+  height: 20rem;
   margin: auto;
   background-color: #fff;
   border-radius: 32px;

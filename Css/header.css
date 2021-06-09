@@ -25,6 +25,8 @@
   display: grid;
   grid-template-columns: 1fr 4fr;
   user-select: none;
+  /* display: flex; */
+  /* justify-content: space-between; */
 }
 
 .space {
