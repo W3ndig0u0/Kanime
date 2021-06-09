@@ -21,12 +21,29 @@
 }
 
 .menu-content {
-  grid-gap: 0%;
-  display: grid;
-  grid-template-columns: 1fr 4fr;
   user-select: none;
-  /* display: flex; */
-  /* justify-content: space-between; */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 30px 5%;
+}
+
+.menu-content li {
+  display: inline-block;
+  padding: 0% 20px;
+}
+
+.menu li a {
+  transition: 0.4s ease 0s;
+  font-size: 1.2rem;
+  color: white;
+  text-decoration: none;
+  transition: 200ms;
+}
+
+.menu li a:hover {
+  transition: 0.4s ease 0s;
+  color: #f27d16;
 }
 
 .space {
@@ -37,43 +54,16 @@
   height: 5rem;
 }
 
-.menu a {
-  font-size: 1.2rem;
-  color: white;
-  text-decoration: none;
-  transition: 200ms;
-}
-
-.menu a:hover {
-  color: #f27d16;
-}
-
-.menu li {
-  float: left;
-}
-
-.menu .right {
-  padding-left: 25vw;
-  height: 5rem;
-}
-
-.menu .right li a {
-  display: flex;
-  text-align: center;
-  margin: 0.75rem 1.5rem 1.5rem 1.75rem;
-  max-height: 1;
-}
-
 .menu .left {
   display: flex;
-  text-align: center;
   color: white;
+  margin-right: auto;
 }
 
 .logo a {
   font-size: 2em;
-  margin: 1.25rem 1.5rem 1.5rem 1.75rem;
   transition: 500ms;
+  text-decoration: none;
 }
 
 .menu .left a {
@@ -92,6 +82,7 @@
 .menu .left a:hover,
 .menu .left a:active {
   color: #f27d16;
+  transition: 0.4s ease 0s;
 }
 
 /* !Media */
@@ -99,9 +90,7 @@
   display: none !important;
   font-size: 1.5em !important;
   margin: 0.55rem !important;
-  cursor: pointer;
-  transition: 300ms;
-  color: white;
+  color: white !important;
 }
 
 .hamburgerNav {
@@ -122,28 +111,29 @@
 }
 
 .hamburgerNavContent {
-  height: 90%;
+  height: auto;
   width: 20%;
   margin: auto;
-}
-
-.hamburgerNav a {
-  font-size: 1.6em;
-  width: 100%;
+  text-align: center;
 }
 
 .hamburgerNav ul li {
-  padding: 5px;
-  padding-top: 1rem;
+  padding: 0;
+  padding-top: 3rem;
+}
+
+.hamburgerNav ul li a {
+  font-size: 3rem;
 }
 
 .hamburgerNav ul li:first-of-type {
   position: absolute;
   top: 0%;
   left: 2%;
+  display: none;
 }
 
-.hamburgerNav ul li:nth-of-type(2) {
+.hamburgerNav ul li:nth-of-type(1) {
   padding-top: 7rem;
 }
 
@@ -163,4 +153,5 @@
   left: 30%;
   width: 40%;
   transition: 500ms;
+  display: none;
 }

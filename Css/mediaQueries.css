@@ -1,9 +1,5 @@
 /* !Big Ass Computer */
-
-@media screen and (min-width: 2041px) {
-  .menu .right {
-    padding-left: 45vw;
-  }
+@media screen and (min-width: 2040px) {
   .img1,
   .img2,
   .img3,
@@ -11,12 +7,12 @@
     background-position-y: -200px;
     zoom: 100%;
   }
+  .menu-content {
+    padding: 30px 10%;
+  }
 }
 
-@media screen and (max-width: 2040px) {
-  .menu .right {
-    padding-left: 30vw;
-  }
+@media screen and (min-width: 1640px) and (max-width: 2039px) {
   .img1,
   .img2,
   .img3,
@@ -24,41 +20,13 @@
     background-position-y: -100px;
     zoom: 80%;
   }
-}
-
-/* !Big Computer */
-@media screen and (max-width: 1640px) {
-  .menu .right {
-    padding-left: 25vw;
-  }
-  .img1 {
-    background-position-y: -220px;
-    zoom: 59%;
-  }
-
-  .img2 {
-    background-position-y: 0px;
-    zoom: 39%;
-  }
-
-  .img3 {
-    background-position-y: 0px;
-    background-position-x: -100px;
-    zoom: 38%;
-  }
-
-  .img4 {
-    background-position-y: -90px;
-    background-position-x: -150px;
-    zoom: 72%;
+  .menu-content {
+    padding: 30px 10%;
   }
 }
 
 /* !Big laptop */
 @media screen and (max-width: 1439px) {
-  .menu .right {
-    padding-left: 15vw;
-  }
   .card h2 {
     font-size: 1.7rem;
     margin-top: 1.5rem;
@@ -68,9 +36,6 @@
 
 /* !Mini Laptop */
 @media screen and (max-width: 1210px) {
-  .menu .right {
-    padding-left: 5vw;
-  }
   .card h2 {
     font-size: 1.5rem;
     margin-top: 2rem;
@@ -89,21 +54,10 @@
 }
 
 @media screen and (max-width: 1000px) {
-  .navButton {
-    display: flex !important;
+  .menu-content li {
+    padding: 0% 10px;
   }
 
-  .menu .menuLinks {
-    display: none;
-  }
-
-  .menu .right {
-    padding-left: 45vw;
-  }
-
-  .menu .right li a {
-    margin: 1rem;
-  }
   .newsRow {
     display: unset;
   }
@@ -129,11 +83,6 @@
     padding: 7px;
     font-size: 10px;
   }
-  .img1,
-  .img2,
-  .img3 {
-    zoom: 45%;
-  }
 }
 
 /* !Ipad - Mobile */
@@ -145,12 +94,6 @@
 }
 
 @media screen and (max-width: 720px) {
-  .menu .right {
-    padding-left: 30vw;
-  }
-  .hamburgerNavContent {
-    width: 30%;
-  }
   .next {
     right: 5.5%;
   }
@@ -165,15 +108,23 @@
     margin-top: 2rem;
     margin-bottom: 2rem;
   }
+  .navButton {
+    display: flex !important;
+  }
+
+  .menu .menu-content .firstMenu li:nth-of-type(1),
+  .menu .menu-content .firstMenu li:nth-of-type(2),
+  .menu .menu-content .firstMenu li:nth-of-type(3),
+  .menu .menu-content .firstMenu li:nth-of-type(4) {
+    display: none;
+  }
+
+  .menu-content {
+    padding: 0px 7%;
+  }
 }
 
 @media screen and (max-width: 560px) {
-  .menu .right {
-    padding-left: 15vw;
-  }
-  .hamburgerNavContent {
-    width: 35%;
-  }
   .newsCardInfo h2 {
     font-size: 0.8rem;
   }
@@ -210,12 +161,6 @@
 
 /* !Smoll */
 @media screen and (max-width: 460px) {
-  .menu .right {
-    padding-left: 0vw;
-  }
-  .hamburgerNavContent {
-    width: 40%;
-  }
   .next {
     right: 2.5%;
   }
@@ -225,24 +170,6 @@
 }
 
 @media screen and (max-width: 400px) {
-  .menu .menuExtra {
-    display: none;
-  }
-  .menu .right {
-    padding-left: 15vw;
-  }
-  .menu .logo {
-    font-size: smaller;
-  }
-  .navButton {
-    font-size: 2em !important;
-    margin: 0 !important;
-  }
-
-  .hamburgerNavContent {
-    width: 50%;
-  }
-
   .imgRow {
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
   }
@@ -293,11 +220,20 @@
 }
 
 /* !min mobil */
-@media screen and (max-width: 300px) {
-  .menu .right {
-    padding-left: 0vw;
-  }
+@media screen and (max-width: 330px) {
   .newsCardInfo h2 {
     font-size: 0.5rem;
+  }
+  .hamburgerNav ul li:first-of-type {
+    display: unset;
+  }
+
+  .searchBarMobile {
+    display: unset;
+  }
+
+  .menu .menu-content .firstMenu li:nth-of-type(5),
+  .menu .menu-content .firstMenu li:nth-of-type(6) {
+    display: none;
   }
 }
