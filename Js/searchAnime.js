@@ -82,10 +82,10 @@ function updateDom(data){
     document.querySelector('.topManga').style.display = "none";
     document.querySelector('.airing').style.display = "none";
     document.querySelector('.upComing').style.display = "none";
+    document.querySelector('.reviews').style.display = "none";
     document.querySelector('.shop').style.display = "none";
     document.querySelector('.newsSection').style.display = "none";
     document.querySelector('.miss').style.display = "none";
-    document.querySelector('.reviews').style.display = "none";
 }
 
 function pageLoaded(){
