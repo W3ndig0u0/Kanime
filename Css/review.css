@@ -1,13 +1,14 @@
 .reviewWrapper {
   position: relative;
-  max-width: 900px;
   margin: 0 auto;
   padding: 0;
   border-radius: 10px;
+  width: 90%;
 }
 
 .reviewGrid {
   display: flex;
+  border-radius: 20px;
 }
 
 .shadow1 {
@@ -74,8 +75,7 @@
   width: 55px;
   border-radius: 50%;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 30px auto;
   user-select: none;
 }
 
@@ -91,21 +91,20 @@
 .reviewDesc {
   font-size: 32px;
   text-align: center;
-  margin: 0 0 0 30px;
 }
 
 .reviewCover {
   margin-left: 30px;
   background-color: #fff;
   border-radius: 10px;
-  height: 20rem;
+  height: 70%;
   width: 13rem;
   user-select: none;
 }
 
 .score {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   flex-wrap: wrap;
 }
 
@@ -120,6 +119,25 @@
 .story h1 {
   padding-left: 20px;
   border-left: 0px solid #a0a0a5 !important;
+}
+
+.reviewPrev1,
+.reviewNext1 {
+  color: black;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 2rem;
+  margin: 30px;
+}
+
+.reviewPrev2,
+.reviewNext2 {
+  display: none;
+  color: black;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  font-size: 2rem;
 }
 
 .reviewScroll::-webkit-scrollbar {
