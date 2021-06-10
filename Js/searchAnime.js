@@ -85,6 +85,7 @@ function updateDom(data){
     document.querySelector('.shop').style.display = "none";
     document.querySelector('.newsSection').style.display = "none";
     document.querySelector('.miss').style.display = "none";
+    document.querySelector('.reviews').style.display = "none";
 }
 
 function pageLoaded(){
