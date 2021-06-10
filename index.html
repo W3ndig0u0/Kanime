@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="A website about Anime, manga and Light novels + Manga store. YEP Insert More TEXT" />
+    <meta
+      name="description"
+      content="A website about Anime, manga and Light novels + Manga store. YEP Insert More TEXT"
+    />
 
     <title>Kanime</title>
 
@@ -23,59 +26,63 @@
     <link rel="stylesheet" href="./Css/footer.css" />
     <link rel="stylesheet" href="./Css/shop.css" />
     <link rel="stylesheet" href="./Css/cooming.css" />
-    <link rel="stylesheet" href="./Css/mediaQueries.css" />
     <link rel="stylesheet" href="./Css/review.css" />
 
+    <link rel="stylesheet" href="./Css/mediaQueries.css" />
+    
     <script defer src="./Js/scroll.js"></script>
-    <script defer src="./Js/searchAnime.js"></script> 
+    <script defer src="./Js/reviews.js"></script>
+    <script defer src="./Js/searchAnime.js"></script>
     <script defer src="./Js/slides.js"></script>
     <script defer src="./Js/menu.js"></script>
 
     <link rel="shortcut icon" href="Img/logo.png" />
   </head>
   <body>
-
     <header id="header">
       <div class="menu fade">
         <nav class="menu-content">
           <div class="left logo"><a href="./index.html">Kanime</a></div>
           <div class="right">
             <ul class="firstMenu">
-                <li><a href="index.html">Anime</a></li>
-                <li><a href="Html/shop.html">Shop</a></li>
-                <li><a href="Html/news.html">News</a></li>
-                <li><a href="Html/about.html">About</a></li>
-                <li>
-                  <a href="#"><i class="fa fa-search search-btn"></i> </a>
-                </li>
-                <li>
-                  <a href="#"><i class="fa fa-user"></i> </a>
-                </li>
-
-                <div id="myModal" class="modal">
-                  <div class="modal-content">
-                    <form id="search_form">
-                      <input
-                        placeholder="Search..."
-                        name="search"
-                        id="search"
-                        autocomplete="off"
-                        type="text"
-                        class="validate search-bar" required
-                      />
-                    </form>
-                  </div>
-                </div>
-
+              <li><a href="index.html">Anime</a></li>
+              <li><a href="Html/shop.html">Shop</a></li>
+              <li><a href="Html/news.html">News</a></li>
+              <li><a href="Html/about.html">About</a></li>
               <li>
-                <div class="navButton" id="navButton" onclick="openNavbar()"
-                  >☰</div>
+                <a href="#"><i class="fa fa-search search-btn"></i> </a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-user"></i> </a>
               </li>
 
+              <div id="myModal" class="modal">
+                <div class="modal-content">
+                  <form id="search_form">
+                    <input
+                      placeholder="Search..."
+                      name="search"
+                      id="search"
+                      autocomplete="off"
+                      type="text"
+                      class="validate search-bar"
+                      required
+                    />
+                  </form>
+                </div>
+              </div>
+
+              <li>
+                <div class="navButton" id="navButton" onclick="openNavbar()">
+                  ☰
+                </div>
+              </li>
             </ul>
 
             <div class="hamburgerNav" id="hamburgerNavbarLinks">
-              <div class="closeButton" id="closeButton" onclick="closeNavbar()"> ☰</div>
+              <div class="closeButton" id="closeButton" onclick="closeNavbar()">
+                ☰
+              </div>
 
               <div class="hamburgerNavContent">
                 <ul>
@@ -94,7 +101,8 @@
                       id="searchMobile"
                       type="text"
                       autocomplete="off"
-                      class="validate searchBarMobile" required
+                      class="validate searchBarMobile"
+                      required
                     />
                   </form>
                 </ul>
@@ -217,893 +225,1448 @@
       <section class="airing" id="airing">
         <div class="imgSection">
           <h3><span>Top Airing Anime</span></h3>
-              <div class="imgRow">
-
-                <div class="imgCard">
-                    <div class="cardImage">
-                      <img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a9/Vivy_Fluorite_Eye%E2%80%99s_Song_key_visual.jpg/220px-Vivy_Fluorite_Eye%E2%80%99s_Song_key_visual.jpg" alt="Vivy: Fluorite Eye's Song">
-                      <div class="tvTag tag">TV</div>
-                    </div>
-                  <div class="cardInfo">
-                      <span class="cardTitle">Vivy: Fluorite Eye's Song</span>
-                      <p class="cardSynopsis">${anime.synopsis}</p>
-                      <p class="cardScore">${anime.score}/10⭐</p>
-                  </div>
-                </div>
-
-                <div class="imgCard">
-                    <div class="cardImage">
-                      <img src="https://cdn.myanimelist.net/images/anime/1104/113797.jpg" alt="86">
-                      <div class="tvTag tag">TV</div>
-                    </div>
-                      <div class="cardInfo">
-                        <span class="cardTitle">86</span>
-                        <p class="cardSynopsis">${anime.synopsis}</p>
-                        <p class="cardScore">${anime.score}/10⭐</p>
-                    </div>
-                </div>
-
-                <div class="imgCard">
-                    <div class="cardImage">
-                      <img src="https://cdn.myanimelist.net/images/anime/1146/113477.jpg" alt="Higehiro: After Being Rejected, I Shaved and Took in a High School Runaway">
-                      <div class="tvTag tag">TV</div>
-                    </div>
-                      <div class="cardInfo">
-                        <span class="cardTitle">Higehiro: After Being Rejected, I Shaved and Took in a High School Runaway</span>
-                        <p class="cardSynopsis">${anime.synopsis}</p>
-                        <p class="cardScore">${anime.score}/10⭐</p>
-                    </div>
-                </div>
-
-                <div class="imgCard">
-                    <div class="cardImage">
-                      <img src="https://cdn.myanimelist.net/images/anime/1900/110097.jpg" alt="Don't Toy with Me, Miss Nagatoro">
-                      <div class="tvTag tag">TV</div>
-                    </div>
-                      <div class="cardInfo">
-                        <span class="cardTitle">Don't Toy with Me, Miss Nagatoro</span>
-                        <p class="cardSynopsis">${anime.synopsis}</p>
-                        <p class="cardScore">${anime.score}/10⭐</p>
-                    </div>
-                </div>
-
-                <div class="imgCard">
-                    <div class="cardImage">
-                      <img src="https://cdn.myanimelist.net/images/anime/1444/115118.jpg" alt="Combatants Will Be Dispatched!">
-                      <div class="tvTag tag">TV</div>
-                    </div>
-                      <div class="cardInfo">
-                        <span class="cardTitle">Combatants Will Be Dispatched!</span>
-                        <p class="cardSynopsis">${anime.synopsis}</p>
-                        <p class="cardScore">${anime.score}/10⭐</p>
-                    </div>
-                </div>
-                
-                <div class="imgCard">
-                    <div class="cardImage">
-                      <img src="https://cdn.myanimelist.net/images/anime/1111/113327.jpg" alt="Osananajimi ga Zettai ni Makenai Love Comedy">
-                      <div class="tvTag tag">TV</div>
-                    </div>
-                      <div class="cardInfo">
-                        <span class="cardTitle">Osananajimi ga Zettai ni Makenai Love Comedy</span>
-                        <p class="cardSynopsis">${anime.synopsis}</p>
-                        <p class="cardScore">${anime.score}/10⭐</p>
-                    </div>
-                </div>
-
-                <div class="imgCard">
-                    <div class="cardImage">
-                      <img src="https://cdn.myanimelist.net/images/anime/1085/114792.jpg" alt="Fruits Basket: The Final">
-                      <div class="tvTag tag">TV</div>
-                    </div>
-                  <div class="cardInfo">
-                      <span class="cardTitle">Fruits Basket: The Final</span>
-                      <p class="cardSynopsis">${anime.synopsis}</p>
-                      <p class="cardScore">${anime.score}/10⭐</p>
-                  </div>
-                </div>
-
-                <div class="imgCard">
-                    <div class="cardImage">
-                      <img src="https://cdn.myanimelist.net/images/anime/1259/110227.jpg" alt="Holo no Graffiti">
-                      <div class="tvTag tag">TV</div>
-                    </div>
-                      <div class="cardInfo">
-                        <span class="cardTitle">Holo no Graffiti</span>
-                        <p class="cardSynopsis">${anime.synopsis}</p>
-                        <p class="cardScore">${anime.score}/10⭐</p>
-                    </div>
-                </div>
-
-                <div class="imgCard">
-                    <div class="cardImage">
-                      <img src="https://cdn.myanimelist.net/images/anime/1027/115055.jpg" alt="Kaguya-sama wa Kokurasetai: Tensai-tachi no Renai Zunousen OVA">
-                      <div class="onaTag tag">Ova</div>
-                    </div>
-                      <div class="cardInfo">
-                        <span class="cardTitle">Kaguya-sama wa Kokurasetai: Tensai-tachi no Renai Zunousen OVA</span>
-                        <p class="cardSynopsis">${anime.synopsis}</p>
-                        <p class="cardScore">${anime.score}/10⭐</p>
-                    </div>
-                </div>
-
-                <div class="imgCard">
-                    <div class="cardImage">
-                      <img src="https://cdn.myanimelist.net/images/anime/1118/115156.jpg" alt="Zombie Land Saga Revenge">
-                      <div class="tvTag tag">TV</div>
-                    </div>
-                      <div class="cardInfo">
-                        <span class="cardTitle">Zombie Land Saga Revenge</span>
-                        <p class="cardSynopsis">${anime.synopsis}</p>
-                        <p class="cardScore">${anime.score}/10⭐</p>
-                    </div>
-                </div>
-
-                <div class="imgCard">
-                    <div class="cardImage">
-                      <img src="https://cdn.myanimelist.net/images/anime/1911/113611.jpg" alt="Boku no Hero Academia 5th Season">
-                      <div class="tvTag tag">TV</div>
-                    </div>
-                      <div class="cardInfo">
-                        <span class="cardTitle">Boku no Hero Academia 5th Season</span>
-                        <p class="cardSynopsis">${anime.synopsis}</p>
-                        <p class="cardScore">${anime.score}/10⭐</p>
-                    </div>
-                </div>
-                
-                <div class="imgCard">
-                    <div class="cardImage">
-                      <img src="https://cdn.myanimelist.net/images/anime/1252/113180.jpg" alt="Gokushufudou">
-                      <div class="onaTag tag">Ona</div>
-                    </div>
-                      <div class="cardInfo">
-                        <span class="cardTitle">Gokushufudou</span>
-                        <p class="cardSynopsis">${anime.synopsis}</p>
-                        <p class="cardScore">${anime.score}/10⭐</p>
-                    </div>
-                </div>
+          <div class="imgRow">
+            <div class="imgCard">
+              <div class="cardImage">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a9/Vivy_Fluorite_Eye%E2%80%99s_Song_key_visual.jpg/220px-Vivy_Fluorite_Eye%E2%80%99s_Song_key_visual.jpg"
+                  alt="Vivy: Fluorite Eye's Song"
+                />
+                <div class="tvTag tag">TV</div>
               </div>
+              <div class="cardInfo">
+                <span class="cardTitle">Vivy: Fluorite Eye's Song</span>
+                <p class="cardSynopsis">${anime.synopsis}</p>
+                <p class="cardScore">${anime.score}/10⭐</p>
+              </div>
+            </div>
+
+            <div class="imgCard">
+              <div class="cardImage">
+                <img
+                  src="https://cdn.myanimelist.net/images/anime/1104/113797.jpg"
+                  alt="86"
+                />
+                <div class="tvTag tag">TV</div>
+              </div>
+              <div class="cardInfo">
+                <span class="cardTitle">86</span>
+                <p class="cardSynopsis">${anime.synopsis}</p>
+                <p class="cardScore">${anime.score}/10⭐</p>
+              </div>
+            </div>
+
+            <div class="imgCard">
+              <div class="cardImage">
+                <img
+                  src="https://cdn.myanimelist.net/images/anime/1146/113477.jpg"
+                  alt="Higehiro: After Being Rejected, I Shaved and Took in a High School Runaway"
+                />
+                <div class="tvTag tag">TV</div>
+              </div>
+              <div class="cardInfo">
+                <span class="cardTitle"
+                  >Higehiro: After Being Rejected, I Shaved and Took in a High
+                  School Runaway</span
+                >
+                <p class="cardSynopsis">${anime.synopsis}</p>
+                <p class="cardScore">${anime.score}/10⭐</p>
+              </div>
+            </div>
+
+            <div class="imgCard">
+              <div class="cardImage">
+                <img
+                  src="https://cdn.myanimelist.net/images/anime/1900/110097.jpg"
+                  alt="Don't Toy with Me, Miss Nagatoro"
+                />
+                <div class="tvTag tag">TV</div>
+              </div>
+              <div class="cardInfo">
+                <span class="cardTitle">Don't Toy with Me, Miss Nagatoro</span>
+                <p class="cardSynopsis">${anime.synopsis}</p>
+                <p class="cardScore">${anime.score}/10⭐</p>
+              </div>
+            </div>
+
+            <div class="imgCard">
+              <div class="cardImage">
+                <img
+                  src="https://cdn.myanimelist.net/images/anime/1444/115118.jpg"
+                  alt="Combatants Will Be Dispatched!"
+                />
+                <div class="tvTag tag">TV</div>
+              </div>
+              <div class="cardInfo">
+                <span class="cardTitle">Combatants Will Be Dispatched!</span>
+                <p class="cardSynopsis">${anime.synopsis}</p>
+                <p class="cardScore">${anime.score}/10⭐</p>
+              </div>
+            </div>
+
+            <div class="imgCard">
+              <div class="cardImage">
+                <img
+                  src="https://cdn.myanimelist.net/images/anime/1111/113327.jpg"
+                  alt="Osananajimi ga Zettai ni Makenai Love Comedy"
+                />
+                <div class="tvTag tag">TV</div>
+              </div>
+              <div class="cardInfo">
+                <span class="cardTitle"
+                  >Osananajimi ga Zettai ni Makenai Love Comedy</span
+                >
+                <p class="cardSynopsis">${anime.synopsis}</p>
+                <p class="cardScore">${anime.score}/10⭐</p>
+              </div>
+            </div>
+
+            <div class="imgCard">
+              <div class="cardImage">
+                <img
+                  src="https://cdn.myanimelist.net/images/anime/1085/114792.jpg"
+                  alt="Fruits Basket: The Final"
+                />
+                <div class="tvTag tag">TV</div>
+              </div>
+              <div class="cardInfo">
+                <span class="cardTitle">Fruits Basket: The Final</span>
+                <p class="cardSynopsis">${anime.synopsis}</p>
+                <p class="cardScore">${anime.score}/10⭐</p>
+              </div>
+            </div>
+
+            <div class="imgCard">
+              <div class="cardImage">
+                <img
+                  src="https://cdn.myanimelist.net/images/anime/1259/110227.jpg"
+                  alt="Holo no Graffiti"
+                />
+                <div class="tvTag tag">TV</div>
+              </div>
+              <div class="cardInfo">
+                <span class="cardTitle">Holo no Graffiti</span>
+                <p class="cardSynopsis">${anime.synopsis}</p>
+                <p class="cardScore">${anime.score}/10⭐</p>
+              </div>
+            </div>
+
+            <div class="imgCard">
+              <div class="cardImage">
+                <img
+                  src="https://cdn.myanimelist.net/images/anime/1027/115055.jpg"
+                  alt="Kaguya-sama wa Kokurasetai: Tensai-tachi no Renai Zunousen OVA"
+                />
+                <div class="onaTag tag">Ova</div>
+              </div>
+              <div class="cardInfo">
+                <span class="cardTitle"
+                  >Kaguya-sama wa Kokurasetai: Tensai-tachi no Renai Zunousen
+                  OVA</span
+                >
+                <p class="cardSynopsis">${anime.synopsis}</p>
+                <p class="cardScore">${anime.score}/10⭐</p>
+              </div>
+            </div>
+
+            <div class="imgCard">
+              <div class="cardImage">
+                <img
+                  src="https://cdn.myanimelist.net/images/anime/1118/115156.jpg"
+                  alt="Zombie Land Saga Revenge"
+                />
+                <div class="tvTag tag">TV</div>
+              </div>
+              <div class="cardInfo">
+                <span class="cardTitle">Zombie Land Saga Revenge</span>
+                <p class="cardSynopsis">${anime.synopsis}</p>
+                <p class="cardScore">${anime.score}/10⭐</p>
+              </div>
+            </div>
+
+            <div class="imgCard">
+              <div class="cardImage">
+                <img
+                  src="https://cdn.myanimelist.net/images/anime/1911/113611.jpg"
+                  alt="Boku no Hero Academia 5th Season"
+                />
+                <div class="tvTag tag">TV</div>
+              </div>
+              <div class="cardInfo">
+                <span class="cardTitle">Boku no Hero Academia 5th Season</span>
+                <p class="cardSynopsis">${anime.synopsis}</p>
+                <p class="cardScore">${anime.score}/10⭐</p>
+              </div>
+            </div>
+
+            <div class="imgCard">
+              <div class="cardImage">
+                <img
+                  src="https://cdn.myanimelist.net/images/anime/1252/113180.jpg"
+                  alt="Gokushufudou"
+                />
+                <div class="onaTag tag">Ona</div>
+              </div>
+              <div class="cardInfo">
+                <span class="cardTitle">Gokushufudou</span>
+                <p class="cardSynopsis">${anime.synopsis}</p>
+                <p class="cardScore">${anime.score}/10⭐</p>
+              </div>
+            </div>
           </div>
+        </div>
       </section>
 
       <!-- !Section 2 -->
       <section class="upComing" id="upComing">
         <div class="imgSection">
           <h3><span>Top Upcoming Anime</span></h3>
-              <div class="imgRow">
-
-                <div class="imgCard">
-                    <div class="cardImage">
-                      <img src="https://cdn.myanimelist.net/images/anime/1245/111800.jpg" alt="The Rising of the Shield Hero Season 2">
-                      <div class="tvTag tag">TV</div>
-                    </div>
-                  <div class="cardInfo">
-                      <span class="cardTitle">The Rising of the Shield Hero Season 2</span>
-                      <p class="cardSynopsis">${anime.synopsis}</p>
-                      <p class="cardScore">${anime.score}/10⭐</p>
-                  </div>
-                </div>
-
-                <div class="imgCard">
-                    <div class="cardImage">
-                      <img src="https://cdn.myanimelist.net/images/anime/1079/109928.jpg" alt="Kaguya-sama wa Kokurasetai: Tensai-tachi no Renai Zunousen 3rd Season">
-                      <div class="tvTag tag">TV</div>
-                    </div>
-                      <div class="cardInfo">
-                        <span class="cardTitle">Kaguya-sama wa Kokurasetai: Tensai-tachi no Renai Zunousen 3rd Season</span>
-                        <p class="cardSynopsis">${anime.synopsis}</p>
-                        <p class="cardScore">${anime.score}/10⭐</p>
-                    </div>
-                </div>
-
-                <div class="imgCard">
-                    <div class="cardImage">
-                      <img src="https://cdn.myanimelist.net/images/anime/1252/115539.jpg" alt="Miss Kobayashi's Dragon Maid S">
-                      <div class="tvTag tag">TV</div>
-                    </div>
-                      <div class="cardInfo">
-                        <span class="cardTitle">Miss Kobayashi's Dragon Maid S</span>
-                        <p class="cardSynopsis">${anime.synopsis}</p>
-                        <p class="cardScore">${anime.score}/10⭐</p>
-                    </div>
-                </div>
-
-                <div class="imgCard">
-                    <div class="cardImage">
-                      <img src="https://cdn.myanimelist.net/images/anime/1742/113709.jpg" alt="Jujutsu Kaisen 0 Movie">
-                      <div class="movieTag tag">Movie</div>
-                    </div>
-                      <div class="cardInfo">
-                        <span class="cardTitle">Jujutsu Kaisen 0 Movie</span>
-                        <p class="cardSynopsis">${anime.synopsis}</p>
-                        <p class="cardScore">${anime.score}/10⭐</p>
-                    </div>
-                </div>
-
-                <div class="imgCard">
-                    <div class="cardImage">
-                      <img src="https://cdn.myanimelist.net/images/anime/1802/113728.jpg" alt="SWORD ART ONLINE the MOVIE -PROGRESSIVE">
-                      <div class="movieTag tag">Movie</div>
-                    </div>
-                      <div class="cardInfo">
-                        <span class="cardTitle">SWORD ART ONLINE the MOVIE -PROGRESSIVE-</span>
-                        <p class="cardSynopsis">${anime.synopsis}</p>
-                        <p class="cardScore">${anime.score}/10⭐</p>
-                    </div>
-                </div>
-
-                <div class="imgCard">
-                    <div class="cardImage">
-                      <img src="https://cdn.myanimelist.net/images/anime/1485/107693l.jpg" alt="Kanojo, Okarishimasu 2nd Season">
-                      <div class="tvTag tag">TV</div>
-                    </div>
-                      <div class="cardInfo">
-                        <span class="cardTitle">Kanojo, Okarishimasu 2nd Season</span>
-                        <p class="cardSynopsis">${anime.synopsis}</p>
-                        <p class="cardScore">${anime.score}/10⭐</p>
-                    </div>
-                </div>
-
-                <div class="imgCard">
-                    <div class="cardImage">
-                      <img src="https://cdn.myanimelist.net/images/anime/1237/113307.jpg" alt="Hataraku Maou-sama! 2nd Season">
-                      <div class="tvTag tag">TV</div>
-                    </div>
-                  <div class="cardInfo">
-                      <span class="cardTitle">Hataraku Maou-sama! 2nd Season</span>
-                      <p class="cardSynopsis">${anime.synopsis}</p>
-                      <p class="cardScore">${anime.score}/10⭐</p>
-                  </div>
-                </div>
-
-                <div class="imgCard">
-                  <div class="cardImage">
-                    <img src="https://cdn.myanimelist.net/images/anime/1946/114481.jpg" alt="5-toubun no Hanayome Movie">
-                    <div class="movieTag tag">Movie</div>
-                  </div>
-                    <div class="cardInfo">
-                      <span class="cardTitle">5-toubun no Hanayome Movie</span>
-                      <p class="cardSynopsis">${anime.synopsis}</p>
-                      <p class="cardScore">${anime.score}/10⭐</p>
-                  </div>
+          <div class="imgRow">
+            <div class="imgCard">
+              <div class="cardImage">
+                <img
+                  src="https://cdn.myanimelist.net/images/anime/1245/111800.jpg"
+                  alt="The Rising of the Shield Hero Season 2"
+                />
+                <div class="tvTag tag">TV</div>
               </div>
-
-                <div class="imgCard">
-                    <div class="cardImage">
-                      <img src="https://cdn.myanimelist.net/images/anime/1632/110707.jpg" alt="Chainsaw Man">
-                      <div class="tvTag tag">TV</div>
-                    </div>
-                      <div class="cardInfo">
-                        <span class="cardTitle">Chainsaw Man</span>
-                        <p class="cardSynopsis">${anime.synopsis}</p>
-                        <p class="cardScore">${anime.score}/10⭐</p>
-                    </div>
-                </div>
-
-                <div class="imgCard">
-                    <div class="cardImage">
-                      <img src="https://cdn.myanimelist.net/images/anime/1868/115018.jpg" alt="Mushoku Tensei: Isekai Ittara Honki Dasu 2nd Season">
-                      <div class="tvTag tag">TV</div>
-                    </div>
-                      <div class="cardInfo">
-                        <span class="cardTitle">Mushoku Tensei: Isekai Ittara Honki Dasu 2nd Season</span>
-                        <p class="cardSynopsis">${anime.synopsis}</p>
-                        <p class="cardScore">${anime.score}/10⭐</p>
-                    </div>
-                </div>
-
-                <div class="imgCard">
-                    <div class="cardImage">
-                      <img src="https://cdn.myanimelist.net/images/anime/1225/111459.jpg" alt="Goblin Slayer 2nd Season">
-                      <div class="tvTag tag">TV</div>
-                    </div>
-                      <div class="cardInfo">
-                        <span class="cardTitle">Goblin Slayer 2nd Season</span>
-                        <p class="cardSynopsis">${anime.synopsis}</p>
-                        <p class="cardScore">${anime.score}/10⭐</p>
-                    </div>
-                </div>
-
-                <div class="imgCard">
-                    <div class="cardImage">
-                      <img src="https://cdn.myanimelist.net/images/anime/1259/114115.jpg" alt="Love Live! Superstar!!">
-                      <div class="tvTag tag">TV</div>
-                    </div>
-                      <div class="cardInfo">
-                        <span class="cardTitle">Love Live! Superstar!!</span>
-                        <p class="cardSynopsis">${anime.synopsis}</p>
-                        <p class="cardScore">${anime.score}/10⭐</p>
-                    </div>
-                </div>
+              <div class="cardInfo">
+                <span class="cardTitle"
+                  >The Rising of the Shield Hero Season 2</span
+                >
+                <p class="cardSynopsis">${anime.synopsis}</p>
+                <p class="cardScore">${anime.score}/10⭐</p>
               </div>
+            </div>
+
+            <div class="imgCard">
+              <div class="cardImage">
+                <img
+                  src="https://cdn.myanimelist.net/images/anime/1079/109928.jpg"
+                  alt="Kaguya-sama wa Kokurasetai: Tensai-tachi no Renai Zunousen 3rd Season"
+                />
+                <div class="tvTag tag">TV</div>
+              </div>
+              <div class="cardInfo">
+                <span class="cardTitle"
+                  >Kaguya-sama wa Kokurasetai: Tensai-tachi no Renai Zunousen
+                  3rd Season</span
+                >
+                <p class="cardSynopsis">${anime.synopsis}</p>
+                <p class="cardScore">${anime.score}/10⭐</p>
+              </div>
+            </div>
+
+            <div class="imgCard">
+              <div class="cardImage">
+                <img
+                  src="https://cdn.myanimelist.net/images/anime/1252/115539.jpg"
+                  alt="Miss Kobayashi's Dragon Maid S"
+                />
+                <div class="tvTag tag">TV</div>
+              </div>
+              <div class="cardInfo">
+                <span class="cardTitle">Miss Kobayashi's Dragon Maid S</span>
+                <p class="cardSynopsis">${anime.synopsis}</p>
+                <p class="cardScore">${anime.score}/10⭐</p>
+              </div>
+            </div>
+
+            <div class="imgCard">
+              <div class="cardImage">
+                <img
+                  src="https://cdn.myanimelist.net/images/anime/1742/113709.jpg"
+                  alt="Jujutsu Kaisen 0 Movie"
+                />
+                <div class="movieTag tag">Movie</div>
+              </div>
+              <div class="cardInfo">
+                <span class="cardTitle">Jujutsu Kaisen 0 Movie</span>
+                <p class="cardSynopsis">${anime.synopsis}</p>
+                <p class="cardScore">${anime.score}/10⭐</p>
+              </div>
+            </div>
+
+            <div class="imgCard">
+              <div class="cardImage">
+                <img
+                  src="https://cdn.myanimelist.net/images/anime/1802/113728.jpg"
+                  alt="SWORD ART ONLINE the MOVIE -PROGRESSIVE"
+                />
+                <div class="movieTag tag">Movie</div>
+              </div>
+              <div class="cardInfo">
+                <span class="cardTitle"
+                  >SWORD ART ONLINE the MOVIE -PROGRESSIVE-</span
+                >
+                <p class="cardSynopsis">${anime.synopsis}</p>
+                <p class="cardScore">${anime.score}/10⭐</p>
+              </div>
+            </div>
+
+            <div class="imgCard">
+              <div class="cardImage">
+                <img
+                  src="https://cdn.myanimelist.net/images/anime/1485/107693l.jpg"
+                  alt="Kanojo, Okarishimasu 2nd Season"
+                />
+                <div class="tvTag tag">TV</div>
+              </div>
+              <div class="cardInfo">
+                <span class="cardTitle">Kanojo, Okarishimasu 2nd Season</span>
+                <p class="cardSynopsis">${anime.synopsis}</p>
+                <p class="cardScore">${anime.score}/10⭐</p>
+              </div>
+            </div>
+
+            <div class="imgCard">
+              <div class="cardImage">
+                <img
+                  src="https://cdn.myanimelist.net/images/anime/1237/113307.jpg"
+                  alt="Hataraku Maou-sama! 2nd Season"
+                />
+                <div class="tvTag tag">TV</div>
+              </div>
+              <div class="cardInfo">
+                <span class="cardTitle">Hataraku Maou-sama! 2nd Season</span>
+                <p class="cardSynopsis">${anime.synopsis}</p>
+                <p class="cardScore">${anime.score}/10⭐</p>
+              </div>
+            </div>
+
+            <div class="imgCard">
+              <div class="cardImage">
+                <img
+                  src="https://cdn.myanimelist.net/images/anime/1946/114481.jpg"
+                  alt="5-toubun no Hanayome Movie"
+                />
+                <div class="movieTag tag">Movie</div>
+              </div>
+              <div class="cardInfo">
+                <span class="cardTitle">5-toubun no Hanayome Movie</span>
+                <p class="cardSynopsis">${anime.synopsis}</p>
+                <p class="cardScore">${anime.score}/10⭐</p>
+              </div>
+            </div>
+
+            <div class="imgCard">
+              <div class="cardImage">
+                <img
+                  src="https://cdn.myanimelist.net/images/anime/1632/110707.jpg"
+                  alt="Chainsaw Man"
+                />
+                <div class="tvTag tag">TV</div>
+              </div>
+              <div class="cardInfo">
+                <span class="cardTitle">Chainsaw Man</span>
+                <p class="cardSynopsis">${anime.synopsis}</p>
+                <p class="cardScore">${anime.score}/10⭐</p>
+              </div>
+            </div>
+
+            <div class="imgCard">
+              <div class="cardImage">
+                <img
+                  src="https://cdn.myanimelist.net/images/anime/1868/115018.jpg"
+                  alt="Mushoku Tensei: Isekai Ittara Honki Dasu 2nd Season"
+                />
+                <div class="tvTag tag">TV</div>
+              </div>
+              <div class="cardInfo">
+                <span class="cardTitle"
+                  >Mushoku Tensei: Isekai Ittara Honki Dasu 2nd Season</span
+                >
+                <p class="cardSynopsis">${anime.synopsis}</p>
+                <p class="cardScore">${anime.score}/10⭐</p>
+              </div>
+            </div>
+
+            <div class="imgCard">
+              <div class="cardImage">
+                <img
+                  src="https://cdn.myanimelist.net/images/anime/1225/111459.jpg"
+                  alt="Goblin Slayer 2nd Season"
+                />
+                <div class="tvTag tag">TV</div>
+              </div>
+              <div class="cardInfo">
+                <span class="cardTitle">Goblin Slayer 2nd Season</span>
+                <p class="cardSynopsis">${anime.synopsis}</p>
+                <p class="cardScore">${anime.score}/10⭐</p>
+              </div>
+            </div>
+
+            <div class="imgCard">
+              <div class="cardImage">
+                <img
+                  src="https://cdn.myanimelist.net/images/anime/1259/114115.jpg"
+                  alt="Love Live! Superstar!!"
+                />
+                <div class="tvTag tag">TV</div>
+              </div>
+              <div class="cardInfo">
+                <span class="cardTitle">Love Live! Superstar!!</span>
+                <p class="cardSynopsis">${anime.synopsis}</p>
+                <p class="cardScore">${anime.score}/10⭐</p>
+              </div>
+            </div>
           </div>
+        </div>
       </section>
-      
+
       <!-- !Section 3 -->
-          <section class="newsSection" id="newsSection">
-              <div class="imgSection">
-                <h3><span>Anime & Manga News</span></h3>
-                  <div class="newsRow">
-                  
-                    <div class="newsLetter">
-                      <div class="newsImg">
-                        <img src="https://cdn.myanimelist.net/s/common/uploaded_files/1622908548-32c49c2a72b54722962a064fe1aaa93f.png" alt="Vanitas no Carte' Unveils Additional Cast, Split Cour Broadcast">
-                      </div>
-                        <div class="newsCardInfo">
-                          <h2 >'Vanitas no Carte' Unveils Additional Cast, Split Cour Broadcast</h2>
-                          <h6><i class="fa fa-calendar"></i> Jun 5, 6:09 AM</h6>
-                      </div>
-                  </div>
-                  
-                  <div class="newsLetter">
-                      <div class="newsImg">
-                        <img src="https://cdn.myanimelist.net/s/common/uploaded_files/1609132432-60dc8fb22d01a6619ffde6299f561d86.jpeg" alt="Cast, Staff, Summer 2021 Premiere Announced for 'Cheat Kusushi no Slow Life: Isekai ni Tsukurou Drugstore' TV Anim">
-                      </div>
-                        <div class="newsCardInfo">
-                          <h2>Cast, Staff, Summer 2021 Premiere Announced for 'Cheat Kusushi no Slow Life: Isekai ni Tsukurou Drugstore' TV Anime</h2>
-                          <h6><i class="fa fa-calendar"></i> May 31, 3:24 AM </h6>
-                    </div>
-                  </div>
-                  
-                  <div class="newsLetter">
-                      <div class="newsImg">
-                        <img src="https://cdn.myanimelist.net/s/common/uploaded_files/1621226222-b4160403eb2fe4f19b64df4eca9934ad.png" alt="Manga 'Isekai Bishoujo Juniku Ojisan to' Receives TV Anime">
-                      </div>
-                        <div class="newsCardInfo">
-                          <h2 >Manga 'Isekai Bishoujo Juniku Ojisan to' Receives TV Anime</h2>
-                          <h6><i class="fa fa-calendar"></i> May 17, 6:38 AM</h6>
-                      </div>
-                  </div>
-                  
-                  <div class="newsLetter">
-                      <div class="newsImg">
-                        <img src="https://cdn.myanimelist.net/s/common/uploaded_files/1620737942-620cbb70e328f8389e163dca9e374ef7.jpeg" alt="Komi-san wa, Comyushou desu.' TV Anime Adaptation Announced for Fall 2021">
-                      </div>
-                      <div class="newsCardInfo">
-                          <h2>'Komi-san wa, Comyushou desu.' TV Anime Adaptation Announced for Fall 2021</h2>
-                          <h6><i class="fa fa-calendar"></i> 12/13/2020</h6>
-                    </div>
-                  </div>
-              </div>        
-            </div>
-          </section>
-
-          <!-- !Section 4 -->
-          <section class="topManga" id="topManga">
-            <div class="imgSection">
-              <h3><span>Top Manga & Light Novel</span></h3>
-                  <div class="imgRow">
-    
-                    <div class="imgCard">
-                      <div class="cardImage">
-                        <img src="https://cdn.myanimelist.net/images/manga/1/129447.jpg" alt="Re:ZERO -Starting Life in Another World">
-                        <div class="lnTag tag">LN</div>
-                      </div>
-                        <div class="cardInfo">
-                          <span class="cardTitle">Re:ZERO -Starting Life in Another World-</span>
-                          <p class="cardSynopsis">${anime.synopsis}</p>
-                          <p class="cardScore">${anime.score}/10⭐</p>
-                      </div>
-                  </div>
-                  
-                  <div class="imgCard">
-                    <div class="cardImage">
-                      <img src="https://cdn.myanimelist.net/images/manga/3/235363.jpg" alt="Welcome to the Classroom of the Second-year">
-                      <div class="lnTag tag">LN</div>
-                    </div>
-                      <div class="cardInfo">
-                        <span class="cardTitle">Welcome to the Classroom of the Second-year</span>
-                        <p class="cardSynopsis">${anime.synopsis}</p>
-                        <p class="cardScore">${anime.score}/10⭐</p>
-                    </div>
-                </div>
-    
-                    <div class="imgCard">
-                        <div class="cardImage">
-                          <img src="https://cdn.myanimelist.net/images/manga/3/164420.jpg" alt="Goodnight Punpun">
-                          <div class="mangaTag tag">Manga</div>
-                        </div>
-                          <div class="cardInfo">
-                            <span class="cardTitle">Goodnight Punpun</span>
-                            <p class="cardSynopsis">${anime.synopsis}</p>
-                            <p class="cardScore">${anime.score}/10⭐</p>
-                        </div>
-                    </div>
-    
-                    <div class="imgCard">
-                        <div class="cardImage">
-                          <img src="https://cdn.myanimelist.net/images/manga/2/166124.jpg" alt="Grand Blue">
-                          <div class="mangaTag tag">Manga</div>
-                        </div>
-                          <div class="cardInfo">
-                            <span class="cardTitle">Grand Blue</span>
-                            <p class="cardSynopsis">${anime.synopsis}</p>
-                            <p class="cardScore">${anime.score}/10⭐</p>
-                        </div>
-                    </div>
-
-                    <div class="imgCard">
-                        <div class="cardImage">
-                          <img src="https://cdn.myanimelist.net/images/manga/1/122461.jpg" alt="My Youth Romantic Comedy Is Wrong, As I Expected">
-                          <div class="lnTag tag">LN</div>
-                        </div>
-                          <div class="cardInfo">
-                            <span class="cardTitle">My Youth Romantic Comedy Is Wrong, As I Expected</span>
-                            <p class="cardSynopsis">${anime.synopsis}</p>
-                            <p class="cardScore">${anime.score}/10⭐</p>
-                        </div>
-                    </div>
-                    
-                    <div class="imgCard">
-                      <div class="cardImage">
-                        <img src="https://cdn.myanimelist.net/images/manga/1/157897.jpg" alt="Berserk">
-                        <div class="mangaTag tag">Manga</div>
-                      </div>
-                    <div class="cardInfo">
-                        <span class="cardTitle">Berserk</span>
-                        <p class="cardSynopsis">${anime.synopsis}</p>
-                        <p class="cardScore">${anime.score}/10⭐</p>
-                    </div>
-                  </div>
-
-                    <div class="imgCard">
-                      <div class="cardImage">
-                        <img src="https://cdn.myanimelist.net/images/manga/3/179882.jpg" alt="JoJo no Kimyou na Bouken Part 7: Steel Ball Run">
-                        <div class="mangaTag tag">Manga</div>
-                      </div>
-                        <div class="cardInfo">
-                          <span class="cardTitle">JoJo no Kimyou na Bouken Part 7: Steel Ball Run	</span>
-                          <p class="cardSynopsis">${anime.synopsis}</p>
-                          <p class="cardScore">${anime.score}/10⭐</p>
-                      </div>
-                  </div>
-                  
-                  <div class="imgCard">
-                    <div class="cardImage">
-                      <img src="https://cdn.myanimelist.net/images/manga/3/80661.jpg" alt="One Punch-Man">
-                      <div class="mangaTag tag">Manga</div>
-                    </div>
-                      <div class="cardInfo">
-                        <span class="cardTitle">One Punch-Man</span>
-                        <p class="cardSynopsis">${anime.synopsis}</p>
-                        <p class="cardScore">${anime.score}/10⭐</p>
-                    </div>
-                </div>
-    
-                    <div class="imgCard">
-                        <div class="cardImage">
-                          <img src="https://cdn.myanimelist.net/images/manga/3/188896.jpg" alt="Kaguya-sama wa Kokurasetai: Tensai-tachi no Renai Zunousen">
-                          <div class="mangaTag tag">Manga</div>
-                        </div>
-                          <div class="cardInfo">
-                            <span class="cardTitle">Kaguya-sama wa Kokurasetai: Tensai-tachi no Renai Zunousen</span>
-                            <p class="cardSynopsis">${anime.synopsis}</p>
-                            <p class="cardScore">${anime.score}/10⭐</p>
-                        </div>
-                    </div>
-    
-                    <div class="imgCard">
-                        <div class="cardImage">
-                          <img src="https://cdn.myanimelist.net/images/manga/2/175662.jpg" alt="Utsuro no Hako to Zero no Maria">
-                          <div class="lnTag tag">LN</div>
-                        </div>
-                          <div class="cardInfo">
-                            <span class="cardTitle">Utsuro no Hako to Zero no Maria</span>
-                            <p class="cardSynopsis">${anime.synopsis}</p>
-                            <p class="cardScore">${anime.score}/10⭐</p>
-                        </div>
-                    </div>
-
-                    <div class="imgCard">
-                        <div class="cardImage">
-                          <img src="https://cdn.myanimelist.net/images/manga/1/52281.jpg" alt="3-gatsu no Lion">
-                          <div class="mangaTag tag">Manga</div>
-                        </div>
-                          <div class="cardInfo">
-                            <span class="cardTitle">3-gatsu no Lion</span>
-                            <p class="cardSynopsis">${anime.synopsis}</p>
-                            <p class="cardScore">${anime.score}/10⭐</p>
-                        </div>
-                    </div>
-                    
-                    <div class="imgCard">
-                      <div class="cardImage">
-                        <img src="https://cdn.myanimelist.net/images/manga/1/120529.jpg" alt="Koe no Katachi">
-                        <div class="mangaTag tag">Manga</div>
-                      </div>
-                    <div class="cardInfo">
-                        <span class="cardTitle">Koe no Katachi</span>
-                        <p class="cardSynopsis">${anime.synopsis}</p>
-                        <p class="cardScore">${anime.score}/10⭐</p>
-                    </div>
-                  </div>
-
-                  </div>
+      <section class="newsSection" id="newsSection">
+        <div class="imgSection">
+          <h3><span>Anime & Manga News</span></h3>
+          <div class="newsRow">
+            <div class="newsLetter">
+              <div class="newsImg">
+                <img
+                  src="https://cdn.myanimelist.net/s/common/uploaded_files/1622908548-32c49c2a72b54722962a064fe1aaa93f.png"
+                  alt="Vanitas no Carte' Unveils Additional Cast, Split Cour Broadcast"
+                />
               </div>
-          </section>
-
-          <!-- !Section 5 -->
-          <section class="shop" id="shop">
-            <div class="imgSection">
-              <h3><span>Manga & Light Novel Shop</span></h3>
-                  <div class="imgRow">
-                    
-                    <div class="imgCard">
-                      <div class="cardImage preview">
-                        <img src="https://cdn.myanimelist.net/s/common/store/cover/9398/5b9ff849adb1ec21cef19799ae0e028dbb21e646c96cfffa3e5b357c75967418/l.jpg" alt="Girlfriend, Girlfriend Volume 3">
-                        <a href="https://myanimelist.net/store/viewer/1/7452/preview" class="button previewButton" target="_blank" rel="noopener noreferrer">Preview</a>
-                        <div class="mangaTag tag">Manga</div>
-                        <div class="new"></div>
-                      </div>
-                        <div class="cardInfo">
-                          <span class="cardTitle">Girlfriend, Girlfriend Volume 3</span>
-                          <p class="cardCost">€10.99</p>
-                          <p class="cardSynopsis">${anime.synopsis}</p>
-                          <p class="cardScore">${anime.score}/10⭐</p>
-                        </div>
-                        <p class="cardCost2">€10.99</p>
-                  </div>
-                  
-                  <div class="imgCard">
-                    <div class="cardImage preview">
-                      <img src="https://cdn.myanimelist.net/s/common/store/cover/8940/f58e08226cbe069c0490e50407cc5bea462cc20f4478e80989c70b263f1b3df9/l.jpg" alt="Wandering Witch: The Journey of Elaina Volume 3">
-
-                      <a href="https://myanimelist.net/store/novel_viewer?cid=6145&cty=0&cti=Wandering%20Witch:%20The%20Journey%20of%20Elaina%20(light%20novel)&lin=1" class="button previewButton" target="_blank" rel="noopener noreferrer">Preview</a>
-                      <div class="lnTag tag">LN</div>
-                    </div>
-                      <div class="cardInfo">
-                        <span class="cardTitle">Wandering Witch: The Journey of Elaina Volume 3</span>
-                        <p class="cardCost">€4.99</p>
-                        <p class="cardSynopsis">${anime.synopsis}</p>
-                        <p class="cardScore">${anime.score}/10⭐</p>
-                      </div>
-                      <p class="cardCost2">€4.99</p>
-                </div>
-                  
-                    <div class="imgCard">
-                        <div class="cardImage preview">
-                          <img src="https://cdn.myanimelist.net/s/common/store/cover/9402/83f198d50f90970cc77e1adcb42b92749aa2c6bbc78040baaf93ae4538d8a8c8/l.jpg" alt="Rent-A-Girlfriend Volume 6">
-
-                          <a href="https://myanimelist.net/store/viewer/1/7455/preview" class="button previewButton" target="_blank" rel="noopener noreferrer">Preview</a>
-                          <div class="mangaTag tag">Manga</div>
-                          <div class="new"></div>
-                        </div>
-                          <div class="cardInfo">
-                            <span class="cardTitle">Rent-A-Girlfriend Volume 6</span>
-                            <p class="cardCost">€10.99</p>
-                            <p class="cardSynopsis">${anime.synopsis}</p>
-                            <p class="cardScore">${anime.score}/10⭐</p>
-                          </div>
-                          <p class="cardCost2">€10.99</p>
-                    </div>
-                    
-                  <div class="imgCard">
-                    <div class="cardImage preview">
-                      <img src="https://cdn.myanimelist.net/s/common/store/cover/3781/6061916821d0a06ab7ffbe08fff42d2c8f8ace5b45d92612484d94ab2d77ea40/l.jpg" alt="Yuri is My Job Volume 2">
-                      <a href="https://myanimelist.net/store/viewer/1/3657/preview" class="button previewButton" target="_blank" rel="noopener noreferrer">Preview</a>
-                      <div class="mangaTag tag">Manga</div>
-                      <div class="new"></div>
-                    </div>
-                      <div class="cardInfo">
-                        <span class="cardTitle">Yuri is My Job Volume 2</span>
-                        <p class="cardCost">€10.99</p>
-                        <p class="cardSynopsis">${anime.synopsis}</p>
-                        <p class="cardScore">${anime.score}/10⭐</p>
-                      </div>
-                      <p class="cardCost2">€10.99</p>
-                </div>
-    
-
-                    <div class="imgCard">
-                        <div class="cardImage preview">
-                          <img src="https://cdn.myanimelist.net/s/common/store/cover/7760/a19da5c0e2bf68caf65c5472304f9169041fce3652a31d0d8453e27a9af8c2ba/l.jpg" alt="Rascal Does Not Dream of Bunny Girl Senpai">
-
-                          <a href="https://myanimelist.net/store/novel_viewer?cid=6094&cty=0&cti=Rascal%20Does%20Not%20Dream%20of%20Bunny%20Girl%20Senpai%20(light%20novel)&lin=1" class="button previewButton" target="_blank" rel="noopener noreferrer">Preview</a>
-
-                          <div class="lnTag tag">LN</div>
-                        </div>
-                          <div class="cardInfo">
-                            <span class="cardTitle">Rascal Does Not Dream of Bunny Girl Senpai</span>
-                            <p class="cardCost">€4.99</p>
-                            <p class="cardSynopsis">${anime.synopsis}</p>
-                            <p class="cardScore">${anime.score}/10⭐</p>
-                          </div>
-                          <p class="cardCost2">€4.99</p>  
-                    </div>
-                    
-                    
-                    <div class="imgCard">
-                      <div class="cardImage preview">
-                        <img src="https://cdn.myanimelist.net/s/common/store/cover/6129/8a6a30d4d3fd68771ad396639bc82cda959205b096a4ed17ee6f31de226bb3d2/l.jpg" alt="Puella Magi Madoka Magica Volume 3">
-                        <a href="https://myanimelist.net/store/viewer/1/2674/preview" class="button previewButton" target="_blank" rel="noopener noreferrer">Preview</a>
-                        <div class="mangaTag tag">Manga</div>
-                      </div>
-                    <div class="cardInfo">
-                        <span class="cardTitle">Puella Magi Madoka Magica Volume 3</span>
-                        <p class="cardCost">€4.99</p>
-                        <p class="cardSynopsis">${anime.synopsis}</p>
-                        <p class="cardScore">${anime.score}/10⭐</p>
-                      </div>
-                      <p class="cardCost2">€4.99</p>
-                  </div>
-                    
-                    <div class="imgCard">
-                      <div class="cardImage preview">
-                        <img src="https://cdn.myanimelist.net/s/common/store/cover/7956/62b201b0f9afbe98a3e2b2af516c8069dac6e0943c0facde554b3cbce3c6ca48/l.jpg" alt="Konosuba: God's Blessing on This Wonderful World">
-
-                        <a href="https://myanimelist.net/store/novel_viewer?cid=6283&cty=0&cti=Konosuba:%20God%27s%20Blessing%20on%20This%20Wonderful%20World!%20(light%20novel)&lin=1" class="button previewButton" target="_blank" rel="noopener noreferrer">Preview</a>
-                        <div class="mangaTag tag">Manga</div>
-                      </div>
-                        <div class="cardInfo">
-                          <span class="cardTitle">Konosuba: God's Blessing on This Wonderful World!</span>
-                          <p class="cardCost">€4.99</p>
-                          <p class="cardSynopsis">${anime.synopsis}</p>
-                          <p class="cardScore">${anime.score}/10⭐</p>
-                        </div>
-                        <p class="cardCost2">€4.99</p>
-                  </div>
-                  
-                  <div class="imgCard">
-                    <div class="cardImage preview">
-                      <img src="https://cdn.myanimelist.net/s/common/store/cover/9477/c3f5138f75cf7ae00fc994c5aac7986672f6176330ff4ff8d7480c2e697a8356/l.jpg" alt="Crimson Prince">
-
-                      <a href="https://myanimelist.net/store/viewer/1/7523/preview" class="button previewButton" target="_blank" rel="noopener noreferrer">Preview</a>
-                      <div class="mangaTag tag">Manga</div>
-                          <div class="new"></div>
-                    </div>
-                      <div class="cardInfo">
-                        <span class="cardTitle">Crimson Prince</span>
-                        <p class="cardCost">€4.99</p>
-                        <p class="cardSynopsis">${anime.synopsis}</p>
-                        <p class="cardScore">${anime.score}/10⭐</p>
-                      </div>
-                      <p class="cardCost2">€4.99</p>
-                </div>
-                  
-                    <div class="imgCard">
-                        <div class="cardImage preview">
-                          <img src="https://cdn.myanimelist.net/s/common/store/cover/4426/dcbb19d6f42453f9135d39e9ded4c6616b9132419c11661a1d3fc4d41de0cd9a/l.jpg" alt="The Quintessential Quintuplets Volume 8">
-                          <a href="https://myanimelist.net/store/viewer/1/3757/preview" class="button previewButton" target="_blank" rel="noopener noreferrer">Preview</a>
-                          <div class="mangaTag tag">Manga</div>
-                        </div>
-                          <div class="cardInfo">
-                            <span class="cardTitle">The Quintessential Quintuplets Volume 8</span>
-                            <p class="cardCost">€10.99</p>
-                            <p class="cardSynopsis">${anime.synopsis}</p>
-                            <p class="cardScore">${anime.score}/10⭐</p>
-                          </div>
-                          <p class="cardCost2">€10.99</p>
-                    </div>
-
-                    
-                  <div class="imgCard">
-                    <div class="cardImage preview">
-                      <img src="https://cdn.myanimelist.net/s/common/store/cover/8353/f69dd76fd709fa17a85ff06903dd01f1bca8ba42523c1deb83c21da86672c177/l.jpg" alt="Horimiya Volume 14">
-                      <a href="https://myanimelist.net/store/viewer/1/6607/preview" class="button previewButton" target="_blank" rel="noopener noreferrer">Preview</a>
-                      <div class="mangaTag tag">Manga</div>
-                    </div>
-                      <div class="cardInfo">
-                        <span class="cardTitle">Horimiya Volume 14</span>
-                        <p class="cardCost">€10.99</p>
-                        <p class="cardSynopsis">${anime.synopsis}</p>
-                        <p class="cardScore">${anime.score}/10⭐</p>
-                      </div>
-                      <p class="cardCost2">€10.99</p>
-                </div>
-    
-
-                    <div class="imgCard">
-                        <div class="cardImage preview">
-                          <img src="https://cdn.myanimelist.net/s/common/store/cover/9413/06bd59ece39a4459bde176ff31f2c99a2ebae643ee85356ce828a7d70ba75853/l.jpg" alt="Peach Boy Riverside Volume 8">
-
-                          <a href="https://myanimelist.net/store/viewer/1/7492/preview" class="button previewButton" target="_blank" rel="noopener noreferrer">Preview</a>
-
-                          <div class="mangaTag tag">Manga</div>
-                          <div class="new"></div>
-                        </div>
-                          <div class="cardInfo">
-                            <span class="cardTitle">Peach Boy Riverside Volume 8</span>
-                            <p class="cardCost">€10.99</p>
-                            <p class="cardSynopsis">${anime.synopsis}</p>
-                            <p class="cardScore">${anime.score}/10⭐</p>
-                          </div>
-                          <p class="cardCost2">€10.99</p>
-                    </div>
-                    
-                    
-                    <div class="imgCard">
-                      <div class="cardImage preview">
-                        <img src="https://cdn.myanimelist.net/s/common/store/cover/7986/70abf2177bbd29ffcd6e776b48f79a2594c11049f93b811e6996d3b5dcaa67ef/l.jpg" alt="No Game No Life Volume 9">
-
-                        <a href="https://myanimelist.net/store/novel_viewer?cid=6314&cty=0&cti=No%20Game%20No%20Life%20(light%20novel)&lin=1" class="button previewButton" target="_blank" rel="noopener noreferrer">Preview</a>
-                        <div class="lnTag tag">Ln</div>
-                        <div class="new"></div>
-                      </div>
-                    <div class="cardInfo">
-                        <span class="cardTitle">No Game No Life Volume 9</span>
-                        <p class="cardCost">€4.99</p>
-                        <p class="cardSynopsis">${anime.synopsis}</p>
-                        <p class="cardScore">${anime.score}/10⭐</p>
-                      </div>
-                      <p class="cardCost2">€4.99</p>
-                  </div>
-
-                    <div class="imgCard">
-                      <div class="cardImage preview">
-                        <img src="https://cdn.myanimelist.net/s/common/store/cover/7774/f84189401ba41d7af7458325fd82c3eb20d4839fdf02fd9e20d4d68d54896084/l.jpg" alt="Suppose a Kid from the Last Dungeon Boonies Moved to a Starter Town">
-
-                        <a href="https://myanimelist.net/store/novel_viewer?cid=6127&cty=0&cti=Suppose%20a%20Kid%20from%20the%20Last%20Dungeon%20Boonies%20Moved%20to%20a%20Starter%20Town%20(light%20novel)&lin=1" class="button previewButton" target="_blank" rel="noopener noreferrer">Preview</a>
-                        <div class="lnTag tag">Ln</div>
-                      </div>
-                        <div class="cardInfo">
-                          <span class="cardTitle">Suppose a Kid from the Last Dungeon Boonies Moved to a Starter Town</span>
-                          <p class="cardCost">€4.99</p>
-                          <p class="cardSynopsis">${anime.synopsis}</p>
-                          <p class="cardScore">${anime.score}/10⭐</p>
-                        </div>
-                        <p class="cardCost2">€4.99</p>
-                  </div>
-                  
-                  <div class="imgCard">
-                    <div class="cardImage preview">
-                      <img src="https://cdn.myanimelist.net/s/common/store/cover/7715/bbd27d65f41b82d54245a730c9516fd05be71b6ca73ac5de69275635ba85ba66/l.jpg" alt="86 Volume 1">
-
-                      <a href="https://myanimelist.net/store/novel_viewer?cid=6056&cty=0&cti=86--EIGHTY-SIX%20(light%20novel)&lin=1" class="button previewButton" target="_blank" rel="noopener noreferrer">Preview</a>
-                      <div class="lnTag tag">Ln</div>
-                    </div>
-                      <div class="cardInfo">
-                        <span class="cardTitle">86 Volume 1</span>
-                        <p class="cardCost">€4.99</p>
-                        <p class="cardSynopsis">${anime.synopsis}</p>
-                        <p class="cardScore">${anime.score}/10⭐</p>
-                      </div>
-                      <p class="cardCost2">€4.99</p>
-                </div>
-                  
-                    <div class="imgCard">
-                        <div class="cardImage preview">
-                          <img src="https://cdn.myanimelist.net/s/common/store/cover/9399/07b3ee01ed5e3d005ba68d7910de92ce29c7e988b74a8a26f2e1f4c89bd826b1/l.jpg" alt="My Dearest Self with Malice Aforethought">
-
-                          <a href="https://myanimelist.net/store/viewer/1/7454/preview" class="button previewButton" target="_blank" rel="noopener noreferrer">Preview</a>
-                          <div class="mangaTag tag">Manga</div>
-                          <div class="new"></div>
-                        </div>
-                          <div class="cardInfo">
-                            <span class="cardTitle">My Dearest Self with Malice Aforethought</span>
-                            <p class="cardCost">€10.99</p>
-                            <p class="cardSynopsis">${anime.synopsis}</p>
-                            <p class="cardScore">${anime.score}/10⭐</p>
-                          </div>
-                          <p class="cardCost2">€10.99</p>
-                    </div>
-
-                    
-                  <div class="imgCard">
-                    <div class="cardImage preview">
-                      <img src="https://cdn.myanimelist.net/s/common/store/cover/7910/9b03db539375e3df15ccccfdf3e9e2b9d8df728d1d0a61e6357fe4360e63a79b/l.jpg" alt="Goblin Slayer Volume 5">
-                      <a href="https://myanimelist.net/store/novel_viewer?cid=6237&cty=0&cti=Goblin%20Slayer%20(light%20novel)&lin=1" class="button previewButton" target="_blank" rel="noopener noreferrer">Preview</a>
-                      <div class="lnTag tag">Ln</div>
-                    </div>
-                      <div class="cardInfo">
-                        <span class="cardTitle">Goblin Slayer Volume 5</span>
-                        <p class="cardCost">€4.99</p>
-                        <p class="cardSynopsis">${anime.synopsis}</p>
-                        <p class="cardScore">${anime.score}/10⭐</p>
-                      </div>
-                      <p class="cardCost2">€4.99</p>
-                </div>
-
-                    <div class="imgCard">
-                        <div class="cardImage preview">
-                          <img src="https://cdn.myanimelist.net/s/common/store/cover/9415/a67a2fa864385a7301cda7e437b071d037f5e30da4e61897657db9963b5c43dc/l.jpg" alt="The Hero Life of a (Self-Proclaimed) Mediocre Demon">
-
-                          <a href="https://myanimelist.net/store/viewer/1/7493/preview" class="button previewButton" target="_blank" rel="noopener noreferrer">Preview</a>
-
-                          <div class="mangaTag tag">Manga</div>
-                          <div class="new"></div>
-                        </div>
-                          <div class="cardInfo">
-                            <span class="cardTitle">The Hero Life of a (Self-Proclaimed) "Mediocre" Demon!</span>
-                            <p class="cardCost">€10.99</p>
-                            <p class="cardSynopsis">${anime.synopsis}</p>
-                            <p class="cardScore">${anime.score}/10⭐</p>
-                          </div>
-                          <p class="cardCost2">€10.99</p>
-                    </div>
-                    
-                    
-                    <div class="imgCard">
-                      <div class="cardImage preview">
-                        <img src="https://cdn.myanimelist.net/s/common/store/cover/9270/601a8621a89f9d4e27054661729823404665f512e84b0a2148f13ecd0b08abb6/l.jpg" alt="Grand Blue Dreaming Volume 12">
-
-                        <a href="https://myanimelist.net/store/viewer/1/7316/preview" class="button previewButton" target="_blank" rel="noopener noreferrer">Preview</a>
-                        <div class="lnTag tag">Ln</div>
-                      </div>
-                    <div class="cardInfo">
-                        <span class="cardTitle">Grand Blue Dreaming Volume 12</span>
-                        <p class="cardCost">€10.99</p>
-                        <p class="cardSynopsis">${anime.synopsis}</p>
-                        <p class="cardScore">${anime.score}/10⭐</p>
-                      </div>
-                      <p class="cardCost2">€10.99</p>
-                  </div>
-
-                </div>
+              <div class="newsCardInfo">
+                <h2>
+                  'Vanitas no Carte' Unveils Additional Cast, Split Cour
+                  Broadcast
+                </h2>
+                <h6><i class="fa fa-calendar"></i> Jun 5, 6:09 AM</h6>
               </div>
-          </section>    
-
-
-          <section class="reviews"> 
-            <div class="imgSection">
-
-              <div class="reviewWrapper">	
-                  <div class="shadow1"></div>
-                  <div class="shadow2"></div>
-                  <div class="slideshow">
-
-                    <!-- slide 1 -->
-                    <div class="reviewGrid">
-
-                      <div class="right">
-                        <p class="reviewDesc">Trinity Seven</p>
-                        <img class="reviewCover" src="https://www.anime-planet.com/images/anime/covers/trinity-seven-6063.jpg?t=1450823446" alt="review Cover">
-                      </div>
-                        
-                    <div class="left">
-                      <div class="reviwerInfo">
-                        <div class="thumbnail">
-                          <img src="https://i.pinimg.com/236x/cb/c9/8d/cbc98d8db07d0529288ac2ac2e857468.jpg" alt="profile-img">
-                        </div>
-                      </div>
-                        
-                      <div class="reviewContentAll"> 
-                          <p class="reviewName">Jhon</p>
-                          <p class="reviewDate">Jun 10, 2021</p>
-                          
-                          <div class="reviewScroll">
-                            <h1 class="reviewText">It was ok dont know why people like it so much the characters are predictable and very cliche. Its better than most of the harem anime since the MC aint super dense but still didnt end up with someone or everyone so eh.</h1> 
-                          </div>
-
-                          <div class="score">
-                            <div class="story">
-                              <h1>5/10</h1>
-                              <p>story</p>
-                            </div>
-                            <div class="animation">
-                              <h1>8/10</h1>
-                              <p>animation</p>
-                            </div>
-                            <div class="sound">
-                              <h1>7/10</h1>
-                              <p>sound</p>
-                            </div>
-                            <div class="characters">
-                              <h1>6/10</h1>
-                              <p>characters</p>
-                            </div>
-                            <div class="overall">
-                              <h1>6.5/10</h1>
-                              <p>overall</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                    </div>
-                  </div>          
-              </div>  
             </div>
-        </section>
+
+            <div class="newsLetter">
+              <div class="newsImg">
+                <img
+                  src="https://cdn.myanimelist.net/s/common/uploaded_files/1609132432-60dc8fb22d01a6619ffde6299f561d86.jpeg"
+                  alt="Cast, Staff, Summer 2021 Premiere Announced for 'Cheat Kusushi no Slow Life: Isekai ni Tsukurou Drugstore' TV Anim"
+                />
+              </div>
+              <div class="newsCardInfo">
+                <h2>
+                  Cast, Staff, Summer 2021 Premiere Announced for 'Cheat Kusushi
+                  no Slow Life: Isekai ni Tsukurou Drugstore' TV Anime
+                </h2>
+                <h6><i class="fa fa-calendar"></i> May 31, 3:24 AM</h6>
+              </div>
+            </div>
+
+            <div class="newsLetter">
+              <div class="newsImg">
+                <img
+                  src="https://cdn.myanimelist.net/s/common/uploaded_files/1621226222-b4160403eb2fe4f19b64df4eca9934ad.png"
+                  alt="Manga 'Isekai Bishoujo Juniku Ojisan to' Receives TV Anime"
+                />
+              </div>
+              <div class="newsCardInfo">
+                <h2>
+                  Manga 'Isekai Bishoujo Juniku Ojisan to' Receives TV Anime
+                </h2>
+                <h6><i class="fa fa-calendar"></i> May 17, 6:38 AM</h6>
+              </div>
+            </div>
+
+            <div class="newsLetter">
+              <div class="newsImg">
+                <img
+                  src="https://cdn.myanimelist.net/s/common/uploaded_files/1620737942-620cbb70e328f8389e163dca9e374ef7.jpeg"
+                  alt="Komi-san wa, Comyushou desu.' TV Anime Adaptation Announced for Fall 2021"
+                />
+              </div>
+              <div class="newsCardInfo">
+                <h2>
+                  'Komi-san wa, Comyushou desu.' TV Anime Adaptation Announced
+                  for Fall 2021
+                </h2>
+                <h6><i class="fa fa-calendar"></i> 12/13/2020</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- !Section 4 -->
+      <section class="topManga" id="topManga">
+        <div class="imgSection">
+          <h3><span>Top Manga & Light Novel</span></h3>
+          <div class="imgRow">
+            <div class="imgCard">
+              <div class="cardImage">
+                <img
+                  src="https://cdn.myanimelist.net/images/manga/1/129447.jpg"
+                  alt="Re:ZERO -Starting Life in Another World"
+                />
+                <div class="lnTag tag">LN</div>
+              </div>
+              <div class="cardInfo">
+                <span class="cardTitle"
+                  >Re:ZERO -Starting Life in Another World-</span
+                >
+                <p class="cardSynopsis">${anime.synopsis}</p>
+                <p class="cardScore">${anime.score}/10⭐</p>
+              </div>
+            </div>
+
+            <div class="imgCard">
+              <div class="cardImage">
+                <img
+                  src="https://cdn.myanimelist.net/images/manga/3/235363.jpg"
+                  alt="Welcome to the Classroom of the Second-year"
+                />
+                <div class="lnTag tag">LN</div>
+              </div>
+              <div class="cardInfo">
+                <span class="cardTitle"
+                  >Welcome to the Classroom of the Second-year</span
+                >
+                <p class="cardSynopsis">${anime.synopsis}</p>
+                <p class="cardScore">${anime.score}/10⭐</p>
+              </div>
+            </div>
+
+            <div class="imgCard">
+              <div class="cardImage">
+                <img
+                  src="https://cdn.myanimelist.net/images/manga/3/164420.jpg"
+                  alt="Goodnight Punpun"
+                />
+                <div class="mangaTag tag">Manga</div>
+              </div>
+              <div class="cardInfo">
+                <span class="cardTitle">Goodnight Punpun</span>
+                <p class="cardSynopsis">${anime.synopsis}</p>
+                <p class="cardScore">${anime.score}/10⭐</p>
+              </div>
+            </div>
+
+            <div class="imgCard">
+              <div class="cardImage">
+                <img
+                  src="https://cdn.myanimelist.net/images/manga/2/166124.jpg"
+                  alt="Grand Blue"
+                />
+                <div class="mangaTag tag">Manga</div>
+              </div>
+              <div class="cardInfo">
+                <span class="cardTitle">Grand Blue</span>
+                <p class="cardSynopsis">${anime.synopsis}</p>
+                <p class="cardScore">${anime.score}/10⭐</p>
+              </div>
+            </div>
+
+            <div class="imgCard">
+              <div class="cardImage">
+                <img
+                  src="https://cdn.myanimelist.net/images/manga/1/122461.jpg"
+                  alt="My Youth Romantic Comedy Is Wrong, As I Expected"
+                />
+                <div class="lnTag tag">LN</div>
+              </div>
+              <div class="cardInfo">
+                <span class="cardTitle"
+                  >My Youth Romantic Comedy Is Wrong, As I Expected</span
+                >
+                <p class="cardSynopsis">${anime.synopsis}</p>
+                <p class="cardScore">${anime.score}/10⭐</p>
+              </div>
+            </div>
+
+            <div class="imgCard">
+              <div class="cardImage">
+                <img
+                  src="https://cdn.myanimelist.net/images/manga/1/157897.jpg"
+                  alt="Berserk"
+                />
+                <div class="mangaTag tag">Manga</div>
+              </div>
+              <div class="cardInfo">
+                <span class="cardTitle">Berserk</span>
+                <p class="cardSynopsis">${anime.synopsis}</p>
+                <p class="cardScore">${anime.score}/10⭐</p>
+              </div>
+            </div>
+
+            <div class="imgCard">
+              <div class="cardImage">
+                <img
+                  src="https://cdn.myanimelist.net/images/manga/3/179882.jpg"
+                  alt="JoJo no Kimyou na Bouken Part 7: Steel Ball Run"
+                />
+                <div class="mangaTag tag">Manga</div>
+              </div>
+              <div class="cardInfo">
+                <span class="cardTitle"
+                  >JoJo no Kimyou na Bouken Part 7: Steel Ball Run
+                </span>
+                <p class="cardSynopsis">${anime.synopsis}</p>
+                <p class="cardScore">${anime.score}/10⭐</p>
+              </div>
+            </div>
+
+            <div class="imgCard">
+              <div class="cardImage">
+                <img
+                  src="https://cdn.myanimelist.net/images/manga/3/80661.jpg"
+                  alt="One Punch-Man"
+                />
+                <div class="mangaTag tag">Manga</div>
+              </div>
+              <div class="cardInfo">
+                <span class="cardTitle">One Punch-Man</span>
+                <p class="cardSynopsis">${anime.synopsis}</p>
+                <p class="cardScore">${anime.score}/10⭐</p>
+              </div>
+            </div>
+
+            <div class="imgCard">
+              <div class="cardImage">
+                <img
+                  src="https://cdn.myanimelist.net/images/manga/3/188896.jpg"
+                  alt="Kaguya-sama wa Kokurasetai: Tensai-tachi no Renai Zunousen"
+                />
+                <div class="mangaTag tag">Manga</div>
+              </div>
+              <div class="cardInfo">
+                <span class="cardTitle"
+                  >Kaguya-sama wa Kokurasetai: Tensai-tachi no Renai
+                  Zunousen</span
+                >
+                <p class="cardSynopsis">${anime.synopsis}</p>
+                <p class="cardScore">${anime.score}/10⭐</p>
+              </div>
+            </div>
+
+            <div class="imgCard">
+              <div class="cardImage">
+                <img
+                  src="https://cdn.myanimelist.net/images/manga/2/175662.jpg"
+                  alt="Utsuro no Hako to Zero no Maria"
+                />
+                <div class="lnTag tag">LN</div>
+              </div>
+              <div class="cardInfo">
+                <span class="cardTitle">Utsuro no Hako to Zero no Maria</span>
+                <p class="cardSynopsis">${anime.synopsis}</p>
+                <p class="cardScore">${anime.score}/10⭐</p>
+              </div>
+            </div>
+
+            <div class="imgCard">
+              <div class="cardImage">
+                <img
+                  src="https://cdn.myanimelist.net/images/manga/1/52281.jpg"
+                  alt="3-gatsu no Lion"
+                />
+                <div class="mangaTag tag">Manga</div>
+              </div>
+              <div class="cardInfo">
+                <span class="cardTitle">3-gatsu no Lion</span>
+                <p class="cardSynopsis">${anime.synopsis}</p>
+                <p class="cardScore">${anime.score}/10⭐</p>
+              </div>
+            </div>
+
+            <div class="imgCard">
+              <div class="cardImage">
+                <img
+                  src="https://cdn.myanimelist.net/images/manga/1/120529.jpg"
+                  alt="Koe no Katachi"
+                />
+                <div class="mangaTag tag">Manga</div>
+              </div>
+              <div class="cardInfo">
+                <span class="cardTitle">Koe no Katachi</span>
+                <p class="cardSynopsis">${anime.synopsis}</p>
+                <p class="cardScore">${anime.score}/10⭐</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- !Section 5 -->
+      <section class="shop" id="shop">
+        <div class="imgSection">
+          <h3><span>Manga & Light Novel Shop</span></h3>
+          <div class="imgRow">
+            <div class="imgCard">
+              <div class="cardImage preview">
+                <img
+                  src="https://cdn.myanimelist.net/s/common/store/cover/9398/5b9ff849adb1ec21cef19799ae0e028dbb21e646c96cfffa3e5b357c75967418/l.jpg"
+                  alt="Girlfriend, Girlfriend Volume 3"
+                />
+                <a
+                  href="https://myanimelist.net/store/viewer/1/7452/preview"
+                  class="button previewButton"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Preview</a
+                >
+                <div class="mangaTag tag">Manga</div>
+                <div class="new"></div>
+              </div>
+              <div class="cardInfo">
+                <span class="cardTitle">Girlfriend, Girlfriend Volume 3</span>
+                <p class="cardCost">€10.99</p>
+                <p class="cardSynopsis">${anime.synopsis}</p>
+                <p class="cardScore">${anime.score}/10⭐</p>
+              </div>
+              <p class="cardCost2">€10.99</p>
+            </div>
+
+            <div class="imgCard">
+              <div class="cardImage preview">
+                <img
+                  src="https://cdn.myanimelist.net/s/common/store/cover/8940/f58e08226cbe069c0490e50407cc5bea462cc20f4478e80989c70b263f1b3df9/l.jpg"
+                  alt="Wandering Witch: The Journey of Elaina Volume 3"
+                />
+
+                <a
+                  href="https://myanimelist.net/store/novel_viewer?cid=6145&cty=0&cti=Wandering%20Witch:%20The%20Journey%20of%20Elaina%20(light%20novel)&lin=1"
+                  class="button previewButton"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Preview</a
+                >
+                <div class="lnTag tag">LN</div>
+              </div>
+              <div class="cardInfo">
+                <span class="cardTitle"
+                  >Wandering Witch: The Journey of Elaina Volume 3</span
+                >
+                <p class="cardCost">€4.99</p>
+                <p class="cardSynopsis">${anime.synopsis}</p>
+                <p class="cardScore">${anime.score}/10⭐</p>
+              </div>
+              <p class="cardCost2">€4.99</p>
+            </div>
+
+            <div class="imgCard">
+              <div class="cardImage preview">
+                <img
+                  src="https://cdn.myanimelist.net/s/common/store/cover/9402/83f198d50f90970cc77e1adcb42b92749aa2c6bbc78040baaf93ae4538d8a8c8/l.jpg"
+                  alt="Rent-A-Girlfriend Volume 6"
+                />
+
+                <a
+                  href="https://myanimelist.net/store/viewer/1/7455/preview"
+                  class="button previewButton"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Preview</a
+                >
+                <div class="mangaTag tag">Manga</div>
+                <div class="new"></div>
+              </div>
+              <div class="cardInfo">
+                <span class="cardTitle">Rent-A-Girlfriend Volume 6</span>
+                <p class="cardCost">€10.99</p>
+                <p class="cardSynopsis">${anime.synopsis}</p>
+                <p class="cardScore">${anime.score}/10⭐</p>
+              </div>
+              <p class="cardCost2">€10.99</p>
+            </div>
+
+            <div class="imgCard">
+              <div class="cardImage preview">
+                <img
+                  src="https://cdn.myanimelist.net/s/common/store/cover/3781/6061916821d0a06ab7ffbe08fff42d2c8f8ace5b45d92612484d94ab2d77ea40/l.jpg"
+                  alt="Yuri is My Job Volume 2"
+                />
+                <a
+                  href="https://myanimelist.net/store/viewer/1/3657/preview"
+                  class="button previewButton"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Preview</a
+                >
+                <div class="mangaTag tag">Manga</div>
+                <div class="new"></div>
+              </div>
+              <div class="cardInfo">
+                <span class="cardTitle">Yuri is My Job Volume 2</span>
+                <p class="cardCost">€10.99</p>
+                <p class="cardSynopsis">${anime.synopsis}</p>
+                <p class="cardScore">${anime.score}/10⭐</p>
+              </div>
+              <p class="cardCost2">€10.99</p>
+            </div>
+
+            <div class="imgCard">
+              <div class="cardImage preview">
+                <img
+                  src="https://cdn.myanimelist.net/s/common/store/cover/7760/a19da5c0e2bf68caf65c5472304f9169041fce3652a31d0d8453e27a9af8c2ba/l.jpg"
+                  alt="Rascal Does Not Dream of Bunny Girl Senpai"
+                />
+
+                <a
+                  href="https://myanimelist.net/store/novel_viewer?cid=6094&cty=0&cti=Rascal%20Does%20Not%20Dream%20of%20Bunny%20Girl%20Senpai%20(light%20novel)&lin=1"
+                  class="button previewButton"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Preview</a
+                >
+
+                <div class="lnTag tag">LN</div>
+              </div>
+              <div class="cardInfo">
+                <span class="cardTitle"
+                  >Rascal Does Not Dream of Bunny Girl Senpai</span
+                >
+                <p class="cardCost">€4.99</p>
+                <p class="cardSynopsis">${anime.synopsis}</p>
+                <p class="cardScore">${anime.score}/10⭐</p>
+              </div>
+              <p class="cardCost2">€4.99</p>
+            </div>
+
+            <div class="imgCard">
+              <div class="cardImage preview">
+                <img
+                  src="https://cdn.myanimelist.net/s/common/store/cover/6129/8a6a30d4d3fd68771ad396639bc82cda959205b096a4ed17ee6f31de226bb3d2/l.jpg"
+                  alt="Puella Magi Madoka Magica Volume 3"
+                />
+                <a
+                  href="https://myanimelist.net/store/viewer/1/2674/preview"
+                  class="button previewButton"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Preview</a
+                >
+                <div class="mangaTag tag">Manga</div>
+              </div>
+              <div class="cardInfo">
+                <span class="cardTitle"
+                  >Puella Magi Madoka Magica Volume 3</span
+                >
+                <p class="cardCost">€4.99</p>
+                <p class="cardSynopsis">${anime.synopsis}</p>
+                <p class="cardScore">${anime.score}/10⭐</p>
+              </div>
+              <p class="cardCost2">€4.99</p>
+            </div>
+
+            <div class="imgCard">
+              <div class="cardImage preview">
+                <img
+                  src="https://cdn.myanimelist.net/s/common/store/cover/7956/62b201b0f9afbe98a3e2b2af516c8069dac6e0943c0facde554b3cbce3c6ca48/l.jpg"
+                  alt="Konosuba: God's Blessing on This Wonderful World"
+                />
+
+                <a
+                  href="https://myanimelist.net/store/novel_viewer?cid=6283&cty=0&cti=Konosuba:%20God%27s%20Blessing%20on%20This%20Wonderful%20World!%20(light%20novel)&lin=1"
+                  class="button previewButton"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Preview</a
+                >
+                <div class="mangaTag tag">Manga</div>
+              </div>
+              <div class="cardInfo">
+                <span class="cardTitle"
+                  >Konosuba: God's Blessing on This Wonderful World!</span
+                >
+                <p class="cardCost">€4.99</p>
+                <p class="cardSynopsis">${anime.synopsis}</p>
+                <p class="cardScore">${anime.score}/10⭐</p>
+              </div>
+              <p class="cardCost2">€4.99</p>
+            </div>
+
+            <div class="imgCard">
+              <div class="cardImage preview">
+                <img
+                  src="https://cdn.myanimelist.net/s/common/store/cover/9477/c3f5138f75cf7ae00fc994c5aac7986672f6176330ff4ff8d7480c2e697a8356/l.jpg"
+                  alt="Crimson Prince"
+                />
+
+                <a
+                  href="https://myanimelist.net/store/viewer/1/7523/preview"
+                  class="button previewButton"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Preview</a
+                >
+                <div class="mangaTag tag">Manga</div>
+                <div class="new"></div>
+              </div>
+              <div class="cardInfo">
+                <span class="cardTitle">Crimson Prince</span>
+                <p class="cardCost">€4.99</p>
+                <p class="cardSynopsis">${anime.synopsis}</p>
+                <p class="cardScore">${anime.score}/10⭐</p>
+              </div>
+              <p class="cardCost2">€4.99</p>
+            </div>
+
+            <div class="imgCard">
+              <div class="cardImage preview">
+                <img
+                  src="https://cdn.myanimelist.net/s/common/store/cover/4426/dcbb19d6f42453f9135d39e9ded4c6616b9132419c11661a1d3fc4d41de0cd9a/l.jpg"
+                  alt="The Quintessential Quintuplets Volume 8"
+                />
+                <a
+                  href="https://myanimelist.net/store/viewer/1/3757/preview"
+                  class="button previewButton"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Preview</a
+                >
+                <div class="mangaTag tag">Manga</div>
+              </div>
+              <div class="cardInfo">
+                <span class="cardTitle"
+                  >The Quintessential Quintuplets Volume 8</span
+                >
+                <p class="cardCost">€10.99</p>
+                <p class="cardSynopsis">${anime.synopsis}</p>
+                <p class="cardScore">${anime.score}/10⭐</p>
+              </div>
+              <p class="cardCost2">€10.99</p>
+            </div>
+
+            <div class="imgCard">
+              <div class="cardImage preview">
+                <img
+                  src="https://cdn.myanimelist.net/s/common/store/cover/8353/f69dd76fd709fa17a85ff06903dd01f1bca8ba42523c1deb83c21da86672c177/l.jpg"
+                  alt="Horimiya Volume 14"
+                />
+                <a
+                  href="https://myanimelist.net/store/viewer/1/6607/preview"
+                  class="button previewButton"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Preview</a
+                >
+                <div class="mangaTag tag">Manga</div>
+              </div>
+              <div class="cardInfo">
+                <span class="cardTitle">Horimiya Volume 14</span>
+                <p class="cardCost">€10.99</p>
+                <p class="cardSynopsis">${anime.synopsis}</p>
+                <p class="cardScore">${anime.score}/10⭐</p>
+              </div>
+              <p class="cardCost2">€10.99</p>
+            </div>
+
+            <div class="imgCard">
+              <div class="cardImage preview">
+                <img
+                  src="https://cdn.myanimelist.net/s/common/store/cover/9413/06bd59ece39a4459bde176ff31f2c99a2ebae643ee85356ce828a7d70ba75853/l.jpg"
+                  alt="Peach Boy Riverside Volume 8"
+                />
+
+                <a
+                  href="https://myanimelist.net/store/viewer/1/7492/preview"
+                  class="button previewButton"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Preview</a
+                >
+
+                <div class="mangaTag tag">Manga</div>
+                <div class="new"></div>
+              </div>
+              <div class="cardInfo">
+                <span class="cardTitle">Peach Boy Riverside Volume 8</span>
+                <p class="cardCost">€10.99</p>
+                <p class="cardSynopsis">${anime.synopsis}</p>
+                <p class="cardScore">${anime.score}/10⭐</p>
+              </div>
+              <p class="cardCost2">€10.99</p>
+            </div>
+
+            <div class="imgCard">
+              <div class="cardImage preview">
+                <img
+                  src="https://cdn.myanimelist.net/s/common/store/cover/7986/70abf2177bbd29ffcd6e776b48f79a2594c11049f93b811e6996d3b5dcaa67ef/l.jpg"
+                  alt="No Game No Life Volume 9"
+                />
+
+                <a
+                  href="https://myanimelist.net/store/novel_viewer?cid=6314&cty=0&cti=No%20Game%20No%20Life%20(light%20novel)&lin=1"
+                  class="button previewButton"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Preview</a
+                >
+                <div class="lnTag tag">Ln</div>
+                <div class="new"></div>
+              </div>
+              <div class="cardInfo">
+                <span class="cardTitle">No Game No Life Volume 9</span>
+                <p class="cardCost">€4.99</p>
+                <p class="cardSynopsis">${anime.synopsis}</p>
+                <p class="cardScore">${anime.score}/10⭐</p>
+              </div>
+              <p class="cardCost2">€4.99</p>
+            </div>
+
+            <div class="imgCard">
+              <div class="cardImage preview">
+                <img
+                  src="https://cdn.myanimelist.net/s/common/store/cover/7774/f84189401ba41d7af7458325fd82c3eb20d4839fdf02fd9e20d4d68d54896084/l.jpg"
+                  alt="Suppose a Kid from the Last Dungeon Boonies Moved to a Starter Town"
+                />
+
+                <a
+                  href="https://myanimelist.net/store/novel_viewer?cid=6127&cty=0&cti=Suppose%20a%20Kid%20from%20the%20Last%20Dungeon%20Boonies%20Moved%20to%20a%20Starter%20Town%20(light%20novel)&lin=1"
+                  class="button previewButton"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Preview</a
+                >
+                <div class="lnTag tag">Ln</div>
+              </div>
+              <div class="cardInfo">
+                <span class="cardTitle"
+                  >Suppose a Kid from the Last Dungeon Boonies Moved to a
+                  Starter Town</span
+                >
+                <p class="cardCost">€4.99</p>
+                <p class="cardSynopsis">${anime.synopsis}</p>
+                <p class="cardScore">${anime.score}/10⭐</p>
+              </div>
+              <p class="cardCost2">€4.99</p>
+            </div>
+
+            <div class="imgCard">
+              <div class="cardImage preview">
+                <img
+                  src="https://cdn.myanimelist.net/s/common/store/cover/7715/bbd27d65f41b82d54245a730c9516fd05be71b6ca73ac5de69275635ba85ba66/l.jpg"
+                  alt="86 Volume 1"
+                />
+
+                <a
+                  href="https://myanimelist.net/store/novel_viewer?cid=6056&cty=0&cti=86--EIGHTY-SIX%20(light%20novel)&lin=1"
+                  class="button previewButton"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Preview</a
+                >
+                <div class="lnTag tag">Ln</div>
+              </div>
+              <div class="cardInfo">
+                <span class="cardTitle">86 Volume 1</span>
+                <p class="cardCost">€4.99</p>
+                <p class="cardSynopsis">${anime.synopsis}</p>
+                <p class="cardScore">${anime.score}/10⭐</p>
+              </div>
+              <p class="cardCost2">€4.99</p>
+            </div>
+
+            <div class="imgCard">
+              <div class="cardImage preview">
+                <img
+                  src="https://cdn.myanimelist.net/s/common/store/cover/9399/07b3ee01ed5e3d005ba68d7910de92ce29c7e988b74a8a26f2e1f4c89bd826b1/l.jpg"
+                  alt="My Dearest Self with Malice Aforethought"
+                />
+
+                <a
+                  href="https://myanimelist.net/store/viewer/1/7454/preview"
+                  class="button previewButton"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Preview</a
+                >
+                <div class="mangaTag tag">Manga</div>
+                <div class="new"></div>
+              </div>
+              <div class="cardInfo">
+                <span class="cardTitle"
+                  >My Dearest Self with Malice Aforethought</span
+                >
+                <p class="cardCost">€10.99</p>
+                <p class="cardSynopsis">${anime.synopsis}</p>
+                <p class="cardScore">${anime.score}/10⭐</p>
+              </div>
+              <p class="cardCost2">€10.99</p>
+            </div>
+
+            <div class="imgCard">
+              <div class="cardImage preview">
+                <img
+                  src="https://cdn.myanimelist.net/s/common/store/cover/7910/9b03db539375e3df15ccccfdf3e9e2b9d8df728d1d0a61e6357fe4360e63a79b/l.jpg"
+                  alt="Goblin Slayer Volume 5"
+                />
+                <a
+                  href="https://myanimelist.net/store/novel_viewer?cid=6237&cty=0&cti=Goblin%20Slayer%20(light%20novel)&lin=1"
+                  class="button previewButton"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Preview</a
+                >
+                <div class="lnTag tag">Ln</div>
+              </div>
+              <div class="cardInfo">
+                <span class="cardTitle">Goblin Slayer Volume 5</span>
+                <p class="cardCost">€4.99</p>
+                <p class="cardSynopsis">${anime.synopsis}</p>
+                <p class="cardScore">${anime.score}/10⭐</p>
+              </div>
+              <p class="cardCost2">€4.99</p>
+            </div>
+
+            <div class="imgCard">
+              <div class="cardImage preview">
+                <img
+                  src="https://cdn.myanimelist.net/s/common/store/cover/9415/a67a2fa864385a7301cda7e437b071d037f5e30da4e61897657db9963b5c43dc/l.jpg"
+                  alt="The Hero Life of a (Self-Proclaimed) Mediocre Demon"
+                />
+
+                <a
+                  href="https://myanimelist.net/store/viewer/1/7493/preview"
+                  class="button previewButton"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Preview</a
+                >
+
+                <div class="mangaTag tag">Manga</div>
+                <div class="new"></div>
+              </div>
+              <div class="cardInfo">
+                <span class="cardTitle"
+                  >The Hero Life of a (Self-Proclaimed) "Mediocre" Demon!</span
+                >
+                <p class="cardCost">€10.99</p>
+                <p class="cardSynopsis">${anime.synopsis}</p>
+                <p class="cardScore">${anime.score}/10⭐</p>
+              </div>
+              <p class="cardCost2">€10.99</p>
+            </div>
+
+            <div class="imgCard">
+              <div class="cardImage preview">
+                <img
+                  src="https://cdn.myanimelist.net/s/common/store/cover/9270/601a8621a89f9d4e27054661729823404665f512e84b0a2148f13ecd0b08abb6/l.jpg"
+                  alt="Grand Blue Dreaming Volume 12"
+                />
+
+                <a
+                  href="https://myanimelist.net/store/viewer/1/7316/preview"
+                  class="button previewButton"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Preview</a
+                >
+                <div class="lnTag tag">Ln</div>
+              </div>
+              <div class="cardInfo">
+                <span class="cardTitle">Grand Blue Dreaming Volume 12</span>
+                <p class="cardCost">€10.99</p>
+                <p class="cardSynopsis">${anime.synopsis}</p>
+                <p class="cardScore">${anime.score}/10⭐</p>
+              </div>
+              <p class="cardCost2">€10.99</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- !Section 6 -->
+      <section class="reviews">
+        <div class="imgSection">
+          <div class="reviewWrapper">
+            <div class="shadow1"></div>
+            <div class="shadow2"></div>
+            <div class="slideshow">
+
+              <!-- slide 1 -->
+              <div class="reviewGrid">
+                <div class="right">
+                  <p class="reviewDesc">Trinity Seven</p>
+                  <img
+                    class="reviewCover"
+                    src="https://www.anime-planet.com/images/anime/covers/trinity-seven-6063.jpg?t=1450823446"
+                    alt="review Cover"
+                  />
+                </div>
+
+                <div class="left reviewContentAll">
+                      <img class="thumbnail"
+                        src="https://i.pinimg.com/236x/cb/c9/8d/cbc98d8db07d0529288ac2ac2e857468.jpg"
+                        alt="profile-img"
+                      />
+                    <p class="reviewName">AndieYazawa</p>
+                    <p class="reviewDate">Jun 10, 2021</p>
+
+                    <div class="reviewScroll">
+                      <h1 class="reviewText">
+                        It was ok dont know why people like it so much the
+                        characters are predictable and very cliche. Its better
+                        than most of the harem anime since the MC aint super
+                        dense but still didnt end up with someone or everyone so
+                        eh.
+                      </h1>
+                    </div>
+
+                    <div class="score">
+                      <div class="story">
+                        <h1>5/10</h1>
+                        <p>story</p>
+                      </div>
+                      <div class="animation">
+                        <h1>8/10</h1>
+                        <p>animation</p>
+                      </div>
+                      <div class="sound">
+                        <h1>7/10</h1>
+                        <p>sound</p>
+                      </div>
+                      <div class="characters">
+                        <h1>6/10</h1>
+                        <p>characters</p>
+                      </div>
+                      <div class="overall">
+                        <h1>6.5/10</h1>
+                        <p>overall</p>
+                      </div>
+                    </div>
+                    <a class="Reviewprev" onclick="plusReview(-1)">&#10094;</a>
+                    <a class="ReviewNext" onclick="plusReview(1)">&#10095;</a>
+                  </div>
+                </div>
+
+              <!-- slide 2 -->
+              <div class="reviewGrid">
+                <div class="right">
+                  <p class="reviewDesc">Wonder Egg Priority</p>
+                  <img
+                    class="reviewCover"
+                    src="https://www.anime-planet.com/images/anime/covers/thumbs/wonder-egg-priority-15861.jpg?t=1608624140"
+                    alt="review Cover"
+                  />
+                </div>
+
+                <div class="left reviewContentAll">
+                      <img class="thumbnail"
+                        src="https://i.redd.it/v0caqchbtn741.jpg"
+                        alt="profile-img"
+                      />
+                    <p class="reviewName">DGFisher</p>
+                    <p class="reviewDate">Jun 9, 2021</p>
+
+                    <div class="reviewScroll">
+                      <h1 class="reviewText">I think people are not looking into this show as much as they should. I've read many reviews talking about the story being lackluster and the animation being the only thing that enticed them but I have to disagree. with definitely a few plot holes and a lot being left up to interpretation Wonder Egg's story is a true mind-fuck if you actually think about it. Though many find the plot quite complicated it's actually quite simple when taking a closer look. I really enjoyed the characters and the different personalities and problems each faced making them seem so different yet so similar all at the same time.
+
+                        I do think the story could be slightly refined and cleared up so the plot wasn't as messy but I really enjoy the psychological element to it, my only honest complaint is that it was short and I would've liked it to be longer!!! 
+                        
+                        A total mindfuck yet so good!!!!! I'm really looking forward to the specials :)
+                      </h1>
+                    </div>
+
+                    <div class="score">
+                      <div class="story">
+                        <h1>8/10</h1>
+                        <p>story</p>
+                      </div>
+                      <div class="animation">
+                        <h1>10/10</h1>
+                        <p>animation</p>
+                      </div>
+                      <div class="sound">
+                        <h1>8/10</h1>
+                        <p>sound</p>
+                      </div>
+                      <div class="characters">
+                        <h1>10/10</h1>
+                        <p>characters</p>
+                      </div>
+                      <div class="overall">
+                        <h1>9/10</h1>
+                        <p>overall</p>
+                      </div>
+                    </div>
+                    <a class="Reviewprev" onclick="plusReview(-1)">&#10094;</a>
+                    <a class="ReviewNext" onclick="plusReview(1)">&#10095;</a>
+                  </div>
+                </div>
+
+              <!-- slide 3 -->
+              <div class="reviewGrid">
+                <div class="right">
+                  <p class="reviewDesc">Stand By Me Doraemon 2</p>
+                  <img
+                    class="reviewCover"
+                    src="https://www.anime-planet.com/images/anime/covers/thumbs/stand-by-me-doraemon-2-14291.jpg?t=1602041651"
+                    alt="review Cover"
+                  />
+                </div>
+
+                <div class="left reviewContentAll">
+                      <img class="thumbnail"
+                        src="https://www.anime-planet.com/images/users/avatars/1742640.jpg?t=1590837891"
+                        alt="profile-img"
+                      />
+                    <p class="reviewName">Kenjiwoman</p>
+                    <p class="reviewDate">Jun 9, 2021</p>
+
+                    <div class="reviewScroll">
+                      <h1 class="reviewText">After watching this,if felt my dream has come true,we people who watch this from childhood must have a wish that they'd be married one day and this shows in here.Who loves Doraemon and Nobita-Shizuka couple mustn't miss this.
+                      </h1>
+                    </div>
+
+                    <div class="score">
+                      <div class="story">
+                        <h1>10/10</h1>
+                        <p>story</p>
+                      </div>
+                      <div class="animation">
+                        <h1>10/10</h1>
+                        <p>animation</p>
+                      </div>
+                      <div class="sound">
+                        <h1>9/10</h1>
+                        <p>sound</p>
+                      </div>
+                      <div class="characters">
+                        <h1>9/10</h1>
+                        <p>characters</p>
+                      </div>
+                      <div class="overall">
+                        <h1>9.7/10</h1>
+                        <p>overall</p>
+                      </div>
+                    </div>
+                    <a class="Reviewprev" onclick="plusReview(-1)">&#10094;</a>
+                    <a class="ReviewNext" onclick="plusReview(1)">&#10095;</a>
+                  </div>
+                </div>
+
+              <!-- slide 4 -->
+              <div class="reviewGrid">
+                <div class="right">
+                  <p class="reviewDesc">The Quintessential Quintuplets</p>
+                  <img
+                    class="reviewCover"
+                    src="https://www.anime-planet.com/images/anime/covers/the-quintessential-quintuplets-11347.jpg?t=1615803678"
+                    alt="review Cover"
+                  />
+                </div>
+
+                <div class="left reviewContentAll">
+                      <img class="thumbnail"
+                        src="https://www.anime-planet.com/images/users/avatars/3147878.jpg?t=1623138515"
+                        alt="profile-img"
+                      />
+                    <p class="reviewName">Wellker</p>
+                    <p class="reviewDate">Jun 8, 2021</p>
+
+                    <div class="reviewScroll">
+                      <h1 class="reviewText">Penis bait.
+                        that is 2 words that describe the show.
+                        it feels like a show for people that has never talked to another human being, frankly its insulting that this show even has this high of a rating.
+                        
+                        i felt like i wasted days of my lives basically understanding the fantasy dreamland of a otaku that has no hope recovering.
+                        its kinda sad that this is their fantasy although you could just put some effort into learning how to communicate and into your looks instead of blaming genetics and fantasising about something you'll never have.
+                        
+                        the rating of the anime made me feel bad for these people, and the anime itself is just taking advantage of the lust within these people which i find insulting as a fellow human being.
+                      </h1>
+                    </div>
+
+                    <div class="score">
+                      <div class="story">
+                        <h1>0.1/10</h1>
+                        <p>story</p>
+                      </div>
+                      <div class="animation">
+                        <h1>7/10</h1>
+                        <p>animation</p>
+                      </div>
+                      <div class="sound">
+                        <h1>8/10</h1>
+                        <p>sound</p>
+                      </div>
+                      <div class="characters">
+                        <h1>0.1/10</h1>
+                        <p>characters</p>
+                      </div>
+                      <div class="overall">
+                        <h1>1/10</h1>
+                        <p>overall</p>
+                      </div>
+                    </div>
+                    <a class="Reviewprev" onclick="plusReview(-1)">&#10094;</a>
+                    <a class="ReviewNext" onclick="plusReview(1)">&#10095;</a>
+                  </div>
+                </div>
+
+              <!-- slide 5 -->
+              <div class="reviewGrid">
+                <div class="right">
+                  <p class="reviewDesc">Kaguya-sama: Love Is War?</p>
+                  <img
+                    class="reviewCover"
+                    src="https://www.anime-planet.com/images/anime/covers/kaguya-sama-love-is-war-2-14130.jpg?t=1586729060"
+                    alt="review Cover"
+                  />
+                </div>
+
+                <div class="left reviewContentAll">
+                      <img class="thumbnail"
+                        src="https://www.anime-planet.com/images/users/avatars/579841.jpg?t=1493330755"
+                        alt="profile-img"
+                      />
+                    <p class="reviewName">CodeBlazeFate</p>
+                    <p class="reviewDate">Jun 28, 2020</p>
+
+                    <div class="reviewScroll">
+                      <h1 class="reviewText">TThe first season of Kaguya-sama: Love is War was a breakout success. With its over the top direction and comedy along with its cast of well-rounded characters with amazing chemistry, the show became easily one of A-1 Pictures’ best works. On top of that, it was helmed by an acclaimed director of Shouwa Genroku Rakugo Shinjuu, Shinichi Omata. Not only did he return for a second season, but the show would be adapting material manga fans consider to generally be better than what the first 12 episodes covered. With such lofty expectations, it’s difficult to see how a show would really top itself, at least until you see it in action.
+
+                        Visually speaking, it’s an absolute oddity. There are moments where the show tries to escape its blander art style and delve more into something different and more appealing, only for most of the show to retain what it had before. The inconsistency between these two styles reminds me of the strange and ever-shifting artwork quality in Ghost in the Shell: Stand Alone Complex 2nd Gig. Said instability may be the weakest aspect of the show’s visuals outside of the inconsistently handled CGI, but if that’s the worst aspect, then the show’s still among the best in the studio’s catalog from a visual perspective. Shinichi Omata and his team have decided to play with the medium even more than last time. Were the optical illusion backgrounds not enough? Then the show will play with aspect ratios and screen filters, even having jokes where a character’s hand gestures affect both the screen size and loudness of the audio. The show will sometimes shift styles entirely for the sake of certain gags, such as when the show obtains a shoujo manga art style or switches to a fighting game perspective. Each new technique the show fiddles around with feels purposeful and for the sake of bolstering the show’s visual gags and overall stellar comedy. The animation itself is even more fluid in the first season as well and the show hasn’t forgotten how to make genuinely gorgeous shots, either.
+                        
+                        Kei Haneoka’s music has not faltered much, either. There are not too many new standout tracks this season, but the few there are take a less comedic approach, such as “close attendant” and the track “birthday” which has a more grandiose and emotional feel to it. That singular track is perhaps a personal favorite for the entire series up to that point. The OST at times has a more emotion-driven feel to it, which fits the direction the season takes. The gag “opening” sequence in the shoujo gag from episode 7 is also one of the show’s multiple vocal tracks which are all good in their own right. Lastly, w I am no fan of the ED, the OP, “DADDY! DADDY! DO!” by Masayuki Suzuki feat. Airi Suzuki is a fun, jazzy bop that rivals that of the first season.
+                        
+                        With the audiovisuals out of the way, it’s time to get down to what makes season 2 a somewhat different beast than its equally funny predecessor. Outside of the last 2 episodes, the first season of Kaguya-sama was more about establishing its characters and their dynamics while planting the seeds for things to come. Meanwhile, this second season can basically be split into 2 arcs with one overarching story of Kaguya and Shirogane’s awkward romance cat and mouse games remaining a constant. The first half of the season is about newcomer Miko Lino and the rivalry she develops against Miyuki Shirogane during the student elections of the new school year. She’s a surprisingly endearing new addition to the cast as an absolute hardass dork, though she certainly cannot compete with the main 4. The second half focuses on the sports festival and what our main leads do to prepare for and conquer it while Miko integrates into the main cast lineup. One thread tying these two together is Ishigami, the dark horse from last season. He effectively comes into the forefront for the bulk of the season with a compelling character arc that puts everything about him and how certain characters react to him into perspective. If season 1 didn’t establish him as a personal favorite of mine, then these 12 episodes most certainly have.
+                        
+                        This isn’t to say the rest of the cast doesn’t pull their weight. The series has always been incredible at continually expanding on its characters and their dynamics. Kaguya’s progression towards being increasingly vulnerable and adorkable when it comes to her cat and mouse romance with manwhore Shirogane is as priceless as Shirogane’s arcs with her or how the show spotlights more times he has to be brought down to learn something new. Chika, who usually teaches him these things at the cost of her own physical and mental health, has been relegated to more of a dark horse position this time as her agent of chaos moments have been dialed back. Seeing her get more violent and frustrated is also an absolute joy to witness. Even outside of these characters, Ai Hayasaka’s growing frustration and humiliation over Kaguya’s embarrassing behavior regarding Shirogane is wonderful to witness. Other characters such as Tsubame and Shirogane’s dad have their own moments to shine as well whenever Shirogane’s and Ishigami’s arcs come to the forefront. It’s safe to say that by the time the inevitable season 3 rolls around, the show will have established quite the ever-expanding ensemble cast. Of course, some of their humorous antics would not be the same without the over the top voice acting and outstanding directing present, but it’s clear that Shinichi Omata and his team are working with a manga that really has a way with writing both main and side characters.
+                        
+                        It’s not hard to see why fans of the source feel that the series gets better over time. Not only did this season put into perspective a lot of the character dynamics and gags from season 1, it also amped up its bombastic presentation from both a visual and voice acting perspective. What could have just been more of the same instead stepped up to deliver an astounding sophomore season of perhaps my favorite anime comedy at the time of writing. Its sweetest and most heartfelt moments are even more endearing and powerful than before while the chaotic, over the top comedy remains rock-solid for those who liked it beforehand. Can the narrator sometimes overexplain things when he’s at his best when riffing on the main cast? Absolutely. Is the pacing a bit weird at times with there being more chapters and gags put into each episode? Perhaps. However, that’s not enough to derail top-tier writing or uproarious presentation. Here’s to a third season in 2021 where the show will vie for the title of AOTY for 3 years in a row. The quaint finale cannot be the end.
+                      </h1>
+                    </div>
+
+                    <div class="score">
+                      <div class="story">
+                        <h1>9/10</h1>
+                        <p>story</p>
+                      </div>
+                      <div class="animation">
+                        <h1>8/10</h1>
+                        <p>animation</p>
+                      </div>
+                      <div class="sound">
+                        <h1>7/10</h1>
+                        <p>sound</p>
+                      </div>
+                      <div class="characters">
+                        <h1>9/10</h1>
+                        <p>characters</p>
+                      </div>
+                      <div class="overall">
+                        <h1>8.7/10</h1>
+                        <p>overall</p>
+                      </div>
+                    </div>
+                    <a class="Reviewprev" onclick="plusReview(-1)">&#10094;</a>
+                    <a class="ReviewNext" onclick="plusReview(1)">&#10095;</a>
+                  </div>
+                </div>
 
 
-          <!-- !Space... -->
-          <div class="space2"></div>
+              </div>
+            </div>
+        </div>
+      </section>
 
-            <!-- !Footer-start -->
-            <footer>
-              <div class="main-content">
-                <div class="left box">
-                  <h2>Navigation</h2>
+      <!-- !Space... -->
+      <div class="space2"></div>
+
+      <!-- !Footer-start -->
+      <footer>
+        <div class="main-content">
+          <div class="left box">
+            <h2>Navigation</h2>
             <div class="content">
               <ul class="navigation">
                 <a href="index.html">Anime</a>
@@ -1113,39 +1676,45 @@
               </ul>
 
               <div class="social">
-                  <ul class="social-link">
-                      <a href="https://facebook.com/" target="_blank"><span class="fab fa-facebook-f"></span></a>
-                      <a href="https://twitter.com/" target="_blank"><span class="fab fa-twitter"></span></a>
-                      <a href="https://instagram.com/" target="_blank"><span class="fab fa-instagram"></span></a>
-                      <span class="fas fa-user"></span>
-                      <a href="#"><span class="fas fa-arrow-up arrow"></span></a>
-                  </ul>
-                  </div>
-                    <div class="copyright">
-                      <p class="far fa-copyright">2020 All rights reserved.</p> </div>
-                </div>
+                <ul class="social-link">
+                  <a href="https://facebook.com/" target="_blank"
+                    ><span class="fab fa-facebook-f"></span
+                  ></a>
+                  <a href="https://twitter.com/" target="_blank"
+                    ><span class="fab fa-twitter"></span
+                  ></a>
+                  <a href="https://instagram.com/" target="_blank"
+                    ><span class="fab fa-instagram"></span
+                  ></a>
+                  <span class="fas fa-user"></span>
+                  <a href="#"><span class="fas fa-arrow-up arrow"></span></a>
+                </ul>
               </div>
-
-            <div class="right box">
-                  <h2>Address</h2>
-                <div class="content">
-                    <div class="place">
-                      <span class="fas fa-map-marker-alt"></span>
-                      <span class="text">idk bro, you kinda sus...</span>
-                    </div>
-                    <div class="phone">
-                      <span class="fas fa-phone-alt"></span>
-                      <span class="text">Meow :3</span>
-                    </div>
-                    <div class="email">
-                      <span class="fas fa-envelope"></span>
-                      <span class="text">hakuna matata</span>
-                    </div>
-                  </div>
+              <div class="copyright">
+                <p class="far fa-copyright">2020 All rights reserved.</p>
+              </div>
             </div>
-            </div>
-            </footer>
+          </div>
 
-        </main>
-      </body>
-    </html>
+          <div class="right box">
+            <h2>Address</h2>
+            <div class="content">
+              <div class="place">
+                <span class="fas fa-map-marker-alt"></span>
+                <span class="text">idk bro, you kinda sus...</span>
+              </div>
+              <div class="phone">
+                <span class="fas fa-phone-alt"></span>
+                <span class="text">Meow :3</span>
+              </div>
+              <div class="email">
+                <span class="fas fa-envelope"></span>
+                <span class="text">hakuna matata</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>

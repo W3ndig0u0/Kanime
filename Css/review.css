@@ -19,6 +19,7 @@
   left: 10%;
   border-radius: 20px;
   box-shadow: 0px 18px 52.8537px rgb(215 228 249 / 50%);
+  user-select: none;
 }
 
 .shadow2 {
@@ -30,12 +31,13 @@
   left: 5%;
   border-radius: 20px;
   box-shadow: 0px 18px 52.8537px rgb(215 228 249 / 50%);
+  user-select: none;
 }
 
-.sd_scroll {
+.previewScroll {
   height: auto;
   max-height: 180px;
-  overflow: auto;
+  overflow-y: auto;
 }
 
 .slideshow {
@@ -55,6 +57,10 @@
   font-weight: 400;
   line-height: 1.6em;
   text-align: center;
+  width: 95%;
+  margin: 0 auto;
+  max-height: 12rem;
+  overflow-y: auto;
 }
 
 .reviewContentAll {
@@ -63,16 +69,18 @@
   text-align: center;
 }
 
-.thumbnail img {
+.thumbnail {
   height: 55px;
   width: 55px;
   border-radius: 50%;
   display: block;
   margin-left: auto;
   margin-right: auto;
+  user-select: none;
 }
 
-.reviewName {
+.reviewName,
+.reviewDate {
   color: black;
   font-family: "Poppins", Sans-serif;
   font-size: 14px;
@@ -83,7 +91,7 @@
 .reviewDesc {
   font-size: 32px;
   text-align: center;
-  margin-left: 30px;
+  margin: 0 0 0 30px;
 }
 
 .reviewCover {
@@ -91,6 +99,8 @@
   background-color: #fff;
   border-radius: 10px;
   height: 20rem;
+  width: 13rem;
+  user-select: none;
 }
 
 .score {
@@ -102,20 +112,14 @@
 .score h1 {
   font-weight: 400;
   font-size: 32px;
+  padding-left: 20px;
+  border-left: 1px solid #a0a0a5;
+  padding-right: 20px;
 }
 
-@media (max-width: 576px) {
-  .reviewScroll {
-    height: auto;
-    overflow: auto;
-    max-height: 240px;
-  }
-
-  .thumbnail,
-  .btnNtxt {
-    width: 100% !important;
-    display: block !important;
-  }
+.story h1 {
+  padding-left: 20px;
+  border-left: 0px solid #a0a0a5 !important;
 }
 
 .reviewScroll::-webkit-scrollbar {
