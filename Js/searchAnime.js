@@ -29,10 +29,11 @@ function searchAnime(event){
         .then(updateDom)
         .catch(err=>console.warn(err.message));
     }
+    
+    const newUrl = new URL('../Kanime/Search?=' + query + '?=' + query2, window.location.href);
+    history.pushState({}, null, newUrl);
 }
 
-// const newUrl = new URL('../Kanime/Search?=' + query + '?=' + query2, window.location.href);
-// history.pushState({}, null, newUrl);
 
 function updateDom(data){
     const searchResults = document.querySelector('#search-results');
