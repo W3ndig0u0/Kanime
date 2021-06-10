@@ -19,11 +19,12 @@
   grid-template-columns: 4fr 2.5fr;
 }
 
-.card h6 {
+.card p {
   opacity: 0.6;
   margin: 0;
   letter-spacing: 1px;
   text-transform: uppercase;
+  font-weight: bold;
 }
 
 .featured h6 {
@@ -51,7 +52,7 @@
   background-color: #0048ac;
 }
 
-.card h6 i {
+.card p i {
   user-select: text;
   color: #0583f2;
 }
