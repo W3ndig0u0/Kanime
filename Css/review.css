@@ -1,0 +1,139 @@
+.reviewWrapper {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0;
+  border-radius: 10px;
+}
+
+.reviewGrid {
+  display: flex;
+}
+
+.shadow1 {
+  height: 100%;
+  width: 80%;
+  background: #fff;
+  position: absolute;
+  bottom: -40px;
+  left: 10%;
+  border-radius: 20px;
+  box-shadow: 0px 18px 52.8537px rgb(215 228 249 / 50%);
+}
+
+.shadow2 {
+  height: 100%;
+  width: 90%;
+  background: #fff;
+  position: absolute;
+  bottom: -22px;
+  left: 5%;
+  border-radius: 20px;
+  box-shadow: 0px 18px 52.8537px rgb(215 228 249 / 50%);
+}
+
+.sd_scroll {
+  height: auto;
+  max-height: 180px;
+  overflow: auto;
+}
+
+.slideshow {
+  position: relative;
+  min-height: 300px;
+  height: auto;
+  background: #fff;
+  box-shadow: 0px 18px 52.8537px rgba(215, 228, 249, 0.5);
+  border-radius: 20px;
+  z-index: 3;
+}
+
+.reviewText {
+  color: #a0a0a5;
+  font-family: "Poppins", Sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.6em;
+  text-align: center;
+}
+
+.reviewContentAll {
+  width: 90%;
+  margin: auto;
+  text-align: center;
+}
+
+.thumbnail img {
+  height: 55px;
+  width: 55px;
+  border-radius: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.reviewName {
+  color: black;
+  font-family: "Poppins", Sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 15px;
+}
+
+.reviewDesc {
+  font-size: 32px;
+  text-align: center;
+  margin-left: 30px;
+}
+
+.reviewCover {
+  margin-left: 30px;
+  background-color: #fff;
+  border-radius: 10px;
+  height: 20rem;
+}
+
+.score {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.score h1 {
+  font-weight: 400;
+  font-size: 32px;
+}
+
+@media (max-width: 576px) {
+  .reviewScroll {
+    height: auto;
+    overflow: auto;
+    max-height: 240px;
+  }
+
+  .thumbnail,
+  .btnNtxt {
+    width: 100% !important;
+    display: block !important;
+  }
+}
+
+.reviewScroll::-webkit-scrollbar {
+  background-color: transparent;
+  width: 6px;
+}
+
+.reviewScroll::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.reviewScroll::-webkit-scrollbar-track:hover {
+  background-color: transparent;
+}
+
+.reviewScroll::-webkit-scrollbar-thumb {
+  background-color: #babac0;
+  border-radius: 16px;
+}
+.reviewScroll::-webkit-scrollbar-thumb:hover {
+  background-color: #a0a0a5;
+}
