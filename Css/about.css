@@ -10,10 +10,16 @@
   padding: 2rem 0;
   width: 90%;
   margin: 1rem auto;
+  border-top: 1px solid #696969;
+}
+
+.about:first-of-type {
+  border-top: 0px solid #696969;
 }
 
 .about img {
   width: inherit;
+  height: 11em;
 }
 
 .about .grid {
@@ -24,7 +30,8 @@
 
 .about .left,
 .about .right {
-  width: 15rem;
+  text-align: center;
+  max-width: 15rem;
 }
 
 .aboutSection h1 {
@@ -34,7 +41,7 @@
 }
 
 .aboutSection .grid h4 {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   text-align: center;
 }
 .aboutSection .grid p {
@@ -42,12 +49,67 @@
   text-align: center;
 }
 
+.btnContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .about .img {
   width: 25rem;
 }
 
+.about-btn {
+  background-color: rgba(5, 131, 242, 0.7);
+  border: none;
+  display: inline-block;
+  width: 12em;
+  height: 4em;
+  border-radius: 10px;
+  padding: 0;
+  margin: 0;
+  font-size: 18px;
+  cursor: pointer;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.about-btn:hover,
+.about-btn:active {
+  background-color: rgba(5, 131, 242, 1);
+  transform: scale(1.05);
+}
+
+.about-btn a {
+  color: black;
+}
+
 .founder {
   text-align: center;
+}
+
+.profile {
+  width: 100px !important;
+  height: 100px !important;
+  border-radius: 10px;
+}
+
+.founder a {
+  text-decoration: none;
+  font-size: 20px;
+  margin: 1rem;
+}
+
+.founder a img {
+  width: 55px;
+  height: 55px;
+  transition: 400ms;
+}
+
+.founder a img:hover,
+.founder a img:active {
+  filter: hue-rotate(50deg);
 }
 
 /* !min mobil */
@@ -55,19 +117,22 @@
   .about .grid {
     display: unset;
   }
-}
 
-@media screen and (max-width: 550px) {
-  .about .img {
-    width: 20rem;
+  .about .left,
+  .about .right {
+    max-width: unset;
+  }
+  .about p {
+    padding-bottom: 5rem;
   }
 }
 
 @media screen and (max-width: 410px) {
-  .about .img {
-    width: 10rem;
-  }
   .about .grid h1 {
     font-size: 3rem;
+  }
+
+  .about img {
+    width: auto;
   }
 }

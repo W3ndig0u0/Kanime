@@ -44,6 +44,14 @@ h3 span {
   padding-right: 10px;
 }
 
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
 h3:after {
   content: "";
   position: absolute;
