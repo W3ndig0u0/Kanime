@@ -2,7 +2,6 @@
   width: 85%;
   margin: 1rem auto;
   height: auto;
-  border: 1px solid #696969;
   background-color: white;
 }
 
@@ -11,15 +10,6 @@
   width: 90%;
   margin: 1rem auto;
   border-top: 1px solid #696969;
-}
-
-.about:first-of-type {
-  border-top: 0px solid #696969;
-}
-
-.about img {
-  width: inherit;
-  height: 11em;
 }
 
 .logoContainer {
