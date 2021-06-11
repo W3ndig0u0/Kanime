@@ -92,6 +92,17 @@
   .reviewNext2 {
     display: unset;
   }
+
+  .score h1 {
+    font-size: 24px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .score p {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
 
 /* !Ipad - Mobile */
@@ -143,15 +154,6 @@
   .menu-content {
     padding: 0px 7%;
   }
-  .score h1 {
-    font-size: 18px;
-    padding-left: 8px;
-    padding-right: 8px;
-  }
-
-  .reviewGrid {
-    display: unset !important;
-  }
 
   .reviewScroll {
     height: auto;
@@ -161,6 +163,11 @@
 
   .score h1 {
     font-size: 24px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .score p {
     padding-left: 10px;
     padding-right: 10px;
   }

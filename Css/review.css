@@ -110,18 +110,22 @@
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  padding-right: 10%;
 }
 
 .score h1 {
   font-weight: 400;
   font-size: 32px;
-  padding-left: 20px;
+  padding-left: 50%;
   border-left: 1px solid #a0a0a5;
-  padding-right: 20px;
+}
+
+.score p {
+  padding-left: 40%;
 }
 
 .story h1 {
-  padding-left: 20px;
+  padding-left: 50%;
   border-left: 0px solid #a0a0a5 !important;
 }
 
