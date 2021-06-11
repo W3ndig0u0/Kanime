@@ -39,7 +39,7 @@
 }
 .newsCardInfo h6 {
   position: absolute;
-  top: 70%;
+  top: 60%;
 }
 
 .newsLetter:hover,
@@ -95,7 +95,7 @@
 }
 .newsCardInfo2 h6 {
   position: absolute;
-  top: 50%;
+  top: 60%;
 }
 
 .newsLetter2:hover,
@@ -125,5 +125,4 @@
   align-items: center;
   padding-top: 2rem;
   padding-bottom: 4rem;
-  flex-wrap: wrap;
 }

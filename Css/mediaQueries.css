@@ -147,7 +147,8 @@
   .menu .menu-content .firstMenu li:nth-of-type(1),
   .menu .menu-content .firstMenu li:nth-of-type(2),
   .menu .menu-content .firstMenu li:nth-of-type(3),
-  .menu .menu-content .firstMenu li:nth-of-type(4) {
+  .menu .menu-content .firstMenu li:nth-of-type(4),
+  .menu .menu-content .firstMenu li:nth-of-type(5) {
     display: none;
   }
 
@@ -170,6 +171,10 @@
   .score p {
     padding-left: 10px;
     padding-right: 10px;
+  }
+
+  .reviewGrid {
+    display: unset;
   }
 
   .reviewCover {
@@ -237,6 +242,13 @@
     font-size: 1.7rem;
     margin-top: 2rem;
     margin-bottom: 2rem;
+  }
+
+  .center {
+    flex-wrap: wrap;
+  }
+  .pagination a {
+    padding: 0rem 0.5rem;
   }
 }
 
