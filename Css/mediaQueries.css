@@ -199,6 +199,10 @@
   .reviewCover {
     height: 15rem;
   }
+
+  .newsCardInfo2 h2 {
+    font-size: 1rem;
+  }
 }
 
 @media screen and (max-width: 560px) {
@@ -244,6 +248,14 @@
   .prev {
     left: 1.5%;
   }
+
+  .newsCardInfo2 h6 {
+    position: absolute;
+    top: 70%;
+  }
+  .newsImg2 img {
+    width: 7rem;
+  }
 }
 
 @media screen and (max-width: 400px) {
@@ -254,6 +266,7 @@
   .imgCard:hover > .cardImage img,
   .imgCard:active > .cardImage img {
     height: 10rem;
+    z-index: 10;
   }
 
   .cardInfo {
@@ -298,6 +311,17 @@
   .imgCard:hover,
   .imgCard:active {
     border: 2px solid #0583f2;
+    z-index: 10;
+  }
+
+  .newsCardInfo2 h2 {
+    font-size: 0.7rem;
+  }
+  .newsCardInfo2 h6 {
+    top: 60%;
+  }
+  .newsImg2 img {
+    width: 7rem;
   }
 }
 
@@ -316,6 +340,18 @@
 
   .menu .menu-content .firstMenu li:nth-of-type(5),
   .menu .menu-content .firstMenu li:nth-of-type(6) {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .newsCardInfo2 h2 {
+    font-size: 1rem;
+  }
+  .newsCardInfo2 h6 {
+    top: 60%;
+  }
+  .newsImg2 img {
     display: none;
   }
 }
