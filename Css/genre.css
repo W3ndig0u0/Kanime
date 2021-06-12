@@ -1,5 +1,7 @@
 .genre {
   padding-top: 5rem;
+  padding-left: 2rem;
+  border-left: 1px solid black;
 }
 
 .genres {
@@ -9,18 +11,20 @@
 
 .genres li a {
   color: #333;
-  width: 165px;
+  width: 100px;
   padding: 7px 10px;
   white-space: nowrap;
+  display: flex;
   float: left;
-  display: inline;
+  flex-wrap: wrap;
   border: 1px solid #ddd;
-  margin-bottom: 2px;
-  margin-right: 2px;
+  margin: 4px;
+  transition: 400ms;
 }
+
 .genres li a:hover {
   text-decoration: none;
-  background: #eee;
+  background: #0583f2;
   transition: 0.3s all ease;
 }
 
