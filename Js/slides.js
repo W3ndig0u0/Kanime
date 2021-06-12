@@ -8,7 +8,7 @@ function plusSlides(n) {
 function showSlides(n) {
   var slides = document.getElementsByClassName("newsCard");
   var card = document.getElementsByClassName("card");
-  var menu = document.querySelector(".menu");  
+  var menu = document.querySelector(".menu");
 
   var colorOne = "rgba(5, 131, 242, 0.82)";  
   var colorTwo = "rgba(5, 131, 242, 0.92)";  

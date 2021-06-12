@@ -32,3 +32,9 @@
   display: grid;
   grid-template-columns: 3fr 1fr;
 }
+
+@media screen and (max-width: 660px) {
+  .shop .grid {
+    display: unset;
+  }
+}
