@@ -15,15 +15,20 @@
 
     <link rel="stylesheet" href="../Css/style.css" />
     <link rel="stylesheet" href="../Css/header.css" />
+    <link rel="stylesheet" href="../Css/card.css" />
     <link rel="stylesheet" href="../Css/sectionAnime.css" />
+    <link rel="stylesheet" href="../Css/genre.css" />
     <link rel="stylesheet" href="../Css/animeCard.css" />
-    <link rel="stylesheet" href="../Css/mediaQueries.css" />
     <link rel="stylesheet" href="../Css/footer.css" />
     <link rel="stylesheet" href="../Css/shop.css" />
     <link rel="stylesheet" href="../Css/newsCard.css" />
-
-
+    
+    <link rel="stylesheet" href="../Css/mediaQueries.css" />
+    
     <script defer src="../Js/menu.js"></script>
+    <script defer src="../Js/slides.js"></script>
+    <script defer src="../Js/scroll.js"></script>
+
   <script data-ad-client="ca-pub-4214057914932039" async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -73,6 +78,7 @@
           </div>
         </nav>
       </div>
+
     </header>
 
     <main>      
@@ -90,17 +96,54 @@
 
 
     <!-- !start -->
-    <section class="shop" id="shop">
-      <div class="imgSection">
-        <h1>Shop</h1>
+    <main class="shop">
+
+      
+      <div class="space"></div>
+
+      <section class="newsCards">
+        <div class="newsCard">
+          <div class="card">
+            <div class="img img1"></div>
+            <div class="card-info">
+              <div class="featured">
+                <h6>Featured</h6>
+                <h6 class="news">News</h6>
+                <h6 class="ova">OVA</h6>
+              </div>
+              <h2>
+                'Fate/Grand Order' Special 'Fate/Grand Carnival' Gets An OVA
+              </h2>
+              <p><i class="fa fa-calendar"></i> 12/13/2020</p>
+
+              <div>
+                <span class="dot dotActive"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+              </div>
+            </div>
+          </div>
+          <a class="prev cardPrev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next cardNext" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <div class="space"></div>
+
+      </section>
+
+      <section class="grid">
+
+      <div class="shop" id="shop">
+        <div class="imgSection">
+          <h1>Shop</h1>
         <div class="imgRow">
           <div class="imgCard">
             <div class="cardImage preview">
               <img
-                src="https://cdn.myanimelist.net/s/common/store/cover/9398/5b9ff849adb1ec21cef19799ae0e028dbb21e646c96cfffa3e5b357c75967418/l.jpg"
+              src="https://cdn.myanimelist.net/s/common/store/cover/9398/5b9ff849adb1ec21cef19799ae0e028dbb21e646c96cfffa3e5b357c75967418/l.jpg"
                 alt="Girlfriend, Girlfriend Volume 3" />
               <a href="https://myanimelist.net/store/viewer/1/7452/preview" class="button previewButton" target="_blank"
-                rel="noopener noreferrer">Preview</a>
+              rel="noopener noreferrer">Preview</a>
               <div class="mangaTag tag">Manga</div>
               <div class="new"></div>
             </div>
@@ -112,15 +155,15 @@
             </div>
             <p class="cardCost2">€10.99</p>
           </div>
-
+          
           <div class="imgCard">
             <div class="cardImage preview">
               <img
-                src="https://cdn.myanimelist.net/s/common/store/cover/8940/f58e08226cbe069c0490e50407cc5bea462cc20f4478e80989c70b263f1b3df9/l.jpg"
+              src="https://cdn.myanimelist.net/s/common/store/cover/8940/f58e08226cbe069c0490e50407cc5bea462cc20f4478e80989c70b263f1b3df9/l.jpg"
                 alt="Wandering Witch: The Journey of Elaina Volume 3" />
 
               <a href="https://myanimelist.net/store/novel_viewer?cid=6145&cty=0&cti=Wandering%20Witch:%20The%20Journey%20of%20Elaina%20(light%20novel)&lin=1"
-                class="button previewButton" target="_blank" rel="noopener noreferrer">Preview</a>
+              class="button previewButton" target="_blank" rel="noopener noreferrer">Preview</a>
               <div class="lnTag tag">LN</div>
             </div>
             <div class="cardInfo">
@@ -137,11 +180,11 @@
               <img
                 src="https://cdn.myanimelist.net/s/common/store/cover/9402/83f198d50f90970cc77e1adcb42b92749aa2c6bbc78040baaf93ae4538d8a8c8/l.jpg"
                 alt="Rent-A-Girlfriend Volume 6" />
-
+                
               <a href="https://myanimelist.net/store/viewer/1/7455/preview" class="button previewButton" target="_blank"
                 rel="noopener noreferrer">Preview</a>
-              <div class="mangaTag tag">Manga</div>
-              <div class="new"></div>
+                <div class="mangaTag tag">Manga</div>
+                <div class="new"></div>
             </div>
             <div class="cardInfo">
               <span class="cardTitle">Rent-A-Girlfriend Volume 6</span>
@@ -155,10 +198,10 @@
           <div class="imgCard">
             <div class="cardImage preview">
               <img
-                src="https://cdn.myanimelist.net/s/common/store/cover/3781/6061916821d0a06ab7ffbe08fff42d2c8f8ace5b45d92612484d94ab2d77ea40/l.jpg"
+              src="https://cdn.myanimelist.net/s/common/store/cover/3781/6061916821d0a06ab7ffbe08fff42d2c8f8ace5b45d92612484d94ab2d77ea40/l.jpg"
                 alt="Yuri is My Job Volume 2" />
               <a href="https://myanimelist.net/store/viewer/1/3657/preview" class="button previewButton" target="_blank"
-                rel="noopener noreferrer">Preview</a>
+              rel="noopener noreferrer">Preview</a>
               <div class="mangaTag tag">Manga</div>
               <div class="new"></div>
             </div>
@@ -178,7 +221,7 @@
                 alt="Rascal Does Not Dream of Bunny Girl Senpai" />
 
               <a href="https://myanimelist.net/store/novel_viewer?cid=6094&cty=0&cti=Rascal%20Does%20Not%20Dream%20of%20Bunny%20Girl%20Senpai%20(light%20novel)&lin=1"
-                class="button previewButton" target="_blank" rel="noopener noreferrer">Preview</a>
+              class="button previewButton" target="_blank" rel="noopener noreferrer">Preview</a>
 
               <div class="lnTag tag">LN</div>
             </div>
@@ -194,11 +237,11 @@
           <div class="imgCard">
             <div class="cardImage preview">
               <img
-                src="https://cdn.myanimelist.net/s/common/store/cover/6129/8a6a30d4d3fd68771ad396639bc82cda959205b096a4ed17ee6f31de226bb3d2/l.jpg"
+              src="https://cdn.myanimelist.net/s/common/store/cover/6129/8a6a30d4d3fd68771ad396639bc82cda959205b096a4ed17ee6f31de226bb3d2/l.jpg"
                 alt="Puella Magi Madoka Magica Volume 3" />
               <a href="https://myanimelist.net/store/viewer/1/2674/preview" class="button previewButton" target="_blank"
                 rel="noopener noreferrer">Preview</a>
-              <div class="mangaTag tag">Manga</div>
+                <div class="mangaTag tag">Manga</div>
             </div>
             <div class="cardInfo">
               <span class="cardTitle">Puella Magi Madoka Magica Volume 3</span>
@@ -212,12 +255,12 @@
           <div class="imgCard">
             <div class="cardImage preview">
               <img
-                src="https://cdn.myanimelist.net/s/common/store/cover/7956/62b201b0f9afbe98a3e2b2af516c8069dac6e0943c0facde554b3cbce3c6ca48/l.jpg"
+              src="https://cdn.myanimelist.net/s/common/store/cover/7956/62b201b0f9afbe98a3e2b2af516c8069dac6e0943c0facde554b3cbce3c6ca48/l.jpg"
                 alt="Konosuba: God's Blessing on This Wonderful World" />
 
               <a href="https://myanimelist.net/store/novel_viewer?cid=6283&cty=0&cti=Konosuba:%20God%27s%20Blessing%20on%20This%20Wonderful%20World!%20(light%20novel)&lin=1"
                 class="button previewButton" target="_blank" rel="noopener noreferrer">Preview</a>
-              <div class="mangaTag tag">Manga</div>
+                <div class="mangaTag tag">Manga</div>
             </div>
             <div class="cardInfo">
               <span class="cardTitle">Konosuba: God's Blessing on This Wonderful World!</span>
@@ -234,9 +277,9 @@
                 src="https://cdn.myanimelist.net/s/common/store/cover/9477/c3f5138f75cf7ae00fc994c5aac7986672f6176330ff4ff8d7480c2e697a8356/l.jpg"
                 alt="Crimson Prince" />
 
-              <a href="https://myanimelist.net/store/viewer/1/7523/preview" class="button previewButton" target="_blank"
+                <a href="https://myanimelist.net/store/viewer/1/7523/preview" class="button previewButton" target="_blank"
                 rel="noopener noreferrer">Preview</a>
-              <div class="mangaTag tag">Manga</div>
+                <div class="mangaTag tag">Manga</div>
               <div class="new"></div>
             </div>
             <div class="cardInfo">
@@ -251,10 +294,10 @@
           <div class="imgCard">
             <div class="cardImage preview">
               <img
-                src="https://cdn.myanimelist.net/s/common/store/cover/4426/dcbb19d6f42453f9135d39e9ded4c6616b9132419c11661a1d3fc4d41de0cd9a/l.jpg"
+              src="https://cdn.myanimelist.net/s/common/store/cover/4426/dcbb19d6f42453f9135d39e9ded4c6616b9132419c11661a1d3fc4d41de0cd9a/l.jpg"
                 alt="The Quintessential Quintuplets Volume 8" />
               <a href="https://myanimelist.net/store/viewer/1/3757/preview" class="button previewButton" target="_blank"
-                rel="noopener noreferrer">Preview</a>
+              rel="noopener noreferrer">Preview</a>
               <div class="mangaTag tag">Manga</div>
             </div>
             <div class="cardInfo">
@@ -271,9 +314,9 @@
               <img
                 src="https://cdn.myanimelist.net/s/common/store/cover/8353/f69dd76fd709fa17a85ff06903dd01f1bca8ba42523c1deb83c21da86672c177/l.jpg"
                 alt="Horimiya Volume 14" />
-              <a href="https://myanimelist.net/store/viewer/1/6607/preview" class="button previewButton" target="_blank"
+                <a href="https://myanimelist.net/store/viewer/1/6607/preview" class="button previewButton" target="_blank"
                 rel="noopener noreferrer">Preview</a>
-              <div class="mangaTag tag">Manga</div>
+                <div class="mangaTag tag">Manga</div>
             </div>
             <div class="cardInfo">
               <span class="cardTitle">Horimiya Volume 14</span>
@@ -283,14 +326,14 @@
             </div>
             <p class="cardCost2">€10.99</p>
           </div>
-
+          
           <div class="imgCard">
             <div class="cardImage preview">
               <img
                 src="https://cdn.myanimelist.net/s/common/store/cover/9413/06bd59ece39a4459bde176ff31f2c99a2ebae643ee85356ce828a7d70ba75853/l.jpg"
                 alt="Peach Boy Riverside Volume 8" />
 
-              <a href="https://myanimelist.net/store/viewer/1/7492/preview" class="button previewButton" target="_blank"
+                <a href="https://myanimelist.net/store/viewer/1/7492/preview" class="button previewButton" target="_blank"
                 rel="noopener noreferrer">Preview</a>
 
               <div class="mangaTag tag">Manga</div>
@@ -312,7 +355,7 @@
                 alt="No Game No Life Volume 9" />
 
               <a href="https://myanimelist.net/store/novel_viewer?cid=6314&cty=0&cti=No%20Game%20No%20Life%20(light%20novel)&lin=1"
-                class="button previewButton" target="_blank" rel="noopener noreferrer">Preview</a>
+              class="button previewButton" target="_blank" rel="noopener noreferrer">Preview</a>
               <div class="lnTag tag">Ln</div>
               <div class="new"></div>
             </div>
@@ -324,15 +367,15 @@
             </div>
             <p class="cardCost2">€4.99</p>
           </div>
-
+          
           <div class="imgCard">
             <div class="cardImage preview">
               <img
-                src="https://cdn.myanimelist.net/s/common/store/cover/7774/f84189401ba41d7af7458325fd82c3eb20d4839fdf02fd9e20d4d68d54896084/l.jpg"
+              src="https://cdn.myanimelist.net/s/common/store/cover/7774/f84189401ba41d7af7458325fd82c3eb20d4839fdf02fd9e20d4d68d54896084/l.jpg"
                 alt="Suppose a Kid from the Last Dungeon Boonies Moved to a Starter Town" />
-
+                
               <a href="https://myanimelist.net/store/novel_viewer?cid=6127&cty=0&cti=Suppose%20a%20Kid%20from%20the%20Last%20Dungeon%20Boonies%20Moved%20to%20a%20Starter%20Town%20(light%20novel)&lin=1"
-                class="button previewButton" target="_blank" rel="noopener noreferrer">Preview</a>
+              class="button previewButton" target="_blank" rel="noopener noreferrer">Preview</a>
               <div class="lnTag tag">Ln</div>
             </div>
             <div class="cardInfo">
@@ -344,15 +387,15 @@
             </div>
             <p class="cardCost2">€4.99</p>
           </div>
-
+          
           <div class="imgCard">
             <div class="cardImage preview">
               <img
                 src="https://cdn.myanimelist.net/s/common/store/cover/7715/bbd27d65f41b82d54245a730c9516fd05be71b6ca73ac5de69275635ba85ba66/l.jpg"
                 alt="86 Volume 1" />
-
+                
               <a href="https://myanimelist.net/store/novel_viewer?cid=6056&cty=0&cti=86--EIGHTY-SIX%20(light%20novel)&lin=1"
-                class="button previewButton" target="_blank" rel="noopener noreferrer">Preview</a>
+              class="button previewButton" target="_blank" rel="noopener noreferrer">Preview</a>
               <div class="lnTag tag">Ln</div>
             </div>
             <div class="cardInfo">
@@ -367,12 +410,12 @@
           <div class="imgCard">
             <div class="cardImage preview">
               <img
-                src="https://cdn.myanimelist.net/s/common/store/cover/9399/07b3ee01ed5e3d005ba68d7910de92ce29c7e988b74a8a26f2e1f4c89bd826b1/l.jpg"
+              src="https://cdn.myanimelist.net/s/common/store/cover/9399/07b3ee01ed5e3d005ba68d7910de92ce29c7e988b74a8a26f2e1f4c89bd826b1/l.jpg"
                 alt="My Dearest Self with Malice Aforethought" />
-
+                
               <a href="https://myanimelist.net/store/viewer/1/7454/preview" class="button previewButton" target="_blank"
                 rel="noopener noreferrer">Preview</a>
-              <div class="mangaTag tag">Manga</div>
+                <div class="mangaTag tag">Manga</div>
               <div class="new"></div>
             </div>
             <div class="cardInfo">
@@ -383,13 +426,13 @@
             </div>
             <p class="cardCost2">€10.99</p>
           </div>
-
+          
           <div class="imgCard">
             <div class="cardImage preview">
               <img
                 src="https://cdn.myanimelist.net/s/common/store/cover/7910/9b03db539375e3df15ccccfdf3e9e2b9d8df728d1d0a61e6357fe4360e63a79b/l.jpg"
                 alt="Goblin Slayer Volume 5" />
-              <a href="https://myanimelist.net/store/novel_viewer?cid=6237&cty=0&cti=Goblin%20Slayer%20(light%20novel)&lin=1"
+                <a href="https://myanimelist.net/store/novel_viewer?cid=6237&cty=0&cti=Goblin%20Slayer%20(light%20novel)&lin=1"
                 class="button previewButton" target="_blank" rel="noopener noreferrer">Preview</a>
               <div class="lnTag tag">Ln</div>
             </div>
@@ -401,17 +444,17 @@
             </div>
             <p class="cardCost2">€4.99</p>
           </div>
-
+          
           <div class="imgCard">
             <div class="cardImage preview">
               <img
                 src="https://cdn.myanimelist.net/s/common/store/cover/9415/a67a2fa864385a7301cda7e437b071d037f5e30da4e61897657db9963b5c43dc/l.jpg"
                 alt="The Hero Life of a (Self-Proclaimed) Mediocre Demon" />
 
-              <a href="https://myanimelist.net/store/viewer/1/7493/preview" class="button previewButton" target="_blank"
+                <a href="https://myanimelist.net/store/viewer/1/7493/preview" class="button previewButton" target="_blank"
                 rel="noopener noreferrer">Preview</a>
 
-              <div class="mangaTag tag">Manga</div>
+                <div class="mangaTag tag">Manga</div>
               <div class="new"></div>
             </div>
             <div class="cardInfo">
@@ -422,29 +465,67 @@
             </div>
             <p class="cardCost2">€10.99</p>
           </div>
-
+          
           <div class="imgCard">
             <div class="cardImage preview">
               <img
                 src="https://cdn.myanimelist.net/s/common/store/cover/9270/601a8621a89f9d4e27054661729823404665f512e84b0a2148f13ecd0b08abb6/l.jpg"
                 alt="Grand Blue Dreaming Volume 12" />
 
-              <a href="https://myanimelist.net/store/viewer/1/7316/preview" class="button previewButton" target="_blank"
+                <a href="https://myanimelist.net/store/viewer/1/7316/preview" class="button previewButton" target="_blank"
                 rel="noopener noreferrer">Preview</a>
-              <div class="lnTag tag">Ln</div>
+                <div class="lnTag tag">Ln</div>
+              </div>
+              <div class="cardInfo">
+                <span class="cardTitle">Grand Blue Dreaming Volume 12</span>
+                <p class="cardCost">€10.99</p>
+                <p class="cardSynopsis">${anime.synopsis}</p>
+                <p class="cardScore">${anime.score}/10⭐</p>
+              </div>
+              <p class="cardCost2">€10.99</p>
             </div>
-            <div class="cardInfo">
-              <span class="cardTitle">Grand Blue Dreaming Volume 12</span>
-              <p class="cardCost">€10.99</p>
-              <p class="cardSynopsis">${anime.synopsis}</p>
-              <p class="cardScore">${anime.score}/10⭐</p>
-            </div>
-            <p class="cardCost2">€10.99</p>
           </div>
         </div>
       </div>
-    </section>
+      
+      <div class="genre">
+        <ul class="genres">
+          <li><a href="#" title="View all seri in genre Action">Action</a></li>
+          <li><a href="#" title="View all seri in genre Adventure">Adventure</a></li>
+          <li><a href="#" title="View all seri in genre Comedy">Comedy</a></li>
+          <li><a href="#" title="View all seri in genre Drama">Drama</a></li>
+          <li><a href="#" title="View all seri in genre Ecchi">Ecchi</a></li>
+          <li><a href="#" title="View all seri in genre Fantasy">Fantasy</a></li>
+          <li><a href="#" title="View all seri in genre Game">Game</a></li>
+          <li><a href="#" title="View all seri in genre Harem">Harem</a></li>
+          <li><a href="#" title="View all seri in genre Historical">Historical</a></li>
+          <li><a href="#" title="View all seri in genre Horror">Horror</a></li>
+          <li><a href="#" title="View all seri in genre Magic">Magic</a></li>
+          <li><a href="#" title="View all seri in genre Mecha">Mecha</a></li>
+          <li><a href="#" title="View all seri in genre Military">Military</a></li>
+          <li><a href="#" title="View all seri in genre Mystery">Mystery</a></li>
+          </ul>
 
+          <div class="space"></div>
+
+        <ul class="genres">
+          <li><a href="#" title="View all seri in genre Drama">2003</a></li>
+          <li><a href="#" title="View all seri in genre Ecchi">2004</a></li>
+          <li><a href="#" title="View all seri in genre Fantasy">2005</a></li>
+          <li><a href="#" title="View all seri in genre Game">2006</a></li>
+          <li><a href="#" title="View all seri in genre Harem">2007</a></li>
+          <li><a href="#" title="View all seri in genre Historical">2008</a></li>
+          <li><a href="#" title="View all seri in genre Horror">2009</a></li>
+          <li><a href="#" title="View all seri in genre Magic">2010</a></li>
+          <li><a href="#" title="View all seri in genre Mecha">2011</a></li>
+          <li><a href="#" title="View all seri in genre Military">2012</a></li>
+          <li><a href="#" title="View all seri in genre Mystery">2013</a></li>
+          </ul>
+      </div>
+
+      </section>
+    </main>
+      
             <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
       <ins class="adsbygoogle"
           style="display:block"

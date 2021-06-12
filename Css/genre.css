@@ -1,0 +1,30 @@
+.genre {
+  padding-top: 5rem;
+}
+
+.genres {
+  overflow: hidden;
+  text-align: center;
+}
+
+.genres li a {
+  color: #333;
+  width: 165px;
+  padding: 7px 10px;
+  white-space: nowrap;
+  float: left;
+  display: inline;
+  border: 1px solid #ddd;
+  margin-bottom: 2px;
+  margin-right: 2px;
+}
+.genres li a:hover {
+  text-decoration: none;
+  background: #eee;
+  transition: 0.3s all ease;
+}
+
+.shop .grid {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
