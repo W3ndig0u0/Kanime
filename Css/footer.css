@@ -51,6 +51,9 @@ footer .logo:active {
 
 .social-media a:hover {
   color: #0583f2;
+  border-radius: 50%;
+  padding: 0.2rem;
+  border: 3.5px solid #0583f2;
 }
 
 .rights-text {
