@@ -21,3 +21,53 @@
   transform: translate(-50%, -50%);
   display: none;
 }
+
+.genre {
+  padding-top: 5rem;
+  border-left: 1px solid black;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.genres {
+  overflow: hidden;
+  text-align: center;
+}
+
+.genres li a {
+  color: #333;
+  width: 100px;
+  padding: 7px 10px;
+  white-space: nowrap;
+  display: flex;
+  float: left;
+  flex-wrap: wrap;
+  border: 1px solid #ddd;
+  margin: 4px;
+  transition: 400ms;
+}
+
+.genres li a:hover {
+  text-decoration: none;
+  background: #0583f2;
+  transition: 0.3s all ease;
+}
+
+.shop .grid {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
+
+@media screen and (max-width: 610px) {
+  .shop .grid {
+    display: unset;
+  }
+  .genre {
+    padding: 0rem;
+    border-left: 0px solid black;
+  }
+  .shop h4 {
+    text-align: center;
+    padding-top: 2rem;
+  }
+}
