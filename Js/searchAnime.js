@@ -1,7 +1,7 @@
 const base_url = "https://api.jikan.moe/v3";
 const url = "https://w3ndig0u0.github.io/Kanime/";
 
-function searchAnime(event){
+function searchAnime(event) {
     event.preventDefault();
 
     const form = new FormData(this);
@@ -11,47 +11,47 @@ function searchAnime(event){
     // !kollar om det e mobil eller vanlig som e tom
     if (query === undefined || query === null) {
         fetch(`${base_url}/search/anime?q=${query2}&page=1`)
-        .then(res=>res.json())
-        .then(updateDom)
-        .catch(err=>console.warn(err.message));
+            .then(res => res.json())
+            .then(updateDom)
+            .catch(err => console.warn(err.message));
     }
 
-    else if (query2 === undefined || query2 === null){
+    else if (query2 === undefined || query2 === null) {
         fetch(`${base_url}/search/anime?q=${query}&page=1`)
-        .then(res=>res.json())
-        .then(updateDom)
-        .catch(err=>console.warn(err.message));
+            .then(res => res.json())
+            .then(updateDom)
+            .catch(err => console.warn(err.message));
     }
 
-    else{
+    else {
         fetch(`${base_url}/search/anime?q=${query}&page=1`)
-        .then(res=>res.json())
-        .then(updateDom)
-        .catch(err=>console.warn(err.message));
+            .then(res => res.json())
+            .then(updateDom)
+            .catch(err => console.warn(err.message));
     }
-    
-    const newUrl = new URL('../Kanime/Search?=' + query + '?=' + query2, window.location.href);
-    history.pushState({}, null, newUrl);
+
 }
 
+// const newUrl = new URL('../Kanime/Search?=' + query + '?=' + query2, window.location.href);
+// history.pushState({}, null, newUrl);
 
-function updateDom(data){
+function updateDom(data) {
     const searchResults = document.querySelector('#search-results');
 
     const animeByCategories = data.results
-        .reduce((acc, anime)=>{
+        .reduce((acc, anime) => {
 
-            const {type} = anime;
-            if(acc[type] === undefined) acc[type] = [];
+            const { type } = anime;
+            if (acc[type] === undefined) acc[type] = [];
             acc[type].push(anime);
             return acc;
         }, {});
 
-        searchResults.innerHTML = Object.keys(animeByCategories).map(key=>{
+    searchResults.innerHTML = Object.keys(animeByCategories).map(key => {
 
-            const animesHTML = animeByCategories[key]
-            .sort((a,b)=>a.episodes-b.episodes)
-            .map(anime=>{
+        const animesHTML = animeByCategories[key]
+            .sort((a, b) => a.episodes - b.episodes)
+            .map(anime => {
                 return `
                     <div class="imgCard">
                         <div class="cardImage">
@@ -71,14 +71,14 @@ function updateDom(data){
             }).join("");
 
 
-            return `
+        return `
                 <section class="imgSection">
                 <h4><span>${key.toUpperCase()}</span></h4>
                     <div class="imgRow">${animesHTML}</div>
                 </section>
             `
-        }).join("");
-        
+    }).join("");
+
     document.querySelector('.topManga').style.display = "none";
     document.querySelector('.airing').style.display = "none";
     document.querySelector('.upComing').style.display = "none";
@@ -88,7 +88,7 @@ function updateDom(data){
     document.querySelector('.miss').style.display = "none";
 }
 
-function pageLoaded(){
+function pageLoaded() {
     const form = document.getElementById('search_form');
     form.addEventListener("submit", searchAnime);
 
