@@ -1,0 +1,8 @@
+User-agent: Googlebot
+Disallow: /nogooglebot/
+
+User-agent: *
+Allow: /
+
+Sitemap: https://www.kanime.cf/sitemap.xml
+Sitemap: https://kanime.cf/sitemap.xml
