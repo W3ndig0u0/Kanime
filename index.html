@@ -18,13 +18,13 @@
   <link rel="stylesheet" href="./Css/header.css" />
   <link rel="stylesheet" href="./Css/card.css" />
   <link rel="stylesheet" href="./Css/sectionAnime.css" />
-  <link rel="stylesheet" href="./Css/animeCard.css" />
   <link rel="stylesheet" href="./Css/newsCard.css" />
   <link rel="stylesheet" href="./Css/search.css" />
   <link rel="stylesheet" href="./Css/footer.css" />
   <link rel="stylesheet" href="./Css/shop.css" />
   <link rel="stylesheet" href="./Css/cooming.css" />
   <link rel="stylesheet" href="./Css/review.css" />
+  <link rel="stylesheet" href="./Css/animeCard.css" />  
 
   <link rel="stylesheet" href="./Css/mediaQueries.css" />
 
@@ -34,6 +34,8 @@
   <script defer src="./Js/slides.js"></script>
   <script defer src="./Js/menu.js"></script>
   <script defer src="./Js/AiringAnime.js"></script>
+  <script defer src="../Js/newsAnimeLandingPage.js"></script>
+  <script defer src="./Js/recentAnime.js"></script>
   
   <script type="application/ld+json">
 {
@@ -300,10 +302,20 @@
     <div id="search-results" class="container"></div>
     
     <!-- !Section 1 -->
+    <section class="airing">
+      <div class="imgSection">
+        <h3><span>Recently Aired</span></h3>
+        <div class="recentAnime">
+        </div>
+      </div>
+    </section>
+
+    <!-- !Section 1 -->
     <section class="airing" id="airing">
       <div class="imgSection">
         <h3><span>Top Airing Anime</span></h3>
         <div class="imgRow">
+
           <div class="imgCard">
             <div class="cardImage">
               <img
@@ -461,12 +473,12 @@
       </div>
     </section>
 
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <ins class="adsbygoogle" style="display:block" data-ad-format="fluid" data-ad-layout-key="-f5-1p+b8-1d-xr"
       data-ad-client="ca-pub-4214057914932039" data-ad-slot="8082595189"></ins>
     <script>
       (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
+    </script> -->
 
     <!-- !Section 2 -->
     <section class="upComing" id="upComing">
@@ -628,94 +640,16 @@
       </div>
     </section>
 
-    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <ins class="adsbygoogle"
-        style="display:block"
-        data-ad-format="fluid"
-        data-ad-layout-key="-f5-1p+b8-1d-xr"
-        data-ad-client="ca-pub-4214057914932039"
-        data-ad-slot="8082595189"></ins>
-    <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-    </script> -->
+
 
     <!-- !Section 3 -->
     <section class="newsSection" id="newsSection">
       <div class="imgSection">
         <h3><span>Anime & Manga News</span></h3>
-        <div class="newsRow">
-          <div class="newsLetter">
-            <div class="newsImg">
-              <img
-                src="https://cdn.myanimelist.net/s/common/uploaded_files/1622908548-32c49c2a72b54722962a064fe1aaa93f.png"
-                alt="Vanitas no Carte' Unveils Additional Cast, Split Cour Broadcast" />
-            </div>
-            <div class="newsCardInfo">
-              <h2>
-                'Vanitas no Carte' Unveils Additional Cast, Split Cour
-                Broadcast
-              </h2>
-              <h6><i class="fa fa-calendar"></i> Jun 5, 6:09 AM</h6>
-            </div>
-          </div>
-
-          <div class="newsLetter">
-            <div class="newsImg">
-              <img
-                src="https://cdn.myanimelist.net/s/common/uploaded_files/1609132432-60dc8fb22d01a6619ffde6299f561d86.jpeg"
-                alt="Cast, Staff, Summer 2021 Premiere Announced for 'Cheat Kusushi no Slow Life: Isekai ni Tsukurou Drugstore' TV Anim" />
-            </div>
-            <div class="newsCardInfo">
-              <h2>
-                Cast, Staff, Summer 2021 Premiere Announced for 'Cheat Kusushi
-                no Slow Life: Isekai ni Tsukurou Drugstore' TV Anime
-              </h2>
-              <h6><i class="fa fa-calendar"></i> May 31, 3:24 AM</h6>
-            </div>
-          </div>
-
-          <div class="newsLetter">
-            <div class="newsImg">
-              <img
-                src="https://www.otakutale.com/wp-content/uploads/2021/05/Isekai-Bishoujo-Juniku-Ojisan-Vol-3-Cover.jpg"
-                alt="Manga 'Isekai Bishoujo Juniku Ojisan to' Receives TV Anime" />
-            </div>
-            <div class="newsCardInfo">
-              <h2>
-                Manga 'Isekai Bishoujo Juniku Ojisan to' Receives TV Anime
-              </h2>
-              <h6><i class="fa fa-calendar"></i> May 17, 6:38 AM</h6>
-            </div>
-          </div>
-
-          <div class="newsLetter">
-            <div class="newsImg">
-              <img
-                src="https://cdn.myanimelist.net/s/common/uploaded_files/1620737942-620cbb70e328f8389e163dca9e374ef7.jpeg"
-                alt="Komi-san wa, Comyushou desu.' TV Anime Adaptation Announced for Fall 2021" />
-            </div>
-            <div class="newsCardInfo">
-              <h2>
-                'Komi-san wa, Comyushou desu.' TV Anime Adaptation Announced
-                for Fall 2021
-              </h2>
-              <h6><i class="fa fa-calendar"></i> 12/13/2020</h6>
-            </div>
-          </div>
-        </div>
+          <div class="newsRow"></div>
       </div>
     </section>
 
-    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <ins class="adsbygoogle"
-    style="display:block"
-    data-ad-format="fluid"
-    data-ad-layout-key="-f5-1p+b8-1d-xr"
-    data-ad-client="ca-pub-4214057914932039"
-    data-ad-slot="8082595189"></ins>
-      <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-      </script> -->
 
     <!-- !Section 4 -->
     <section class="topManga" id="topManga">

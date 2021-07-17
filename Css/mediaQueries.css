@@ -17,7 +17,7 @@
   .img2,
   .img3,
   .img4 {
-    background-position-y: -100px;
+    background-position-y: -170px;
     zoom: 80%;
   }
   .menu-content {
@@ -38,7 +38,7 @@
 @media screen and (max-width: 1210px) {
   .card h2 {
     font-size: 1.5rem;
-    margin-top: 2rem;
+    margin-top: rem;
     margin-bottom: 1rem;
   }
 

@@ -1,11 +1,11 @@
 .newsCard {
-  height: 24rem;
+  height: 28rem;
   position: relative;
 }
 
 .card {
   position: relative;
-  height: 20rem;
+  height: 25rem;
   margin: auto;
   background-color: #fff;
   border-radius: 32px;
