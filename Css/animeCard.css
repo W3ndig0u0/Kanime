@@ -29,7 +29,7 @@
 
 .imgCard:hover > .cardImage img,
 .imgCard:active > .cardImage img {
-  height: 14rem;
+  height: 15rem;
   transition: 600ms;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0);
 }
