@@ -28,7 +28,7 @@
 /* !Big laptop */
 @media screen and (max-width: 1439px) {
   .card h2 {
-    font-size: 1.7rem;
+    font-size: 2.2rem;
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
   }
@@ -37,9 +37,9 @@
 /* !Mini Laptop */
 @media screen and (max-width: 1210px) {
   .card h2 {
-    font-size: 1.5rem;
-    margin-top: rem;
-    margin-bottom: 1rem;
+    font-size: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
   }
 
   .featured h6 {
