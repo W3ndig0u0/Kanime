@@ -28,7 +28,6 @@ function searchAnime(event) {
             .then(updateDom)
             .catch(err => console.warn(err.message));
     }
-
 }
 
 function updateDom(data) {
@@ -90,7 +89,6 @@ function pageLoaded() {
 
     const formMobile = document.getElementById('searchFormMobil');
     formMobile.addEventListener("submit", searchAnime);
-
 }
 
 window.addEventListener("load", pageLoaded);
