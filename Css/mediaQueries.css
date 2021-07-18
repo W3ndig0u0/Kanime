@@ -1,25 +1,5 @@
 /* !Big Ass Computer */
-@media screen and (min-width: 2040px) {
-  .img1,
-  .img2,
-  .img3,
-  .img4 {
-    background-position-y: -200px;
-    zoom: 100%;
-  }
-  .menu-content {
-    padding: 30px 10%;
-  }
-}
-
-@media screen and (min-width: 1640px) and (max-width: 2039px) {
-  .img1,
-  .img2,
-  .img3,
-  .img4 {
-    background-position-y: -170px;
-    zoom: 80%;
-  }
+@media screen and (min-width: 1640px) {
   .menu-content {
     padding: 30px 10%;
   }
@@ -28,7 +8,7 @@
 /* !Big laptop */
 @media screen and (max-width: 1439px) {
   .card h2 {
-    font-size: 2.2rem;
+    font-size: 1.4rem;
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
   }
@@ -36,12 +16,6 @@
 
 /* !Mini Laptop */
 @media screen and (max-width: 1210px) {
-  .card h2 {
-    font-size: 2rem;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-  }
-
   .featured h6 {
     padding: 7px;
     font-size: 10px;
@@ -74,11 +48,13 @@
     height: 20rem;
   }
   .card h2 {
-    font-size: 1.3rem;
+    font-size: 1rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
   }
-
+  .card p {
+    font-size: 0.9rem;
+  }
   .featured h6 {
     padding: 7px;
     font-size: 10px;
@@ -121,6 +97,9 @@
   .reviewCover {
     margin-left: 20px;
   }
+  .card p {
+    font-size: 0.7rem;
+  }
 }
 
 @media screen and (max-width: 720px) {
@@ -134,10 +113,18 @@
     display: block;
   }
   .card h2 {
-    font-size: 2rem;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    font-size: 1.5rem;
   }
+  .card p {
+    font-size: 1rem;
+  }
+  .card .img {
+    height: 0%;
+  }
+  .card {
+    height: 20rem;
+  }
+
   .navButton {
     display: flex !important;
   }
@@ -229,9 +216,7 @@
     display: block;
   }
   .card h2 {
-    font-size: 1.7rem;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    font-size: 1.3rem;
   }
 
   .center {
@@ -324,9 +309,10 @@
     margin-block-end: 0em;
   }
   .card h2 {
-    font-size: 1.5rem;
-    margin-top: 1.5rem;
-    margin-bottom: 1rem;
+    font-size: 1.2rem;
+  }
+  .card p {
+    font-size: 0.7rem;
   }
 
   .next {

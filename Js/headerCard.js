@@ -1,9 +1,7 @@
-const RSS_URL = "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.livechart.me%2Ffeeds%2Fheadlines";
-
-fetch(RSS_URL)
+fetch("https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.livechart.me%2Ffeeds%2Fheadlines")
   .then(response => response.json())
   .then(result => {
-    createNewsCard(result);
+    createHeaderNewsCard(result);
   });
 
   function webSiteCheck(url) {
@@ -62,13 +60,13 @@ fetch(RSS_URL)
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
   
-  function createNewsCard(result) {
-    for (let i = 4; i < 10; i++) {
-    const newsSection2 = document.createElement('section');
-    newsSection2.classList.add('newsSection2');
+  function createHeaderNewsCard(result) {
+    for (let i = 0; i < 4; i++) {
+    const headerNewsSection = document.createElement('section');
+    headerNewsSection.classList.add('newsCards');
   
     const thumbnail = result.items[i].thumbnail;
-    const title = result.items[i].title.toUpperCase();
+    const title = result.items[i].title;
     const pubDate = result.items[i].pubDate;
     const newPubDate = dateConverser(pubDate);
     const youtubeUrl = result.items[i].link;
@@ -77,23 +75,38 @@ fetch(RSS_URL)
     // !Skapar html
     const newsInnerHTML = 
     `
-    <a href=${youtubeUrl} target="_blank" rel="noopener" title=${youtubeUrl} aria-label=${youtubeUrl}>
-      <div class="newsLetter">
-        <div class="newsImg">
-          <img
-          src=${thumbnail}
-          alt=${title}/>
+      <div class="newsCard">
+      <div class="card">
+        <div class="img">
+        <img
+        src=${thumbnail}
+        alt=${capitalizeFirstLetter(title)}/>
         </div>
-        <div class="newsCardInfo">
-        <h2>${title}"</h2>
-        <p>Source: ${capitalizeFirstLetter(websiteName)}</p>
-        <h6><i class="fa fa-calendar"></i> ${newPubDate}</h6>
+        <div class="card-info">
+          <div class="featured">
+            <h6>Featured</h6>
+            <h6 class="news">News</h6>
+          </div>
+          <h2>${title}</h2>
+          <p><i class="fa fa-calendar"></i>${newPubDate}</p>
+          <a href=${youtubeUrl} target="_blank" rel="noopener" title=${youtubeUrl} aria-label=${youtubeUrl}>
+          <p class="source"> Source: ${capitalizeFirstLetter(websiteName)}</p>
+          </a>
+
+          <div>
+            <span class="dot dotActive"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
         </div>
       </div>
-      <a/>
+      <a class="prev cardPrev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next cardNext" onclick="plusSlides(1)">&#10095;</a>
+    </div>
       `;
           
-      newsSection2.innerHTML = newsInnerHTML;
-      document.querySelector(".newsRow").appendChild(newsSection2)
+      headerNewsSection.innerHTML = newsInnerHTML;
+      document.querySelector(".newsCardsJs").appendChild(headerNewsSection)
     }
   }

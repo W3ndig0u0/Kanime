@@ -1,6 +1,4 @@
-const SEASON_ANIME_URL = "https://api.jikan.moe/v3/top/anime/1/airing";
-
-fetch(SEASON_ANIME_URL)
+fetch("https://api.jikan.moe/v3/top/anime/1/airing")
   .then(response => response.json())
   .then(result => {
     createSeasonAnimeCard(result);
@@ -23,11 +21,6 @@ fetch(SEASON_ANIME_URL)
     const thumbnail = result.top[i].image_url;
     const title = result.top[i].title;
     const type = result.top[i].type;
-    const ep = result.top[i].episodes;
-
-    const rank = result.top[i].rank;
-    const score = result.top[i].score;
-    const startDate = result.top[i].start_date;
 
     const newTitle = capitalizeFirstLetter(title);
     const newNewTitle = AnimeNameConverter(newTitle);

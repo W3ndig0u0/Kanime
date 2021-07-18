@@ -21,12 +21,48 @@
 }
 
 .card p {
-  opacity: 0.8;
-  margin: 0;
+  opacity: 0.9;
   letter-spacing: 1px;
   text-transform: uppercase;
   font-weight: bold;
   font-family: "Open Sans", sans-serif;
+  color: #f27d16;
+}
+
+.card .source {
+  color: #0583f2;
+}
+.card .source:hover {
+  transition: 300ms;
+  transition: underline 500ms;
+}
+
+.card .source::after {
+  content: "";
+  display: block;
+  width: 0%;
+  height: 2px;
+  background-color: #0583f2;
+  transition: 700ms;
+}
+.card .source:hover::after {
+  width: 40%;
+}
+
+.card img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.card h2 {
+  letter-spacing: 1px;
+  margin: 10px 0;
+  font-size: 1.7rem;
+  display: flex;
+  margin-top: 1rem;
+  margin-bottom: 1.3rem;
+  user-select: text;
 }
 
 .featured h6 {
@@ -39,7 +75,6 @@
   font-size: 0.9rem;
   font-family: Arial, Helvetica, sans-serif, Times, serif;
 }
-
 .featured .ova {
   background-color: #8cf187;
 }
@@ -59,46 +94,6 @@
 .card p i {
   user-select: text;
   color: #0583f2;
-}
-
-.card h2 {
-  letter-spacing: 1px;
-  margin: 10px 0;
-  font-size: 2.3rem;
-  display: flex;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
-  user-select: text;
-}
-
-.img1 {
-  background: url("https://i.pinimg.com/originals/5f/12/b9/5f12b974076736afe4bfe170b36b5e89.jpg");
-  background-position: center;
-  background-position-y: -220px;
-  zoom: 59%;
-}
-
-.img2 {
-  background: url("https://wallpaperaccess.com/full/5918531.jpg");
-  background-position: center;
-  background-position-y: 0px;
-  zoom: 39%;
-}
-
-.img3 {
-  background: url("https://www.funimationfilms.com/wp-content/uploads/2021/03/VioletEvergardenMovie_BackgroundwLogo.jpg");
-  background-position: center;
-  background-position-y: 0px;
-  background-position-x: -100px;
-  zoom: 38%;
-}
-
-.img4 {
-  background: url("https://i1.wp.com/www.monstersandcritics.com/wp-content/uploads/2020/08/Miss-Kobayashis-Dragon-Maid-Season-2-release-date-2021-Kyoto-Animation-Kobayashi-san-Chi-no-Maid-S.jpg?fit=1200%2C675&ssl=1");
-  background-position: center;
-  background-position-y: -90px;
-  background-position-x: -150px;
-  zoom: 72%;
 }
 
 .card-info {
@@ -150,7 +145,7 @@
   background-color: rgba(0, 171, 255, 0.25);
   border-radius: 50%;
   display: inline-block;
-  margin-top: 2rem;
+  margin-top: 1rem;
   margin-bottom: -0.5rem;
 }
 

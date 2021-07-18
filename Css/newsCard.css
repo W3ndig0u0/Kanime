@@ -25,7 +25,6 @@
   width: 100%;
   height: 12rem;
   object-fit: cover;
-  user-select: none;
 }
 
 .newsCardInfo {
@@ -40,6 +39,7 @@
   margin-block-start: 0em;
   margin-block-end: 0em;
 }
+
 .newsCardInfo h2:hover {
   transition: 300ms;
   transition: underline 500ms;
