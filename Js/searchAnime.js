@@ -90,12 +90,14 @@ function updateDom(data) {
 
     document.querySelector('.airing').style.display = "none";
     document.querySelector('.airingRecent').style.display = "none";
-    document.querySelector('.topManga').style.display = "none";
-    document.querySelector('.airing').style.display = "none";
-    document.querySelector('.upComing').style.display = "none";
-    document.querySelector('.reviews').style.display = "none";
-    document.querySelector('.shop').style.display = "none";
+    document.querySelector('.upComming').style.display = "none";
     document.querySelector('.newsSection').style.display = "none";
+    document.querySelector('.topAnime').style.display = "none";
+    document.querySelector('.topManga').style.display = "none";
+    document.querySelector('.topNovel').style.display = "none";
+    document.querySelector('.topChar').style.display = "none";
+    document.querySelector('.shop').style.display = "none";
+    document.querySelector('.reviews').style.display = "none";
 
     
     const pagination = document.createElement('div');
@@ -117,7 +119,7 @@ function updateDom(data) {
       `;
       
       pagination.innerHTML = paginationInnerHTML;
-      document.querySelector(".center").appendChild(pagination)
+      document.querySelector(".center2").appendChild(pagination)
 }
 
 function pageLoaded() {

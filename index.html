@@ -33,9 +33,17 @@
   <script defer src="./Js/searchAnime.js"></script>
   <script defer src="./Js/slides.js"></script>
   <script defer src="./Js/menu.js"></script>
+
+  <!-- !Api -->
   <script defer src="./Js/AiringAnime.js"></script>
   <script defer src="../Js/newsAnimeLandingPage.js"></script>
+  <script defer src="./Js/AiringAnime.js"></script>
   <script defer src="./Js/recentAnime.js"></script>
+  <script defer src="./Js/upComming.js"></script>
+  <script defer src="./Js/topManga.js"></script>
+  <script defer src="./Js/topChar.js"></script>
+  <script defer src="./Js/topAnime.js"></script>
+  <script defer src="./Js/topNovel.js"></script>
   
   <script type="application/ld+json">
 {
@@ -300,7 +308,7 @@
 </script> -->
 
     <div id="search-results" class="container"></div>
-    <div class="center"></div>
+    <div class="center2"></div>
     
     <!-- !Section 1 -->
     <section class="airingRecent">
@@ -312,517 +320,70 @@
     </section>
 
     <!-- !Section 1 -->
-    <section class="airing" id="airing">
+    <section class="airing">
       <div class="imgSection">
         <h3><span>Top Airing Anime</span></h3>
-        <div class="imgRow">
-
-          <div class="imgCard">
-            <div class="cardImage">
-              <img
-                src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a9/Vivy_Fluorite_Eye%E2%80%99s_Song_key_visual.jpg/220px-Vivy_Fluorite_Eye%E2%80%99s_Song_key_visual.jpg"
-                alt="Vivy: Fluorite Eye's Song" />
-              <div class="tvTag tag">TV</div>
-            </div>
-            <div class="cardInfo">
-              <span class="cardTitle">Vivy: Fluorite Eye's Song</span>
-              <p class="cardSynopsis">${anime.synopsis}</p>
-              <p class="cardScore">${anime.score}/10⭐</p>
-            </div>
-          </div>
-
-          <div class="imgCard">
-            <div class="cardImage">
-              <img src="https://cdn.myanimelist.net/images/anime/1104/113797.jpg" alt="86" />
-              <div class="tvTag tag">TV</div>
-            </div>
-            <div class="cardInfo">
-              <span class="cardTitle">86</span>
-              <p class="cardSynopsis">${anime.synopsis}</p>
-              <p class="cardScore">${anime.score}/10⭐</p>
-            </div>
-          </div>
-
-          <div class="imgCard">
-            <div class="cardImage">
-              <img src="https://cdn.myanimelist.net/images/anime/1146/113477.jpg"
-                alt="Higehiro: After Being Rejected, I Shaved and Took in a High School Runaway" />
-              <div class="tvTag tag">TV</div>
-            </div>
-            <div class="cardInfo">
-              <span class="cardTitle">Higehiro: After Being Rejected, I Shaved and Took in a High
-                School Runaway</span>
-              <p class="cardSynopsis">${anime.synopsis}</p>
-              <p class="cardScore">${anime.score}/10⭐</p>
-            </div>
-          </div>
-
-          <div class="imgCard">
-            <div class="cardImage">
-              <img src="https://cdn.myanimelist.net/images/anime/1900/110097.jpg"
-                alt="Don't Toy with Me, Miss Nagatoro" />
-              <div class="tvTag tag">TV</div>
-            </div>
-            <div class="cardInfo">
-              <span class="cardTitle">Don't Toy with Me, Miss Nagatoro</span>
-              <p class="cardSynopsis">${anime.synopsis}</p>
-              <p class="cardScore">${anime.score}/10⭐</p>
-            </div>
-          </div>
-
-          <div class="imgCard">
-            <div class="cardImage">
-              <img src="https://cdn.myanimelist.net/images/anime/1444/115118.jpg"
-                alt="Combatants Will Be Dispatched!" />
-              <div class="tvTag tag">TV</div>
-            </div>
-            <div class="cardInfo">
-              <span class="cardTitle">Combatants Will Be Dispatched!</span>
-              <p class="cardSynopsis">${anime.synopsis}</p>
-              <p class="cardScore">${anime.score}/10⭐</p>
-            </div>
-          </div>
-
-          <div class="imgCard">
-            <div class="cardImage">
-              <img src="https://cdn.myanimelist.net/images/anime/1111/113327.jpg"
-                alt="Osananajimi ga Zettai ni Makenai Love Comedy" />
-              <div class="tvTag tag">TV</div>
-            </div>
-            <div class="cardInfo">
-              <span class="cardTitle">Osananajimi ga Zettai ni Makenai Love Comedy</span>
-              <p class="cardSynopsis">${anime.synopsis}</p>
-              <p class="cardScore">${anime.score}/10⭐</p>
-            </div>
-          </div>
-
-          <div class="imgCard">
-            <div class="cardImage">
-              <img src="https://cdn.myanimelist.net/images/anime/1085/114792.jpg" alt="Fruits Basket: The Final" />
-              <div class="tvTag tag">TV</div>
-            </div>
-            <div class="cardInfo">
-              <span class="cardTitle">Fruits Basket: The Final</span>
-              <p class="cardSynopsis">${anime.synopsis}</p>
-              <p class="cardScore">${anime.score}/10⭐</p>
-            </div>
-          </div>
-
-          <div class="imgCard">
-            <div class="cardImage">
-              <img src="https://cdn.myanimelist.net/images/anime/1259/110227.jpg" alt="Holo no Graffiti" />
-              <div class="tvTag tag">TV</div>
-            </div>
-            <div class="cardInfo">
-              <span class="cardTitle">Holo no Graffiti</span>
-              <p class="cardSynopsis">${anime.synopsis}</p>
-              <p class="cardScore">${anime.score}/10⭐</p>
-            </div>
-          </div>
-
-          <div class="imgCard">
-            <div class="cardImage">
-              <img src="https://cdn.myanimelist.net/images/anime/1027/115055.jpg"
-                alt="Kaguya-sama wa Kokurasetai: Tensai-tachi no Renai Zunousen OVA" />
-              <div class="onaTag tag">Ova</div>
-            </div>
-            <div class="cardInfo">
-              <span class="cardTitle">Kaguya-sama wa Kokurasetai: Tensai-tachi no Renai Zunousen
-                OVA</span>
-              <p class="cardSynopsis">${anime.synopsis}</p>
-              <p class="cardScore">${anime.score}/10⭐</p>
-            </div>
-          </div>
-
-          <div class="imgCard">
-            <div class="cardImage">
-              <img src="https://cdn.myanimelist.net/images/anime/1118/115156.jpg" alt="Zombie Land Saga Revenge" />
-              <div class="tvTag tag">TV</div>
-            </div>
-            <div class="cardInfo">
-              <span class="cardTitle">Zombie Land Saga Revenge</span>
-              <p class="cardSynopsis">${anime.synopsis}</p>
-              <p class="cardScore">${anime.score}/10⭐</p>
-            </div>
-          </div>
-
-          <div class="imgCard">
-            <div class="cardImage">
-              <img src="https://cdn.myanimelist.net/images/anime/1911/113611.jpg"
-                alt="Boku no Hero Academia 5th Season" />
-              <div class="tvTag tag">TV</div>
-            </div>
-            <div class="cardInfo">
-              <span class="cardTitle">Boku no Hero Academia 5th Season</span>
-              <p class="cardSynopsis">${anime.synopsis}</p>
-              <p class="cardScore">${anime.score}/10⭐</p>
-            </div>
-          </div>
-
-          <div class="imgCard">
-            <div class="cardImage">
-              <img src="https://cdn.myanimelist.net/images/anime/1252/113180.jpg" alt="Gokushufudou" />
-              <div class="onaTag tag">Ona</div>
-            </div>
-            <div class="cardInfo">
-              <span class="cardTitle">Gokushufudou</span>
-              <p class="cardSynopsis">${anime.synopsis}</p>
-              <p class="cardScore">${anime.score}/10⭐</p>
-            </div>
-          </div>
+        <div class="airingAnimeJs">
         </div>
       </div>
     </section>
-
-    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <ins class="adsbygoogle" style="display:block" data-ad-format="fluid" data-ad-layout-key="-f5-1p+b8-1d-xr"
-      data-ad-client="ca-pub-4214057914932039" data-ad-slot="8082595189"></ins>
-    <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
-    </script> -->
 
     <!-- !Section 2 -->
-    <section class="upComing" id="upComing">
+    <section class="upComming">
       <div class="imgSection">
         <h3><span>Top Upcoming Anime</span></h3>
-        <div class="imgRow">
-          <div class="imgCard">
-            <div class="cardImage">
-              <img src="https://cdn.myanimelist.net/images/anime/1245/111800.jpg"
-                alt="The Rising of the Shield Hero Season 2" />
-              <div class="tvTag tag">TV</div>
-            </div>
-            <div class="cardInfo">
-              <span class="cardTitle">The Rising of the Shield Hero Season 2</span>
-              <p class="cardSynopsis">${anime.synopsis}</p>
-              <p class="cardScore">${anime.score}/10⭐</p>
-            </div>
-          </div>
-
-          <div class="imgCard">
-            <div class="cardImage">
-              <img src="https://cdn.myanimelist.net/images/anime/1079/109928.jpg"
-                alt="Kaguya-sama wa Kokurasetai: Tensai-tachi no Renai Zunousen 3rd Season" />
-              <div class="tvTag tag">TV</div>
-            </div>
-            <div class="cardInfo">
-              <span class="cardTitle">Kaguya-sama wa Kokurasetai: Tensai-tachi no Renai Zunousen
-                3rd Season</span>
-              <p class="cardSynopsis">${anime.synopsis}</p>
-              <p class="cardScore">${anime.score}/10⭐</p>
-            </div>
-          </div>
-
-          <div class="imgCard">
-            <div class="cardImage">
-              <img src="https://cdn.myanimelist.net/images/anime/1252/115539.jpg"
-                alt="Miss Kobayashi's Dragon Maid S" />
-              <div class="tvTag tag">TV</div>
-            </div>
-            <div class="cardInfo">
-              <span class="cardTitle">Miss Kobayashi's Dragon Maid S</span>
-              <p class="cardSynopsis">${anime.synopsis}</p>
-              <p class="cardScore">${anime.score}/10⭐</p>
-            </div>
-          </div>
-
-          <div class="imgCard">
-            <div class="cardImage">
-              <img src="https://cdn.myanimelist.net/images/anime/1742/113709.jpg" alt="Jujutsu Kaisen 0 Movie" />
-              <div class="movieTag tag">Movie</div>
-            </div>
-            <div class="cardInfo">
-              <span class="cardTitle">Jujutsu Kaisen 0 Movie</span>
-              <p class="cardSynopsis">${anime.synopsis}</p>
-              <p class="cardScore">${anime.score}/10⭐</p>
-            </div>
-          </div>
-
-          <div class="imgCard">
-            <div class="cardImage">
-              <img src="https://cdn.myanimelist.net/images/anime/1802/113728.jpg"
-                alt="SWORD ART ONLINE the MOVIE -PROGRESSIVE" />
-              <div class="movieTag tag">Movie</div>
-            </div>
-            <div class="cardInfo">
-              <span class="cardTitle">SWORD ART ONLINE the MOVIE -PROGRESSIVE-</span>
-              <p class="cardSynopsis">${anime.synopsis}</p>
-              <p class="cardScore">${anime.score}/10⭐</p>
-            </div>
-          </div>
-
-          <div class="imgCard">
-            <div class="cardImage">
-              <img src="https://www.anime-planet.com/images/anime/covers/rent-a-girlfriend-14325.jpg?t=1601294828"
-                alt="Kanojo, Okarishimasu 2nd Season" />
-              <div class="tvTag tag">TV</div>
-            </div>
-            <div class="cardInfo">
-              <span class="cardTitle">Kanojo, Okarishimasu 2nd Season</span>
-              <p class="cardSynopsis">${anime.synopsis}</p>
-              <p class="cardScore">${anime.score}/10⭐</p>
-            </div>
-          </div>
-
-          <div class="imgCard">
-            <div class="cardImage">
-              <img src="https://cdn.myanimelist.net/images/anime/1237/113307.jpg"
-                alt="Hataraku Maou-sama! 2nd Season" />
-              <div class="tvTag tag">TV</div>
-            </div>
-            <div class="cardInfo">
-              <span class="cardTitle">Hataraku Maou-sama! 2nd Season</span>
-              <p class="cardSynopsis">${anime.synopsis}</p>
-              <p class="cardScore">${anime.score}/10⭐</p>
-            </div>
-          </div>
-
-          <div class="imgCard">
-            <div class="cardImage">
-              <img src="https://cdn.myanimelist.net/images/anime/1946/114481.jpg" alt="5-toubun no Hanayome Movie" />
-              <div class="movieTag tag">Movie</div>
-            </div>
-            <div class="cardInfo">
-              <span class="cardTitle">5-toubun no Hanayome Movie</span>
-              <p class="cardSynopsis">${anime.synopsis}</p>
-              <p class="cardScore">${anime.score}/10⭐</p>
-            </div>
-          </div>
-
-          <div class="imgCard">
-            <div class="cardImage">
-              <img src="https://cdn.myanimelist.net/images/anime/1632/110707.jpg" alt="Chainsaw Man" />
-              <div class="tvTag tag">TV</div>
-            </div>
-            <div class="cardInfo">
-              <span class="cardTitle">Chainsaw Man</span>
-              <p class="cardSynopsis">${anime.synopsis}</p>
-              <p class="cardScore">${anime.score}/10⭐</p>
-            </div>
-          </div>
-
-          <div class="imgCard">
-            <div class="cardImage">
-              <img src="https://cdn.myanimelist.net/images/anime/1868/115018.jpg"
-                alt="Mushoku Tensei: Isekai Ittara Honki Dasu 2nd Season" />
-              <div class="tvTag tag">TV</div>
-            </div>
-            <div class="cardInfo">
-              <span class="cardTitle">Mushoku Tensei: Isekai Ittara Honki Dasu 2nd Season</span>
-              <p class="cardSynopsis">${anime.synopsis}</p>
-              <p class="cardScore">${anime.score}/10⭐</p>
-            </div>
-          </div>
-
-          <div class="imgCard">
-            <div class="cardImage">
-              <img src="https://cdn.myanimelist.net/images/anime/1225/111459.jpg" alt="Goblin Slayer 2nd Season" />
-              <div class="tvTag tag">TV</div>
-            </div>
-            <div class="cardInfo">
-              <span class="cardTitle">Goblin Slayer 2nd Season</span>
-              <p class="cardSynopsis">${anime.synopsis}</p>
-              <p class="cardScore">${anime.score}/10⭐</p>
-            </div>
-          </div>
-
-          <div class="imgCard">
-            <div class="cardImage">
-              <img src="https://cdn.myanimelist.net/images/anime/1259/114115.jpg" alt="Love Live! Superstar!!" />
-              <div class="tvTag tag">TV</div>
-            </div>
-            <div class="cardInfo">
-              <span class="cardTitle">Love Live! Superstar!!</span>
-              <p class="cardSynopsis">${anime.synopsis}</p>
-              <p class="cardScore">${anime.score}/10⭐</p>
-            </div>
-          </div>
+        <div class="upComingAnime">
         </div>
       </div>
     </section>
-
 
 
     <!-- !Section 3 -->
-    <section class="newsSection" id="newsSection">
+    <section class="newsSection">
       <div class="imgSection">
         <h3><span>Anime & Manga News</span></h3>
           <div class="newsRow"></div>
       </div>
     </section>
 
-
-    <!-- !Section 4 -->
-    <section class="topManga" id="topManga">
+    
+    <!-- !Section-->
+    <section class="topAnime">
       <div class="imgSection">
-        <h3><span>Top Manga & Light Novel</span></h3>
-        <div class="imgRow">
-          <div class="imgCard">
-            <div class="cardImage">
-              <img src="https://cdn.myanimelist.net/images/manga/1/129447.jpg"
-                alt="Re:ZERO -Starting Life in Another World" />
-              <div class="lnTag tag">LN</div>
-            </div>
-            <div class="cardInfo">
-              <span class="cardTitle">Re:ZERO -Starting Life in Another World-</span>
-              <p class="cardSynopsis">${anime.synopsis}</p>
-              <p class="cardScore">${anime.score}/10⭐</p>
-            </div>
-          </div>
-
-          <div class="imgCard">
-            <div class="cardImage">
-              <img src="https://cdn.myanimelist.net/images/manga/3/235363.jpg"
-                alt="Welcome to the Classroom of the Second-year" />
-              <div class="lnTag tag">LN</div>
-            </div>
-            <div class="cardInfo">
-              <span class="cardTitle">Welcome to the Classroom of the Second-year</span>
-              <p class="cardSynopsis">${anime.synopsis}</p>
-              <p class="cardScore">${anime.score}/10⭐</p>
-            </div>
-          </div>
-
-          <div class="imgCard">
-            <div class="cardImage">
-              <img src="https://cdn.myanimelist.net/images/manga/3/164420.jpg" alt="Goodnight Punpun" />
-              <div class="mangaTag tag">Manga</div>
-            </div>
-            <div class="cardInfo">
-              <span class="cardTitle">Goodnight Punpun</span>
-              <p class="cardSynopsis">${anime.synopsis}</p>
-              <p class="cardScore">${anime.score}/10⭐</p>
-            </div>
-          </div>
-
-          <div class="imgCard">
-            <div class="cardImage">
-              <img src="https://cdn.myanimelist.net/images/manga/2/166124.jpg" alt="Grand Blue" />
-              <div class="mangaTag tag">Manga</div>
-            </div>
-            <div class="cardInfo">
-              <span class="cardTitle">Grand Blue</span>
-              <p class="cardSynopsis">${anime.synopsis}</p>
-              <p class="cardScore">${anime.score}/10⭐</p>
-            </div>
-          </div>
-
-          <div class="imgCard">
-            <div class="cardImage">
-              <img src="https://cdn.myanimelist.net/images/manga/1/122461.jpg"
-                alt="My Youth Romantic Comedy Is Wrong, As I Expected" />
-              <div class="lnTag tag">LN</div>
-            </div>
-            <div class="cardInfo">
-              <span class="cardTitle">My Youth Romantic Comedy Is Wrong, As I Expected</span>
-              <p class="cardSynopsis">${anime.synopsis}</p>
-              <p class="cardScore">${anime.score}/10⭐</p>
-            </div>
-          </div>
-
-          <div class="imgCard">
-            <div class="cardImage">
-              <img src="https://cdn.myanimelist.net/images/manga/1/157897.jpg" alt="Berserk" />
-              <div class="mangaTag tag">Manga</div>
-            </div>
-            <div class="cardInfo">
-              <span class="cardTitle">Berserk</span>
-              <p class="cardSynopsis">${anime.synopsis}</p>
-              <p class="cardScore">${anime.score}/10⭐</p>
-            </div>
-          </div>
-
-          <div class="imgCard">
-            <div class="cardImage">
-              <img src="https://cdn.myanimelist.net/images/manga/3/179882.jpg"
-                alt="JoJo no Kimyou na Bouken Part 7: Steel Ball Run" />
-              <div class="mangaTag tag">Manga</div>
-            </div>
-            <div class="cardInfo">
-              <span class="cardTitle">JoJo no Kimyou na Bouken Part 7: Steel Ball Run
-              </span>
-              <p class="cardSynopsis">${anime.synopsis}</p>
-              <p class="cardScore">${anime.score}/10⭐</p>
-            </div>
-          </div>
-
-          <div class="imgCard">
-            <div class="cardImage">
-              <img src="https://cdn.myanimelist.net/images/manga/3/80661.jpg" alt="One Punch-Man" />
-              <div class="mangaTag tag">Manga</div>
-            </div>
-            <div class="cardInfo">
-              <span class="cardTitle">One Punch-Man</span>
-              <p class="cardSynopsis">${anime.synopsis}</p>
-              <p class="cardScore">${anime.score}/10⭐</p>
-            </div>
-          </div>
-
-          <div class="imgCard">
-            <div class="cardImage">
-              <img src="https://cdn.myanimelist.net/images/manga/3/188896.jpg"
-                alt="Kaguya-sama wa Kokurasetai: Tensai-tachi no Renai Zunousen" />
-              <div class="mangaTag tag">Manga</div>
-            </div>
-            <div class="cardInfo">
-              <span class="cardTitle">Kaguya-sama wa Kokurasetai: Tensai-tachi no Renai
-                Zunousen</span>
-              <p class="cardSynopsis">${anime.synopsis}</p>
-              <p class="cardScore">${anime.score}/10⭐</p>
-            </div>
-          </div>
-
-          <div class="imgCard">
-            <div class="cardImage">
-              <img src="https://cdn.myanimelist.net/images/manga/2/175662.jpg" alt="Utsuro no Hako to Zero no Maria" />
-              <div class="lnTag tag">LN</div>
-            </div>
-            <div class="cardInfo">
-              <span class="cardTitle">Utsuro no Hako to Zero no Maria</span>
-              <p class="cardSynopsis">${anime.synopsis}</p>
-              <p class="cardScore">${anime.score}/10⭐</p>
-            </div>
-          </div>
-
-          <div class="imgCard">
-            <div class="cardImage">
-              <img src="https://cdn.myanimelist.net/images/manga/1/52281.jpg" alt="3-gatsu no Lion" />
-              <div class="mangaTag tag">Manga</div>
-            </div>
-            <div class="cardInfo">
-              <span class="cardTitle">3-gatsu no Lion</span>
-              <p class="cardSynopsis">${anime.synopsis}</p>
-              <p class="cardScore">${anime.score}/10⭐</p>
-            </div>
-          </div>
-
-          <div class="imgCard">
-            <div class="cardImage">
-              <img src="https://cdn.myanimelist.net/images/manga/1/120529.jpg" alt="Koe no Katachi" />
-              <div class="mangaTag tag">Manga</div>
-            </div>
-            <div class="cardInfo">
-              <span class="cardTitle">Koe no Katachi</span>
-              <p class="cardSynopsis">${anime.synopsis}</p>
-              <p class="cardScore">${anime.score}/10⭐</p>
-            </div>
-          </div>
-        </div>
+        <h3><span>Top Anime</span></h3>
+          <div class="topAnimeJs"></div>
       </div>
     </section>
 
-          <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-      <ins class="adsbygoogle"
-          style="display:block"
-          data-ad-format="fluid"
-          data-ad-layout-key="-f5-1p+b8-1d-xr"
-          data-ad-client="ca-pub-4214057914932039"
-          data-ad-slot="8082595189"></ins>
-      <script>
-          (adsbygoogle = window.adsbygoogle || []).push({});
-      </script> -->
 
+    <!-- !Section 4 -->
+    <section class="topManga">
+      <div class="imgSection">
+        <h3><span>Top Manga & Light Novel</span></h3>
+          <div class="topMangaJs"></div>
+      </div>
+    </section> 
+    
+    
     <!-- !Section 5 -->
+    <section class="topNovel">
+      <div class="imgSection">
+        <h3><span>Top Novels</span></h3>
+          <div class="topNovelJs"></div>
+      </div>
+    </section>
+
+    
+    <!-- !Section 5 -->
+    <section class="topChar">
+      <div class="imgSection">
+        <h3><span>Favorite Characters</span></h3>
+          <div class="topCharJs"></div>
+      </div>
+    </section>
+
+
+    <!-- !Section 6 -->
     <section class="shop" id="shop">
       <div class="imgSection">
         <h3><span>Manga & Light Novel Shop</span></h3>
@@ -1178,18 +739,7 @@
       </div>
     </section>
 
-          <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-      <ins class="adsbygoogle"
-          style="display:block"
-          data-ad-format="fluid"
-          data-ad-layout-key="-f5-1p+b8-1d-xr"
-          data-ad-client="ca-pub-4214057914932039"
-          data-ad-slot="8082595189"></ins>
-      <script>
-          (adsbygoogle = window.adsbygoogle || []).push({});
-      </script> -->
-
-    <!-- !Section 6 -->
+    <!-- !Section 7 -->
     <section class="reviews">
       <div class="imgSection">
         <div class="reviewWrapper">
@@ -1557,30 +1107,7 @@
       </div>
     </section>
 
-    <!-- !Space... -->
     <div class="space2"></div>
-
-            <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <ins class="adsbygoogle"
-            style="display:block"
-            data-ad-format="fluid"
-            data-ad-layout-key="-f5-1p+b8-1d-xr"
-            data-ad-client="ca-pub-4214057914932039"
-            data-ad-slot="8082595189"></ins>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        </script> -->
-        
-      <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-      <ins class="adsbygoogle"
-          style="display:block"
-          data-ad-format="fluid"
-          data-ad-layout-key="-f5-1p+b8-1d-xr"
-          data-ad-client="ca-pub-4214057914932039"
-          data-ad-slot="8082595189"></ins>
-      <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-      </script> -->
 
     <!-- !Footer-start -->
             <footer>

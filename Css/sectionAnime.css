@@ -18,9 +18,11 @@
 .airing,
 .newsSection,
 .topManga,
+.topChar,
+.topNovel,
+.topAnime,
 .upComing,
 .shop,
-.miss,
 .airingRecent {
   font-family: "Open Sans", sans-serif;
   padding-bottom: 3rem;

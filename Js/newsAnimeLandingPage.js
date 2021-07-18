@@ -63,7 +63,7 @@ fetch(RSS_URL)
   }
   
   function createNewsCard(result) {
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 6; i++) {
     const newsSection2 = document.createElement('section');
     newsSection2.classList.add('newsSection2');
   

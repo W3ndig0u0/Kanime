@@ -189,3 +189,10 @@
   padding-top: 2rem;
   padding-bottom: 4rem;
 }
+
+.center2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2rem;
+}

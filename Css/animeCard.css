@@ -135,31 +135,39 @@
   height: 100px;
 }
 
+.cardImage .MovieTag,
 .cardImage .movieTag {
   background-color: #a90042;
 }
+.cardImage .TVTag,
 .cardImage .tvTag {
   background-color: #0583f2;
 }
 .cardImage .novelTag,
+.cardImage .NovelTag,
 .cardImage .lnTag {
   background-color: #845ec2;
 }
+.cardImage .MangaTag,
 .cardImage .mangaTag {
-  background-color: #d975aa;
+  background-color: #0053b5;
 }
+.cardImage .SpecialTag,
 .cardImage .specialTag {
   background-color: #fa474c;
 }
+.cardImage .OVATag,
 .cardImage .ovaTag {
   background-color: #06822e;
 }
+.cardImage .ManhwaTag,
 .cardImage .manhwaTag {
-  background-color: #0053b5;
+  background-color: #d975aa;
 }
 .cardImage .manhuaTag {
   background-color: #4f0113;
 }
+.cardImage .ONATag,
 .cardImage .onaTag {
   background-color: #900d00;
 }
@@ -167,9 +175,12 @@
 .cardImage .one-shotTag {
   background-color: #db886c;
 }
+
+.cardImage .DoujinshiTag,
 .cardImage .doujinshiTag {
   background-color: #ce88e5;
 }
+.cardImage .UnknownTag,
 .cardImage .undefinedTag {
   background-color: darkslategray;
 }

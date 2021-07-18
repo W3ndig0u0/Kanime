@@ -1,29 +1,28 @@
-const SEASON_ANIME_URL = "https://api.jikan.moe/v3/top/anime/1/airing";
+const TOP_MANGA_URL = "https://api.jikan.moe/v3/top/manga/1/bypopularity";
 
-fetch(SEASON_ANIME_URL)
+fetch(TOP_MANGA_URL)
   .then(response => response.json())
   .then(result => {
-    createSeasonAnimeCard(result);
+    createTopMangaCard(result);
   });
 
   function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
 
-  function createSeasonAnimeCard(result) {
-    const TopCharSection = document.createElement('section');
-    TopCharSection.classList.add('imgRow');
+  function createTopMangaCard(result) {
+    const TopMangaSection = document.createElement('section');
+    TopMangaSection.classList.add('imgRow');
 
     if (undefined !== result.top && result.top.length) {
       for (let i = 0; i < result.top.length; i++) {
       
-    const TopCharDiv = document.createElement('div');
-    TopCharDiv.classList.add('imgRow');
+    const TopMangaDiv = document.createElement('div');
+    TopMangaDiv.classList.add('imgRow');
     
     const thumbnail = result.top[i].image_url;
     const title = result.top[i].title;
     const type = result.top[i].type;
-    const ep = result.top[i].episodes;
 
     const rank = result.top[i].rank;
     const score = result.top[i].score;
@@ -40,9 +39,10 @@ fetch(SEASON_ANIME_URL)
           <img
           src=${thumbnail}
           alt=${newNewTitle}/>
-          <div class="${type}Tag tag">${type}</div>
+            <div class="${type}Tag tag">${type}</div>
+            <div class="epTag">Top: ${rank}</div>
           </div>
-          <div class="cardInfo">
+            <div class="cardInfo">
             <span class="cardTitle">${newNewTitle}</span>
               <p class="cardSynopsis"></p>
               <p class="cardScore">/10⭐</p>
@@ -50,9 +50,9 @@ fetch(SEASON_ANIME_URL)
       </div>
       `;
           
-      TopCharDiv.innerHTML = recentInnerHTML;
-      TopCharSection.appendChild(TopCharDiv)
-      document.querySelector(".airingAnimeJs").appendChild(TopCharSection)
+      TopMangaDiv.innerHTML = recentInnerHTML;
+      TopMangaSection.appendChild(TopMangaDiv)
+      document.querySelector(".topMangaJs").appendChild(TopMangaSection)
     }
   }
 }

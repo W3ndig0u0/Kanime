@@ -3,7 +3,7 @@ const RECENT_ANIME_RSS_URL = "https://api.rss2json.com/v1/api.json?rss_url=https
 fetch(RECENT_ANIME_RSS_URL)
   .then(response => response.json())
   .then(result => {
-    createAnimeCard(result);
+    createRecentAnimeCard(result);
   });
 
   function capitalizeFirstLetter(string) {
@@ -19,7 +19,7 @@ fetch(RECENT_ANIME_RSS_URL)
       return ep
   }
 
-  function createAnimeCard(result) {
+  function createRecentAnimeCard(result) {
     const recentSection = document.createElement('section');
     recentSection.classList.add('imgRow');
 
