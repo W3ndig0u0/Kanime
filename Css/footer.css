@@ -1,6 +1,7 @@
 footer {
   background: #fefefe;
   padding: 90px 0px 60px 0px;
+  font-family: "Lato", sans-serif;
 }
 
 .footer-container {
@@ -15,11 +16,13 @@ footer {
 
 footer .logo {
   margin: 0;
+  cursor: pointer;
   user-select: none;
   font-size: 2rem;
   transition: 500ms;
   color: #0583f2;
   margin: 20px 0;
+  width: 20%;
 }
 
 footer .logo:first-letter {

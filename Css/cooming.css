@@ -1,6 +1,7 @@
 .miss .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  font-family: "Open Sans", sans-serif;
 }
 
 .miss .grid h1 {

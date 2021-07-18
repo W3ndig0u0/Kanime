@@ -103,9 +103,6 @@
     padding-left: 10px;
     padding-right: 10px;
   }
-  .imgRow {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  }
   .newsCardInfo2 h2 {
     font-size: 1rem;
   }
@@ -264,22 +261,46 @@
     left: 1.5%;
   }
   .newsCardInfo h2 {
-    font-size: 0.65rem;
+    font-size: 0.5rem;
+  }
+  .card .featured h6 {
+    font-size: 12px;
+    padding: 8px;
   }
   .newsCardInfo2 {
-    padding: 0.5rem;
+    padding: 0.4rem;
+  }
+  .card-info {
+    padding: 30px;
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 430px) {
   .imgRow {
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(7rem, 1fr));
+    grid-gap: 3px;
+  }
+
+  .cardImage {
+    width: 8rem;
+    height: 12rem;
+  }
+
+  .imgCard {
+    width: 8rem;
+    height: 12rem;
+    align-items: center;
+  }
+
+  .cardImage img {
+    width: 100%;
+    height: 100%;
   }
 
   .imgCard:hover > .cardImage img,
   .imgCard:active > .cardImage img {
-    height: 10rem;
-    z-index: 10;
+    height: 12rem;
+    width: 7.7rem;
   }
 
   .cardInfo {
@@ -287,34 +308,27 @@
     font-size: 0.6rem;
   }
 
-  .cardImage img {
-    height: 12rem;
-  }
-
   .previewButton {
     font-size: 14px;
   }
 
-  .tag {
+  .tag,
+  .epTag {
     padding: 0.2;
     font-size: 0.7rem !important;
+    bottom: 0px !important;
   }
 
   .cardCost2 {
     margin-block-start: 0em;
     margin-block-end: 0em;
   }
-
   .card h2 {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     margin-top: 1.5rem;
     margin-bottom: 1rem;
   }
 
-  .card .featured h6 {
-    font-size: 8px;
-    padding: 6px;
-  }
   .next {
     right: 0%;
   }
@@ -347,15 +361,15 @@
 
 @media screen and (max-width: 280px) {
   .newsCardInfo2 h2 {
-    font-size: 0.9rem;
+    font-size: 0.5rem;
     text-align: center;
   }
   .newsCardInfo2 h6 {
-    font-size: 0.6rem;
+    font-size: 0.3rem;
     text-align: center;
   }
   .newsCardInfo2 p {
-    font-size: 0.6rem;
+    font-size: 0.3rem;
     text-align: center;
   }
   .newsImg2 img {

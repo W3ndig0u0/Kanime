@@ -35,23 +35,43 @@
 }
 
 .newsCardInfo h2 {
-  margin-block-start: 0em;
   color: black;
   font-size: 1rem;
-  font-family: "Abel", sans-serif;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+}
+.newsCardInfo h2:hover {
+  transition: 300ms;
+  transition: underline 500ms;
+}
+
+.newsCardInfo h2::after {
+  content: "";
+  display: block;
+  width: 0%;
+  height: 2px;
+  background-color: #0583f2;
+  transition: 700ms;
+}
+
+.newsCardInfo h2:hover::after {
+  width: 20%;
 }
 
 .newsCardInfo h6 {
   color: #f27d16;
   font-size: 1em;
-  margin-block-start: 1em;
+  margin-block-start: 0em;
   margin-block-end: 1em;
   font-weight: bold;
 }
 
 .newsCardInfo p {
+  font-family: "Zilla Slab", serif;
   color: #0583f2;
   font-size: 1rem;
+  margin-block-start: 0em;
+  margin-block-end: 0.5em;
 }
 
 .newsLetter:hover,
@@ -106,17 +126,37 @@
 
 .newsCardInfo2 h2 {
   font-size: 1.5rem;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+}
+.newsCardInfo2 h2:hover {
+  font-size: 1.53rem;
+  transition: 300ms;
+}
+
+.newsCardInfo2 h2::after {
+  content: "";
+  display: block;
+  width: 0%;
+  height: 2px;
+  background-color: #0583f2;
+  transition: 700ms;
+}
+
+.newsCardInfo2 h2:hover::after {
+  width: 20%;
 }
 
 .newsCardInfo2 h6 {
   color: #f27d16;
   font-size: 0.7em;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
+  margin-block-start: 0.6em;
+  margin-block-end: 0.6em;
   font-weight: bold;
 }
 
 .newsCardInfo2 p {
+  font-family: "Zilla Slab", serif;
   color: #0583f2;
   font-size: 1rem;
 }
