@@ -5,7 +5,7 @@
   min-height: auto;
   transition: 800ms;
   width: auto;
-  user-select: none;
+  user-select: text;
 }
 
 .imgCard:hover,
@@ -29,9 +29,16 @@
 
 .imgCard:hover > .cardImage img,
 .imgCard:active > .cardImage img {
-  height: 15rem;
+  height: 17rem;
   transition: 600ms;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0);
+}
+.imgCard:hover,
+.imgCard:active {
+  height: 105%;
+  transition: 600ms;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0);
+  z-index: 10;
 }
 
 .cardImage {
@@ -71,6 +78,13 @@
 
 .cardTitle {
   cursor: pointer;
+  color: #ffffff;
+  transition: 300ms;
+}
+
+.cardTitle:hover {
+  cursor: pointer;
+  color: #f27d16;
 }
 
 .cardCost {
@@ -78,6 +92,7 @@
   margin-block-start: 0.5em;
   margin-block-end: 0em;
   cursor: pointer;
+  font-size: 1rem;
 }
 
 .cardCost2 {
@@ -126,11 +141,12 @@
 .cardImage .tvTag {
   background-color: #0583f2;
 }
+.cardImage .novelTag,
 .cardImage .lnTag {
   background-color: #845ec2;
 }
 .cardImage .mangaTag {
-  background-color: #ffa88b;
+  background-color: #d975aa;
 }
 .cardImage .specialTag {
   background-color: #fa474c;
@@ -138,6 +154,34 @@
 .cardImage .ovaTag {
   background-color: #06822e;
 }
+.cardImage .manhwaTag {
+  background-color: #0053b5;
+}
+.cardImage .manhuaTag {
+  background-color: #4f0113;
+}
 .cardImage .onaTag {
-  background-color: #5fdd87;
+  background-color: #900d00;
+}
+
+.cardImage .one-shotTag {
+  background-color: #db886c;
+}
+.cardImage .doujinshiTag {
+  background-color: #ce88e5;
+}
+.cardImage .undefinedTag {
+  background-color: darkslategray;
+}
+
+.cardImage .epTag {
+  background-color: #900d00;
+  position: absolute;
+  bottom: 4px;
+  color: #eee;
+  right: 0;
+  text-transform: uppercase;
+  border-radius: 10px 0px 10px 0px;
+  padding: 0.2rem;
+  font-size: 1rem;
 }

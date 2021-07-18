@@ -12,6 +12,7 @@
 .imgSection h3 {
   font-size: 1.5rem;
   margin-block-end: 0em;
+  font-family: "Open Sans", sans-serif;
 }
 
 .airing,
@@ -19,20 +20,15 @@
 .topManga,
 .upComing,
 .shop,
-.miss {
+.miss,
+.airingRecent {
+  font-family: "Open Sans", sans-serif;
   padding-bottom: 3rem;
-}
-
-.miss {
-  text-align: center;
-  font-size: 1.5rem;
-  text-transform: capitalize;
-  word-wrap: break-word;
-  padding-top: 3rem;
 }
 
 .imgSection h4 {
   text-align: center;
+  font-family: "Open Sans", sans-serif;
   font-size: 2.5rem;
 }
 

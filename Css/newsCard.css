@@ -35,8 +35,10 @@
 }
 
 .newsCardInfo h2 {
+  margin-block-start: 0em;
   color: black;
   font-size: 1rem;
+  font-family: "Abel", sans-serif;
 }
 
 .newsCardInfo h6 {
@@ -70,6 +72,7 @@
 .newsSection2 {
   width: 85%;
   margin: 0 auto;
+  font-family: "Open Sans", sans-serif;
 }
 
 .newsLetter2 {

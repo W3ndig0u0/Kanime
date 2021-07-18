@@ -1,6 +1,6 @@
-const RSS_URL = "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.livechart.me%2Ffeeds%2Fheadlines";
+const NEWS_ANIME_RSS_URL = "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.livechart.me%2Ffeeds%2Fheadlines";
 
-fetch(RSS_URL)
+fetch(NEWS_ANIME_RSS_URL)
   .then(response => response.json())
   .then(result => {
     console.log('Success:', result.items[0]);

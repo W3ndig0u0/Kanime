@@ -17,10 +17,11 @@
   height: 5rem;
   transition: 500ms;
   background: inherit;
-  z-index: 100;
+  z-index: 10000000;
 }
 
 .menu-content {
+  font-family: "Open Sans", sans-serif;
   user-select: none;
   display: flex;
   justify-content: flex-end;
