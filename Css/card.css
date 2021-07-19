@@ -1,11 +1,11 @@
 .newsCard {
-  height: 28rem;
+  height: 30rem;
   position: relative;
 }
 
 .card {
   position: relative;
-  height: 25rem;
+  height: 28rem;
   margin: auto;
   background-color: #fff;
   border-radius: 32px;
@@ -60,7 +60,7 @@
   margin: 10px 0;
   font-size: 1.7rem;
   display: flex;
-  margin-top: 1rem;
+  margin-top: 2rem;
   margin-bottom: 1.3rem;
   user-select: text;
 }

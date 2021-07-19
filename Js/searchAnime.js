@@ -98,7 +98,6 @@ function updateDom(data) {
     document.querySelector('.topChar').style.display = "none";
     document.querySelector('.shop').style.display = "none";
     document.querySelector('.reviews').style.display = "none";
-
     
     const pagination = document.createElement('div');
     pagination.classList.add('pagination');

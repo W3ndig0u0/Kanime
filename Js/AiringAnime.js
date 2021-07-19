@@ -13,10 +13,10 @@ fetch("https://api.jikan.moe/v3/top/anime/1/airing")
     TopCharSection.classList.add('imgRow');
 
     if (undefined !== result.top && result.top.length) {
-      for (let i = 0; i < result.top.length; i++) {
+    for (let i = 0; i < 10; i++) {
+      // for (let i = 0; i < result.top.length; i++) {
       
     const TopCharDiv = document.createElement('div');
-    TopCharDiv.classList.add('imgRow');
     
     const thumbnail = result.top[i].image_url;
     const title = result.top[i].title;

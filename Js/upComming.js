@@ -1,9 +1,9 @@
-// const UPCOMING_ANIME_URL = "https://api.jikan.moe/v3/season/later";
-const TOP_UPCOMING_ANIME_URL = "https://api.jikan.moe/v3/top/anime/1/upcoming";
+const TOP_UPCOMING_ANIME_URL = "https://api.jikan.moe/v3/season/later";
 
 fetch(TOP_UPCOMING_ANIME_URL)
   .then(response => response.json())
   .then(result => {
+    // console.log(result.anime);
     createTopCommingAnimeCard(result);
   });
 
@@ -15,19 +15,20 @@ fetch(TOP_UPCOMING_ANIME_URL)
     const upCommingSection = document.createElement('section');
     upCommingSection.classList.add('imgRow');
 
-    if (undefined !== result.top && result.top.length) {
-      for (let i = 0; i < result.top.length; i++) {
+    if (undefined !== result.anime && result.anime.length) {
+      for (let i = 0; i < 10; i++) {
+      // for (let i = 0; i < result.anime.length; i++) {
       
     const upCommingDiv = document.createElement('div');
     upCommingDiv.classList.add('imgRow');
     
-    const thumbnail = result.top[i].image_url;
-    const title = result.top[i].title;
-    const type = result.top[i].type;
+    const thumbnail = result.anime[i].image_url;
+    const title = result.anime[i].title;
+    const type = result.anime[i].type;
 
-    const rank = result.top[i].rank;
-    const score = result.top[i].score;
-    const startDate = result.top[i].start_date;
+    const rank = result.anime[i].rank;
+    const score = result.anime[i].score;
+    const startDate = result.anime[i].start_date;
 
     const newTitle = capitalizeFirstLetter(title);
     const newNewTitle = AnimeNameConverter(newTitle);
