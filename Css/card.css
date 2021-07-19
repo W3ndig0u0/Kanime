@@ -20,6 +20,10 @@
   font-family: "Helvetica Neue", sans-serif;
 }
 
+.mobileImgHeader {
+  display: none;
+}
+
 .card p {
   opacity: 0.9;
   letter-spacing: 1px;
@@ -58,7 +62,7 @@
 .card h2 {
   letter-spacing: 1px;
   margin: 10px 0;
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   display: flex;
   margin-top: 2rem;
   margin-bottom: 1.3rem;
@@ -152,8 +156,8 @@
   background-color: rgba(0, 171, 255, 0.25);
   border-radius: 50%;
   display: inline-block;
-  margin-top: 1rem;
-  margin-bottom: -0.5rem;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
 }
 
 .dotActive {

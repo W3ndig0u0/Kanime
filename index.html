@@ -25,6 +25,7 @@
   <link rel="stylesheet" href="./Css/cooming.css" />
   <link rel="stylesheet" href="./Css/review.css" />
   <link rel="stylesheet" href="./Css/animeCard.css" />  
+  <link rel="stylesheet" href="./Css/leader.css" />  
 
   <link rel="stylesheet" href="./Css/mediaQueries.css" />
 
@@ -42,11 +43,13 @@
   <script defer src="./Js/topAnime.js"></script>
   <script defer src="./Js/topNovel.js"></script>
   
+  <script defer src="./Js/loader.js"></script>
   <script defer src="./Js/scroll.js"></script>
   <script defer src="./Js/reviews.js"></script>
   <script defer src="./Js/searchAnime.js"></script>
   <script defer src="./Js/slides.js"></script>
   <script defer src="./Js/menu.js"></script>
+  <script defer src="./Js/AnimeCardSlider.js"></script>
   
   <script defer src="./Js/AnimePage.js"></script>
   
@@ -172,7 +175,7 @@
 
           <div class="hamburgerNav" id="hamburgerNavbarLinks">
             <div class="closeButton" id="closeButton" onclick="closeNavbar()">
-              ☰
+              X
             </div>
 
             <div class="hamburgerNavContent">
@@ -202,57 +205,40 @@
 
   <main>
 
-        <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <ins class="adsbygoogle"
-        style="display:block"
-        data-ad-format="fluid"
-        data-ad-layout-key="-f5-1p+b8-1d-xr"
-        data-ad-client="ca-pub-4214057914932039"
-        data-ad-slot="8082595189"></ins>
-    <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
-</script> -->
-
     <div id="search-results" class="container"></div>
     <div class="center2"></div>
-    
-    <!-- !Section 1 -->
-    <section class="airingRecent">
-      <div class="imgSection">
-        <h3><span>Recently Aired</span></h3>
-        <span class="prev" onclick="plusSlides(-1)">&#10094;</span>
-        <span class="next" onclick="plusSlides(1)">&#10095;</span>
-        <div class="slider">
-          <div class="recentAnime">
-        </div>
-        </div>
-      </div>
-    </section>
 
     <!-- !Section 1 -->
     <section class="airing">
       <div class="imgSection">
         <h3><span>Top Airing Anime</span></h3>
-        <span class="prev" onclick="plusSlides(-1)">&#10094;</span>
-        <span class="next" onclick="plusSlides(1)">&#10095;</span>
+        <span class="prev" onclick="PrevSlider()">&#10094;</span>
+        <span class="next" onclick="NextSlider()">&#10095;</span>
         <div class="slider">
           <div class="airingAnimeJs"></div>
         </div>
       </div>
     </section>
 
-    <!-- !Section 2 -->
-    <section class="upComming">
-      <div class="imgSection">
-        <h3><span>Top Upcoming Anime</span></h3>
-      <span class="prev" onclick="plusSlides(-1)">&#10094;</span>
-      <span class="next" onclick="plusSlides(1)">&#10095;</span>
-        <div class="slider">
-          <div class="upComingAnime">
+    <div class="shop">
+      <section class="grid">
+        <!-- !Section 2 -->
+        <section class="upComming">
+          <div class="imgSection">
+            <h3><span>Top Upcoming Anime</span></h3>
+            <div class="upComingAnime">
+            </div>
           </div>
-        </div>
-      </div>
-    </section>
+        </section>
+        
+        <!-- !Section 1 -->
+          <section class="upComming">
+            <div class="recentAnime"></div>
+          </section>
+      </section>
+    </div>
+    
+
 
 
     <!-- !Section 3 -->
@@ -268,8 +254,6 @@
     <section class="topAnime">
       <div class="imgSection">
         <h3><span>Top Anime</span></h3>
-        <span class="prev" onclick="plusSlides(-1)">&#10094;</span>
-        <span class="next" onclick="plusSlides(1)">&#10095;</span>
         <div class="slider">
           <div class="topAnimeJs"></div>
       </div>
@@ -281,8 +265,6 @@
     <section class="topManga">
       <div class="imgSection">
         <h3><span>Top Manga & Light Novel</span></h3>
-        <span class="prev" onclick="plusSlides(-1)">&#10094;</span>
-        <span class="next" onclick="plusSlides(1)">&#10095;</span>
         <div class="slider">
           <div class="topMangaJs"></div>
       </div>
@@ -294,8 +276,6 @@
     <section class="topNovel">
       <div class="imgSection">
         <h3><span>Top Novels</span></h3>
-        <span class="prev" onclick="plusSlides(-1)">&#10094;</span>
-        <span class="next" onclick="plusSlides(1)">&#10095;</span>
         <div class="slider">
           <div class="topNovelJs"></div>
       </div>
@@ -307,15 +287,11 @@
     <section class="topChar">
       <div class="imgSection">
         <h3><span>Favorite Characters</span></h3>
-        <span class="prev" onclick="plusSlides(-1)">&#10094;</span>
-        <span class="next" onclick="plusSlides(1)">&#10095;</span>
-        <div class="slider">
-          <div class="topCharJs"></div>
-      </div>
+          <div class= "topCharJs"></div>
       </div>
     </section>
 
-
+  <div class="space2"></div>
     <!-- !Section 7 -->
     <section class="reviews">
       <div class="imgSection">

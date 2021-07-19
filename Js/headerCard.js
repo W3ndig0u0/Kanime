@@ -88,7 +88,10 @@ fetch("https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.livechart.
             <h6 class="news">News</h6>
           </div>
           <h2>${title}</h2>
-          <p><i class="fa fa-calendar"></i>${newPubDate}</p>
+          <img class="mobileImgHeader"
+          src=${thumbnail}
+          alt=${capitalizeFirstLetter(title)}/>
+          <p><i class="fa fa-calendar"></i> ${newPubDate}</p>
           <a href=${youtubeUrl} target="_blank" rel="noopener" title=${youtubeUrl} aria-label=${youtubeUrl}>
           <p class="source"> Source: ${capitalizeFirstLetter(websiteName)}</p>
           </a>

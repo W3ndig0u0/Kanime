@@ -115,6 +115,9 @@ footer .logo:active {
   .footer-container {
     max-width: 600px;
   }
+  footer .logo {
+    margin: 0 auto;
+  }
   .right-col {
     width: 100%;
     margin-bottom: 30px;

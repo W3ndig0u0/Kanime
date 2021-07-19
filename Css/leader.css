@@ -1,0 +1,124 @@
+.container {
+  width: 350px;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 5px;
+  z-index: 1;
+  overflow: hidden;
+  font-family: "Open Sans", sans-serif;
+  margin: 0 auto;
+  margin-top: 2rem;
+  margin-right: 3rem;
+}
+
+.leaderboard {
+  background: linear-gradient(to bottom, #3a404d, #181c26);
+}
+
+.leaderboard .head {
+  color: snow;
+  font-size: 16px;
+  text-align: center;
+}
+
+.leaderboard .head h1 {
+  display: inline-block;
+  margin-left: 4px;
+}
+
+.leaderboard .body {
+  color: snow;
+  font-size: 16px;
+}
+
+.leaderboard li {
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.leaderboard li img {
+  width: 4.5rem;
+  border-radius: 4px;
+}
+
+.leaderboard li mark {
+  color: snow;
+  background-color: transparent;
+}
+
+.leaderboard li:before {
+  margin-right: 4px;
+}
+.leaderboard li:nth-child(1) {
+  background: #fa6855;
+}
+.leaderboard li:nth-child(2) {
+  background: #e0574f;
+}
+.leaderboard li:nth-child(3) {
+  background: #d7514d;
+}
+.leaderboard li:nth-child(4) {
+  background: #cd4b4b;
+}
+.leaderboard li:nth-child(5) {
+  background: #c24448;
+}
+
+.leaderboard li small h1 {
+  color: snow;
+  opacity: 0.85;
+  background-color: transparent;
+  cursor: pointer;
+  transition: 200ms;
+  font-size: 18px;
+}
+
+.leaderboard li small h1:hover,
+.leaderboard li small h1:active {
+  color: white;
+  opacity: 1;
+}
+
+.leaderboard li small .extraInfo {
+  color: snow;
+  opacity: 0.7;
+  background-color: transparent;
+}
+
+.leaderboard li small .dot {
+  height: 7px;
+  width: 7px;
+  opacity: 1;
+  background-color: white;
+  border-radius: 50%;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+  text-align: start;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+@media screen and (max-width: 840px) {
+  .container {
+    width: 300px;
+    margin-right: 2rem;
+  }
+}
+@media screen and (max-width: 760px) {
+  .container {
+    width: 280px;
+    margin-right: 2rem;
+  }
+}
+@media screen and (max-width: 606px) {
+  .container {
+    width: 400px;
+    margin: 0 auto;
+    margin-top: 2rem;
+  }
+  .leaderboard li small h1 {
+    font-size: 16px;
+  }
+}

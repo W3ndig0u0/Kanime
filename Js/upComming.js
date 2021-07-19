@@ -13,14 +13,14 @@ fetch(TOP_UPCOMING_ANIME_URL)
 
   function createTopCommingAnimeCard(result) {
     const upCommingSection = document.createElement('section');
-    upCommingSection.classList.add('imgRow');
+    upCommingSection.classList.add('imgRow2');
 
     if (undefined !== result.anime && result.anime.length) {
-      // for (let i = 0; i < 10; i++) {
-      for (let i = 0; i < result.anime.length; i++) {
+      for (let i = 0; i < 15; i++) {
+      // for (let i = 0; i < result.anime.length; i++) {
       
     const upCommingDiv = document.createElement('div');
-    upCommingDiv.classList.add('imgRow');
+    upCommingDiv.classList.add('imgRow2');
     
     const thumbnail = result.anime[i].image_url;
     const title = result.anime[i].title;
@@ -36,8 +36,8 @@ fetch(TOP_UPCOMING_ANIME_URL)
     // !Skapar html
     const recentInnerHTML = 
     `
-    <div class="imgCard">
-      <div class="cardImage">
+    <div class="imgCard2">
+      <div class="cardImage2">
           <img
           src=${thumbnail}
           alt=${newNewTitle}/>
@@ -45,8 +45,8 @@ fetch(TOP_UPCOMING_ANIME_URL)
             <div class="playWrapper">
             </div>
           </div>
-            <div class="cardInfo">
-            <span class="cardTitle">${newNewTitle}</span>
+            <div class="cardInfo2">
+            <span class="cardTitle2">${newNewTitle}</span>
               <p class="cardSynopsis"></p>
               <p class="cardScore">/10⭐</p>
         </div>

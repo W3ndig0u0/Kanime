@@ -1,15 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Abel&family=Lato:wght@300;400&family=Open+Sans:wght@300;400;600&family=Zilla+Slab:wght@300&display=swap");
 
-body {
+body,
+html {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
   background-color: #f8f8ff;
+  overflow-x: hidden;
+  min-width: 100vw;
 }
-
-* {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
-  scroll-behavior: smooth;
 }
 
 li {

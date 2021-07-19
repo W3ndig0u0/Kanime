@@ -29,7 +29,7 @@ fetch("https://api.jikan.moe/v3/top/anime/1/airing")
     // !Skapar html
     const recentInnerHTML = 
     `
-    <div class="imgCard">
+    <div class="imgCard ImgCardSlider">
       <div class="cardImage">
           <img
           src=${thumbnail}

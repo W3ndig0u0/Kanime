@@ -103,6 +103,9 @@
 }
 
 @media screen and (max-width: 720px) {
+  .slider {
+    overflow-x: auto;
+  }
   .next {
     right: 5.5%;
   }
@@ -111,6 +114,13 @@
   }
   .card {
     display: block;
+    height: auto;
+    width: auto;
+  }
+  .newsCard {
+    height: auto;
+    width: 100%;
+    padding-bottom: 4rem;
   }
   .card h2 {
     font-size: 1.5rem;
@@ -119,10 +129,14 @@
     font-size: 1rem;
   }
   .card .img {
-    height: 0%;
+    display: none;
   }
-  .card {
-    height: 20rem;
+
+  .card .mobileImgHeader {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
   }
 
   .navButton {
@@ -189,11 +203,17 @@
   .reviewCover {
     height: 15rem;
   }
+  .score {
+    padding-right: 0%;
+  }
 }
 
 @media screen and (max-width: 560px) {
   .newsCardInfo h2 {
     font-size: 0.8rem;
+  }
+  .newsCardInfo h6 {
+    font-size: 0.7rem;
   }
   .newsLetter {
     height: 10rem;
@@ -201,22 +221,11 @@
   .newsImg img {
     height: 10rem;
   }
-
-  .card {
-    height: 21rem;
-  }
   .next {
     right: 4.5%;
   }
   .prev {
     left: 5.5%;
-  }
-
-  .card {
-    display: block;
-  }
-  .card h2 {
-    font-size: 1.3rem;
   }
 
   .center {
@@ -255,54 +264,27 @@
   .newsCardInfo2 {
     padding: 0.4rem;
   }
-  .card-info {
-    padding: 30px;
+
+  .container {
+    width: 350px;
   }
 }
 
 @media screen and (max-width: 430px) {
   .imgRow2 {
     grid-template-columns: repeat(auto-fill, minmax(7rem, 1fr));
-    grid-gap: 3px;
+    column-gap: 2rem;
   }
-
-  .cardImage2 {
-    width: 8rem;
-    height: 12rem;
-  }
-
   .imgCard2 {
-    width: 8rem;
-    height: 12rem;
-    align-items: center;
-  }
-
-  .cardImage2 img {
-    width: 100%;
-    height: 100%;
-  }
-
-  .imgCard2:hover > .cardImage2 img,
-  .imgCard2:active > .cardImage2 img {
-    height: 12rem;
-    width: 7.7rem;
-  }
-
-  .previewButton {
-    font-size: 14px;
-  }
-
-  .tag,
-  .epTag {
-    padding: 0.2;
-    font-size: 0.7rem !important;
-    bottom: 0px !important;
+    margin: 1.5rem auto;
+    padding-right: 1.5rem;
   }
 
   .cardCost2 {
     margin-block-start: 0em;
     margin-block-end: 0em;
   }
+
   .card h2 {
     font-size: 1.2rem;
   }
@@ -313,10 +295,28 @@
   .next {
     right: 0%;
   }
+  .container {
+    width: 300px;
+  }
+  .newsCardInfo p {
+    font-size: 0.7rem;
+  }
 }
 
 /* !min mobil */
 @media screen and (max-width: 330px) {
+  .imgRow2 {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    margin: 0rem auto;
+  }
+
+  .imgCard2 {
+    margin: 1.5rem auto;
+  }
+
+  .container {
+    width: 280px;
+  }
   .newsCardInfo h2 {
     font-size: 0.45rem;
   }

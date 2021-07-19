@@ -6,6 +6,12 @@ fetch(RECENT_ANIME_RSS_URL)
     createRecentAnimeCard(result);
   });
 
+  function dateConverser(date) {
+    var str = date;
+    var hour =  str.slice(11,16);
+    return "At " + hour
+  }
+
   function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
@@ -21,44 +27,58 @@ fetch(RECENT_ANIME_RSS_URL)
 
   function createRecentAnimeCard(result) {
     const recentSection = document.createElement('section');
-    recentSection.classList.add('imgRow');
+    
+    const recentDivContainer = document.createElement('div');
+    recentDivContainer.classList.add('container');
+        
+    const recentDivLeaderboard = document.createElement('div');
+    recentDivLeaderboard.classList.add('leaderboard');
 
-
-    for (let i = 0; i < 10; i++) {
+    
     const recentDiv = document.createElement('div');
-    recentDiv.classList.add('imgRow');
-  
+    recentDiv.classList.add('body');
+    const recentInnerHTML =
+    `
+        <div class="head">
+          <h1>Recently Added</h1>
+        </div>
+    `;
+
+    
+    recentDivLeaderboard.innerHTML = recentInnerHTML;
+    recentDivContainer.appendChild(recentDivLeaderboard)
+    recentDivLeaderboard.appendChild(recentDiv);
+
+    for (let i = 0; i < 5; i++) {
     const thumbnail = result.items[i].thumbnail;
     const title = result.items[i].title;
     const newTitle = capitalizeFirstLetter(title);
-    const nweNewTitle = AnimeNameConverter(newTitle);
+    const newNewTitle = AnimeNameConverter(newTitle);
     const ep = EpConverter(newTitle)
-    const animeUrl = result.items[i].link;
+    const pubDate = result.items[i].pubDate;
+    const newPubDate = dateConverser(pubDate);
 
-  
+    const recentLi = document.createElement('li');
+
     // !Skapar html
-    const recentInnerHTML = 
+    const recentInnerHTMLLoop =
     `
-    <div class="imgCard">
-      <div class="cardImage">
-          <img
-          src=${thumbnail}
-          alt=${nweNewTitle}/>
-            <div class="tvTag tag">TV</div>
-            <div class="epTag">Ep ${ep}</div>
-              <div class="playWrapper">
-              </div>
-            </div>
-            <div class="cardInfo">
-            <span class="cardTitle">${nweNewTitle}</span>
-              <p class="cardSynopsis"></p>
-              <p class="cardScore">/10⭐</p>
-        </div>
-      </div>
+        <mark>
+          <img src=${thumbnail} alt=${newNewTitle}/>
+        </mark>
+        <small>
+          <h1>${newNewTitle}</h1>
+          <div class="extraInfo">
+            <span>Episode ${ep}</span>
+            <span class="dot"></span>
+            <span>Date: ${newPubDate}</span>
+          </div
+        </small>
       `;
-          
-      recentDiv.innerHTML = recentInnerHTML;
-      recentSection.appendChild(recentDiv)
-      document.querySelector(".recentAnime").appendChild(recentSection)
+      recentLi.innerHTML = recentInnerHTMLLoop;
+      
+      recentDiv.appendChild(recentLi);
+      recentSection.appendChild(recentDivContainer);
+      document.querySelector(".recentAnime").appendChild(recentSection);
     }
   }
