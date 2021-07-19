@@ -66,6 +66,8 @@ function updateDom(data) {
                         <div class="cardImage">
                             <img src="${anime.image_url}">
                             <div class="${key.toLowerCase()}Tag tag">${key.toUpperCase()}</div>
+                            <div class="playWrapper">
+                            </div>
                         </div>
                     <div class="cardInfo">
                         <span class="cardTitle">${anime.title}</span>
@@ -82,8 +84,10 @@ function updateDom(data) {
 
         return `
                 <section class="imgSection">
-                <h4><span>${key.toUpperCase()}</span></h4>
+                <h3><span>${key.toUpperCase()}</span></h3>
+                <div class="slider">
                     <div class="imgRow">${animesHTML}</div>
+                </div>
                 </section>
             `
     }).join("");
@@ -96,8 +100,8 @@ function updateDom(data) {
     document.querySelector('.topManga').style.display = "none";
     document.querySelector('.topNovel').style.display = "none";
     document.querySelector('.topChar').style.display = "none";
-    document.querySelector('.shop').style.display = "none";
     document.querySelector('.reviews').style.display = "none";
+    document.querySelector('.shop').style.display = "none";
     
     const pagination = document.createElement('div');
     pagination.classList.add('pagination');

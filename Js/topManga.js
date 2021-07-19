@@ -41,7 +41,9 @@ fetch(TOP_MANGA_URL)
           src=${thumbnail}
           alt=${newNewTitle}/>
             <div class="${type}Tag tag">${type}</div>
-            <div class="epTag">Top: ${rank}</div>
+            <div class="epTag">Rank: ${rank}</div>
+            <div class="playWrapper">
+            </div>
           </div>
             <div class="cardInfo">
             <span class="cardTitle">${newNewTitle}</span>

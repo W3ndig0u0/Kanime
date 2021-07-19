@@ -42,6 +42,8 @@ fetch(TOP_UPCOMING_ANIME_URL)
           src=${thumbnail}
           alt=${newNewTitle}/>
             <div class="${type}Tag tag">${type}</div>
+            <div class="playWrapper">
+            </div>
           </div>
             <div class="cardInfo">
             <span class="cardTitle">${newNewTitle}</span>

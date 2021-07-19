@@ -5,14 +5,21 @@
 
 .imgSection {
   width: 90%;
-  margin: 1rem auto;
+  margin: 2rem auto;
   height: auto;
+  padding-top: 2rem;
+  font-family: "Open Sans", sans-serif;
+}
+
+.slider {
+  overflow-y: hidden;
+  overflow-x: auto;
+  height: 26rem;
 }
 
 .imgSection h3 {
-  font-size: 1.5rem;
+  font-size: 2rem;
   margin-block-end: 0em;
-  font-family: "Open Sans", sans-serif;
 }
 
 .airing,
@@ -21,7 +28,7 @@
 .topChar,
 .topNovel,
 .topAnime,
-.upComing,
+.upComming,
 .shop,
 .airingRecent {
   font-family: "Open Sans", sans-serif;
@@ -35,9 +42,22 @@
 }
 
 .imgRow {
+  /* display: grid; */
+  /* grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr)); */
+  /* column-gap: 2rem; */
+  /* align-items: center; */
+  /* row-gap: 0.5rem; */
+
+  display: flex;
+  align-items: center;
+}
+.imgRow2 {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
   column-gap: 2rem;
   align-items: center;
   row-gap: 0.5rem;
+
+  /* display: flex;
+  align-items: center; */
 }

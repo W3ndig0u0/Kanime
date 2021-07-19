@@ -17,6 +17,7 @@ fetch("https://api.jikan.moe/v3/top/anime/1/airing")
       // for (let i = 0; i < result.top.length; i++) {
       
     const TopCharDiv = document.createElement('div');
+    TopCharDiv.classList.add('imgRow');
     
     const thumbnail = result.top[i].image_url;
     const title = result.top[i].title;
@@ -34,6 +35,8 @@ fetch("https://api.jikan.moe/v3/top/anime/1/airing")
           src=${thumbnail}
           alt=${newNewTitle}/>
           <div class="${type}Tag tag">${type}</div>
+          <div class="playWrapper">
+          </div>          
           </div>
           <div class="cardInfo">
             <span class="cardTitle">${newNewTitle}</span>

@@ -41,8 +41,10 @@ fetch(TOP_ANIME_URL)
           src=${thumbnail}
           alt=${newNewTitle}/>
             <div class="${type}Tag tag">${type}</div>
-            <div class="epTag">Top: ${rank}</div>
-          </div>
+            <div class="epTag">Rank: ${rank}</div>
+              <div class="playWrapper">
+              </div>
+            </div>
             <div class="cardInfo">
             <span class="cardTitle">${newNewTitle}</span>
               <p class="cardSynopsis"></p>

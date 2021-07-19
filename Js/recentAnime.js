@@ -46,7 +46,9 @@ fetch(RECENT_ANIME_RSS_URL)
           alt=${nweNewTitle}/>
             <div class="tvTag tag">TV</div>
             <div class="epTag">Ep ${ep}</div>
-          </div>
+              <div class="playWrapper">
+              </div>
+            </div>
             <div class="cardInfo">
             <span class="cardTitle">${nweNewTitle}</span>
               <p class="cardSynopsis"></p>

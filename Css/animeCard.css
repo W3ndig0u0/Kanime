@@ -3,40 +3,30 @@
   border-radius: 10px;
   margin-top: 2rem;
   min-height: auto;
-  width: 12rem;
+  min-width: 12rem;
   user-select: text;
   transition: 800ms;
+  margin: 2rem;
+  border: 4px solid #0583f2;
+  background-color: #0583f2;
 }
 
 .imgCard:hover,
 .imgCard:active {
-  border: 4px solid #0583f2;
-  background-color: #0583f2;
+  z-index: 10;
   transform: scale(1.1);
-}
-
-.imgCard:hover > .cardInfo,
-.imgCard:active > .cardInfo {
-  visibility: visible;
-}
-
-.imgCard:hover > .cardCost2,
-.imgCard:active > .cardCost2 {
-  display: none;
 }
 
 .imgCard:hover > .cardImage img,
 .imgCard:active > .cardImage img {
-  height: 17rem;
-  transition: 400ms;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0);
+  border-radius: 10px;
+  /* filter: grayscale(90%); */
+  /* filter: drop-shadow(16px 16px 20px red) invert(75%); */
 }
-.imgCard:hover,
-.imgCard:active {
-  height: 100%;
-  transition: 700ms;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0);
-  z-index: 10;
+
+.imgCard:hover > .cardInfo,
+.imgCard:active > .cardInfo {
+  opacity: 1;
 }
 
 .cardImage {
@@ -48,6 +38,124 @@
 
 .cardImage img {
   width: 100%;
+  height: 17rem;
+  object-fit: cover;
+  box-sizing: border-box;
+  border-radius: 10px;
+  user-select: none;
+  transition: 500ms;
+}
+
+.cardImage img {
+  position: relative;
+}
+
+.playBtn {
+  display: block;
+}
+
+.playWrapper {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("http://wptf.com/wp-content/uploads/2014/05/play-button.png");
+  background-size: 110px 110px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0.7);
+
+  opacity: 1;
+  transition: 500ms;
+}
+
+.imgCard img:hover > .playWrapper,
+.imgCard img::active > .playWrapper {
+  opacity: 0;
+}
+
+.cardInfo {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: max-content;
+
+  padding: 6px;
+  text-align: center;
+  color: black;
+
+  cursor: default;
+  font-family: sans-serif;
+  font-size: 1rem;
+  text-align: center;
+  text-transform: capitalize;
+  opacity: 0.7;
+  transition: 300ms;
+}
+
+.cardTitle {
+  transition: 300ms;
+  cursor: pointer;
+}
+
+.cardTitle:hover {
+  color: #f27d16;
+}
+
+/* !Shop */
+/* !gammla */
+.imgCard2 {
+  position: relative;
+  border-radius: 10px;
+  margin-top: 2rem;
+  min-height: auto;
+  width: 12rem;
+  user-select: text;
+  transition: 800ms;
+}
+
+.imgCard2:hover,
+.imgCard2:active {
+  border: 4px solid #0583f2;
+  background-color: #0583f2;
+  transform: scale(1.1);
+}
+
+.imgCard2:hover > .cardInfo2,
+.imgCard2:active > .cardInfo2 {
+  visibility: visible;
+}
+
+.imgCard2:hover > .cardCost2,
+.imgCard2:active > .cardCost2 {
+  display: none;
+}
+
+.imgCard2:hover > .cardImage2 img,
+.imgCard2:active > .cardImage img {
+  height: 17rem;
+  transition: 400ms;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0);
+}
+
+.imgCard2:hover,
+.imgCard2:active {
+  height: 90%;
+  transition: 700ms;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0);
+  z-index: 10;
+}
+
+.cardImage2 {
+  position: relative;
+  height: auto;
+  cursor: pointer;
+  user-select: none;
+}
+
+.cardImage2 img {
+  width: 100%;
   height: 18rem;
   object-fit: cover;
   box-sizing: border-box;
@@ -56,7 +164,7 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-.cardInfo {
+.cardInfo2 {
   position: absolute;
   left: 0;
   width: 100%;
@@ -74,14 +182,13 @@
   text-transform: capitalize;
 }
 
-.cardTitle {
+.cardTitle2 {
   cursor: pointer;
   color: #ffffff;
   transition: 200ms;
 }
 
-.cardTitle:hover {
-  cursor: pointer;
+.cardTitle2:hover {
   color: #f27d16;
 }
 
@@ -89,7 +196,6 @@
   color: #a90042;
   margin-block-start: 0.5em;
   margin-block-end: 0em;
-  cursor: pointer;
   font-size: 1rem;
 }
 
@@ -112,9 +218,9 @@
 
 /* !tags */
 
-.cardImage .tag {
+.tag {
   position: absolute;
-  bottom: 4px;
+  bottom: 5px;
   color: #eee;
   left: 0;
   text-transform: uppercase;
@@ -123,7 +229,7 @@
   font-size: 1rem;
 }
 
-.cardImage .new {
+.new {
   position: absolute;
   top: 0px;
   left: 0px;
@@ -135,60 +241,60 @@
   height: 100px;
 }
 
-.cardImage .MovieTag,
-.cardImage .movieTag {
+.MovieTag,
+.movieTag {
   background-color: #a90042;
 }
-.cardImage .TVTag,
-.cardImage .tvTag {
+.TVTag,
+.tvTag {
   background-color: #0583f2;
 }
-.cardImage .novelTag,
-.cardImage .NovelTag,
-.cardImage .lnTag {
+.novelTag,
+.NovelTag,
+.lnTag {
   background-color: #845ec2;
 }
-.cardImage .MangaTag,
-.cardImage .mangaTag {
+.MangaTag,
+.mangaTag {
   background-color: #0053b5;
 }
-.cardImage .SpecialTag,
-.cardImage .specialTag {
+.SpecialTag,
+.specialTag {
   background-color: #fa474c;
 }
-.cardImage .OVATag,
-.cardImage .ovaTag {
+.OVATag,
+.ovaTag {
   background-color: #06822e;
 }
-.cardImage .ManhwaTag,
-.cardImage .manhwaTag {
+.ManhwaTag,
+.manhwaTag {
   background-color: #d975aa;
 }
-.cardImage .manhuaTag {
+.manhuaTag {
   background-color: #4f0113;
 }
-.cardImage .ONATag,
-.cardImage .onaTag {
+.ONATag,
+.onaTag {
   background-color: #900d00;
 }
 
-.cardImage .one-shotTag {
+.one-shotTag {
   background-color: #db886c;
 }
 
-.cardImage .DoujinshiTag,
-.cardImage .doujinshiTag {
+.DoujinshiTag,
+.doujinshiTag {
   background-color: #ce88e5;
 }
-.cardImage .UnknownTag,
-.cardImage .undefinedTag {
+.UnknownTag,
+.undefinedTag {
   background-color: darkslategray;
 }
 
-.cardImage .epTag {
+.epTag {
   background-color: #900d00;
   position: absolute;
-  bottom: 4px;
+  bottom: 5px;
   color: #eee;
   right: 0;
   text-transform: uppercase;
