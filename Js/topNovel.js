@@ -15,8 +15,8 @@ fetch(TOP_NOVEL_URL)
     TopNovelSection.classList.add('imgRow');
 
     if (undefined !== result.top && result.top.length) {
-      for (let i = 0; i < 10; i++) {
-      // for (let i = 0; i < result.top.length; i++) {
+      // for (let i = 0; i < 10; i++) {
+      for (let i = 0; i < result.top.length; i++) {
       
     const TopNovelDiv = document.createElement('div');
     TopNovelDiv.classList.add('imgRow');

@@ -15,8 +15,8 @@ fetch(TOP_ANIME_URL)
     TopAnimeSection.classList.add('imgRow');
 
     if (undefined !== result.top && result.top.length) {
-      for (let i = 0; i < 10; i++) {
-      // for (let i = 0; i < result.top.length; i++) {
+      // for (let i = 0; i < 10; i++) {
+      for (let i = 0; i < result.top.length; i++) {
       
     const TopAnimeDiv = document.createElement('div');
     TopAnimeDiv.classList.add('imgRow');

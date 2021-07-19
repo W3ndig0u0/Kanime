@@ -1,9 +1,10 @@
 var reviewIndex = 1;
-showReview(reviewIndex);
 
 function plusReview(n) {
   showReview(reviewIndex += n);
 }
+
+setTimeout(plusReview(0),1000)
 
 function showReview(n) {
   var review = document.getElementsByClassName("reviewGrid");

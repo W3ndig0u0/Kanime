@@ -16,8 +16,8 @@ fetch(TOP_UPCOMING_ANIME_URL)
     upCommingSection.classList.add('imgRow');
 
     if (undefined !== result.anime && result.anime.length) {
-      for (let i = 0; i < 10; i++) {
-      // for (let i = 0; i < result.anime.length; i++) {
+      // for (let i = 0; i < 10; i++) {
+      for (let i = 0; i < result.anime.length; i++) {
       
     const upCommingDiv = document.createElement('div');
     upCommingDiv.classList.add('imgRow');
