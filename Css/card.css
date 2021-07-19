@@ -114,29 +114,36 @@
   cursor: pointer;
   width: auto;
   padding: 16px;
-  color: white;
+  color: #f27d16;
   font-weight: bold;
   font-size: 28px;
   transition: 0.6s ease;
   user-select: none;
 }
 
-.cardNext {
-  position: absolute;
-  top: 30%;
-  right: 8.5%;
+.next {
   border-radius: 0 8px 8px 0;
 }
-.cardPrev {
-  position: absolute;
-  top: 30%;
-  left: 9.5%;
+.prev {
   border-radius: 8px 0 0 8px;
 }
 
-.cardPrev:hover,
-.cardNext:hover {
+.prev:hover,
+.next:hover {
   background-color: #0048ac;
+}
+
+.cardNext {
+  color: white;
+  position: absolute;
+  top: 30%;
+  right: 8.5%;
+}
+.cardPrev {
+  color: white;
+  position: absolute;
+  top: 30%;
+  left: 9.5%;
 }
 
 .dot {

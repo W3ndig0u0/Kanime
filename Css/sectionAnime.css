@@ -12,6 +12,7 @@
 }
 
 .slider {
+  margin: 0rem auto;
   overflow-y: hidden;
   overflow-x: auto;
   height: 26rem;
