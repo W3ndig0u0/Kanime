@@ -11,8 +11,8 @@
   background-color: #fff;
   border-radius: 32px;
   box-shadow: 20px 20px 0px -5px #00abff;
-  max-height: 35rem;
   max-width: 75%;
+  max-height: 35rem;
 
   user-select: none;
   margin: 1rem auto;
@@ -24,6 +24,8 @@
 
 .mobileImgHeader {
   display: none;
+  max-height: 20rem;
+  object-fit: cover;
 }
 
 .card p {
@@ -34,10 +36,21 @@
   font-family: "Open Sans", sans-serif;
   color: #f27d16;
 }
+.card h5 {
+  opacity: 1.2;
+  letter-spacing: 1px;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: "Open Sans", sans-serif;
+  color: black;
+}
 
 .card .source {
   color: #0583f2;
+  cursor: pointer;
 }
+
 .card .source:hover {
   transition: 300ms;
   transition: underline 500ms;
@@ -51,8 +64,9 @@
   background-color: #0583f2;
   transition: 700ms;
 }
+
 .card .source:hover::after {
-  width: 40%;
+  width: 20%;
 }
 
 .card img {

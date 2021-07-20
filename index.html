@@ -32,7 +32,6 @@
   
   <!-- !Api -->
   <script defer src="../Js/newsAnimeLandingPage.js"></script>
-  <script defer src="./Js/headerCard.js"></script>
   
   
   <script defer src="./Js/AiringAnime.js"></script>
@@ -214,7 +213,7 @@
         <!-- !Section 2 -->
         <section class="upComming">
           <div class="imgSection">
-            <h3><span>Top Upcoming Anime</span></h3>
+            <h3><span>Upcoming Anime</span></h3>
             <div class="upComingAnime">
             </div>
           </div>
@@ -223,7 +222,60 @@
         <!-- !Section 1 -->
           <section class="upComming">
             <div class="recentAnime"></div>
-          </section>
+                  
+              <div class="container">
+                <div class="leaderboard">
+                  <div class="head">
+                    <h1>Genres</h1>
+                  </div>
+              </div>
+              <div class="body">
+                <ul class="genres">
+                <li><a href="#" rel="noopener" title="Action">Action</a></li>
+                <li><a href="#"  rel="noopener" title="Adventure">Adventure</a></li>
+                <li><a href="#" rel="noopener"  title="Comedy">Comedy</a></li>
+                <li><a href="#"  rel="noopener" title="Drama">Drama</a></li>
+                <li><a href="#"  rel="noopener" title="Ecchi">Ecchi</a></li>
+                <li><a href="#" rel="noopener"  title="Fantasy">Fantasy</a></li>
+                <li><a href="#"  rel="noopener" title="Romance">Romance</a></li>
+                <li><a href="#"  rel="noopener" title="Harem">Harem</a></li>
+                <li><a href="#"  rel="noopener" title="Shounen">Shounen</a></li>
+                <li><a href="#"  rel="noopener" title="Horror">Horror</a></li>
+                <li><a href="#"  rel="noopener" title="School">School</a></li>
+                <li><a href="#"  rel="noopener" title="Mecha">Mecha</a></li>
+                <li><a href="#"  rel="noopener" title="Military">Military</a></li>
+                <li><a href="#"  rel="noopener" title="Mystery">Mystery</a></li>
+              </ul>
+            </div>
+          </div>
+
+                <div class="space"></div>
+
+                  <div class="container">
+                    <div class="leaderboard">
+                      <div class="head">
+                        <h1>Realase Year</h1>
+                      </div>
+                  </div>
+                <div class="body">
+                <ul class="genres">
+                  <li><a href="#"  rel="noopener" title="2021">2021</a></li>
+                  <li><a href="#"  rel="noopener" title="2020">2020</a></li>
+                  <li><a href="#"  rel="noopener" title="2019">2019</a></li>
+                  <li><a href="#"  rel="noopener" title="2018">2018</a></li>
+                  <li><a href="#"  rel="noopener" title="2017">2017</a></li>
+                  <li><a href="#"  rel="noopener" title="2016">2016</a></li>
+                  <li><a href="#"  rel="noopener" title="2015">2015</a></li>
+                  <li><a href="#"  rel="noopener" title="2014">2014</a></li>
+                  <li><a href="#"  rel="noopener" title="2013">2013</a></li>
+                  <li><a href="#"  rel="noopener" title="2012">2012</a></li>
+                  <li><a href="#"  rel="noopener" title="2011">2011</a></li>
+                  <li><a href="#"  rel="noopener" title="2010">2010</a></li>
+                  <li><a href="#"  rel="noopener" title="2009+">2009+</a></li>
+                </ul>
+              </div>
+            </div>
+          </section> 
       </section>
     </div>
     
@@ -257,17 +309,20 @@
     <section class="topAnime">
       <div class="imgSection">
         <h3><span>Top Anime</span></h3>
+        <span class="prev" onclick="PrevSlider()">&#10094;</span>
+        <span class="next" onclick="NextSlider()">&#10095;</span>
         <div class="slider">
           <div class="topAnimeJs"></div>
       </div>
       </div>
     </section>
 
-
     <!-- !Section 4 -->
     <section class="topManga">
       <div class="imgSection">
         <h3><span>Top Manga & Light Novel</span></h3>
+        <span class="prev" onclick="PrevSlider()">&#10094;</span>
+        <span class="next" onclick="NextSlider()">&#10095;</span>
         <div class="slider">
           <div class="topMangaJs"></div>
       </div>
@@ -279,23 +334,17 @@
     <section class="topNovel">
       <div class="imgSection">
         <h3><span>Top Novels</span></h3>
+        <span class="prev" onclick="PrevSlider()">&#10094;</span>
+        <span class="next" onclick="NextSlider()">&#10095;</span>
         <div class="slider">
           <div class="topNovelJs"></div>
       </div>
       </div>
     </section>
-
     
-    <!-- !Section 5 -->
-    <section class="topChar">
-      <div class="imgSection">
-        <h3><span>Favorite Characters</span></h3>
-          <div class= "topCharJs"></div>
-      </div>
-    </section>
+    <div class="space2"></div>
 
-  <div class="space2"></div>
-    <!-- !Section 7 -->
+    <!-- !Section -->
     <section class="reviews">
       <div class="imgSection">
         <div class="reviewWrapper">
@@ -660,6 +709,17 @@
 
           </div>
         </div>
+      </div>
+    </section>
+    
+    <div class="space2"></div>
+
+    
+    <!-- !Section 5 -->
+    <section class="topChar">
+      <div class="imgSection">
+        <h3><span>Favorite Characters</span></h3>
+          <div class= "topCharJs"></div>
       </div>
     </section>
 

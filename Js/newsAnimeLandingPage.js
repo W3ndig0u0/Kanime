@@ -27,6 +27,11 @@ fetch(RSS_URL)
     var strTime = hours + ':' + minutes + ' ' + ampm;
     return strTime;
   }
+
+  
+function truncate(str, n){
+  return (str.length > n) ? str.substr(0, n-1) + '&hellip;' : str;
+};
   
   function dateConverser(date) {
     const monthNames = ["January", "February", "March", "April", "May", "June",
@@ -85,7 +90,7 @@ fetch(RSS_URL)
           alt=${title}/>
         </div>
         <div class="newsCardInfo">
-        <h2>${title}"</h2>
+        <h2>${truncate(title,150)}"</h2>
         <p>Source: ${capitalizeFirstLetter(websiteName)}</p>
         <h6><i class="fa fa-calendar"></i> ${newPubDate}</h6>
         </div>

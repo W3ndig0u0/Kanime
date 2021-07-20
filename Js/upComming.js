@@ -16,7 +16,7 @@ fetch(TOP_UPCOMING_ANIME_URL)
     upCommingSection.classList.add('imgRow2');
 
     if (undefined !== result.anime && result.anime.length) {
-      for (let i = 0; i < 15; i++) {
+      for (let i = 0; i < 20; i++) {
       // for (let i = 0; i < result.anime.length; i++) {
       
     const upCommingDiv = document.createElement('div');
@@ -42,7 +42,7 @@ fetch(TOP_UPCOMING_ANIME_URL)
           src=${thumbnail}
           alt=${newNewTitle}/>
             <div class="${type}Tag tag">${type}</div>
-            <div class="epTag"></div>
+            <div></div>
             <div class="playWrapper">
             </div>          
           </div>

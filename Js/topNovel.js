@@ -35,7 +35,7 @@ fetch(TOP_NOVEL_URL)
     // !Skapar html
     const recentInnerHTML = 
     `
-    <div class="imgCard animeCard">
+    <div class="imgCard animeCard ImgCardSlider">
       <div class="cardImage">
           <img
           src=${thumbnail}

@@ -38,19 +38,23 @@ function hoverCardIn(event) {
 }
 
 function hoverCardOut(event) {
-  console.log(event.target.childNodes[1].childNodes[5]);
-
-  if (event.target.childNodes[5] !== undefined) {    
-    if (event.target.childNodes[5].classList.contains("playWrapper"))
+  if (event.target.childNodes[1].childNodes[5] !== undefined) {    
+    if (event.target.childNodes[1].childNodes[5].classList.contains("playWrapper"))
     {
-      event.target.parentNode.childNodes[5].style.opacity = "0";
+      event.target.childNodes[1].childNodes[5].style.opacity = "0";
+    }
+  }  
+  
+  if (event.target.childNodes[1].childNodes[7] !== undefined) {    
+    if (event.target.childNodes[1].childNodes[7].classList.contains("playWrapper"))
+    {
+      event.target.childNodes[1].childNodes[7].style.opacity = "0";
     }
   }
   
   else if(event.target.classList.contains("playWrapper"))
   {
     event.target.style.opacity = "0";
-    console.log("sas");
   }
 }
 

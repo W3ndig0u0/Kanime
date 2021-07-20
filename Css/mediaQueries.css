@@ -39,13 +39,13 @@
   .prev {
     left: 7.5%;
   }
-  .card {
-    height: 20rem;
-  }
   .card h2 {
     font-size: 1rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
+  }
+  .card h5 {
+    font-size: 0.9rem;
   }
   .card p {
     font-size: 0.9rem;
@@ -95,6 +95,9 @@
   .card p {
     font-size: 0.7rem;
   }
+  .card h5 {
+    font-size: 0.7rem;
+  }
 }
 
 @media screen and (max-width: 720px) {
@@ -111,7 +114,9 @@
     display: block;
     height: auto;
     width: auto;
+    max-height: none;
   }
+
   .newsCard {
     height: auto;
     width: 100%;

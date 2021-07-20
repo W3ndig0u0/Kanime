@@ -1,75 +1,79 @@
-fetch("https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.livechart.me%2Ffeeds%2Fheadlines")
+
+function dayWeek(){
+  var days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+  var d = new Date();
+  var dayName = days[d.getDay()];
+  return dayName
+}
+
+let dayName = dayWeek();
+
+function truncate(str, n){
+  return (str.length > n) ? str.substr(0, n-1) + '&hellip;' : str;
+};
+
+
+fetch("https://api.jikan.moe/v3/schedule/" + dayName)
   .then(response => response.json())
   .then(result => {
-    createHeaderNewsCard(result);
+    // !INTE BRA!!! HITTA ETT Bättre SÄTT
+    switch (dayName) {
+      case "sunday":
+        createAnimeHeaderNewsCard(result.sunday);
+      break;
+      case "monday":
+        createAnimeHeaderNewsCard(result.monday);
+      break;
+      case "tuesday":
+        createAnimeHeaderNewsCard(result.tuesday);
+      break;
+      case "wednesday":
+        createAnimeHeaderNewsCard(result.wednesday);
+      break;
+      case "thursday":
+        createAnimeHeaderNewsCard(result.thursday);
+      break;
+      case "friday":
+        createAnimeHeaderNewsCard(result.friday);
+      break;
+      case "saturday":
+        createAnimeHeaderNewsCard(result.saturday);
+      break;
+    
+      default:
+        break;
+    }
   });
-
-  function webSiteCheck(url) {
-    var str = url;
-    if (str.includes("twitter")) {
-      return "twitter"
-    }
-    else{
-      var res =  str.split('.')[1]
-      return res
-    }
-  }
-
-  function formatAMPM(date) {
-    var hours = date.slice(0,2);
-    var minutes = date.slice(3,5);
-    var ampm = hours >= 12 ? 'pm' : 'am';
-    hours = hours % 12;
-    hours = hours ? hours : 12;
-    minutes = minutes < 10 ? '0'+minutes : minutes;
-    var strTime = hours + ':' + minutes + ' ' + ampm;
-    return strTime;
-  }
   
   function dateConverser(date) {
-    const monthNames = ["January", "February", "March", "April", "May", "June",
-    "July", "August", "September", "October", "November", "December"
-    ];
-
     var str = date;
-    var newDate =  str.slice(5);
-    var newNewDate =  newDate.slice(0,5)
-    var mounth =  12;
-
-    if (newmounth =  newDate.slice(0,1) == "0") {
-      var mounth =  newDate.slice(1,2);
-    }
-    else{
-      var mounth =  newDate.slice(0,2);
-    }
-    var date =  newDate.slice(3,6);
-    var hour =  newDate.slice(7,11);
-    const today = new Date();
-
-    if (date == today.getDate()) {
-      return "At " + formatAMPM(hour)
-    }
-    else
-    {
-      return [date +  monthNames[mounth - 1]]
-    }
+    var hour =  str.slice(11,16);
+    
+    return ["Airing Today At: " + hour]
   }
 
   function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
   
-  function createHeaderNewsCard(result) {
-    for (let i = 0; i < 4; i++) {
+  function createAnimeHeaderNewsCard(result) {
+    for (let i = 0; i < 10; i++) {
     const headerNewsSection = document.createElement('section');
     headerNewsSection.classList.add('newsCards');
+    
   
-    const thumbnail = result.items[i].thumbnail;
-    const title = result.items[i].title;
-    const pubDate = result.items[i].pubDate;
+    const id = result[i].mal_id;
+    const thumbnail = result[i].image_url;
+    const title = result[i].title;
+    const scores = result[i].score;
+    const genre = result[i].genres[0]?.name;
+    const genre2 = result[i].genres[1]?.name;
+
+    const type = result[i].type;
+    const synopsis = result[i].synopsis;
+
+    const pubDate = result[i].airing_start;
     const newPubDate = dateConverser(pubDate);
-    const youtubeUrl = result.items[i].link;
-    const websiteName = webSiteCheck(result.items[i].link);
   
     // !Skapar html
     const newsInnerHTML = 
@@ -83,20 +87,21 @@ fetch("https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.livechart.
         </div>
         <div class="card-info">
           <div class="featured">
-            <h6>Featured</h6>
-            <h6 class="news">News</h6>
+            <h6 class="tv">${genre}</h6>
+            <h6 class="movie">${genre2}</h6>
           </div>
           <h2>${title}</h2>
           <img class="mobileImgHeader"
           src=${thumbnail}
           alt=${capitalizeFirstLetter(title)}/>
+          <p class="animeCard source">Learn More</p>
           <p><i class="fa fa-calendar"></i> ${newPubDate}</p>
-          <a href=${youtubeUrl} target="_blank" rel="noopener" title=${youtubeUrl} aria-label=${youtubeUrl}>
-          <p class="source"> Source: ${capitalizeFirstLetter(websiteName)}</p>
-          </a>
+          <h5>${truncate(capitalizeFirstLetter(synopsis), 200)}</h5>
 
           <div>
             <span class="dot dotActive"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
             <span class="dot"></span>
             <span class="dot"></span>
             <span class="dot"></span>
