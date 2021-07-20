@@ -62,7 +62,7 @@ function updateDom(data) {
             .sort((a, b) => a.episodes - b.episodes)
             .map(anime => {
                 return `
-                    <div class="imgCard2">
+                    <div class="imgCard2 animeCard">
                         <div class="cardImage2">
                             <img src="${anime.image_url}">
                             <div class="${key.toLowerCase()}Tag tag">${key.toUpperCase()}</div>

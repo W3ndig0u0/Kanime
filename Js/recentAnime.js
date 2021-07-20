@@ -64,10 +64,10 @@ fetch(RECENT_ANIME_RSS_URL)
     const recentInnerHTMLLoop =
     `
         <mark>
-          <img src=${thumbnail} alt=${newNewTitle}/>
+          <img class="animeCard" src=${thumbnail} alt=${newNewTitle}/>
         </mark>
         <small>
-          <h1>${newNewTitle}</h1>
+          <h1 class="animeCard">${newNewTitle}</h1>
           <div class="extraInfo">
             <span>Episode ${ep}</span>
             <span class="dot"></span>

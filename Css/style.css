@@ -71,12 +71,18 @@ h3:after {
   content: "";
   position: absolute;
   bottom: 0;
-  left: 0;
+  left: 40%;
   right: 0;
   width: auto;
   height: 0.5em;
   border-top: 2px solid #f27d16;
-  z-index: -1;
+  z-index: 1;
+}
+
+@media screen and (max-width: 606px) {
+  h3:after {
+    left: 80%;
+  }
 }
 
 .space2 {

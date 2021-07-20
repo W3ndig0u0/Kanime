@@ -2,7 +2,7 @@ var modal = document.querySelector("myModal");
 var modalImg = document.getElementById("img");
 var captionText = document.getElementById("caption");
 var close = document.getElementsByClassName("close")[0];
-let animeCards = document.getElementsByClassName("cardImage");
+let animeCards = document.getElementsByClassName("animeCard");
 
 
 setTimeout(function(){
@@ -22,25 +22,35 @@ function clickCard(event) {
 }
 
 function hoverCardIn(event) { 
-  console.log(event.target.childNodes);
   
   if ((event.target.childNodes[5] !== undefined))
   {
-      event.target.parentNode.childNodes[5].style.opacity = "1";
+    if (event.target.childNodes[5].classList.contains("playWrapper"))
+    {
+        event.target.parentNode.childNodes[5].style.opacity = "1";
+    }
   }
   
-  else
-  {
-    event.target.style.opacity = "1";
-  }
+  else if(event.target.classList.contains("playWrapper"))
+    {
+      event.target.style.opacity = "1";
+    }
 }
 
 function hoverCardOut(event) {
-  if (event.target.childNodes[7] === undefined) {
-    event.target.childNodes[5].style.opacity = "0";
+  console.log(event.target.childNodes[1].childNodes[5]);
+
+  if (event.target.childNodes[5] !== undefined) {    
+    if (event.target.childNodes[5].classList.contains("playWrapper"))
+    {
+      event.target.parentNode.childNodes[5].style.opacity = "0";
+    }
   }
-  else{
-    event.target.childNodes[7].style.opacity = "0";
+  
+  else if(event.target.classList.contains("playWrapper"))
+  {
+    event.target.style.opacity = "0";
+    console.log("sas");
   }
 }
 

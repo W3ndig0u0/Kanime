@@ -104,13 +104,13 @@
   border-radius: 10px;
   transition: 700ms;
   border: 1px solid black;
-  height: 11rem;
-  cursor: pointer;
+  height: auto;
+  padding-bottom: 2rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .newsImg2 img {
-  border-radius: 40px;
+  border-radius: 4px;
   padding: 0.7rem;
   width: 10rem;
   height: 11rem;
@@ -127,7 +127,9 @@
 .newsCardInfo2 h2 {
   font-size: 1.5rem;
   margin-block-start: 0em;
+  cursor: pointer;
   margin-block-end: 0em;
+  color: black;
 }
 .newsCardInfo2 h2:hover {
   font-size: 1.53rem;

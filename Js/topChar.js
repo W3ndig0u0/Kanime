@@ -35,7 +35,7 @@ fetch(TOP_CHAR_URL)
     // !Skapar html
     const recentInnerHTML = 
     `
-    <div class="imgCard2">
+    <div class="imgCard2 animeCard">
       <div class="cardImage2">
           <img
           src=${thumbnail}

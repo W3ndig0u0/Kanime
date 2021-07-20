@@ -17,7 +17,7 @@
 
 .leaderboard .head {
   color: snow;
-  font-size: 16px;
+  font-size: 20px;
   text-align: center;
 }
 
@@ -28,13 +28,13 @@
 
 .leaderboard .body {
   color: snow;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .leaderboard li {
-  padding: 10px;
+  padding: 8px;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .leaderboard li img {
@@ -51,19 +51,19 @@
   margin-right: 4px;
 }
 .leaderboard li:nth-child(1) {
-  background: #fa6855;
+  background: hsl(208, 96%, 28%);
 }
 .leaderboard li:nth-child(2) {
-  background: #e0574f;
+  background: hsl(208, 96%, 38%);
 }
 .leaderboard li:nth-child(3) {
-  background: #d7514d;
+  background: hsl(208, 96%, 48%);
 }
 .leaderboard li:nth-child(4) {
-  background: #cd4b4b;
+  background: hsl(208, 96%, 58%);
 }
 .leaderboard li:nth-child(5) {
-  background: #c24448;
+  background: hsl(208, 96%, 68%);
 }
 
 .leaderboard li small h1 {
@@ -72,18 +72,20 @@
   background-color: transparent;
   cursor: pointer;
   transition: 200ms;
+  padding-left: 1rem;
   font-size: 18px;
 }
 
 .leaderboard li small h1:hover,
 .leaderboard li small h1:active {
-  color: white;
+  color: #f27d16;
   opacity: 1;
 }
 
 .leaderboard li small .extraInfo {
   color: snow;
   opacity: 0.7;
+  padding-left: 1rem;
   background-color: transparent;
 }
 

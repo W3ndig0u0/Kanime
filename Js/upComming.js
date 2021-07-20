@@ -36,14 +36,15 @@ fetch(TOP_UPCOMING_ANIME_URL)
     // !Skapar html
     const recentInnerHTML = 
     `
-    <div class="imgCard2">
+    <div class="imgCard2 animeCard">
       <div class="cardImage2">
           <img
           src=${thumbnail}
           alt=${newNewTitle}/>
             <div class="${type}Tag tag">${type}</div>
+            <div class="epTag"></div>
             <div class="playWrapper">
-            </div>
+            </div>          
           </div>
             <div class="cardInfo2">
             <span class="cardTitle2">${newNewTitle}</span>

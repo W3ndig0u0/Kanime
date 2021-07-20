@@ -1,10 +1,7 @@
-const NEWS_ANIME_RSS_URL = "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.livechart.me%2Ffeeds%2Fheadlines";
-
-fetch(NEWS_ANIME_RSS_URL)
+fetch("https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.livechart.me%2Ffeeds%2Fheadlines")
   .then(response => response.json())
   .then(result => {
-    console.log('Success:', result.items[0]);
-    createNewsAnime(result);
+    createHeaderNewsCard(result);
   });
 
   function webSiteCheck(url) {
@@ -56,20 +53,19 @@ fetch(NEWS_ANIME_RSS_URL)
     {
       return [date +  monthNames[mounth - 1]]
     }
-
   }
 
   function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
   
-  function createNewsAnime(result) {
-    for (let i = 0; i < result.items.length; i++) {
-    const newsSection2 = document.createElement('section');
-    newsSection2.classList.add('newsSection2');
+  function createHeaderNewsCard(result) {
+    for (let i = 0; i < 4; i++) {
+    const headerNewsSection = document.createElement('section');
+    headerNewsSection.classList.add('newsCards');
   
     const thumbnail = result.items[i].thumbnail;
-    const title = result.items[i].title.toUpperCase();
+    const title = result.items[i].title;
     const pubDate = result.items[i].pubDate;
     const newPubDate = dateConverser(pubDate);
     const youtubeUrl = result.items[i].link;
@@ -78,23 +74,41 @@ fetch(NEWS_ANIME_RSS_URL)
     // !Skapar html
     const newsInnerHTML = 
     `
-    <div class="newsLetter2">
-      <div class="newsImg2">
-      <img
-      src=${thumbnail}
-      alt="${title}" />
-      </div>
-      <div class="newsCardInfo2">
-          <a href=${youtubeUrl} target="_blank" rel="noopener" title=${youtubeUrl} aria-label=${youtubeUrl}>
-            <h2>${title}"</h2>
-          <a/>
-            <p>Source: ${capitalizeFirstLetter(websiteName)}</p>
-              <h6><i class="fa fa-calendar"></i> ${newPubDate}</h6>
+      <div class="newsCard">
+      <div class="card">
+        <div class="img">
+        <img
+        src=${thumbnail}
+        alt=${capitalizeFirstLetter(title)}/>
+        </div>
+        <div class="card-info">
+          <div class="featured">
+            <h6>Featured</h6>
+            <h6 class="news">News</h6>
           </div>
+          <h2>${title}</h2>
+          <img class="mobileImgHeader"
+          src=${thumbnail}
+          alt=${capitalizeFirstLetter(title)}/>
+          <p><i class="fa fa-calendar"></i> ${newPubDate}</p>
+          <a href=${youtubeUrl} target="_blank" rel="noopener" title=${youtubeUrl} aria-label=${youtubeUrl}>
+          <p class="source"> Source: ${capitalizeFirstLetter(websiteName)}</p>
+          </a>
+
+          <div>
+            <span class="dot dotActive"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+        </div>
       </div>
+      <a class="prev cardPrev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next cardNext" onclick="plusSlides(1)">&#10095;</a>
+    </div>
       `;
           
-      newsSection2.innerHTML = newsInnerHTML;
-      document.querySelector(".newsAnime").appendChild(newsSection2)
+      headerNewsSection.innerHTML = newsInnerHTML;
+      document.querySelector(".AnimeCardsJs").appendChild(headerNewsSection)
     }
   }

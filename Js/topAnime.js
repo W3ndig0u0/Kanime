@@ -35,7 +35,7 @@ fetch(TOP_ANIME_URL)
     // !Skapar html
     const recentInnerHTML = 
     `
-    <div class="imgCard">
+    <div class="imgCard animeCard">
       <div class="cardImage">
           <img
           src=${thumbnail}

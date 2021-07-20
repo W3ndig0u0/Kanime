@@ -20,11 +20,6 @@
     padding: 7px;
     font-size: 10px;
   }
-  .img1,
-  .img2,
-  .img3 {
-    zoom: 45%;
-  }
 }
 
 @media screen and (max-width: 1000px) {
