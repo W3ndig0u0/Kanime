@@ -100,12 +100,11 @@
   position: relative;
   border-radius: 10px;
   display: flex;
-  margin-top: 2rem;
+  margin-top: 4rem;
   border-radius: 10px;
   transition: 700ms;
   border: 1px solid black;
   height: auto;
-  padding-bottom: 2rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -113,7 +112,7 @@
   border-radius: 4px;
   padding: 0.7rem;
   width: 10rem;
-  height: 11rem;
+  height: 100%;
   object-fit: cover;
   box-sizing: border-box;
   user-select: none;

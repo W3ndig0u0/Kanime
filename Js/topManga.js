@@ -10,6 +10,11 @@ fetch(TOP_MANGA_URL)
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
 
+  function truncate(str, n){
+    return (str.length > n) ? str.substr(0, n-1) + '&hellip;' : str;
+  };
+
+
   function createTopMangaCard(result) {
     const TopMangaSection = document.createElement('section');
     TopMangaSection.classList.add('imgRow');
@@ -46,7 +51,7 @@ fetch(TOP_MANGA_URL)
             </div>
           </div>
             <div class="cardInfo">
-            <span class="cardTitle">${newNewTitle}</span>
+            <span class="cardTitle">${truncate(newNewTitle, 35)}</span>
               <p class="cardSynopsis"></p>
               <p class="cardScore">/10⭐</p>
         </div>

@@ -9,6 +9,9 @@ fetch(TOP_ANIME_URL)
   function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
+  function truncate(str, n){
+    return (str.length > n) ? str.substr(0, n-1) + '&hellip;' : str;
+  };
 
   function createTopAnimeCard(result) {
     const TopAnimeSection = document.createElement('section');
@@ -46,7 +49,7 @@ fetch(TOP_ANIME_URL)
               </div>
             </div>
             <div class="cardInfo">
-            <span class="cardTitle">${newNewTitle}</span>
+            <span class="cardTitle">${truncate(newNewTitle, 35)}</span>
               <p class="cardSynopsis"></p>
               <p class="cardScore">/10⭐</p>
         </div>

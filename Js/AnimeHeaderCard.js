@@ -12,7 +12,6 @@ function truncate(str, n){
   return (str.length > n) ? str.substr(0, n-1) + '&hellip;' : str;
 };
 
-
 fetch("https://api.jikan.moe/v3/schedule/" + dayName)
   .then(response => response.json())
   .then(result => {
@@ -39,9 +38,6 @@ fetch("https://api.jikan.moe/v3/schedule/" + dayName)
       case "saturday":
         createAnimeHeaderNewsCard(result.saturday);
       break;
-    
-      default:
-        break;
     }
   });
   

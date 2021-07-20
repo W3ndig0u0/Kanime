@@ -29,27 +29,41 @@
   padding-right: 2rem;
 }
 
+.index .genres {
+  background: linear-gradient(
+    to bottom,
+    hsl(208, 96%, 38%),
+    hsl(208, 96%, 68%)
+  );
+}
+.index .genres li a {
+  border: 3px solid white;
+}
+
 .genres {
   overflow: hidden;
   text-align: center;
+  margin: 0;
+  padding-top: 16px;
+  padding-bottom: 16px;
 }
 
 .genres li a {
   color: #333;
-  width: 100px;
+  width: 120px;
   padding: 7px 10px;
   white-space: nowrap;
   display: flex;
   float: left;
   flex-wrap: wrap;
-  border: 1px solid #ddd;
-  margin: 4px;
+  border: 1px solid rgb(56, 56, 56);
+  margin: 5px;
   transition: 400ms;
 }
 
 .genres li a:hover {
   text-decoration: none;
-  background: #0583f2;
+  background: #f27d16;
   transition: 0.3s all ease;
 }
 

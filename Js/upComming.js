@@ -11,16 +11,20 @@ fetch(TOP_UPCOMING_ANIME_URL)
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
 
+  function truncate(str, n){
+    return (str.length > n) ? str.substr(0, n-1) + '&hellip;' : str;
+  };
+
   function createTopCommingAnimeCard(result) {
     const upCommingSection = document.createElement('section');
-    upCommingSection.classList.add('imgRow2');
+    upCommingSection.classList.add('imgRow');
 
     if (undefined !== result.anime && result.anime.length) {
-      for (let i = 0; i < 20; i++) {
-      // for (let i = 0; i < result.anime.length; i++) {
+      // for (let i = 0; i < 25; i++) {
+      for (let i = 0; i < result.anime.length; i++) {
       
     const upCommingDiv = document.createElement('div');
-    upCommingDiv.classList.add('imgRow2');
+    upCommingDiv.classList.add('imgRow');
     
     const thumbnail = result.anime[i].image_url;
     const title = result.anime[i].title;
@@ -36,8 +40,8 @@ fetch(TOP_UPCOMING_ANIME_URL)
     // !Skapar html
     const recentInnerHTML = 
     `
-    <div class="imgCard2 animeCard">
-      <div class="cardImage2">
+    <div class="imgCard animeCard ImgCardSlider">
+      <div class="cardImage">
           <img
           src=${thumbnail}
           alt=${newNewTitle}/>
@@ -46,8 +50,8 @@ fetch(TOP_UPCOMING_ANIME_URL)
             <div class="playWrapper">
             </div>          
           </div>
-            <div class="cardInfo2">
-            <span class="cardTitle2">${newNewTitle}</span>
+            <div class="cardInfo">
+            <span class="cardTitle">${truncate(newNewTitle, 35)}</span>
               <p class="cardSynopsis"></p>
               <p class="cardScore">/10⭐</p>
         </div>

@@ -1,8 +1,8 @@
 .menu {
   background: linear-gradient(
       to bottom,
-      rgba(5, 131, 242, 0.87),
-      rgba(5, 131, 242, 0.99)
+      rgba(5, 131, 242, 0.85),
+      rgba(5, 131, 242, 0.98)
     ),
     url("https://i.pinimg.com/originals/5f/12/b9/5f12b974076736afe4bfe170b36b5e89.jpg")
       right top -20rem;

@@ -7,17 +7,22 @@ fetch("https://api.jikan.moe/v3/top/anime/1/airing")
   function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
+  
+  function truncate(str, n){
+    return (str.length > n) ? str.substr(0, n-1) + '&hellip;' : str;
+  };
+
 
   function createSeasonAnimeCard(result) {
     const TopCharSection = document.createElement('section');
-    TopCharSection.classList.add('imgRow');
+    TopCharSection.classList.add('imgRow2');
 
-    if (undefined !== result.top && result.top.length) {
-    // for (let i = 0; i < 10; i++) {
-      for (let i = 0; i < result.top.length; i++) {
+    // if (undefined !== result.top && result.top.length) {
+    for (let i = 0; i < 23; i++) {
+      // for (let i = 0; i < result.top.length; i++) {
       
     const TopCharDiv = document.createElement('div');
-    TopCharDiv.classList.add('imgRow');
+    TopCharDiv.classList.add('imgRow2');
     
     const thumbnail = result.top[i].image_url;
     const title = result.top[i].title;
@@ -29,7 +34,7 @@ fetch("https://api.jikan.moe/v3/top/anime/1/airing")
     // !Skapar html
     const recentInnerHTML = 
     `
-    <div class="imgCard animeCard ImgCardSlider">
+    <div class="imgCard animeCard">
       <div class="cardImage">
           <img
           src=${thumbnail}
@@ -39,7 +44,7 @@ fetch("https://api.jikan.moe/v3/top/anime/1/airing")
           </div>          
           </div>
           <div class="cardInfo">
-            <span class="cardTitle">${newNewTitle}</span>
+            <span class="cardTitle">${truncate(newNewTitle,35)}</span>
               <p class="cardSynopsis"></p>
               <p class="cardScore">/10⭐</p>
         </div>
@@ -51,4 +56,3 @@ fetch("https://api.jikan.moe/v3/top/anime/1/airing")
       document.querySelector(".airingAnimeJs").appendChild(TopCharSection)
     }
   }
-}
