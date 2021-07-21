@@ -52,6 +52,7 @@ fetch(RECENT_ANIME_RSS_URL)
     for (let i = 0; i < 5; i++) {
     const thumbnail = result.items[i].thumbnail;
     const title = result.items[i].title;
+    const id = result.items[i].link;
     const newTitle = capitalizeFirstLetter(title);
     const newNewTitle = AnimeNameConverter(newTitle);
     const ep = EpConverter(newTitle)
@@ -67,7 +68,9 @@ fetch(RECENT_ANIME_RSS_URL)
           <img class="animeCard" src=${thumbnail} alt=${newNewTitle}/>
         </mark>
         <small>
+        <a href=${id} target="_blank" title="noopener">
           <h1 class="animeCard">${newNewTitle}</h1>
+        <a/>
           <div class="extraInfo">
             <span>Episode ${ep}</span>
             <span class="dot"></span>

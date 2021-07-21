@@ -15,6 +15,13 @@ fetch(TOP_UPCOMING_ANIME_URL)
     return (str.length > n) ? str.substr(0, n-1) + '&hellip;' : str;
   };
 
+  function animeSelect(id){
+    sessionStorage.setItem("AnimeID", id);
+    console.log(id)
+    window.location = "../Html/Anime.html"
+    return false;
+  }
+
   function createTopCommingAnimeCard(result) {
     const upCommingSection = document.createElement('section');
     upCommingSection.classList.add('imgRow');
@@ -29,6 +36,7 @@ fetch(TOP_UPCOMING_ANIME_URL)
     const thumbnail = result.anime[i].image_url;
     const title = result.anime[i].title;
     const type = result.anime[i].type;
+    const id = result.anime[i].mal_id;
 
     const rank = result.anime[i].rank;
     const score = result.anime[i].score;
@@ -40,7 +48,7 @@ fetch(TOP_UPCOMING_ANIME_URL)
     // !Skapar html
     const recentInnerHTML = 
     `
-    <div class="imgCard animeCard ImgCardSlider">
+    <div onclick="animeSelect(${id})" class="imgCard animeCard ImgCardSlider">
       <div class="cardImage">
           <img
           src=${thumbnail}

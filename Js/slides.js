@@ -7,11 +7,11 @@ function imgUrlHeader(result){
   for (let i = 0; i < 6; i++) {
     imgUrl[i] = result[i].image_url;
   }
-  
-  setTimeout(function() {
-    showSlides(sliderIndex += 0);
-  }, 1100)
 }
+
+setTimeout(function() {
+  showSlides(sliderIndex += 0);
+}, 900)
 
 function plusSlides(n) {
   showSlides(sliderIndex += n);

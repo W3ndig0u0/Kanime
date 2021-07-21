@@ -1,4 +1,3 @@
-
 function dayWeek(){
   var days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
   var d = new Date();
@@ -11,6 +10,13 @@ let dayName = dayWeek();
 function truncate(str, n){
   return (str.length > n) ? str.substr(0, n-1) + '&hellip;' : str;
 };
+
+function animeSelect(id){
+  sessionStorage.setItem("AnimeID", id);
+  console.log(id)
+  window.location = "../Html/Anime.html"
+  return false;
+}
 
 fetch("https://api.jikan.moe/v3/schedule/" + dayName)
   .then(response => response.json())
@@ -40,7 +46,7 @@ fetch("https://api.jikan.moe/v3/schedule/" + dayName)
       break;
     }
   });
-  
+
   function dateConverser(date) {
     var str = date;
     var hour =  str.slice(11,16);
@@ -53,7 +59,7 @@ fetch("https://api.jikan.moe/v3/schedule/" + dayName)
   }
   
   function createAnimeHeaderNewsCard(result) {
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < result.length; i++) {
     const headerNewsSection = document.createElement('section');
     headerNewsSection.classList.add('newsCards');
     
@@ -82,7 +88,8 @@ fetch("https://api.jikan.moe/v3/schedule/" + dayName)
         alt=${capitalizeFirstLetter(title)}/>
         </div>
         <div class="card-info">
-          <div class="featured">
+        <div class="featured">
+        <h6 class="news">${type}</h6>
             <h6 class="tv">${genre}</h6>
             <h6 class="movie">${genre2}</h6>
           </div>
@@ -90,7 +97,7 @@ fetch("https://api.jikan.moe/v3/schedule/" + dayName)
           <img class="mobileImgHeader"
           src=${thumbnail}
           alt=${capitalizeFirstLetter(title)}/>
-          <p class="animeCard source">Learn More</p>
+          <p onclick="animeSelect(${id})" class="animeCard source">Learn More</p>
           <p><i class="fa fa-calendar"></i> ${newPubDate}</p>
           <h5>${truncate(capitalizeFirstLetter(synopsis), 200)}</h5>
 

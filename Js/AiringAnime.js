@@ -12,6 +12,13 @@ fetch("https://api.jikan.moe/v3/top/anime/1/airing")
     return (str.length > n) ? str.substr(0, n-1) + '&hellip;' : str;
   };
 
+  function animeSelect(id){
+    sessionStorage.setItem("AnimeID", id);
+    console.log(id)
+    window.location = "../Html/Anime.html"
+    return false;
+  }
+
 
   function createSeasonAnimeCard(result) {
     const TopCharSection = document.createElement('section');
@@ -25,6 +32,7 @@ fetch("https://api.jikan.moe/v3/top/anime/1/airing")
     TopCharDiv.classList.add('imgRow2');
     
     const thumbnail = result.top[i].image_url;
+    const id = result.top[i].mal_id;
     const title = result.top[i].title;
     const type = result.top[i].type;
 
@@ -34,7 +42,7 @@ fetch("https://api.jikan.moe/v3/top/anime/1/airing")
     // !Skapar html
     const recentInnerHTML = 
     `
-    <div class="imgCard animeCard">
+    <div onclick="animeSelect(${id})" class="imgCard">
       <div class="cardImage">
           <img
           src=${thumbnail}

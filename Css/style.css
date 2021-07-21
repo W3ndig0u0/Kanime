@@ -7,11 +7,13 @@ html {
   overflow-x: hidden;
   background-color: #f8f8ff;
   overflow-x: hidden;
+  scroll-behavior: smooth;
   min-width: 100vw;
 }
 *,
 *:before,
 *:after {
+  scroll-behavior: smooth;
   box-sizing: border-box;
 }
 
