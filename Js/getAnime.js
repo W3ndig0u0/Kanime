@@ -16,6 +16,10 @@ function getAnimeComments() {
   .then(response => response.json())
   .then(result => {
     console.log(result.reviews);
+    
+    if (result.reviews.length === 0) {
+      noAnimeCommentsPage();
+    }
     AnimeCommentsPage(result.reviews);
   })
 }
@@ -53,8 +57,6 @@ function AnimePage(result) {
   const genres = result.genres[0]?.name;
   const genres1 = result.genres[1]?.name;
   const genres2 = result.genres[2]?.name;
-  const genres3 = result.genres[3]?.name;
-  const genres4 = result.genres[4]?.name;
 
   const rank = result.rank;
   const popularity = result.popularity;
@@ -70,21 +72,18 @@ function AnimePage(result) {
   // !Skapar html
   const PageInnerHTML = 
   `
-  <div class="imgCard animeCard ImgCardSlider">
-    <div class="cardImage">
+  <div>
         <img
         src=${thumbnail}
         alt=${newTitleEn}/>
       </div>
-        </div>
-          <div class="cardInfo">
         <hr>
         <p class="cardSynopsis">TitleEn: ${newTitleEn}</p>
         <p class="cardSynopsis">TitleJp: ${newTitleJp}</p>
         <p class="cardSynopsis">Type: ${type}</p>
 
         <hr>
-        <p class="cardSynopsis">genres: ${genres}, ${genres1}, ${genres2}, ${genres3}, ${genres4}</p>
+        <p class="cardSynopsis">genres: ${genres}, ${genres1}, ${genres2}</p>
         
         <hr>
         <p class="cardSynopsis">Rank: ${rank}</p>
@@ -108,11 +107,11 @@ function AnimePage(result) {
         <hr>
         <p class="cardSynopsis">Synopsis: ${synopsis}</p>
 
-        <iframe width="560" height="315" src=${trailer_url} title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src=${trailer_url} title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-        <hr>
+        </div>
+
         <a href=${MalURL} target="_blank" title="noopener">MyAnimeList Link<a/>
-    </div>
   </div>
     `;
         
@@ -121,32 +120,74 @@ function AnimePage(result) {
     document.querySelector(".animePage").appendChild(AnimePageSection)
 }
 
+function dateConverser(dates) {
+  const monthNames = ["January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+  ];
+
+  var str = dates;
+  var newDate =  str.slice(5);
+  var mounth =  12;
+
+  if (newmounth =  newDate.slice(0,1) == "0") {
+    var mounth =  newDate.slice(1,2);
+  }
+  else{
+    var mounth =  newDate.slice(0,2);
+  }
+  var date =  newDate.slice(3,5);
+  var hour =  newDate.slice(6,11);
+
+  return [date + " " +  monthNames[mounth - 1] + ", " + hour]
+
+}
+
 
 function AnimeCommentsPage(result) {
   for (let i = 0; i < result.length; i++) {
-  const commentSection = document.createElement('section');
   const commentDiv = document.createElement('div');
+  commentDiv.classList.add("commentDiv")
     const content = result[i].content;
     const date = result[i].date;
     const votes = result[i].helpful_count;
     const reviewerImg = result[i].reviewer.image_url;
     const reviewerName = result[i].reviewer.username;
+    const url = result[i].reviewer.url;
     
     // !Skapar html
     const CommentsReviewInnerHTML = 
     `
-    <img src=${reviewerImg} 
-    alt=${reviewerName + date}>
-    <p class="cardSynopsis">UserName: ${reviewerName}</p>
-    <p class="cardSynopsis">votes: ${votes}</p>
-    <p class="cardSynopsis">date: ${date}</p>
-    <p class="cardSynopsis">Review: ${truncate(content, 500)}</p>
-    
+    <div class="reviewerImgDiv">
+      <a href=${url} target="_blank" title="noopener">
+        <img class="reviewerImg" src=${reviewerImg} alt=${reviewerName + date}>
+        <p class="reviewName">${reviewerName}</p>
+        <a/>
+      </div>
+      
+      <div class="reviewInfo">
+      <div class="reviewInfoTop">
+        <span class="reviewDate">${dateConverser(date)}</span>
+      </div>
+        <p class="revireContent">${truncate(content, 900)}</p>
+    </div>
     `;
     commentDiv.innerHTML = CommentsReviewInnerHTML;
-    commentSection.appendChild(commentDiv)
-    document.querySelector(".animePageComments").appendChild(commentSection)
+    document.querySelector(".animePageComments").appendChild(commentDiv)
   }
+}
+
+function noAnimeCommentsPage() {
+  const commentDiv = document.createElement('div');
+    // !Skapar html
+    const CommentsReviewInnerHTML = 
+    `
+    <div class="reviewerImgDiv">
+      <h1>This Anime Dosn't have any Reviwes/Comments yet...<h1/>
+      <p>Sorry D:<p/>
+    </div>
+    `;
+    commentDiv.innerHTML = CommentsReviewInnerHTML;
+    document.querySelector(".animePageComments").appendChild(commentDiv)
 }
 
 getAnime();

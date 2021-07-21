@@ -34,6 +34,11 @@
   font-family: "Open Sans", sans-serif;
 }
 
+.newsSection,
+.reviews {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
 .imgSection h4 {
   text-align: center;
   font-family: "Open Sans", sans-serif;

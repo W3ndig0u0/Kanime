@@ -13,13 +13,13 @@
   <link rel="canonical" href="https://kanime.cf">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
 
+  <link rel="canonical" href="https://kanime.cf"> 
   <link rel="stylesheet" href="../Css/style.css" />
   <link rel="stylesheet" href="../Css/header.css" />
-  <link rel="stylesheet" href="../Css/sectionAnime.css" />
-  <link rel="stylesheet" href="../Css/search.css" />
   <link rel="stylesheet" href="../Css/footer.css" />
+  <link rel="stylesheet" href="../Css/animePage.css" />
+  <link rel="stylesheet" href="../Css/mediaQueries.css" />
 
-  <link rel="stylesheet" href="./Css/mediaQueries.css" />
 
   <!-- !Api -->
   <script defer src="../Js/loader.js"></script>
@@ -39,37 +39,25 @@
         <div class="left logo"><a href="../index.html">Kanime</a></div>
         <div class="right">
           <ul class="firstMenu">
-            <li><a href="index.html">Anime</a></li>
-            <li><a href="Html/shop.html">Shop</a></li>
-            <li><a href="Html/review.html">Review</a></li>
-            <li><a href="Html/news.html">News</a></li>
-            <li><a href="Html/about.html">About</a></li>
+              <li><a href="../index.html">Anime</a></li>
+              <li><a href="../Html/shop.html">Shop</a></li>
+              <li><a href="../Html/review.html">Review</a></li>
+              <li><a href="../Html/news.html">News</a></li>
+              <li><a href="../Html/about.html">About</a></li>
+              <li>
+                <a href="#" aria-label="Search"><i class="fa fa-user"></i> </a>
+              </li>
+
+
             <li>
-              <a href="#" aria-label="Search"><i class="fa fa-search search-btn"></i> </a>
-            </li>
-            <li>
-              <a href="#" aria-label="User"><i class="fa fa-user"></i> </a>
+              <div class="navButton" id="navButton" onclick="openNavbar()"
+                >☰</div>
             </li>
 
-            <div id="myModal" class="modal">
-              <div class="modal-content">
-                <form id="search_form">
-                  <input placeholder="Search..." name="search" id="search" autocomplete="off" type="text"
-                    class="validate search-bar" required />
-                </form>
-              </div>
-            </div>
-            <li>
-              <div class="navButton" id="navButton" onclick="openNavbar()">
-                ☰
-              </div>
-            </li>
           </ul>
 
           <div class="hamburgerNav" id="hamburgerNavbarLinks">
-            <div class="closeButton" id="closeButton" onclick="closeNavbar()">
-              X
-            </div>
+            <div class="closeButton" id="closeButton" onclick="closeNavbar()"> ☰</div>
 
             <div class="hamburgerNavContent">
               <ul>
@@ -77,26 +65,22 @@
                   <a href="#" aria-label="User"><i class="fa fa-user"></i> </a>
                 </li>
                 <li><a href="../index.html">Anime</a></li>
-                <li><a href="./shop.html">Shop</a></li>
-                <li><a href="./review.html">Review</a></li>
-                <li><a href="./news.html">News</a></li>
-                <li><a href="./about.html">About</a></li>
+                <li><a href="../Html/shop.html">Shop</a></li>
+                <li><a href="../Html/review.html">Review</a></li>
+                <li><a href="../Html/news.html">News</a></li>
+                <li><a href="../Html/about.html">About</a></li>
               </ul>
             </div>
           </div>
-          
         </div>
       </nav>
-
-      <div class="space"></div>
-
     </div>
   </header>
+
     <main>
 
       <div class="animePage"></div>
-      <section>
-        <h1>Comments</h1>
+      <section class="animePageCommentsSection">
         <div class="animePageComments"></div>
       </section>
 

@@ -62,15 +62,17 @@ function updateDom(data) {
             .sort((a, b) => a.episodes - b.episodes)
             .map(anime => {
                 return `
-                    <div class="imgCard2 animeCard">
-                        <div class="cardImage2">
+                <div class="imgRow2">
+                    <div onclick="animeSelect(${anime.mal_id})" class="imgCard animeCard">
+                        <div class="cardImage">
                             <img src="${anime.image_url}">
-                            <div class="${key.toLowerCase()}Tag tag">${key.toUpperCase()}</div>
+                            <div class="${key}Tag tag">${key.toUpperCase()}</div>
+                            <span><span/>
                             <div class="playWrapper">
                             </div>
                         </div>
-                    <div class="cardInfo2">
-                        <span class="cardTitle2">${anime.title}</span>
+                    <div class="cardInfo">
+                        <span class="cardTitle">${anime.title}</span>
                         <p class="cardSynopsis">${anime.synopsis}</p>
                         <p class="cardScore">${anime.score}/10⭐</p>
                     </div>
@@ -78,7 +80,8 @@ function updateDom(data) {
                             <a href="${anime.url}">Find out more</a>
                         </div>
                     </div>
-                `
+                </div>
+            `
             }).join("");
 
 
@@ -92,41 +95,31 @@ function updateDom(data) {
     }).join("");
 
     document.querySelector('.airing').style.display = "none";
-    document.querySelector('.airingRecent').style.display = "none";
-    document.querySelector('.upComming').style.display = "none";
+    document.querySelector('.shop').style.display = "none";
     document.querySelector('.newsSection').style.display = "none";
+    document.querySelector('.genreSelect').style.display = "none";
+    document.querySelector('.upComming').style.display = "none";
     document.querySelector('.topAnime').style.display = "none";
     document.querySelector('.topManga').style.display = "none";
     document.querySelector('.topNovel').style.display = "none";
     document.querySelector('.topChar').style.display = "none";
     document.querySelector('.reviews').style.display = "none";
     document.querySelector('.shop').style.display = "none";
-    
-    const pagination = document.createElement('div');
-    pagination.classList.add('pagination');
-    
-    const paginationInnerHTML = 
-    `
-      <a href="#" onclick="prev()" class="Prev">&laquo;</a>
-      <a href="#" onclick="newPageNr()" class="active" >${pageNr}</a>
-      <a href="#" onclick="newPageNr()" > ${pageNr+1}</a>
-      <a href="#" onclick="newPageNr()" > ${pageNr+2}</a>
-      <a href="#" onclick="newPageNr()" > ${pageNr+3}</a>
-      <a href="#" onclick="newPageNr()" > ${pageNr+4}</a>
-      <a href="#" onclick="newPageNr()" > ${pageNr+5}</a>
-      <a href="#" onclick="newPageNr()" > ${pageNr+6}</a>
-      <a href="#" onclick="newPageNr()" > ${pageNr+7}</a>
-      <a href="#" onclick="newPageNr()" > ${pageNr+8}</a>
-      <a href="#" onclick="next()" class="Next">&raquo;</a>
-      `;
-      
-      pagination.innerHTML = paginationInnerHTML;
-      document.querySelector(".center2").appendChild(pagination)
+    document.querySelectorAll('.space2').style.display = "none";
+
 }
 
 function pageLoaded() {
     const form = document.getElementById('search_form');
     form.addEventListener("submit", searchAnime);
 }
+
+function animeSelect(id){
+    sessionStorage.setItem("AnimeID", id);
+    console.log(id)
+    window.location = "../Html/Anime.html"
+    return false;
+  }
+
 
 window.addEventListener("load", pageLoaded);
