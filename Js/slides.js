@@ -11,7 +11,7 @@ function imgUrlHeader(result){
 
 setTimeout(function() {
   showSlides(sliderIndex += 0);
-}, 900)
+}, 1400)
 
 function plusSlides(n) {
   showSlides(sliderIndex += n);

@@ -25,6 +25,9 @@ function getAnimeComments() {
 }
 
 function capitalizeFirstLetter(string) {
+  if (string === null) {
+    return undefined;
+  }
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
@@ -39,7 +42,7 @@ function AnimePage(result) {
   const thumbnail = result.image_url;
 
   const titleEn = result.title_english;
-  const titleJp = result.title_japanese;
+  const title = result.title;
 
   const type = result.type;
   const aired = result.aired.string;
@@ -66,8 +69,8 @@ function AnimePage(result) {
 
   const trailer_url = result.trailer_url;
 
+  const newTitle = capitalizeFirstLetter(title);
   const newTitleEn = capitalizeFirstLetter(titleEn);
-  const newTitleJp = capitalizeFirstLetter(titleJp);
 
   // !Skapar html
   const PageInnerHTML = 
@@ -78,8 +81,8 @@ function AnimePage(result) {
         alt=${newTitleEn}/>
       </div>
         <hr>
-        <p class="cardSynopsis">TitleEn: ${newTitleEn}</p>
-        <p class="cardSynopsis">TitleJp: ${newTitleJp}</p>
+        <p class="cardSynopsis">Title: ${newTitle}</p>
+        <p class="cardSynopsis">TitleJp: ${newTitleEn}</p>
         <p class="cardSynopsis">Type: ${type}</p>
 
         <hr>
