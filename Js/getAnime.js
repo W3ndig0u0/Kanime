@@ -63,7 +63,10 @@ function AnimePage(result) {
 
   const rank = result.rank;
   const popularity = result.popularity;
+  const members = result.members;
+
   const score = result.score;
+  const scored_by = result.scored_by;
   const startDate = result.start_date;
   const synopsis = result.synopsis;
 
@@ -75,47 +78,104 @@ function AnimePage(result) {
   // !Skapar html
   const PageInnerHTML = 
   `
-  <div>
-        <img
+  <div class="animeTop">
+    <div class="animePageFlex">
+      <div class="left">
+        <img class="AnimePageImg"
         src=${thumbnail}
         alt=${newTitleEn}/>
       </div>
-        <hr>
-        <p class="cardSynopsis">Title: ${newTitle}</p>
-        <p class="cardSynopsis">TitleJp: ${newTitleEn}</p>
-        <p class="cardSynopsis">Type: ${type}</p>
-
-        <hr>
-        <p class="cardSynopsis">genres: ${genres}, ${genres1}, ${genres2}</p>
-        
-        <hr>
-        <p class="cardSynopsis">Rank: ${rank}</p>
-        <p class="cardSynopsis">popularity: ${popularity}</p>
-        <p class="cardSynopsis">Score: ${score}</p>
-
-        <hr>
-        <p class="cardSynopsis">Status: ${status}</p>
-        <p class="cardSynopsis">Airing: ${aired}</p>
-        <p class="cardSynopsis">Premiered: ${premiered}</p>
-        <p class="cardSynopsis">StartDate: ${startDate}</p>
-        <p class="cardSynopsis">AiringTime: ${broadcast}</p>
-        <p class="cardSynopsis">Ep Duration: ${duration}</p>
-
-        <hr>
-        <p class="cardSynopsis">Totla Ep: ${ep}</p>
-        <p class="cardSynopsis">source: ${source}</p>
-        <p class="cardSynopsis">studio: ${studio}</p>
-        <p class="cardSynopsis">producers: ${producers}</p>
-
-        <hr>
-        <p class="cardSynopsis">Synopsis: ${synopsis}</p>
-
-        <iframe src=${trailer_url} title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+      
+    <div class="right">
+      <div class="titleFlex">
+        <div class="titles">
+          <p class="title">${newTitle}</p>
+          <p class="titleJp">${newTitleEn}</p>
         </div>
+        <div class="score">
+          <span class="beforeState">Score: </span>
+          <span class="state scoreNumber">${score}</span>
+          <span class="state">${truncate(scored_by, 400)} Users</span>
+        </div>
+      </div>
+        
 
-        <a href=${MalURL} target="_blank" title="noopener">MyAnimeList Link<a/>
+        <div class="titleFlex">
+        <div class="rankInfo">
+        <span class="beforeState">Ranked: </span>
+        <span class="state">${rank}</span>
+        <span class="beforeState">Popularity: </span>
+            <span class="state">${popularity}</span>
+            <span class="beforeState">Members: </span>
+            <span class="state">${members}</span>
+          </div>
+        </div>
+          <p class="beforeState synopsis">Synopsis: </p>  
+          <p class="state synopsis">${synopsis}</p>
+      </div>
+    </div>
   </div>
+  
+  <div class="animeBottom">
+    <div>
+      <div class="animeInfo">
+        <div>
+          <span class="beforeState">Type: </span>
+          <span class="state">${type}</span>
+        </div>
+        <div>
+          <span class="beforeState">Genres: </span>
+          <span class="state">${genres}, ${genres1}, ${genres2}</span>
+        </div>
+        <div>
+          <span class="beforeState">Status: </span>
+          <span class="state">${status}</span>
+        </div>
+        <div>
+          <span class="beforeState">Total Eps:</span>
+          <span class="state">${ep}</span>
+        </div>
+      </div>
+
+      <div class="animeInfo">
+        <div>
+          <span class="beforeState">Premiered: </span>
+          <span class="state">${premiered}</span>
+        </div>
+        <div>
+          <span class="beforeState">Airing: </span>
+          <span class="state">${aired}</span>
+        </div>
+        <div>
+          <span class="beforeState">Broadcast: </span>
+          <span class="state">${broadcast}</span>
+        </div>
+      </div>
+
+      <div class="animeInfo">
+        <div>
+          <span class="beforeState">Source:</span>
+          <span class="state">${source}</span>
+        </div>
+        <div>
+          <span class="beforeState">Studio: </span>
+          <span class="state">${studio}</span>
+        </div>
+        <div>
+          <span class="beforeState">Producers: </span>
+          <span class="state">${producers}</span>
+        </div>
+        <div>
+        <span class="beforeState">Ep Duration: </span>
+        <span class="state">${duration}</span>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+        
+        <iframe src=${trailer_url} title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <a href=${MalURL} target="_blank" class="beforeState" title="${newTitle}">MyAnimeList Link<a/>
     `;
         
     AnimePageDiv.innerHTML = PageInnerHTML;
