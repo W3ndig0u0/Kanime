@@ -14,6 +14,12 @@ fetch(TOP_MANGA_URL)
     return (str.length > n) ? str.substr(0, n-1) + '&hellip;' : str;
   };
 
+  function mangaSelect(id){
+    sessionStorage.setItem("mangaId", id);
+    console.log(id)
+    window.location = "../Html/Manga.html"
+    return false;
+  }
 
   function createTopMangaCard(result) {
     const TopMangaSection = document.createElement('section');
@@ -27,12 +33,11 @@ fetch(TOP_MANGA_URL)
     TopMangaDiv.classList.add('imgRow');
     
     const thumbnail = result.top[i].image_url;
+    const id = result.top[i].mal_id;
     const title = result.top[i].title;
     const type = result.top[i].type;
 
     const rank = result.top[i].rank;
-    const score = result.top[i].score;
-    const startDate = result.top[i].start_date;
 
     const newTitle = capitalizeFirstLetter(title);
     const newNewTitle = AnimeNameConverter(newTitle);
@@ -40,7 +45,7 @@ fetch(TOP_MANGA_URL)
     // !Skapar html
     const recentInnerHTML = 
     `
-    <div class="imgCard animeCard ImgCardSlider">
+    <div onclick="mangaSelect(${id})" class="imgCard animeCard ImgCardSlider">
       <div class="cardImage">
           <img
           src=${thumbnail}
@@ -52,8 +57,6 @@ fetch(TOP_MANGA_URL)
           </div>
             <div class="cardInfo">
             <span class="cardTitle">${truncate(newNewTitle, 35)}</span>
-              <p class="cardSynopsis"></p>
-              <p class="cardScore">/10⭐</p>
         </div>
       </div>
       `;

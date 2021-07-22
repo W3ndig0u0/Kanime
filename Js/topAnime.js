@@ -38,8 +38,6 @@ fetch(TOP_ANIME_URL)
     const id = result.top[i].mal_id;
 
     const rank = result.top[i].rank;
-    const score = result.top[i].score;
-    const startDate = result.top[i].start_date;
 
     const newTitle = capitalizeFirstLetter(title);
     const newNewTitle = AnimeNameConverter(newTitle);
@@ -59,8 +57,6 @@ fetch(TOP_ANIME_URL)
             </div>
             <div class="cardInfo">
             <span class="cardTitle">${truncate(newNewTitle, 35)}</span>
-              <p class="cardSynopsis"></p>
-              <p class="cardScore">/10⭐</p>
         </div>
       </div>
       `;

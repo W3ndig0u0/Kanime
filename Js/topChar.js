@@ -10,6 +10,15 @@ fetch(TOP_CHAR_URL)
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
 
+  function charSelect(id, rank){
+    sessionStorage.setItem("charId", id);
+    sessionStorage.setItem("charRank", rank);
+    console.log(id)
+    console.log(rank)
+    window.location = "../Html/Char.html"
+    return false;
+  }
+
   function createTopCharCard(result) {
     const TopCharSection = document.createElement('section');
     TopCharSection.classList.add('imgRow2');
@@ -22,12 +31,10 @@ fetch(TOP_CHAR_URL)
     TopCharDiv.classList.add('imgRow2');
     
     const thumbnail = result.top[i].image_url;
+    const id = result.top[i].mal_id;
     const title = result.top[i].title;
-    const type = result.top[i].type;
 
     const rank = result.top[i].rank;
-    const score = result.top[i].score;
-    const startDate = result.top[i].start_date;
 
     const newTitle = capitalizeFirstLetter(title);
     const newNewTitle = AnimeNameConverter(newTitle);
@@ -35,8 +42,8 @@ fetch(TOP_CHAR_URL)
     // !Skapar html
     const recentInnerHTML = 
     `
-    <div class="imgCard2 animeCard">
-      <div class="cardImage2">
+    <div onclick="charSelect(${id, rank})" class="imgCard animeCard">
+      <div class="cardImage">
           <img
           src=${thumbnail}
           alt=${newNewTitle}/>
@@ -44,8 +51,8 @@ fetch(TOP_CHAR_URL)
             <div class="playWrapper">
             </div>
           </div>
-            <div class="cardInfo2">
-            <span class="cardTitle2">${newNewTitle}</span>
+            <div class="cardInfo">
+            <span class="cardTitle">${newNewTitle}</span>
               <p class="cardSynopsis"></p>
               <p class="cardScore">/10⭐</p>
         </div>

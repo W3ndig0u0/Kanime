@@ -8,7 +8,15 @@ fetch(TOP_NOVEL_URL)
 
   function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
+  }  
+  
+  function mangaSelect(id){
+    sessionStorage.setItem("mangaId", id);
+    console.log(id)
+    window.location = "../Html/Manga.html"
+    return false;
   }
+
 
   function createTopNovelCard(result) {
     const TopNovelSection = document.createElement('section');
@@ -22,12 +30,10 @@ fetch(TOP_NOVEL_URL)
     TopNovelDiv.classList.add('imgRow');
     
     const thumbnail = result.top[i].image_url;
+    const id = result.top[i].mal_id;
     const title = result.top[i].title;
     const type = result.top[i].type;
-
     const rank = result.top[i].rank;
-    const score = result.top[i].score;
-    const startDate = result.top[i].start_date;
 
     const newTitle = capitalizeFirstLetter(title);
     const newNewTitle = AnimeNameConverter(newTitle);
@@ -35,7 +41,7 @@ fetch(TOP_NOVEL_URL)
     // !Skapar html
     const recentInnerHTML = 
     `
-    <div class="imgCard animeCard ImgCardSlider">
+    <div onclick="mangaSelect(${id})" class="imgCard animeCard ImgCardSlider">
       <div class="cardImage">
           <img
           src=${thumbnail}
@@ -47,8 +53,6 @@ fetch(TOP_NOVEL_URL)
           </div>
             <div class="cardInfo">
             <span class="cardTitle">${newNewTitle}</span>
-              <p class="cardSynopsis"></p>
-              <p class="cardScore">/10⭐</p>
         </div>
       </div>
       `;

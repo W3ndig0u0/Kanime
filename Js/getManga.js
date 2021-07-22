@@ -1,26 +1,26 @@
-function getAnime() {
-  let animeId = sessionStorage.getItem("AnimeID");
+function getManga() {
+  let mangaId = sessionStorage.getItem("mangaId");
   
-  fetch("https://api.jikan.moe/v3/anime/" + animeId)
+  fetch("https://api.jikan.moe/v3/manga/" + mangaId)
   .then(response => response.json())
   .then(result => {
     console.log(result);
-    AnimePage(result);
+    MangaPage(result);
   })
 }
 
-function getAnimeComments() {
-  let animeId = sessionStorage.getItem("AnimeID");
+function getMangaComments() {
+  let mangaId = sessionStorage.getItem("mangaId");
   
-  fetch("https://api.jikan.moe/v3/anime/" + animeId + "/reviews/1")
+  fetch("https://api.jikan.moe/v3/manga/" + mangaId + "/reviews/1")
   .then(response => response.json())
   .then(result => {
     console.log(result.reviews);
     
     if (result.reviews.length === 0) {
-      noAnimeCommentsPage();
+      noMangaCommentsPage();
     }
-    AnimeCommentsPage(result.reviews);
+    MangaCommentsPage(result.reviews);
   })
 }
 
@@ -53,7 +53,7 @@ function truncate(str, n){
   return (str.length > n) ? str.substr(0, n-1) + '&hellip;' : str;
 };
 
-function AnimePage(result) {
+function MangaPage(result) {
   const AnimePageSection = document.createElement('section');
   const AnimePageDiv = document.createElement('div');
   AnimePageDiv.classList.add('statePage');
@@ -64,17 +64,14 @@ function AnimePage(result) {
   const title = result.title;
 
   const type = result.type;
-  const aired = result.aired.string;
-  const broadcast = result.broadcast;
-  const ep = result.episodes;
-  const source = result.source;
+  const aired = result.published.string;
+  const chapters = result.chapters;
+  const volumes = result.volumes;
   const status = result.status;
-  const premiered = result.premiered;
   const MalURL = result.url;
-  const duration = result.duration;
 
-  const producers = result.producers[0]?.name;
-  const studio = result.studios[0]?.name;
+  const producers = result.authors[0]?.name;
+  const studio = result.authors[1]?.name;
 
   const genres = result.genres[0]?.name;
   const genres1 = result.genres[1]?.name;
@@ -89,8 +86,6 @@ function AnimePage(result) {
 
   const scored_by = result.scored_by;
   const synopsis = result.synopsis;
-
-  const trailer_url = result.trailer_url;
 
   const newTitle = capitalizeFirstLetter(title);
   const newTitleEn = capitalizeFirstLetter(titleEn);
@@ -136,7 +131,6 @@ function AnimePage(result) {
             <span class="beforeState">Members: </span>
             <span class="state">${members}</span>
           </div>
-        </div>
           <div>
           <h1 class="beforeState">Synopsis: </span>  
           <p class="state">${synopsis}</p>
@@ -158,51 +152,35 @@ function AnimePage(result) {
             <span class="beforeState">Status: </span>
             <span class="state">${status}</span>
           </div>
-          <div>
-            <span class="beforeState">Total Eps:</span>
-            <span class="state">${ep}</span>
-          </div>
         </div>
 
         <div class="animeInfo">
-          <div>
-            <span class="beforeState">Premiered: </span>
-            <span class="state">${premiered}</span>
-          </div>
           <div>
             <span class="beforeState">Airing: </span>
             <span class="state">${aired}</span>
           </div>
           <div>
-            <span class="beforeState">Broadcast: </span>
-            <span class="state">${broadcast}</span>
+            <span class="beforeState">Total Volumes:</span>
+            <span class="state">${volumes}</span>
+          </div>
+          <div>
+            <span class="beforeState">Total Chapters:</span>
+            <span class="state">${chapters}</span>
           </div>
         </div>
 
         <div class="animeInfo">
           <div>
-            <span class="beforeState">Source:</span>
-            <span class="state">${source}</span>
-          </div>
-          <div>
-            <span class="beforeState">Studio: </span>
-            <span class="state">${studio}</span>
-          </div>
-          <div>
-            <span class="beforeState">Producers: </span>
+            <span class="beforeState">Author: </span>
             <span class="state">${producers}</span>
           </div>
           <div>
-          <span class="beforeState">Ep Duration: </span>
-          <span class="state">${duration}</span>
+            <span class="beforeState">Authors: </span>
+            <span class="state">${studio}</span>
           </div>
         </div>
       </div>
     <div class="iframe">
-      <h1>Trailer:</h1>
-        <div class="iframeContainer"> 
-          <iframe src=${trailer_url} title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
         <button>
           <a href=${MalURL} title="MyAnimeList Link" target="_blank">MyAnimeList Link</a> 
         </button>
@@ -210,11 +188,10 @@ function AnimePage(result) {
     </div>
   </div>
     `;
-        
 
     AnimePageDiv.innerHTML = PageInnerHTML;
     AnimePageSection.appendChild(AnimePageDiv)
-    document.querySelector(".animePage").appendChild(AnimePageSection)
+    document.querySelector(".mangaPage").appendChild(AnimePageSection)
     document.querySelector(".score").style.backgroundColor = ColorScore;
     menuBgChange(thumbnail)
 }
@@ -251,7 +228,7 @@ function dateConverser(dates) {
 }
 
 
-function AnimeCommentsPage(result) {
+function MangaCommentsPage(result) {
   for (let i = 0; i < result.length; i++) {
   const commentDiv = document.createElement('div');
   commentDiv.classList.add("commentDiv")
@@ -280,11 +257,11 @@ function AnimeCommentsPage(result) {
     </div>
     `;
     commentDiv.innerHTML = CommentsReviewInnerHTML;
-    document.querySelector(".animePageComments")?.appendChild(commentDiv)
+    document.querySelector(".mangaPageComments").appendChild(commentDiv)
   }
 }
 
-function noAnimeCommentsPage() {
+function noMangaCommentsPage() {
   const commentDiv = document.createElement('div');
     // !Skapar html
     const CommentsReviewInnerHTML = 
@@ -295,8 +272,8 @@ function noAnimeCommentsPage() {
     </div>
     `;
     commentDiv.innerHTML = CommentsReviewInnerHTML;
-    document.querySelector(".animePageComments").appendChild(commentDiv)
+    document.querySelector(".mangaPageComments").appendChild(commentDiv)
 }
 
-getAnime();
-getAnimeComments();
+getManga();
+getMangaComments();

@@ -3,12 +3,6 @@ let slides = document.getElementsByClassName("newsCard");
 let card = document.getElementsByClassName("card");
 let menu = document.querySelector(".menu");
 
-function imgUrlHeader(result){
-  for (let i = 0; i < 6; i++) {
-    imgUrl[i] = result[i].image_url;
-  }
-}
-
 setTimeout(function() {
   showSlides(sliderIndex += 0);
 }, 1400)

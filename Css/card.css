@@ -1,6 +1,7 @@
 .newsCard {
   height: auto;
   position: relative;
+  padding-top: 8rem;
   padding-bottom: 4rem;
 }
 
@@ -156,13 +157,13 @@
 .cardNext {
   color: white;
   position: absolute;
-  top: 30%;
+  top: 45%;
   right: 8.5%;
 }
 .cardPrev {
   color: white;
   position: absolute;
-  top: 30%;
+  top: 45%;
   left: 9.5%;
 }
 

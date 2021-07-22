@@ -1,58 +1,125 @@
-/* .animePage, */
-.animeTop,
+.menuAnimePage {
+  transition: 300ms;
+  width: 100vw;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.synopsis,
 .animeBottom,
 .animePageCommentsSection {
   font-family: "Open Sans", sans-serif;
   width: 100%;
-  padding: 5%;
   margin: 0 auto;
+  padding: 5%;
 }
 
 .animeTop {
-  background-color: hsl(208, 96%, 18%);
+  padding-top: 8rem;
   color: white;
 }
 
-.animeBottom {
-  margin-bottom: 3rem;
+.animePageFlex {
+  padding: 5%;
+  font-family: "Open Sans", sans-serif;
+  background: inherit;
+}
+
+.animeBottom,
+.synopsis {
+  padding-top: 2rem;
   background-color: hsl(208, 96%, 48%);
   color: white;
 }
 
-.animePage .animePageFlex {
+.statePage .animePageFlex {
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
-.animePage .animePageFlex > .right {
+.statePage .animePageFlex > .right {
   flex: 50%;
 }
 
 .AnimePageImg {
+  position: relative;
+  z-index: 1;
+  display: block;
   border-radius: 15px;
   width: auto;
   height: auto;
-  justify-content: center;
-  align-items: center;
   object-fit: cover;
-  zoom: 120%;
-  margin: 0rem 2rem 0rem 0;
+  margin: 0 auto;
   box-shadow: 4px 6px 8px 2px rgba(0, 0, 0, 0.1);
 }
 
-.animePage .title {
-  font-size: 2.4em;
+.statePage .title {
+  font-size: 2.3rem;
   font-weight: bold;
   margin-block-end: 0em;
 }
 
-.animePage .titleJp {
-  font-size: 1.4em;
-  margin-block-start: 0.5em;
+.statePage .titleJp {
+  font-size: 1.4rem;
+  margin-block-start: 0.5rem;
   margin-block-end: 1em;
   font-weight: italic;
   opacity: 0.7;
+}
+
+.statePage .rankInfo {
+  font-size: 1.6rem;
+  padding: 2rem;
+}
+
+.statePage .titleFlex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 2rem;
+  padding-bottom: 0;
+  margin-block-end: 0rem;
+}
+
+.statePage .synopsis {
+  padding-left: 3rem;
+  padding-right: 3rem;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-block-start: 1rem;
+  font-size: 1.3rem;
+}
+
+.statePage .synopsis .rankInfo {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-block-end: 0rem;
+  padding: 2rem;
+  margin: 2rem auto;
+}
+
+.statePage .synopsis h1 {
+  font-size: 2.1rem;
+  padding-top: 5rem;
+  padding-bottom: 1rem;
+  text-align: center;
+}
+
+.statePage .synopsis p {
+  text-align: center;
+  font-weight: normal;
+  font-size: 1.3rem;
+  padding-bottom: 1rem;
+}
+
+.statePage .rankInfo span:nth-of-type(2n) {
+  margin-right: 1rem;
 }
 
 .animeInfo {
@@ -66,56 +133,25 @@
   margin: 1rem;
 }
 
-.animePage .titleFlex {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  padding: 2rem;
-  padding-bottom: 0;
-  margin-block-end: 0rem;
-}
-
-.rankInfo {
-  padding-top: 0;
-  margin-block-end: 1rem;
-  margin-block-start: 1rem;
-}
-
-.animePage .synopsis {
-  padding-left: 2rem;
-  padding-right: 2rem;
-  padding-top: 0;
-  margin-block-start: 0.5rem;
-  font-size: 18px;
-}
-
-.animePage .rankInfo span:nth-of-type(2n) {
-  margin-right: 1rem;
-}
-
-.animePage .beforeState {
+.statePage .beforeState {
   font-size: 1.2em;
   font-weight: bold;
   margin-block-end: 0em;
 }
 
-.animePage .state {
-  opacity: 0.8;
+.statePage .state {
+  opacity: 0.9;
+  color: white;
 }
 
-.animePage .score {
+.statePage .score {
   color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 1rem;
-  background-color: #f27d16;
   border-radius: 10px;
   box-shadow: 4px 6px 8px 2px rgba(0, 0, 0, 0.2);
-  opacity: 1;
-}
-.animePage .score .state {
   opacity: 1;
 }
 
@@ -123,16 +159,71 @@
   font-size: 2em;
 }
 
-iframe {
-  width: 60%;
+.statePage .score .state {
+  opacity: 1;
+}
+
+.iframe {
+  width: 75%;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  padding-top: 2rem;
+}
+
+.iframe button {
+  cursor: pointer;
+  display: block;
+  padding: 1rem;
+  font-size: 2rem;
+  margin: 4rem auto;
+  transition: 300ms;
+  text-align: center;
+  border: 0px;
+  background-color: #f27d16;
+  border-radius: 14px;
+  box-shadow: 4px 6px 8px 2px rgba(0, 0, 0, 0.2);
+  opacity: 1;
+}
+
+.iframe button a {
+  color: white;
+}
+
+.iframe button:hover {
+  opacity: 0.8;
+  transition: 300ms;
+}
+
+.iframe .iframeContainer {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding-top: 56.25%;
+}
+
+.iframe .iframeContainer iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
   height: 100%;
-  min-height: 25rem;
+  border: none;
 }
 
 /* !comments */
 .commentDiv {
   margin-top: 5rem;
   display: flex;
+}
+
+.titleComments {
+  font-size: 3rem;
+  word-wrap: break-word;
+  text-align: center;
 }
 
 .reviewerImgDiv {
@@ -186,17 +277,116 @@ iframe {
   font-size: 17px;
 }
 
+@media screen and (max-width: 960px) {
+  .statePage .animePageFlex {
+    display: unset;
+  }
+
+  .statePage .titleFlex {
+    display: unset;
+    padding-bottom: 0;
+    margin-block-end: 0rem;
+    text-align: center;
+  }
+
+  .statePage .score {
+    width: 180px;
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .statePage .rankInfo {
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  .AnimePageImg {
+    position: unset;
+  }
+
+  .animeInfo {
+    padding: 1rem;
+    margin: 2rem;
+    display: block;
+    border: 3px solid #002680;
+    word-wrap: break-word;
+    text-align: center;
+  }
+
+  .animeInfo div {
+    padding-bottom: 1rem;
+  }
+
+  .iframe button {
+    font-size: 1.6rem;
+  }
+}
 @media screen and (max-width: 760px) {
   .reviewerImg {
     width: 5rem;
     height: 5rem;
   }
-  iframe {
-    min-height: 20rem;
+
+  .rankInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    font-size: 1.4em;
+    padding: 0rem;
+  }
+
+  .rankInfo span:nth-of-type(2n) {
+    padding-bottom: 2rem;
+  }
+  .statePage .beforeState {
+    font-size: 1.5rem;
+  }
+
+  .statePage .state {
+    font-size: 1.3rem;
+  }
+
+  .statePage .synopsis {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .statePage .scoreNumber {
+    font-size: 2rem;
+  }
+
+  .statePage .synopsis h1 {
+    padding-top: 4rem;
+  }
+  .iframe button {
+    font-size: 1.4rem;
   }
 }
 
 @media screen and (max-width: 540px) {
+  .statePage .titles {
+    padding: 5%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .statePage .synopsis h1 {
+    padding-top: 2rem;
+  }
+
+  .statePage .synopsis .rankInfo {
+    padding-left: 0rem;
+    padding-right: 0rem;
+    text-align: center;
+  }
+
+  .statePage .animeInfo {
+    text-align: center;
+  }
+
   .commentDiv {
     margin-top: 2rem;
     display: unset;
@@ -212,10 +402,15 @@ iframe {
     margin-block-start: 0em;
     margin-block-end: 1em;
   }
+
   .revireContent {
-    font-size: 15px;
+    font-size: 17px;
   }
-  iframe {
-    min-height: 10rem;
+  .titleComments {
+    font-size: 1.5rem;
+  }
+
+  .iframe button {
+    font-size: 1.3rem;
   }
 }
