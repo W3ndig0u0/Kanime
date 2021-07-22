@@ -71,7 +71,7 @@ const animesHTML = animeByCategories[key]
                 </div>
             </div>
         <div class="cardInfo">
-            <span class="cardTitle">${anime.title}</span>
+            <span class="cardTitle">${truncate(anime.title, 35)}</span>
         </div>
             <div class="cardAction">
                 <a href="${anime.url}">Find out more</a>
@@ -106,8 +106,11 @@ return `
 
 
 function truncate(str, n){
-    return (str.length > n) ? str.substr(0, n-1) + '&hellip;' : str;
-  };
+    if (str === null) {
+     return "Null"
+   }
+   return (str.length > n) ? str.substr(0, n-1) + '&hellip;' : str;
+ };
   
 
 function animeSelect(id){

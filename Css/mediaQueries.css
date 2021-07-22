@@ -214,7 +214,7 @@
 
 @media screen and (max-width: 560px) {
   .imgCard {
-    margin: 1rem auto;
+    margin: 2rem auto;
   }
 
   .slider .imgCard {
@@ -305,7 +305,7 @@
   }
 
   .imgCard {
-    margin: 1.5rem auto;
+    margin: 2rem auto;
     min-width: 10rem;
     border: 1px solid #0583f2;
   }
@@ -315,7 +315,7 @@
   }
 
   .imgCard2 {
-    margin: 1.5rem auto;
+    margin: 2rem auto;
     padding-right: 1.5rem;
   }
 
@@ -369,7 +369,6 @@
 
   .imgRow2 {
     grid-template-columns: repeat(auto-fill, minmax(6rem, 1fr));
-    margin: 0rem auto;
   }
 
   .imgCard2 {

@@ -30,24 +30,35 @@ function capitalizeFirstLetter(string) {
 }
 
 function scoreColor(score) {
-  if (score >= 8.5) {
+  if (score >= 9) {
     return "#00ba41";
   }  
 
-  else if (score >= 7.0 && score < 8.5) {
+  else if (score >= 8 && score < 9) {
+    return "#91ca0c";
+  }
+
+  else if (score >= 7 && score < 8) {
     return "#F27D16";
   }
 
-  else if (score >= 6.0 && score < 7.0) {
-    return "#C45258";
+  else if (score >= 6 && score < 7) {
+    return "#ca450c";
   }
 
-  else if (score < 6.0) {
+  else if (score >= 5 && score < 6) {
+    return "#AE0045";
+  }
+
+  else if (score < 5.0) {
     return "#590000";
   }
 }
 
 function truncate(str, n){
+   if (str === null) {
+    return "Null"
+  }
   return (str.length > n) ? str.substr(0, n-1) + '&hellip;' : str;
 };
 
