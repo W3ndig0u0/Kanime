@@ -5,7 +5,11 @@ let menu = document.querySelector(".menu");
 
 setTimeout(function() {
   showSlides(sliderIndex += 0);
-}, 1400)
+}, 1600)
+
+setTimeout(function() {
+  showSlides(sliderIndex += 0);
+}, 1900)
 
 function plusSlides(n) {
   showSlides(sliderIndex += n);

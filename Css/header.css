@@ -12,6 +12,8 @@
 
 .menu-content.sticky {
   background: inherit;
+  font-size: 1.3rem;
+  height: 6rem;
   animation: smoothScroll 0.1s forwards ease-in;
 }
 
@@ -19,7 +21,7 @@
   0% {
     transform: translateY(-20px);
     height: 8rem;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
   100% {
     transform: translateY(0px);

@@ -216,6 +216,11 @@
   .imgCard {
     margin: 1rem auto;
   }
+
+  .slider .imgCard {
+    margin-left: 3rem;
+  }
+
   .newsCardInfo h2 {
     font-size: 0.8rem;
   }
@@ -283,6 +288,16 @@
 }
 
 @media screen and (max-width: 430px) {
+  .tag {
+    padding: 0.1rem;
+    font-size: 0.7rem;
+  }
+
+  .epTag {
+    padding: 0.1rem;
+    font-size: 0.7rem;
+  }
+
   .imgRow2 {
     grid-template-columns: repeat(auto-fill, minmax(7rem, 1fr));
     column-gap: 2rem;
@@ -293,6 +308,10 @@
     margin: 1.5rem auto;
     min-width: 10rem;
     border: 1px solid #0583f2;
+  }
+
+  .slider .imgCard {
+    margin-left: 2rem;
   }
 
   .imgCard2 {
@@ -325,15 +344,32 @@
 
 /* !min mobil */
 @media screen and (max-width: 410px) {
+  .menu-content {
+    font-size: 1.3rem;
+  }
+
+  .menu-content.sticky {
+    animation: smoothScroll 0.4s ease;
+    font-size: 1.3rem;
+    height: 6rem;
+  }
+
+  @keyframes smoothScroll {
+    0% {
+      transform: translateY(-30px);
+      height: 8rem;
+      font-size: 1.3rem;
+    }
+    100% {
+      transform: translateY(0px);
+      font-size: 1.3rem;
+      height: 6rem;
+    }
+  }
+
   .imgRow2 {
     grid-template-columns: repeat(auto-fill, minmax(6rem, 1fr));
     margin: 0rem auto;
-  }
-
-  .imgCard {
-    margin: 1.5rem auto;
-    min-width: 7rem;
-    border: 1px solid #0583f2;
   }
 
   .imgCard2 {
