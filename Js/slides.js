@@ -3,13 +3,9 @@ let slides = document.getElementsByClassName("newsCard");
 let card = document.getElementsByClassName("card");
 let menu = document.querySelector(".menu");
 
-setTimeout(function() {
+window.addEventListener('DOMContentLoaded', (event) => {
   showSlides(sliderIndex += 0);
-}, 1600)
-
-setTimeout(function() {
-  showSlides(sliderIndex += 0);
-}, 1900)
+});
 
 function plusSlides(n) {
   showSlides(sliderIndex += n);
