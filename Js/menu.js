@@ -8,7 +8,6 @@ function openNavbar() {
     document.querySelector("body").classList.toggle("active");
   }
 
-
 document.querySelector(".search-btn").onclick = function() {
     document.getElementById("myModal").style.display = "block";
     document.querySelector("body").style.overflowY = "hidden";

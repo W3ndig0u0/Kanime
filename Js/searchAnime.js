@@ -56,43 +56,39 @@ function updateDom(data) {
             return acc;
         }, {});
 
-    searchResults.innerHTML = Object.keys(animeByCategories).map(key => {
-
-        const animesHTML = animeByCategories[key]
-            .sort((a, b) => a.episodes - b.episodes)
-            .map(anime => {
-                return `
-                <div class="imgRow2">
-                    <div onclick="animeSelect(${anime.mal_id})" class="imgCard animeCard">
-                        <div class="cardImage">
-                            <img src="${anime.image_url}">
-                            <div class="${key}Tag tag">${key.toUpperCase()}</div>
-                            <span><span/>
-                            <div class="playWrapper">
-                            </div>
-                        </div>
-                    <div class="cardInfo">
-                        <span class="cardTitle">${anime.title}</span>
-                        <p class="cardSynopsis">${anime.synopsis}</p>
-                        <p class="cardScore">${anime.score}/10⭐</p>
-                    </div>
-                        <div class="cardAction">
-                            <a href="${anime.url}">Find out more</a>
-                        </div>
-                    </div>
+searchResults.innerHTML = Object.keys(animeByCategories).map(key => {
+    
+const animesHTML = animeByCategories[key]
+.sort((a, b) => a.episodes - b.episodes)
+.map(anime => {
+    return `
+    <div class="imgRow2">
+        <div onclick="animeSelect(${anime.mal_id})" class="imgCard animeCard">
+            <div class="cardImage">
+                <img src="${anime.image_url}">
+                <div class="${key}Tag tag">${key.toUpperCase()}</div>
+                <div class="playWrapper">
                 </div>
-            `
-            }).join("");
+            </div>
+        <div class="cardInfo">
+            <span class="cardTitle">${anime.title}</span>
+        </div>
+            <div class="cardAction">
+                <a href="${anime.url}">Find out more</a>
+            </div>
+        </div>
+    </div>
+`
+}).join("");
 
-
-        return `
-                <section class="imgSection">
-                <h3><span>${key.toUpperCase()}</span></h3>
-                    <div class="imgRow2">${animesHTML}</div>
-                </div>
-                </section>
-            `
-    }).join("");
+return `
+    <section class="imgSection">
+    <h3><span>${key.toUpperCase()}</span></h3>
+        <div class="imgRow2">${animesHTML}</div>
+    </div>
+    </section>
+    `   
+}).join("");
 
     document.querySelector('.airing').style.display = "none";
     document.querySelector('.shop').style.display = "none";
@@ -105,14 +101,14 @@ function updateDom(data) {
     document.querySelector('.topChar').style.display = "none";
     document.querySelector('.reviews').style.display = "none";
     document.querySelector('.shop').style.display = "none";
-    document.querySelectorAll('.space2').style.display = "none";
-
 }
 
-function pageLoaded() {
-    const form = document.getElementById('search_form');
-    form.addEventListener("submit", searchAnime);
-}
+
+
+function truncate(str, n){
+    return (str.length > n) ? str.substr(0, n-1) + '&hellip;' : str;
+  };
+  
 
 function animeSelect(id){
     sessionStorage.setItem("AnimeID", id);
@@ -120,6 +116,34 @@ function animeSelect(id){
     window.location = "../Html/Anime.html"
     return false;
   }
+  
+  function personSelect(id){
+    sessionStorage.setItem("personId", id);
+    console.log(id)
+    window.location = "../Html/Person.html"
+    return false;
+  }
+  
+  function mangaSelect(id){
+    sessionStorage.setItem("mangaId", id);
+    console.log(id)
+    window.location = "../Html/Manga.html"
+    return false;
+  }
+  
+  function charSelect(id){
+    sessionStorage.setItem("charId", id);
+    console.log(id)
+    window.location = "../Html/Char.html"
+    return false;
+  }
+
+function pageLoaded() {
+    const form = document.getElementById('search_form');
+    form?.addEventListener("submit", searchAnime);
+
+}
+
 
 
 window.addEventListener("load", pageLoaded);

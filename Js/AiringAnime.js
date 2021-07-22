@@ -25,7 +25,7 @@ fetch("https://api.jikan.moe/v3/top/anime/1/airing")
     TopCharSection.classList.add('imgRow2');
 
     // if (undefined !== result.top && result.top.length) {
-    for (let i = 0; i < 23; i++) {
+    for (let i = 0; i < 30; i++) {
       // for (let i = 0; i < result.top.length; i++) {
       
     const TopCharDiv = document.createElement('div');
@@ -53,8 +53,6 @@ fetch("https://api.jikan.moe/v3/top/anime/1/airing")
           </div>
           <div class="cardInfo">
             <span class="cardTitle">${truncate(newNewTitle,35)}</span>
-              <p class="cardSynopsis"></p>
-              <p class="cardScore">/10⭐</p>
         </div>
       </div>
       `;

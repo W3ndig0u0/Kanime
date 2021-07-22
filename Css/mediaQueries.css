@@ -101,6 +101,10 @@
 }
 
 @media screen and (max-width: 720px) {
+  .imgRow2 {
+    padding-right: 2.5rem;
+  }
+
   .slider {
     overflow-x: auto;
   }
@@ -250,10 +254,11 @@
 }
 
 /* !Smoll */
-@media screen and (max-width: 460px) {
+@media screen and (max-width: 462px) {
   .imgRow2 {
     grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
     column-gap: 2rem;
+    padding-right: 1rem;
   }
   .next {
     right: 2.5%;
@@ -279,11 +284,15 @@
 
 @media screen and (max-width: 430px) {
   .imgRow2 {
-    grid-template-columns: repeat(auto-fill, minmax(7.5rem, 1fr));
-    column-gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(7rem, 1fr));
+    column-gap: 2rem;
+    padding-right: 1rem;
   }
+
   .imgCard {
     margin: 1.5rem auto;
+    min-width: 10rem;
+    border: 1px solid #0583f2;
   }
 
   .imgCard2 {
@@ -317,8 +326,14 @@
 /* !min mobil */
 @media screen and (max-width: 410px) {
   .imgRow2 {
-    grid-template-columns: repeat(auto-fill, minmax(7rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(6rem, 1fr));
     margin: 0rem auto;
+  }
+
+  .imgCard {
+    margin: 1.5rem auto;
+    min-width: 7rem;
+    border: 1px solid #0583f2;
   }
 
   .imgCard2 {

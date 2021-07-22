@@ -7,9 +7,7 @@ setTimeout(function(){
   }
 },1000)
 
-function hoverCardIn(event) { 
-  console.log(event.target);
-  
+function hoverCardIn(event) {
   if ((event.target.childNodes[5] !== undefined))
   {
     if (event.target.childNodes[5].classList.contains("playWrapper"))
@@ -25,6 +23,13 @@ function hoverCardIn(event) {
 }
 
 function hoverCardOut(event) {
+  if (event.target.childNodes[1].childNodes[3] !== undefined) {    
+    if (event.target.childNodes[1].childNodes[3].classList.contains("playWrapper"))
+    {
+      event.target.childNodes[1].childNodes[3].style.opacity = "0";
+    }
+  }    
+  
   if (event.target.childNodes[1].childNodes[5] !== undefined) {    
     if (event.target.childNodes[1].childNodes[5].classList.contains("playWrapper"))
     {

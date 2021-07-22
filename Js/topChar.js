@@ -10,11 +10,9 @@ fetch(TOP_CHAR_URL)
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
 
-  function charSelect(id, rank){
+  function charSelect(id){
     sessionStorage.setItem("charId", id);
-    sessionStorage.setItem("charRank", rank);
     console.log(id)
-    console.log(rank)
     window.location = "../Html/Char.html"
     return false;
   }
@@ -42,7 +40,7 @@ fetch(TOP_CHAR_URL)
     // !Skapar html
     const recentInnerHTML = 
     `
-    <div onclick="charSelect(${id, rank})" class="imgCard animeCard">
+    <div onclick="charSelect(${id})" class="imgCard animeCard">
       <div class="cardImage">
           <img
           src=${thumbnail}
@@ -53,8 +51,6 @@ fetch(TOP_CHAR_URL)
           </div>
             <div class="cardInfo">
             <span class="cardTitle">${newNewTitle}</span>
-              <p class="cardSynopsis"></p>
-              <p class="cardScore">/10⭐</p>
         </div>
       </div>
       `;

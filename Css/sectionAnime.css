@@ -5,10 +5,9 @@
 
 .imgSection {
   width: 90%;
-  margin: 2rem auto;
   height: auto;
   font-family: "Open Sans", sans-serif;
-  margin: 0 auto;
+  margin: 2rem auto;
 }
 
 .imgSectionChar {
@@ -53,6 +52,7 @@
   padding-top: 3rem;
   padding-bottom: 3rem;
 }
+
 .imgSection h4 {
   text-align: center;
   font-family: "Open Sans", sans-serif;
@@ -71,14 +71,13 @@
   justify-content: space-between;
   margin: 0 auto;
 }
+
 .imgRow2 {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
   column-gap: 2rem;
   align-items: center;
-  row-gap: 0.5rem;
+  row-gap: 1rem;
   margin: 0 auto;
-
-  /* display: flex;
-  align-items: center; */
+  padding-right: 4rem;
 }

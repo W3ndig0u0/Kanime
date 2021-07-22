@@ -15,8 +15,6 @@ function getMangaComments() {
   fetch("https://api.jikan.moe/v3/manga/" + mangaId + "/reviews/1")
   .then(response => response.json())
   .then(result => {
-    console.log(result.reviews);
-    
     if (result.reviews.length === 0) {
       noMangaCommentsPage();
     }
@@ -90,7 +88,6 @@ function MangaPage(result) {
   const newTitle = capitalizeFirstLetter(title);
   const newTitleEn = capitalizeFirstLetter(titleEn);
 
-  // !Skapar html
   const PageInnerHTML = 
   `
     <div class="animeTop">
@@ -130,6 +127,7 @@ function MangaPage(result) {
           <div>
             <span class="beforeState">Members: </span>
             <span class="state">${members}</span>
+          </div>
           </div>
           <div>
           <h1 class="beforeState">Synopsis: </span>  
@@ -175,7 +173,7 @@ function MangaPage(result) {
             <span class="state">${producers}</span>
           </div>
           <div>
-            <span class="beforeState">Authors: </span>
+            <span class="beforeState">Co Authors: </span>
             <span class="state">${studio}</span>
           </div>
         </div>
@@ -194,6 +192,7 @@ function MangaPage(result) {
     document.querySelector(".mangaPage").appendChild(AnimePageSection)
     document.querySelector(".score").style.backgroundColor = ColorScore;
     menuBgChange(thumbnail)
+
 }
 
 
