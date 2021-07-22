@@ -1,15 +1,24 @@
 let sliderIndex = 1;
 let slides = document.getElementsByClassName("newsCard");
 let card = document.getElementsByClassName("card");
-let menu = document.querySelector(".menu");
-
-window.addEventListener('DOMContentLoaded', (event) => {
-  showSlides(sliderIndex += 0);
-});
 
 function plusSlides(n) {
   showSlides(sliderIndex += n);
 }
+
+
+window.addEventListener('DOMContentLoaded', (event) => {
+  setTimeout(function(){
+    plusSlides(sliderIndex += 1);
+  },
+  1500);
+
+  while(slides[sliderIndex-1] === undefined){
+    plusSlides(sliderIndex += 1);
+  }
+});
+
+
 
 function showSlides(n) {
   if (n > slides.length) {sliderIndex = 1}
@@ -20,6 +29,6 @@ function showSlides(n) {
       card[i].className = card[i].className.replace(" ani", "");
   }
 
-    slides[sliderIndex-1].style.display = "block";
-    card[sliderIndex-1].className += " ani";
+  slides[sliderIndex-1].style.display = "block";
+  card[sliderIndex-1].className += " ani";
 }
