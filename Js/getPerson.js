@@ -5,9 +5,59 @@ function getPerson() {
   .then(response => response.json())
   .then(result => {
     console.log(result);
+    if (result.voice_acting_roles.length === 0) {
+      noPageActorPerson();
+    }
     CharPage(result);
   })
 }
+
+
+function getPersonGallery() {
+  let personId = sessionStorage.getItem("personId");
+
+  fetch("https://api.jikan.moe/v3/person/" + personId + "/pictures")
+    .then((response) => response.json())
+    .then((result) => {
+      console.log(result);
+      if (result.pictures.length === 0) {
+        noPageGalleryPerson();
+      }
+      personGallery(result);
+    });
+}
+
+function noPageGalleryPerson() {
+  const commentDiv = document.createElement('div');
+    // !Skapar html
+    const CommentsReviewInnerHTML = 
+    `
+    <div class="reviewerImgDiv">
+      <h1>This Person Dosn't have any gallery yet...<h1/>
+      <p>Sorry D:<p/>
+      <p>Tehee<p/>
+    </div>
+    `;
+    commentDiv.innerHTML = CommentsReviewInnerHTML;
+    document.querySelector(".persGallery").appendChild(commentDiv)
+}
+
+function noPageActorPerson() {
+  const commentDiv = document.createElement('div');
+    // !Skapar html
+    const CommentsReviewInnerHTML = 
+    `
+    <div class="reviewerImgDiv">
+      <h1>This Person Dosn't have any Roles...<h1/>
+      <p>Sorry D:<p/>
+      <p>Tehee<p/>
+    </div>
+    `;
+    commentDiv.innerHTML = CommentsReviewInnerHTML;
+    document.querySelector(".roles").appendChild(commentDiv)
+}
+
+
 
 function CharPage(result) {
   const AnimePageSection = document.createElement('section');
@@ -222,4 +272,31 @@ function menuBgChange(Imgurl)
 }
 
 
+function personGallery(result) {
+  const galleryAnimeDiv = document.createElement("div");
+  galleryAnimeDiv.classList.add("imgRow2");
+  for (let i = 0; i < result.pictures.length; i++) {
+
+    const galleryAnime = document.createElement("div");
+    galleryAnime.classList.add("vcCard");
+
+    const AnimeThumbnail = result.pictures[i].small;
+
+    const MovieInnerHTML = `
+          <div class="imgCard animeCard">
+          <div class="cardImage">
+              <img
+              src=${AnimeThumbnail}
+              alt=${AnimeThumbnail}       
+            </div>
+          </div>
+        `;
+
+    galleryAnime.innerHTML = MovieInnerHTML;
+    galleryAnimeDiv.appendChild(galleryAnime);
+    document.querySelector(".persGallery").appendChild(galleryAnimeDiv);
+  }
+}
+
+getPersonGallery();
 getPerson();
