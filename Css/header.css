@@ -13,7 +13,7 @@
 .menu-content.sticky {
   background: inherit;
   font-size: 1.3rem;
-  height: 6rem;
+  height: 5rem;
   animation: smoothScroll 0.1s forwards ease-in;
 }
 
@@ -26,11 +26,12 @@
   100% {
     transform: translateY(0px);
     font-size: 1.3rem;
-    height: 6rem;
+    height: 5rem;
   }
 }
 
 .menu-content {
+  /* background: inherit; */
   font-family: "Open Sans", sans-serif;
   user-select: none;
   display: flex;

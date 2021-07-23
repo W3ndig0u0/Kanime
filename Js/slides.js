@@ -18,7 +18,13 @@ window.addEventListener('DOMContentLoaded', (event) => {
   }
 });
 
-
+while(slides[sliderIndex-1] === undefined){
+  plusSlides(sliderIndex += 1);
+}
+setTimeout(function(){
+  plusSlides(sliderIndex += 1);
+},
+1500);
 
 function showSlides(n) {
   if (n > slides.length) {sliderIndex = 1}

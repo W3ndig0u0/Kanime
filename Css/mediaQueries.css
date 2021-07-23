@@ -81,6 +81,19 @@
 
 /* !Ipad - Mobile */
 @media screen and (max-width: 800px) {
+  .genreSelect > div {
+    margin: 4rem auto;
+  }
+
+  .recentAnime .container {
+    margin: 5rem auto;
+  }
+
+  .shop .grid {
+    display: unset;
+    margin: 0 auto;
+  }
+
   .score h1 {
     font-weight: 400;
     font-size: 24px;
@@ -346,29 +359,30 @@
 @media screen and (max-width: 410px) {
   .menu-content {
     font-size: 1.3rem;
+    height: 6rem;
   }
 
   .menu-content.sticky {
     animation: smoothScroll 0.4s ease;
     font-size: 1.3rem;
-    height: 6rem;
+    height: 4rem;
   }
 
   @keyframes smoothScroll {
     0% {
       transform: translateY(-30px);
-      height: 8rem;
+      height: 6rem;
       font-size: 1.3rem;
     }
     100% {
       transform: translateY(0px);
       font-size: 1.3rem;
-      height: 6rem;
+      height: 4rem;
     }
   }
 
   .imgRow2 {
-    grid-template-columns: repeat(auto-fill, minmax(6rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(7rem, 1fr));
   }
 
   .imgCard2 {
@@ -402,7 +416,7 @@
   }
 
   .imgCard {
-    min-width: 8rem;
+    min-width: 9rem;
     height: 13rem;
     border: 1.5px solid #0583f2;
   }
