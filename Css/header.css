@@ -54,9 +54,9 @@
   z-index: 10000000;
   width: 100%;
   padding: 30px 5%;
-  position: fixed;
   top: 0%;
   height: 8rem;
+  position: fixed;
   transition: 300ms ease-in-out;
 }
 
