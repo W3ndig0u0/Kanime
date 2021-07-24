@@ -48,6 +48,10 @@
   background-color: transparent;
 }
 
+.animeCardText {
+  margin-top: 0;
+}
+
 .leaderboard li:before {
   margin-right: 4px;
 }

@@ -44,7 +44,6 @@ fetch(RECENT_ANIME_RSS_URL)
         </div>
     `;
 
-    
     recentDivLeaderboard.innerHTML = recentInnerHTML;
     recentDivContainer.appendChild(recentDivLeaderboard)
     recentDivLeaderboard.appendChild(recentDiv);
@@ -69,7 +68,7 @@ fetch(RECENT_ANIME_RSS_URL)
         </mark>
         <small>
         <a href=${id} target="_blank" title="noopener">
-          <h1 class="animeCard">${newNewTitle}</h1>
+          <h1 class="animeCardText">${newNewTitle}</h1>
         <a/>
           <div class="extraInfo">
             <span>Episode ${ep}</span>
