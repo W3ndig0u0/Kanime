@@ -10,41 +10,9 @@
   width: 100vw;
 }
 
-.menu-content.sticky {
-  background: inherit;
+.menu-content {
   font-size: 1.3rem;
   height: 5rem;
-  animation: smoothScroll 0.1s forwards ease-in;
-}
-
-@keyframes smoothScroll {
-  0% {
-    transform: translateY(-20px);
-    height: 8rem;
-    font-size: 1.5rem;
-  }
-  100% {
-    transform: translateY(0px);
-    font-size: 1.3rem;
-    height: 5rem;
-  }
-}
-
-@keyframes smoothScroll2 {
-  0% {
-    transform: translateY(-15px);
-    height: 6rem;
-    font-size: 1.3rem;
-  }
-  100% {
-    transform: translateY(0px);
-    font-size: 1.3rem;
-    height: 4rem;
-  }
-}
-
-.menu-content {
-  /* background: inherit; */
   font-family: "Open Sans", sans-serif;
   user-select: none;
   display: flex;
@@ -56,7 +24,6 @@
   padding: 30px 5%;
   top: 0%;
   height: 8rem;
-  position: fixed;
   transition: 300ms ease-in-out;
 }
 
@@ -132,7 +99,7 @@
 
 .navButton {
   display: none !important;
-  font-size: 1.5em !important;
+  font-size: 1.2em !important;
   margin: 0.55rem !important;
   color: white !important;
 }
