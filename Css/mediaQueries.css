@@ -81,6 +81,15 @@
 
 /* !Ipad - Mobile */
 @media screen and (max-width: 800px) {
+  .titleComments {
+    margin-top: 7rem;
+    font-size: 3rem;
+  }
+
+  .vcCard {
+    padding-top: 4rem;
+  }
+
   .genreSelect > div {
     margin: 4rem auto;
   }
@@ -223,9 +232,23 @@
   .score {
     padding-right: 0%;
   }
+
+  .newsCardInfo h2 {
+    font-size: 0.8rem;
+  }
+  .newsCardInfo p {
+    font-size: 0.7rem;
+  }
+  .newsCardInfo h6 {
+    font-size: 0.6rem;
+  }
 }
 
 @media screen and (max-width: 560px) {
+  .vcCard {
+    padding-top: 3rem;
+  }
+
   .imgCard {
     margin: 2rem auto;
   }
@@ -235,10 +258,10 @@
   }
 
   .newsCardInfo h2 {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
   }
   .newsCardInfo h6 {
-    font-size: 0.7rem;
+    font-size: 0.6rem;
   }
   .newsLetter {
     height: 10rem;
@@ -285,6 +308,10 @@
     left: 1.5%;
   }
   .newsCardInfo h2 {
+    font-size: 0.65rem;
+  }
+  .newsCardInfo h6,
+  .newsCardInfo p {
     font-size: 0.5rem;
   }
   .card .featured h6 {
@@ -350,9 +377,6 @@
   .container {
     width: 300px;
   }
-  .newsCardInfo p {
-    font-size: 0.7rem;
-  }
 }
 
 /* !min mobil */
@@ -362,23 +386,15 @@
     height: 6rem;
   }
 
-  .menu-content.sticky {
-    animation: smoothScroll 0.4s ease;
-    font-size: 1.3rem;
-    height: 4rem;
+  .titleComments {
+    margin-top: 7rem;
+    font-size: 3rem;
   }
 
-  @keyframes smoothScroll {
-    0% {
-      transform: translateY(-30px);
-      height: 6rem;
-      font-size: 1.3rem;
-    }
-    100% {
-      transform: translateY(0px);
-      font-size: 1.3rem;
-      height: 4rem;
-    }
+  .menu-content.sticky {
+    animation: smoothScroll2 0.4s ease;
+    font-size: 1.3rem;
+    height: 4rem;
   }
 
   .imgRow2 {
@@ -392,8 +408,14 @@
   .container {
     width: 280px;
   }
+
   .newsCardInfo h2 {
-    font-size: 0.45rem;
+    font-size: 0.55rem;
+  }
+
+  .newsCardInfo h6,
+  .newsCardInfo p {
+    font-size: 0.4rem;
   }
   .hamburgerNav ul li:first-of-type {
     display: unset;

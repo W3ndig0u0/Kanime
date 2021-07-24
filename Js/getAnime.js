@@ -7,6 +7,10 @@ function getAnime() {
     console.log(result);
       AnimePage(result);
   })
+  .catch(error => {
+    console.error(error);
+    getAnime();
+  })
 }
 
 function getAnimeComments() {
@@ -21,6 +25,10 @@ function getAnimeComments() {
     else{
       AnimeCommentsPage(result.reviews);
     }
+  })
+  .catch(error => {
+    console.error(error);
+    getAnimeComments();
   })
 }
 
@@ -37,8 +45,11 @@ function getAnimeStaff() {
     if (result.characters.length === 0) {
       noPageCharachter();
     }
-
     AnimePageStaff(result);
+  })
+  .catch(error => {
+    console.error(error);
+    getAnimeStaff();
   })
 }
 
@@ -52,6 +63,10 @@ function getAnimeGallery() {
       noPageGallery();
     }
       AnimePageGallery(result);
+  })  
+  .catch(error => {
+    console.error(error);
+    getAnimeGallery();
   })
 }
 
@@ -65,6 +80,27 @@ function getAnimeRecommendations() {
       noAnimeRecommendations();
     }
       AnimeRecommendations(result);
+  })
+  .catch(error => {
+    console.error(error);
+    getAnimeRecommendations();
+  })
+}
+
+function getAnimeNews() {
+  let animeId = sessionStorage.getItem("AnimeID");
+  
+  fetch("https://api.jikan.moe/v3/anime/" + animeId + "/news")
+  .then(response => response.json())
+  .then(result => {
+    if (result.articles.length === 0) {
+      noAnimeNews();
+    }
+      AnimeNews(result);
+  })
+  .catch(error => {
+    console.error(error);
+    getAnimeNews();
   })
 }
 
@@ -416,7 +452,7 @@ function AnimePageGallery(result) {
 
   for (let i = 0; i < result.pictures.length; i++) {
     const galleryAnime = document.createElement("div");
-    galleryAnime.classList.add("vcCard");
+    galleryAnime.classList.add("vcCard2");
 
     const AnimeThumbnail = result.pictures[i].small;
     const MovieInnerHTML = `
@@ -471,7 +507,60 @@ function AnimeRecommendations(result) {
   }
 }
 
+function AnimeNews(result) {
+  const galleryAnimeDiv = document.createElement("div");
+  galleryAnimeDiv.classList.add("newsRow");
+
+  for (let i = 0; i < result.articles.length; i++) {
+    const galleryAnime = document.createElement("div");
+    galleryAnime.classList.add("newsSection2");
+
+    const AnimeThumbnail = result.articles[i].image_url;
+    const AnimeTitle = result.articles[i].title;
+    const AnimeId = result.articles[i].mal_id;
+    const url = result.articles[i].url;
+    const author_name = result.articles[i].author_name;
+    const intro = result.articles[i].intro;
+    const date = result.articles[i].date;
+
+    const MovieInnerHTML = `
+        <div class="newsLetter">
+          <div class="newsImg">
+            <img
+            src=${AnimeThumbnail}
+            alt=${AnimeTitle}/>
+          </div>
+          <div class="newsCardInfo">
+            <a href=${url} target="_blank" rel="noopener" title=${url} aria-label=${AnimeTitle}>
+              <h2>${truncate(intro,120)}"</h2>
+            <a/>
+              <p>Source: ${author_name}</p>
+              <h6><i class="fa fa-calendar"></i> ${dateConverser(date)}</h6>
+          </div>
+        </div>
+        `;
+
+    galleryAnime.innerHTML = MovieInnerHTML;
+    galleryAnimeDiv.appendChild(galleryAnime);
+    document.querySelector(".animePageNews").appendChild(galleryAnimeDiv);
+  }
+}
+
 // !Fail Catches
+
+function noAnimeNews() {
+  const commentDiv = document.createElement('div');
+    const CommentsReviewInnerHTML = 
+    `
+    <div class="reviewerImgDiv">
+      <h1>This Anime Dosn't have any News...<h1/>
+      <p>Sorry D:<p/>
+      <p>Tehee<p/>
+    </div>
+    `;
+    commentDiv.innerHTML = CommentsReviewInnerHTML;
+    document.querySelector(".animePageNews").appendChild(commentDiv)
+}
 
 function noAnimeRecommendations() {
   const commentDiv = document.createElement('div');
@@ -549,4 +638,5 @@ getAnimeComments();
 getAnimeStaff();
 getAnimeGallery();
 getAnimeRecommendations();
+getAnimeNews();
 

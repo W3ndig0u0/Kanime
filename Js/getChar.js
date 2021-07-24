@@ -252,7 +252,7 @@ function CharPageGallery(result) {
 
   for (let i = 0; i < result.pictures.length; i++) {
     const galleryAnime = document.createElement("div");
-    galleryAnime.classList.add("vcCard");
+    galleryAnime.classList.add("vcCard2");
 
     const AnimeThumbnail = result.pictures[i].small;
 

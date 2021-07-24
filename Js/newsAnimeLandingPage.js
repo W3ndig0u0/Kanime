@@ -60,7 +60,6 @@ function truncate(str, n){
     {
       return [date +  monthNames[mounth - 1]]
     }
-
   }
 
   function capitalizeFirstLetter(string) {
@@ -82,7 +81,6 @@ function truncate(str, n){
     // !Skapar html
     const newsInnerHTML = 
     `
-    <a href=${youtubeUrl} target="_blank" rel="noopener" title=${youtubeUrl} aria-label=${youtubeUrl}>
       <div class="newsLetter">
         <div class="newsImg">
           <img
@@ -90,12 +88,13 @@ function truncate(str, n){
           alt=${title}/>
         </div>
         <div class="newsCardInfo">
-        <h2>${truncate(title,150)}"</h2>
-        <p>Source: ${capitalizeFirstLetter(websiteName)}</p>
-        <h6><i class="fa fa-calendar"></i> ${newPubDate}</h6>
+          <a href=${youtubeUrl} target="_blank" rel="noopener" title=${youtubeUrl} aria-label=${youtubeUrl}>
+            <h2>${truncate(title,150)}"</h2>
+          <a/>
+            <p>Source: ${capitalizeFirstLetter(websiteName)}</p>
+            <h6><i class="fa fa-calendar"></i> ${newPubDate}</h6>
         </div>
       </div>
-      <a/>
       `;
           
       newsSection2.innerHTML = newsInnerHTML;

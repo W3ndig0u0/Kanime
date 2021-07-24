@@ -120,6 +120,9 @@
   font-weight: normal;
   font-size: 1.3rem;
   padding-bottom: 1rem;
+  padding-top: 1rem;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .statePage .rankInfo span:nth-of-type(2n) {
@@ -220,7 +223,18 @@
 }
 
 .vcCard {
-  padding-top: 4rem;
+  padding-top: 5rem;
+}
+
+.vcCard2 {
+  margin-top: -3rem;
+}
+
+.vcCard2:nth-of-type(1) {
+  margin-top: 0rem;
+}
+.vcCard2:nth-of-type(2) {
+  margin-top: 0rem;
 }
 
 /* !comments */
@@ -233,7 +247,7 @@
   font-size: 3rem;
   word-wrap: break-word;
   text-align: center;
-  margin-top: 15rem;
+  margin-top: 10rem;
   margin-bottom: 0rem;
   padding-bottom: 0rem;
 }

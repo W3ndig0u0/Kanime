@@ -30,6 +30,19 @@
   }
 }
 
+@keyframes smoothScroll2 {
+  0% {
+    transform: translateY(-15px);
+    height: 6rem;
+    font-size: 1.3rem;
+  }
+  100% {
+    transform: translateY(0px);
+    font-size: 1.3rem;
+    height: 4rem;
+  }
+}
+
 .menu-content {
   /* background: inherit; */
   font-family: "Open Sans", sans-serif;

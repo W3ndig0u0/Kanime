@@ -7,46 +7,58 @@ function getManga() {
     console.log(result);
     MangaPage(result);
   })
+  .catch(error => {
+    console.error(error);
+    getManga();
+  })
 }
 
 
 function getMangaChar() {
 
-  fetch("https://api.jikan.moe/v3/anime/" + mangaId + "/characters")
+  fetch("https://api.jikan.moe/v3/manga/" + mangaId + "/characters")
   .then(response => response.json())
   .then(result => {
-    console.log(result);
     if (result.characters.length === 0) {
       noPageCharachter();
     }
 
     MangaPageChar(result);
   })
+  .catch(error => {
+    console.error(error);
+    getMangaChar();
+  })
 }
 
-function getAnimeGallery() {
-  
-  fetch("https://api.jikan.moe/v3/anime/" + mangaId + "/pictures")
+function getMangaGallery() {
+  fetch("https://api.jikan.moe/v3/manga/" + mangaId + "/pictures")
   .then(response => response.json())
   .then(result => {
-    console.log(result);
     if (result.pictures.length === 0) {
       noPageGallery();
     }
-      AnimePageGallery(result);
+      MangaPageGallery(result);
+  })
+  .catch(error => {
+    console.error(error);
+    getMangaGallery();
   })
 }
 
 function getMangaRecommendations() {
   
-  fetch("https://api.jikan.moe/v3/anime/" + mangaId + "/recommendations")
+  fetch("https://api.jikan.moe/v3/manga/" + mangaId + "/recommendations")
   .then(response => response.json())
   .then(result => {
-    console.log(result);
     if (result.recommendations.length === 0) {
       noMangaRecommendations();
     }
     MangaRecommendations(result);
+  })
+  .catch(error => {
+    console.error(error);
+    getMangaRecommendations();
   })
 }
 
@@ -61,6 +73,27 @@ function getMangaComments() {
       noMangaCommentsPage();
     }
     MangaCommentsPage(result.reviews);
+  })
+  .catch(error => {
+    console.error(error);
+    getMangaComments();
+  })
+}
+
+function getMangaNews() {
+  let mangaId = sessionStorage.getItem("mangaId");
+  
+  fetch("https://api.jikan.moe/v3/manga/" + mangaId + "/news")
+  .then(response => response.json())
+  .then(result => {
+    if (result.articles.length === 0) {
+      noMangaNews();
+    }
+      MangaNews(result);
+  })
+  .catch(error => {
+    console.error(error);
+    getMangaNews();
   })
 }
 
@@ -111,7 +144,7 @@ function MangaPage(result) {
   
   const thumbnail = result.image_url;
 
-  const titleEn = result.title_english;
+  const titleEn = result.title_japanese;
   const title = result.title;
 
   const type = result.type;
@@ -363,50 +396,15 @@ function MangaPageChar(result) {
     galleryAnimeDiv2.appendChild(CharAnime);
     document.querySelector(".mangaPageChar").appendChild(galleryAnimeDiv2);
   }
-
-  // !staff
-  const galleryAnimeDiv = document.createElement("div");
-  galleryAnimeDiv.classList.add("imgRow2");
-
-  for (let i = 0; i < result.staff.length; i++) {
-    const StaffAnime = document.createElement("div");
-    StaffAnime.classList.add("vcCard");
-
-    const AnimeThumbnail = result.staff[i].image_url;
-    const AnimeTitle = result.staff[i].name;
-    const AnimeId = result.staff[i].mal_id;
-    const role = result.staff[i].positions[0];
-
-    const MovieInnerHTML = `
-          <div onclick="personSelect(${AnimeId})" class="imgCard animeCard">
-          <div class="cardImage">
-              <img
-              src=${AnimeThumbnail}
-              alt=${AnimeTitle}       
-              <div</div>
-              <div class="playWrapper">
-              </div>
-              </div>
-              <div class="cardInfo">
-                <h2 class="cardTitle">${truncate(AnimeTitle, 25)}</h2>
-                <p> ${role} Role</p>
-            </div>
-          </div>
-        `;
-
-    StaffAnime.innerHTML = MovieInnerHTML;
-    galleryAnimeDiv.appendChild(StaffAnime);
-    document.querySelector(".animePageStaff").appendChild(galleryAnimeDiv);
-  }
 }
 
-function AnimePageGallery(result) {
+function MangaPageGallery(result) {
   const galleryAnimeDiv = document.createElement("div");
   galleryAnimeDiv.classList.add("imgRow2");
 
   for (let i = 0; i < result.pictures.length; i++) {
     const galleryAnime = document.createElement("div");
-    galleryAnime.classList.add("vcCard");
+    galleryAnime.classList.add("vcCard2");
 
     const AnimeThumbnail = result.pictures[i].small;
     const MovieInnerHTML = `
@@ -421,7 +419,7 @@ function AnimePageGallery(result) {
 
         galleryAnime.innerHTML = MovieInnerHTML;
         galleryAnimeDiv.appendChild(galleryAnime);
-    document.querySelector(".animePageGallery").appendChild(galleryAnimeDiv);
+    document.querySelector(".mangaPageGallery").appendChild(galleryAnimeDiv);
   }
 }
 
@@ -461,7 +459,60 @@ function MangaRecommendations(result) {
   }
 }
 
+function MangaNews(result) {
+  const galleryAnimeDiv = document.createElement("div");
+  galleryAnimeDiv.classList.add("newsRow");
+
+  for (let i = 0; i < result.articles.length; i++) {
+    const galleryAnime = document.createElement("div");
+    galleryAnime.classList.add("newsSection2");
+
+    const AnimeThumbnail = result.articles[i].image_url;
+    const AnimeTitle = result.articles[i].title;
+    const AnimeId = result.articles[i].mal_id;
+    const url = result.articles[i].url;
+    const author_name = result.articles[i].author_name;
+    const intro = result.articles[i].intro;
+    const date = result.articles[i].date;
+
+    const MovieInnerHTML = `
+        <div class="newsLetter">
+          <div class="newsImg">
+            <img
+            src=${AnimeThumbnail}
+            alt=${AnimeTitle}/>
+          </div>
+          <div class="newsCardInfo">
+            <a href=${url} target="_blank" rel="noopener" title=${url} aria-label=${AnimeTitle}>
+              <h2>${truncate(intro,120)}"</h2>
+            <a/>
+              <p>Source: ${author_name}</p>
+              <h6><i class="fa fa-calendar"></i> ${dateConverser(date)}</h6>
+          </div>
+        </div>
+        `;
+
+    galleryAnime.innerHTML = MovieInnerHTML;
+    galleryAnimeDiv.appendChild(galleryAnime);
+    document.querySelector(".mangaPageNews").appendChild(galleryAnimeDiv);
+  }
+}
+
 // !Fail Catches
+
+function noMangaNews() {
+  const commentDiv = document.createElement('div');
+    const CommentsReviewInnerHTML = 
+    `
+    <div class="reviewerImgDiv">
+      <h1>This Manga Dosn't have any News...<h1/>
+      <p>Sorry D:<p/>
+      <p>Tehee<p/>
+    </div>
+    `;
+    commentDiv.innerHTML = CommentsReviewInnerHTML;
+    document.querySelector(".animePageNews").appendChild(commentDiv)
+}
 
 function noMangaRecommendations() {
   const commentDiv = document.createElement('div');
@@ -520,9 +571,9 @@ function noPageCharachter() {
 }
 
 
-getAnimeGallery();
+getMangaGallery();
 getMangaRecommendations();
-
+getMangaNews();
 
 getMangaChar();
 getManga();

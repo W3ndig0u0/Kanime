@@ -14,9 +14,7 @@
   margin-top: 2rem;
   border-radius: 10px;
   transition: 700ms;
-  border: 1px solid black;
   height: 12rem;
-  cursor: pointer;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -35,9 +33,10 @@
 
 .newsCardInfo h2 {
   color: black;
-  font-size: 0.8rem;
+  font-size: 1rem;
   margin-block-start: 0em;
   margin-block-end: 0em;
+  cursor: pointer;
 }
 
 .newsCardInfo h2:hover {
@@ -55,12 +54,12 @@
 }
 
 .newsCardInfo h2:hover::after {
-  width: 20%;
+  width: 30%;
 }
 
 .newsCardInfo h6 {
   color: #f27d16;
-  font-size: 1em;
+  font-size: 0.8rem;
   margin-block-start: 0em;
   margin-block-end: 1em;
   font-weight: bold;
@@ -69,16 +68,15 @@
 .newsCardInfo p {
   font-family: "Zilla Slab", serif;
   color: #0583f2;
-  font-size: 1rem;
-  margin-block-start: 0em;
+  font-size: 0.8rem;
+  margin-block-start: 0.5em;
   margin-block-end: 0.5em;
 }
 
 .newsLetter:hover,
 .newsLetter:active {
-  border: 2px solid #0583f2;
+  border: 2.5px solid #0583f2;
   transition: 400ms;
-  transform: scale(1.03);
   box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3);
 }
 
