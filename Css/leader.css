@@ -49,7 +49,13 @@
 }
 
 .animeCardText {
+  margin-block-start: 0rem;
   margin-top: 0;
+  padding-top: 0;
+
+  margin-block-end: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .leaderboard li:before {

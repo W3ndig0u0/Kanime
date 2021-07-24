@@ -6,7 +6,6 @@ function plusSlides(n) {
   showSlides(sliderIndex += n);
 }
 
-
 // window.addEventListener('DOMContentLoaded', (event) => {
 //   setTimeout(function(){
 //     plusSlides(sliderIndex += 1);

@@ -230,13 +230,6 @@
   margin-top: -3rem;
 }
 
-.vcCard2:nth-of-type(1) {
-  margin-top: 0rem;
-}
-.vcCard2:nth-of-type(2) {
-  margin-top: 0rem;
-}
-
 /* !comments */
 .commentDiv {
   margin-top: 5rem;
@@ -254,6 +247,10 @@
 
 .titleComments:first-of-type {
   margin-top: 0rem;
+}
+
+.gallery {
+  margin-bottom: 5rem;
 }
 
 .reviewerImgDiv {
