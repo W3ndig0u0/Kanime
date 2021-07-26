@@ -111,25 +111,23 @@
 .score {
   display: flex;
   justify-content: space-evenly;
+  text-align: center;
   flex-wrap: wrap;
-  padding-right: 10%;
+}
+
+.score div {
+  min-width: 15%;
 }
 
 .score h1 {
-  font-weight: 400;
+  font-weight: 500;
   font-size: 32px;
-  padding-left: 50%;
-  border-left: 1px solid #a0a0a5;
-}
-
-.score p {
-  padding-left: 60%;
   text-align: center;
+  border-right: 1px solid #a0a0a5;
 }
 
-.story h1 {
-  padding-left: 50%;
-  border-left: 0px solid #a0a0a5 !important;
+.overall h1 {
+  border-right: 0px solid #a0a0a5 !important;
 }
 
 .reviewPrev1,

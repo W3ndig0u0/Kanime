@@ -64,16 +64,6 @@
     display: unset;
   }
 
-  .score h1 {
-    font-size: 24px;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-
-  .score p {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
   .newsCardInfo2 h2 {
     font-size: 1rem;
   }
@@ -104,11 +94,7 @@
   }
 
   .score h1 {
-    font-weight: 400;
     font-size: 24px;
-    padding-left: 10px;
-    border-left: 1px solid #a0a0a5;
-    padding-right: 10px;
   }
 
   .reviewCover {
@@ -183,17 +169,6 @@
     max-height: 240px;
   }
 
-  .score h1 {
-    font-size: 24px;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-
-  .score p {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-
   .reviewGrid {
     display: unset;
   }
@@ -224,9 +199,6 @@
 
   .reviewCover {
     height: 15rem;
-  }
-  .score {
-    padding-right: 0%;
   }
 
   .newsCardInfo h2 {
