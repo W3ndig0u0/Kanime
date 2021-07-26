@@ -156,13 +156,13 @@
 .cardNext {
   color: white;
   position: absolute;
-  top: 45%;
+  top: 35%;
   right: 8.5%;
 }
 .cardPrev {
   color: white;
   position: absolute;
-  top: 45%;
+  top: 35%;
   left: 9.5%;
 }
 
