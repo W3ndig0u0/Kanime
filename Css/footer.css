@@ -2,6 +2,7 @@ footer {
   background: #fefefe;
   padding: 90px 0px 60px 0px;
   font-family: "Lato", sans-serif;
+  transition: background 1s ease-in-out;
 }
 
 .footer-container {
@@ -50,12 +51,12 @@ footer .logo:active {
   font-size: 1.25rem;
   text-decoration: none;
   transition: 0.3s linear;
+  padding: 0.2rem;
 }
 
 .social-media a:hover {
   color: #0583f2;
   border-radius: 50%;
-  padding: 0.2rem;
   border: 3.5px solid #0583f2;
 }
 

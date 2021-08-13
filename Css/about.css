@@ -2,7 +2,7 @@
   width: 85%;
   margin: 1rem auto;
   height: auto;
-  background-color: white;
+  background: transparent;
   font-family: "Open Sans", sans-serif;
 }
 
@@ -124,6 +124,7 @@
 .founder a img {
   width: 55px;
   height: 55px;
+  border-radius: 10px;
 }
 
 .founder .profile:hover,

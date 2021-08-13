@@ -33,7 +33,7 @@
 }
 
 .newsCardInfo h2 {
-  color: black;
+  color: white;
   font-size: 1rem;
   margin-block-start: 0em;
   margin-block-end: 0em;
@@ -140,7 +140,7 @@
   display: block;
   width: 0%;
   height: 2px;
-  background-color: #0583f2;
+  background-color: #900d00;
   transition: 700ms;
 }
 
@@ -164,7 +164,7 @@
 
 .newsLetter2:hover,
 .newsLetter2:active {
-  border: 2px solid #0583f2;
+  border: 3px solid #f27d16;
   transition: 400ms;
   box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3);
 }
