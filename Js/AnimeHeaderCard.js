@@ -99,7 +99,7 @@ fetch("https://api.jikan.moe/v3/schedule/" + dayName)
           alt=${capitalizeFirstLetter(title)}/>
           <p onclick="animeSelect(${id})" class="animeCard source">Learn More</p>
           <p><i class="fa fa-calendar"></i> ${newPubDate}</p>
-          <h5>${truncate(capitalizeFirstLetter(synopsis), 200)}</h5>
+          <h5>${truncate(capitalizeFirstLetter(synopsis), 170)}</h5>
 
           <div>
             <span class="dot dotActive"></span>

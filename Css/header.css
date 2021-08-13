@@ -18,6 +18,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  text-align: center;
   font-size: 1.6rem;
   z-index: 10000000;
   width: 100%;

@@ -574,7 +574,6 @@ function noPageCharachter() {
 getMangaGallery();
 getMangaRecommendations();
 getMangaNews();
-
 getMangaChar();
 getManga();
 getMangaComments();

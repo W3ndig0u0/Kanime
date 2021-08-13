@@ -17,14 +17,19 @@
 /* !Mini Laptop */
 @media screen and (max-width: 1210px) {
   .featured h6 {
-    padding: 7px;
+    padding: 8px;
     font-size: 10px;
+  }
+  .card h5 {
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1050px) {
   .menu-content li {
-    padding: 0% 10px;
+    padding: 0% 6px;
   }
 
   .newsRow {
@@ -39,13 +44,8 @@
   .prev {
     left: 7.5%;
   }
-  .card h2 {
-    font-size: 1rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-  }
   .card h5 {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
   .card p {
     font-size: 0.9rem;
@@ -106,6 +106,21 @@
   .card h5 {
     font-size: 0.7rem;
   }
+  .navButton {
+    display: flex !important;
+  }
+
+  .menu-content .firstMenu li:nth-of-type(1),
+  .menu-content .firstMenu li:nth-of-type(2),
+  .menu-content .firstMenu li:nth-of-type(3),
+  .menu-content .firstMenu li:nth-of-type(4),
+  .menu-content .firstMenu li:nth-of-type(5) {
+    display: none;
+  }
+
+  .menu-content {
+    padding: 0px 7%;
+  }
 }
 
 @media screen and (max-width: 720px) {
@@ -146,22 +161,6 @@
     width: 100%;
     height: 100%;
     margin: 0 auto;
-  }
-
-  .navButton {
-    display: flex !important;
-  }
-
-  .menu-content .firstMenu li:nth-of-type(1),
-  .menu-content .firstMenu li:nth-of-type(2),
-  .menu-content .firstMenu li:nth-of-type(3),
-  .menu-content .firstMenu li:nth-of-type(4),
-  .menu-content .firstMenu li:nth-of-type(5) {
-    display: none;
-  }
-
-  .menu-content {
-    padding: 0px 7%;
   }
 
   .reviewScroll {
@@ -283,8 +282,8 @@
   }
 
   .card .featured h6 {
-    font-size: 12px;
-    padding: 8px;
+    font-size: 10px;
+    padding: 6px;
   }
   .newsCardInfo2 {
     padding: 0.4rem;

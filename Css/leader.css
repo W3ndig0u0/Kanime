@@ -111,9 +111,11 @@
   opacity: 1;
 }
 
-@media screen and (max-width: 836px) {
+@media screen and (max-width: 880px) {
   .container {
     width: 300px;
+    margin-right: 2rem;
+    margin-left: 2rem;
   }
 }
 
