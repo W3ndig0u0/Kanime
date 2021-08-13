@@ -1,7 +1,7 @@
 .newsCard {
   height: auto;
   position: relative;
-  padding-bottom: 4rem;
+  padding-bottom: 2rem;
 }
 
 .card {
@@ -15,7 +15,7 @@
   max-height: 32rem;
 
   user-select: none;
-  margin: 1rem auto;
+  margin: 0rem auto;
   overflow: hidden;
   display: grid;
   grid-template-columns: 4fr 2.5fr;

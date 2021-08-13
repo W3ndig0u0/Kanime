@@ -1,15 +1,18 @@
+.recentAnime {
+  margin-top: 7rem;
+}
+
 .container {
   width: 350px;
   height: auto;
-  border-radius: 6px;
+  border-radius: 8px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 5px;
   z-index: 1;
   overflow: hidden;
   font-family: "Open Sans", sans-serif;
-  margin: 0 auto;
   margin-top: 2rem;
-  margin-right: 2rem;
-  margin-left: 2rem;
+  margin-right: 3rem;
+  margin-left: 3rem;
 }
 
 .leaderboard {
@@ -18,7 +21,7 @@
 
 .leaderboard .head {
   color: snow;
-  font-size: 20px;
+  font-size: 1.7rem;
   text-align: center;
 }
 
@@ -33,14 +36,21 @@
 }
 
 .leaderboard li {
-  padding: 8px;
+  width: 100%;
+  padding: 12px;
   display: flex;
-  justify-content: center;
+  justify-content: start;
 }
 
 .leaderboard li img {
   width: 4.5rem;
+  transition: 400ms ease-in-out;
   border-radius: 4px;
+}
+
+.leaderboard li img:hover,
+.leaderboard li img:active {
+  width: 7rem;
 }
 
 .leaderboard li mark {
@@ -58,25 +68,6 @@
   padding-bottom: 0.5rem;
 }
 
-.leaderboard li:before {
-  margin-right: 4px;
-}
-.leaderboard li:nth-child(1) {
-  background: hsl(208, 96%, 28%);
-}
-.leaderboard li:nth-child(2) {
-  background: hsl(208, 96%, 38%);
-}
-.leaderboard li:nth-child(3) {
-  background: hsl(208, 96%, 48%);
-}
-.leaderboard li:nth-child(4) {
-  background: hsl(208, 96%, 58%);
-}
-.leaderboard li:nth-child(5) {
-  background: hsl(208, 96%, 68%);
-}
-
 .leaderboard li small h1 {
   color: snow;
   opacity: 0.85;
@@ -84,7 +75,10 @@
   cursor: pointer;
   transition: 200ms;
   padding-left: 1rem;
-  font-size: 18px;
+  font-size: 1.2rem;
+
+  margin-block-end: 1rem;
+  margin-bottom: 0rem;
 }
 
 .leaderboard li small h1:hover,
@@ -98,40 +92,77 @@
   opacity: 0.7;
   padding-left: 1rem;
   background-color: transparent;
+  cursor: default;
+  transition: 0.2s;
+  font-size: 1rem;
 }
 
-.leaderboard li small .dot {
-  height: 7px;
-  width: 7px;
-  opacity: 1;
-  background-color: white;
-  border-radius: 50%;
-  margin-top: 0rem;
+.leaderboard li small .extraInfo p {
+  margin-block-start: 0rem;
+  margin-top: 0;
+  padding-top: 0;
+  margin-block-end: 1rem;
   margin-bottom: 0rem;
-  text-align: start;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
 }
 
-@media screen and (max-width: 840px) {
+.leaderboard li small .extraInfo:hover,
+.leaderboard li small .extraInfo:active {
+  color: #f27d16;
+  opacity: 1;
+}
+
+@media screen and (max-width: 836px) {
   .container {
     width: 300px;
-    margin-right: 2rem;
   }
 }
-@media screen and (max-width: 760px) {
+
+@media screen and (max-width: 800px) {
   .container {
-    width: 280px;
-    margin-right: 2rem;
+    width: 80%;
   }
 }
+
 @media screen and (max-width: 606px) {
   .container {
-    width: 400px;
     margin: 0 auto;
     margin-top: 2rem;
   }
   .leaderboard li small h1 {
     font-size: 16px;
   }
+}
+
+.leaderboard li:before {
+  margin-right: 4px;
+}
+.leaderboard li:nth-child(1) {
+  background: hsl(208, 96%, 28%);
+}
+.leaderboard li:nth-child(2) {
+  background: hsl(214, 86%, 38%);
+}
+.leaderboard li:nth-child(3) {
+  background: hsl(218, 96%, 48%);
+}
+.leaderboard li:nth-child(4) {
+  background: hsl(214, 86%, 58%);
+}
+.leaderboard li:nth-child(5) {
+  background: hsl(208, 96%, 63%);
+}
+.leaderboard li:nth-child(6) {
+  background: hsl(208, 96%, 68%);
+}
+.leaderboard li:nth-child(7) {
+  background: hsl(214, 86%, 58%);
+}
+.leaderboard li:nth-child(8) {
+  background: hsl(218, 96%, 48%);
+}
+.leaderboard li:nth-child(9) {
+  background: hsl(214, 86%, 38%);
+}
+.leaderboard li:nth-child(10) {
+  background: hsl(208, 96%, 28%);
 }

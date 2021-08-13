@@ -26,7 +26,6 @@ fetch(TOP_CHAR_URL)
       for (let i = 0; i < result.top.length; i++) {
       
     const TopCharDiv = document.createElement('div');
-    TopCharDiv.classList.add('imgRow2');
     
     const thumbnail = result.top[i].image_url;
     const id = result.top[i].mal_id;

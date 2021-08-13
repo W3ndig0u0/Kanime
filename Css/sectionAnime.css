@@ -60,26 +60,18 @@
 }
 
 .imgRow {
-  /* display: grid; */
-  /* grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr)); */
-  /* column-gap: 2rem; */
-  /* align-items: center; */
-  /* row-gap: 0.5rem; */
-
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 0 auto;
+  grid-gap: 2rem;
 }
 
 .imgRow2 {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
-  column-gap: 2rem;
-  align-items: center;
-  row-gap: 1rem;
   margin: 0 auto;
-  padding-right: 2rem;
+  grid-gap: 2rem;
 }
 
 .airingAnimeJs .imgRow2 {

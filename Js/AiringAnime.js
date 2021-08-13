@@ -24,8 +24,7 @@ fetch("https://api.jikan.moe/v3/top/anime/1/airing")
     const TopCharSection = document.createElement('section');
     TopCharSection.classList.add('imgRow2');
 
-    // if (undefined !== result.top && result.top.length) {
-    for (let i = 0; i < 30; i++) {
+    for (let i = 0; i < 20; i++) {
       // for (let i = 0; i < result.top.length; i++) {
       
     const TopCharDiv = document.createElement('div');

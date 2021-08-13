@@ -15,6 +15,10 @@ fetch(RECENT_ANIME_RSS_URL)
   function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
+
+  function truncate(str, n){
+    return (str.length > n) ? str.substr(0, n-1) + '&hellip;' : str;
+  };
   
   function EpConverter(ep) {
       var ep =  ep.split('#')[1]
@@ -48,7 +52,7 @@ fetch(RECENT_ANIME_RSS_URL)
     recentDivContainer.appendChild(recentDivLeaderboard)
     recentDivLeaderboard.appendChild(recentDiv);
 
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 10; i++) {
     const thumbnail = result.items[i].thumbnail;
     const title = result.items[i].title;
     const id = result.items[i].link;
@@ -68,12 +72,11 @@ fetch(RECENT_ANIME_RSS_URL)
         </mark>
         <small>
         <a href=${id} target="_blank" title="noopener">
-          <h1 class="animeCardText">${newNewTitle}</h1>
+          <h1 class="animeCardText">${truncate(newNewTitle,30)}</h1>
         <a/>
           <div class="extraInfo">
-            <span>Episode ${ep}</span>
-            <span class="dot"></span>
-            <span>Date: ${newPubDate}</span>
+            <p>Episode ${ep}</p>
+            <p>${newPubDate}</p>
           </div
         </small>
       `;

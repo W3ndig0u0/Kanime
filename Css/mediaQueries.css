@@ -130,6 +130,7 @@
     width: 100%;
     padding-bottom: 4rem;
   }
+
   .card h2 {
     font-size: 1.5rem;
   }
@@ -164,13 +165,20 @@
   }
 
   .reviewScroll {
-    height: auto;
+    height: 10rem;
     overflow: auto;
-    max-height: 240px;
+    max-height: 500px;
   }
 
   .reviewGrid {
     display: unset;
+  }
+  .score {
+    display: unset;
+  }
+
+  .score h1 {
+    border-right: 0px solid #a0a0a5 !important;
   }
 
   .reviewCover {
@@ -190,10 +198,8 @@
   }
 
   .reviewText {
-    font-size: 18px;
     line-height: 1.6em;
     text-align: center;
-    width: 90%;
     margin: 0 auto;
   }
 
@@ -275,13 +281,7 @@
   .prev {
     left: 1.5%;
   }
-  .newsCardInfo h2 {
-    font-size: 0.65rem;
-  }
-  .newsCardInfo h6,
-  .newsCardInfo p {
-    font-size: 0.5rem;
-  }
+
   .card .featured h6 {
     font-size: 12px;
     padding: 8px;
@@ -376,15 +376,6 @@
   .container {
     width: 280px;
   }
-
-  .newsCardInfo h2 {
-    font-size: 0.55rem;
-  }
-
-  .newsCardInfo h6,
-  .newsCardInfo p {
-    font-size: 0.4rem;
-  }
   .hamburgerNav ul li:first-of-type {
     display: unset;
   }
@@ -414,6 +405,15 @@
   .slider {
     height: 21rem;
   }
+
+  .newsCardInfo h2 {
+    font-size: 0.55rem;
+  }
+
+  .newsCardInfo h6,
+  .newsCardInfo p {
+    font-size: 0.6rem;
+  }
 }
 
 @media screen and (max-width: 280px) {
@@ -431,5 +431,13 @@
   }
   .newsImg2 img {
     display: none;
+  }
+  .newsCardInfo h2 {
+    font-size: 0.5rem;
+  }
+
+  .newsCardInfo h6,
+  .newsCardInfo p {
+    font-size: 0.55rem;
   }
 }

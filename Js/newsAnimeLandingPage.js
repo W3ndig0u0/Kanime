@@ -89,7 +89,7 @@ function truncate(str, n){
         </div>
         <div class="newsCardInfo">
           <a href=${youtubeUrl} target="_blank" rel="noopener" title=${youtubeUrl} aria-label=${youtubeUrl}>
-            <h2>${truncate(title,150)}"</h2>
+            <h2>${truncate(title,80)}"</h2>
           <a/>
             <p>Source: ${capitalizeFirstLetter(websiteName)}</p>
             <h6><i class="fa fa-calendar"></i> ${newPubDate}</h6>

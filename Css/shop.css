@@ -47,6 +47,8 @@
   margin: 0;
   padding-top: 32px;
   padding-bottom: 32px;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 .genres li a {
@@ -73,12 +75,20 @@
   grid-template-columns: 3fr 1fr;
 }
 
+@media screen and (max-width: 835px) {
+  .genres {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+
 @media screen and (max-width: 610px) {
   .shop .grid {
     display: unset;
   }
   .genre {
-    padding: 0rem;
     border-left: 0px solid black;
   }
   .shop h4 {
