@@ -1,0 +1,67 @@
+:root {
+  --blue: rgb(1, 136, 202);
+  --bg-blue: rgba(1, 136, 202, 0.4);
+  --purp: rgb(89, 94, 171);
+  --bg-purp: rgba(89, 94, 171, 0.8);
+  --orang: rgb(142, 99, 130);
+  --bg-orang: rgb(142, 99, 130, 0.5);
+  --white: rgb(255, 255, 255);
+  --light-bg: rgba(27, 39, 53, 0.94);
+  --dark-bg: rgba(9, 10, 15, 0.95);
+}
+
+body {
+  background-image: var(--white);
+}
+
+body h3 {
+  color: var(--dark-bg);
+}
+
+body .cardInfo {
+  color: var(--dark-bg);
+}
+
+body.dark-theme {
+  background-image: radial-gradient(
+    ellipse at bottom,
+    var(--light-bg),
+    var(--dark-bg)
+  );
+}
+
+body.dark-theme h3 {
+  color: var(--dark-bg);
+}
+
+body.dark-theme .cardInfo {
+  color: var(--white);
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-image: radial-gradient(
+      ellipse at bottom,
+      var(--light-bg),
+      var(--dark-bg)
+    );
+  }
+  body h3 {
+    color: var(--white);
+  }
+
+  body .cardInfo {
+    color: var(--white);
+  }
+
+  body.light-theme {
+    background-image: var(--white);
+  }
+
+  body.light-theme h3 {
+    color: var(--dark-bg);
+  }
+  body.light-theme .cardInfo {
+    color: var(--dark-bg);
+  }
+}

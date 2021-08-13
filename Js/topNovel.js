@@ -17,6 +17,11 @@ fetch(TOP_NOVEL_URL)
     return false;
   }
 
+  function truncate(str, n){
+    return (str.length > n) ? str.substr(0, n-1) + '&hellip;' : str;
+  };
+
+
 
   function createTopNovelCard(result) {
     const TopNovelSection = document.createElement('section');
@@ -52,7 +57,7 @@ fetch(TOP_NOVEL_URL)
             </div>
           </div>
             <div class="cardInfo">
-            <span class="cardTitle">${newNewTitle}</span>
+            <span class="cardTitle">${truncate(newNewTitle, 30)}</span>
         </div>
       </div>
       `;

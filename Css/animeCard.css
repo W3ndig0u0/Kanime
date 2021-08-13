@@ -76,6 +76,7 @@
   height: max-content;
 
   padding: 6px;
+  padding-top: 8px;
   text-align: center;
   color: black;
 
@@ -84,7 +85,7 @@
   font-size: 1rem;
   text-align: center;
   text-transform: capitalize;
-  opacity: 0.7;
+  opacity: 0.9;
   transition: 300ms;
 }
 
@@ -215,6 +216,28 @@
 .tag {
   position: absolute;
   bottom: 0px;
+  color: #eee;
+  left: 0;
+  text-transform: uppercase;
+  border-radius: 0px 10px 0px 10px;
+  padding: 0.2rem;
+  font-size: 1rem;
+}
+
+.mangaTag {
+  position: absolute;
+  bottom: 5px;
+  color: #eee;
+  left: 0;
+  text-transform: uppercase;
+  border-radius: 0px 10px 0px 10px;
+  padding: 0.2rem;
+  font-size: 1rem;
+}
+
+.lnTag {
+  position: absolute;
+  bottom: 5px;
   color: #eee;
   left: 0;
   text-transform: uppercase;

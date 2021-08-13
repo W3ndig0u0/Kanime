@@ -15,6 +15,7 @@
   border-radius: 10px;
   transition: 700ms;
   height: 12rem;
+  background-color: rgba(5, 131, 242, 0.85);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -49,7 +50,7 @@
   display: block;
   width: 0%;
   height: 2px;
-  background-color: #0583f2;
+  background-color: #900d00;
   transition: 700ms;
 }
 
@@ -58,7 +59,7 @@
 }
 
 .newsCardInfo h6 {
-  color: #f27d16;
+  color: #fa474c;
   font-size: 0.8rem;
   margin-block-start: 0em;
   margin-block-end: 1em;
@@ -67,16 +68,17 @@
 
 .newsCardInfo p {
   font-family: "Zilla Slab", serif;
-  color: #0583f2;
-  font-size: 0.8rem;
+  color: #fa474c;
+  font-size: 0.9rem;
+  font-weight: bold;
   margin-block-start: 0.5em;
   margin-block-end: 0.5em;
 }
 
 .newsLetter:hover,
 .newsLetter:active {
-  border: 2.5px solid #0583f2;
-  transition: 400ms;
+  border: 2.5px solid #f27d16;
+  transition: 450ms;
   box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3);
 }
 

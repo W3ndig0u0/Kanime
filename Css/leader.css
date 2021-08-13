@@ -12,7 +12,6 @@
   font-family: "Open Sans", sans-serif;
   margin-top: 2rem;
   margin-right: 3rem;
-  margin-left: 3rem;
 }
 
 .leaderboard {
@@ -115,7 +114,6 @@
   .container {
     width: 300px;
     margin-right: 2rem;
-    margin-left: 2rem;
   }
 }
 

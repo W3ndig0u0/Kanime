@@ -28,17 +28,17 @@
   padding-left: 2rem;
   padding-right: 2rem;
 }
+.genre h4 {
+  font-size: 2rem;
+}
 
-.index .genres {
+.genres {
+  border-radius: 12px;
   background: linear-gradient(
     to bottom,
     hsl(208, 96%, 38%),
     hsl(208, 96%, 68%)
   );
-}
-
-.index .genres li a {
-  border: 3px solid white;
 }
 
 .genres {
@@ -52,14 +52,14 @@
 }
 
 .genres li a {
-  color: #333;
+  color: black;
+  border: 3px solid white;
   width: 120px;
   padding: 7px 10px;
   white-space: nowrap;
   display: flex;
   float: left;
   flex-wrap: wrap;
-  border: 1px solid rgb(56, 56, 56);
   margin: 5px;
   transition: 400ms;
 }

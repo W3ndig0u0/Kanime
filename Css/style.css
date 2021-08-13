@@ -29,14 +29,17 @@ li {
 }
 
 ::-webkit-scrollbar {
-  width: 7px;
+  width: 14px;
 }
 
 ::-webkit-scrollbar-track {
-  background: white;
+  border: 3px solid #00abff;
+  border-radius: 10px;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
+  border-radius: 10px;
   background-color: #00abff;
 }
 
@@ -59,7 +62,7 @@ h3 {
 }
 
 h3 span {
-  background-color: #f8f8ff;
+  background-color: transparent;
   padding-right: 10px;
 }
 

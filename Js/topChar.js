@@ -15,7 +15,11 @@ fetch(TOP_CHAR_URL)
     console.log(id)
     window.location = "../Html/Char.html"
     return false;
-  }
+  }  
+  
+  function truncate(str, n){
+    return (str.length > n) ? str.substr(0, n-1) + '&hellip;' : str;
+  };
 
   function createTopCharCard(result) {
     const TopCharSection = document.createElement('section');
@@ -49,7 +53,7 @@ fetch(TOP_CHAR_URL)
             </div>
           </div>
             <div class="cardInfo">
-            <span class="cardTitle">${newNewTitle}</span>
+            <span class="cardTitle">${truncate(newNewTitle, 30)}</span>
         </div>
       </div>
       `;

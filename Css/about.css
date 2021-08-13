@@ -97,14 +97,22 @@
   color: black;
 }
 
+.founder h1 {
+  text-decoration: none;
+  font-size: 32px;
+  font-weight: bold;
+  margin: 1rem;
+}
+
 .founder {
   text-align: center;
 }
 
 .profile {
-  width: 100px !important;
-  height: 100px !important;
+  width: 300px !important;
+  height: 300px !important;
   border-radius: 10px;
+  transition: 600ms;
 }
 
 .founder a {
@@ -116,12 +124,11 @@
 .founder a img {
   width: 55px;
   height: 55px;
-  transition: 400ms;
 }
 
-.founder a img:hover,
-.founder a img:active {
-  filter: hue-rotate(50deg);
+.founder .profile:hover,
+.founder .profile:active {
+  filter: hue-rotate(-120deg);
 }
 
 /* !min mobil */

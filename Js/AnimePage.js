@@ -7,6 +7,8 @@ setTimeout(function(){
   }
 },1000)
 
+
+
 function hoverCardIn(event) {
   if ((event.target.childNodes[5] !== undefined))
   {
