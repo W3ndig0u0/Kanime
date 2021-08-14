@@ -24,12 +24,16 @@
     <link rel="stylesheet" href="../Css/newsCard.css" />
     <link rel="stylesheet" href="../Css/review.css" />
     <link rel="stylesheet" href="../Css/about.css" />
+    <link rel="stylesheet" href="../Css/search.css" />
+
+
     <link rel="stylesheet" href="../Css/color.css" />
     <link rel="stylesheet" href="../Css/mediaQueries.css" />
 
 
   <script defer src="../Js/loader.js"></script>
   <script defer src="../Js/darkMode.js"></script>
+  <script defer src="../Js/searchAnime.js"></script>
   <script defer src="../Js/menu.js"></script>
   <script defer src="../Js/scroll.js"></script>
 
@@ -46,7 +50,7 @@
   <body>
     
     <header id="header">
-      <div class="menu fade">
+      <div class="menuAnimePage fade">
         <nav class="menu-content">
           <div class="left logo"><a href="../index.html">Kanime</a></div>
           <div class="right">
@@ -57,20 +61,29 @@
                 <li><a href="../Html/news.html">News</a></li>
                 <li><a href="../Html/about.html">About</a></li>
                 <li>
+                  <a href="#" aria-label="Search"><i class="fa fa-search search-btn"></i> </a>
+                </li>
+                <li>
                   <a href="#" aria-label="Search"><i class="fa fa-user"></i> </a>
                 </li>
-
-
+  
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <form id="search_form">
+                      <input placeholder="Search..." name="search" id="search" autocomplete="off" type="text"
+                        class="validate search-bar" required />
+                    </form>
+                  </div>
+                </div>
               <li>
                 <div class="navButton" id="navButton" onclick="openNavbar()"
                   >☰</div>
               </li>
-
             </ul>
-
+  
             <div class="hamburgerNav" id="hamburgerNavbarLinks">
               <div class="closeButton" id="closeButton" onclick="closeNavbar()"> ☰</div>
-
+  
               <div class="hamburgerNavContent">
                 <ul>
                   <li>
@@ -85,23 +98,11 @@
               </div>
             </div>
           </div>
-        </nav> 
+        </nav>
       </div>
     </header>
 
     <main>
-
-      
-      <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-      <ins class="adsbygoogle"
-          style="display:block"
-          data-ad-format="fluid"
-          data-ad-layout-key="-f5-1p+b8-1d-xr"
-          data-ad-client="ca-pub-4214057914932039"
-          data-ad-slot="8082595189"></ins>
-      <script>
-          (adsbygoogle = window.adsbygoogle || []).push({});
-      </script> -->
 
       <!-- !Start -->
       <section class="aboutSection">
@@ -137,17 +138,6 @@
         </div>
       </section>
 
-        <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-      <ins class="adsbygoogle"
-          style="display:block"
-          data-ad-format="fluid"
-          data-ad-layout-key="-f5-1p+b8-1d-xr"
-          data-ad-client="ca-pub-4214057914932039"
-          data-ad-slot="8082595189"></ins>
-      <script>
-          (adsbygoogle = window.adsbygoogle || []).push({});
-      </script> -->
-
             <!-- !Footer-start -->
             <footer>
               <div class="footer-container">
@@ -161,7 +151,7 @@
                     <!-- <a href="#" target="_blank" aria-label="Youtube" rel="noopener"><i class="fab fa-youtube"></i></a> -->
                     <a href="https://github.com/W3ndig0u0" target="_blank" aria-label="Github" rel="noopener"><i class="fab fa-github"></i></a>
                     <a href="https://www.linkedin.com/in/jingxiang-xu-882324214/" target="_blank" aria-label="Linkdin" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
-                    <a><input type="checkbox" class="darkmode" id="toggle_checkbox" /></a>
+                    <a class="darkmode" href="javascript:void(0)" ><i class="far fa-lightbulb" id="toggle_checkbox" ></i></a>
                     <a href="#"><i class="fas fa-arrow-up"></i></a>
                   </div>
                   <p class="rights-text">© 2021 Created By Jing All Rights Reserved.</p>

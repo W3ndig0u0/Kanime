@@ -75,7 +75,7 @@ function Reviews(result) {
     `
     <div class="reviewGrid">
       <div class="right">
-        <p class="reviewDesc">aaa</p>
+        <p class="reviewDesc">Cowboy BeeBop</p>
         <img class="reviewCover" src=${reviewerImg} alt=${reviewerImg}>
       </div>
 
@@ -86,7 +86,7 @@ function Reviews(result) {
           <p class="reviewDate">${dateConverser(date)}</p>
 
           <div class="reviewScroll">
-            <h1 class="reviewText">
+            <h2 class="reviewText">
             ${truncate(content, 900)}
             </h1> 
           </div>
@@ -148,7 +148,6 @@ function noPageComments() {
     <div class="reviewerImgDiv">
       <h1>This Anime Dosn't have any Comments yet...<h1/>
       <p>Sorry D:<p/>
-      <p>Tehee<p/>
     </div>
     `;
     commentDiv.innerHTML = CommentsReviewInnerHTML;

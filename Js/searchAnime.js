@@ -143,10 +143,7 @@ function animeSelect(id){
 
 function pageLoaded() {
     const form = document.getElementById('search_form');
-    form?.addEventListener("submit", searchAnime);
-
+    form.addEventListener("submit", searchAnime);
 }
-
-
 
 window.addEventListener("load", pageLoaded);

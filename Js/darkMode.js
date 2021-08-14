@@ -11,7 +11,7 @@ if (currentTheme == "dark") {
   // document.querySelector(".loader").classList.toggle("light");
 }
 
-nightmode.addEventListener("change", function () {
+nightmode.addEventListener("click", function () {
   if (prefersDarkScheme.matches) {
     document.body.classList.toggle("light-theme");
     var theme = document.body.classList.contains("light-theme")

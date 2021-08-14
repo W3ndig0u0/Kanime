@@ -19,12 +19,12 @@
 }
 
 .leaderboard .head {
-  color: snow;
   font-size: 1.7rem;
   text-align: center;
 }
 
 .leaderboard .head h1 {
+  color: snow !important;
   display: inline-block;
   margin-left: 4px;
 }

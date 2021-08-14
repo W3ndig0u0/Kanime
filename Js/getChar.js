@@ -180,15 +180,20 @@ function CharPage(result) {
       </div>
   
       <div class="synopsis">
-          <div class="rankInfo">
-            <div>
-              <span class="beforeState">Favorites: </span>
-              <span class="state">${members}</span>
-            </div>
-            <div>
-            <h1 class="beforeState">About: </span>  
-            <p class="state">${synopsis}</p>
-        </div>
+        <div class="rankInfo">
+          <div>
+            <span class="beforeState">Favorites: </span>
+            <span class="state">${members}</span>
+          </div>
+          <div>
+            <span class="beforeState">Birthday: </span>
+            <span class="state">Null</span>
+          </div>
+          </div>
+          <div>
+          <h2 class="beforeState">About: </h2>  
+          <p class="state">${synopsis}</p>
+      </div>
   
         <div class="iframe">
           <button>
@@ -234,7 +239,7 @@ function mangaSelect(id) {
 
 function menuBgChange(Imgurl) {
   const menuBgColor1 = " rgba(2, 49, 90, 0.88),";
-  const menuBgColor2 = " rgba(2, 49, 90, 0.98) ";
+  const menuBgColor2 = " rgba(2, 49, 90, 0.78) ";
   const menuBg =
     "linear-gradient(to bottom," +
     menuBgColor1 +

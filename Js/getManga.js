@@ -285,9 +285,9 @@ function MangaPage(result) {
 function menuBgChange(Imgurl)
 {
   const menuBgColor1 = " rgba(2, 49, 90, 0.88),";
-  const menuBgColor2 = " rgba(2, 49, 90, 0.98) "
+  const menuBgColor2 = " rgba(2, 49, 90, 0.78) ";
   const menuBg = "linear-gradient(to bottom," + menuBgColor1 + menuBgColor2 + "), url("+ Imgurl +")";
-  document.querySelector(".menuAnimePage").style.backgroundImage = menuBg;
+  document.querySelector(".menuAnimePage").style.background = menuBg;
 }
 
 function dateConverser(dates) {
@@ -484,7 +484,7 @@ function MangaNews(result) {
           </div>
           <div class="newsCardInfo">
             <a href=${url} target="_blank" rel="noopener" title=${url} aria-label=${AnimeTitle}>
-              <h2>${truncate(intro,120)}"</h2>
+              <h2>${truncate(intro,90)}"</h2>
             <a/>
               <p>Source: ${author_name}</p>
               <h6><i class="fa fa-calendar"></i> ${dateConverser(date)}</h6>

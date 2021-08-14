@@ -5,12 +5,11 @@
   min-height: auto;
   user-select: text;
   transition: 800ms;
-  /* margin: 2rem; */
   border: 4px solid #0583f2;
   background-color: #0583f2;
 
   min-width: 11.5rem;
-  max-width: 13rem;
+  max-width: 12.5rem;
 }
 
 .imgCard:hover,
@@ -62,7 +61,7 @@
   background-size: 110px 110px;
   background-position: center;
   background-repeat: no-repeat;
-  background-color: rgba(0, 0, 0, 0.65);
+  background-color: rgba(0, 0, 0, 0.6);
   border-radius: 10px;
 
   opacity: 0;

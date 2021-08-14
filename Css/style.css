@@ -9,7 +9,7 @@ html {
   background-color: #f8f8ff;
   overflow-x: hidden;
   scroll-behavior: smooth;
-  min-width: 100vw;
+  width: 100vw;
   transition: background 1s ease-in-out;
 }
 
@@ -78,7 +78,7 @@ a {
 }
 
 h3:after {
-  content: "";
+  /* content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -86,7 +86,7 @@ h3:after {
   width: auto;
   height: 0.5em;
   border-bottom: 2px solid #f27d16;
-  z-index: 1;
+  z-index: 1; */
 }
 
 .space2 {

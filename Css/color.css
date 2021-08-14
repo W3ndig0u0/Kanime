@@ -1,8 +1,8 @@
 :root {
-  --white: hsl(0, 0%, 100%);
-  --footer-white: #fefefe;
+  --white: hsl(0, 0%, 97%);
+  --footer-white: hsl(10, 10%, 100%);
 
-  --lighter-bg: hsla(212, 33%, 20%, 0.94);
+  --lighter-bg: rgba(34, 50, 68, 0.94);
   --light-bg: hsla(212, 33%, 15%, 0.94);
   --dark-bg: hsla(230, 25%, 8%, 0.95);
   --footer-dark: hsla(230, 25%, 10%, 0.94);
@@ -46,6 +46,8 @@ body footer .social-media a {
 }
 
 body h3,
+body h1,
+body .reviewInfo,
 body .h3,
 body .cardInfo {
   color: var(--dark-bg);
@@ -136,6 +138,8 @@ body.dark-theme footer .social-media a {
 
 body.dark-theme .cardInfo,
 body.dark-theme .h3,
+body.dark-theme .reviewInfo,
+body.dark-theme h1,
 body.dark-theme h3 {
   color: var(--white);
 }
@@ -187,7 +191,9 @@ body.dark-theme .pagination a {
   }
 
   body h3,
+  body h1,
   body .h3,
+  body .reviewInfo,
   body .cardInfo {
     color: var(--white);
   }
@@ -274,7 +280,9 @@ body.dark-theme .pagination a {
   }
 
   body.light-theme h3,
+  body.light-theme h1,
   body.light-theme .h3,
+  body.light-theme .reviewInfo,
   body.light-theme .cardInfo {
     color: var(--dark-bg);
   }

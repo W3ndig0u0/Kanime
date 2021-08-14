@@ -15,6 +15,10 @@ footer {
   flex-wrap: wrap;
 }
 
+footer p {
+  transition: 350ms ease-in-out;
+}
+
 footer .logo {
   margin: 0;
   cursor: pointer;
@@ -66,6 +70,7 @@ footer .logo:active {
 
 .right-col h1 {
   font-size: 26px;
+  transition: 300ms ease-in-out;
 }
 
 .border {
@@ -79,10 +84,12 @@ footer .logo:active {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  transition: 300ms ease-in-out;
 }
 
 .txtb {
   flex: 1;
+  transition: 300ms ease-in-out;
   padding: 18px 40px;
   font-size: 16px;
   color: #293043;

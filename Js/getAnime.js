@@ -229,7 +229,7 @@ function AnimePage(result) {
           </div>
         </div>
           <div>
-          <h1 class="beforeState">Synopsis: </span>  
+          <h2 class="beforeState">Synopsis: </h2>  
           <p class="state">${synopsis}</p>
         </div>
       </div>
@@ -290,7 +290,7 @@ function AnimePage(result) {
         </div>
       </div>
     <div class="iframe">
-      <h1>Trailer:</h1>
+      <h2>Trailer:</h2>
         <div class="iframeContainer"> 
           <iframe src=${trailer_url} title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
@@ -314,8 +314,9 @@ function AnimePage(result) {
 function menuBgChange(Imgurl)
 {
   const menuBgColor1 = " rgba(2, 49, 90, 0.88),";
-  const menuBgColor2 = " rgba(2, 49, 90, 0.98) "
+  const menuBgColor2 = " rgba(2, 49, 90, 0.78) ";
   const menuBg = "linear-gradient(to bottom," + menuBgColor1 + menuBgColor2 + "), url("+ Imgurl +")";
+
   document.querySelector(".menuAnimePage").style.backgroundImage = menuBg;
 }
 
@@ -532,7 +533,7 @@ function AnimeNews(result) {
           </div>
           <div class="newsCardInfo">
             <a href=${url} target="_blank" rel="noopener" title=${url} aria-label=${AnimeTitle}>
-              <h2>${truncate(intro,120)}"</h2>
+              <h2>${truncate(intro,90)}"</h2>
             <a/>
               <p>Source: ${author_name}</p>
               <h6><i class="fa fa-calendar"></i> ${dateConverser(date)}</h6>
