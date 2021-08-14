@@ -46,7 +46,7 @@ function searchAnime(event) {
 }
 
 function updateDom(data) {
-    const searchResults = document.querySelector('#search-results');
+    const searchResults = document.getElementById("search-results");
 
     const animeByCategories = data
         .reduce((acc, anime) => {
@@ -56,39 +56,39 @@ function updateDom(data) {
             return acc;
         }, {});
 
-searchResults.innerHTML = Object.keys(animeByCategories).map(key => {
-    
-const animesHTML = animeByCategories[key]
-.sort((a, b) => a.episodes - b.episodes)
-.map(anime => {
-    return `
-    <div class="imgRow2">
-        <div onclick="animeSelect(${anime.mal_id})" class="imgCard animeCard">
-            <div class="cardImage">
-                <img src="${anime.image_url}">
-                <div class="${key}Tag tag">${key.toUpperCase()}</div>
-                <div class="playWrapper">
+    searchResults.innerHTML = Object.keys(animeByCategories).map(key => {
+        
+    const animesHTML = animeByCategories[key]
+    .sort((a, b) => a.episodes - b.episodes)
+    .map(anime => {
+        return `
+        <div class="imgRow2">
+            <div onclick="animeSelect(${anime.mal_id})" class="imgCard animeCard">
+                <div class="cardImage">
+                    <img src="${anime.image_url}">
+                    <div class="${key}Tag tag">${key.toUpperCase()}</div>
+                    <div class="playWrapper">
+                    </div>
+                </div>
+            <div class="cardInfo">
+                <span class="cardTitle">${truncate(anime.title, 35)}</span>
+            </div>
+                <div class="cardAction">
+                    <a href="${anime.url}">Find out more</a>
                 </div>
             </div>
-        <div class="cardInfo">
-            <span class="cardTitle">${truncate(anime.title, 35)}</span>
         </div>
-            <div class="cardAction">
-                <a href="${anime.url}">Find out more</a>
-            </div>
-        </div>
-    </div>
-`
-}).join("");
+    `
+    }).join("");
 
-return `
-    <section class="imgSection">
-    <h3><span>${key.toUpperCase()}</span></h3>
-        <div class="imgRow2">${animesHTML}</div>
-    </div>
-    </section>
-    `   
-}).join("");
+    return `
+        <section class="imgSection">
+        <h3><span>${key.toUpperCase()}</span></h3>
+            <div class="imgRow2">${animesHTML}</div>
+        </div>
+        </section>
+        `   
+    }).join("");
 
     document.querySelector('.airing').style.display = "none";
     document.querySelector('.shop').style.display = "none";
@@ -101,6 +101,8 @@ return `
     document.querySelector('.topChar').style.display = "none";
     document.querySelector('.reviews').style.display = "none";
     document.querySelector('.shop').style.display = "none";
+    console.log("smile2");
+
 }
 
 
