@@ -93,7 +93,14 @@ function updateDom(data) {
     
     document.querySelector('.main').style.display = "none";
     document.querySelector('.specialPage').style.display = "none";
-    // document.querySelector('.menuAnimePage').style.display = "none";
+    
+    const menuBgColor1 = " rgba(5, 131, 242, 0.85),";
+    const menuBgColor2 = " rgba(5, 131, 242, 0.98) ";
+    const Imgurl = "https://i.pinimg.com/originals/5f/12/b9/5f12b974076736afe4bfe170b36b5e89.jpg";
+    const menuBg = "linear-gradient(to bottom," + menuBgColor1 + menuBgColor2 + "), url("+ Imgurl +")";
+
+    document.querySelector(".menuAnimePage").style.backgroundImage = menuBg;
+    document.querySelector('.menuAnimePage').style.background = menuBg;
 }
 
 function truncate(str, n){
