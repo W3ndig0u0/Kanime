@@ -232,6 +232,9 @@ function dateConverser(date) {
 }
 
 function truncate(str, n){
+  if (str === null || str === undefined) {
+    return "Null"
+  }
   return (str.length > n) ? str.substr(0, n-1) + '&hellip;' : str;
 };
 
@@ -262,7 +265,6 @@ function charSelect(id){
   window.location = "../Html/Char.html"
   return false;
 }
-
 
 function menuBgChange(Imgurl)
 {

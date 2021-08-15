@@ -212,10 +212,12 @@ function CharPage(result) {
   menuBgChange(thumbnail);
 }
 
-function truncate(str, n) {
-  return str.length > n ? str.substr(0, n - 1) + "&hellip;" : str;
-}
-
+function truncate(str, n){
+  if (str === null || str === undefined) {
+    return "Null"
+  }
+  return (str.length > n) ? str.substr(0, n-1) + '&hellip;' : str;
+};
 function animeSelect(id){
   sessionStorage.setItem("AnimeID", id);
   console.log(id)

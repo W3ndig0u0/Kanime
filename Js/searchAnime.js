@@ -93,16 +93,16 @@ function updateDom(data) {
     
     document.querySelector('.main').style.display = "none";
     document.querySelector('.specialPage').style.display = "none";
+    // document.querySelector('.menuAnimePage').style.display = "none";
 }
 
 function truncate(str, n){
-    if (str === undefined || null) {
-     return "Null"
-   }
-   return (str.length > n) ? str.substr(0, n-1) + '&hellip;' : str;
+    if (str === null || str === undefined) {
+      return "Null"
+    }
+    return (str.length > n) ? str.substr(0, n-1) + '&hellip;' : str;
 };
   
-
 function animeSelect(id){
     sessionStorage.setItem("AnimeID", id);
     console.log(id)

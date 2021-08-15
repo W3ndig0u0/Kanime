@@ -129,9 +129,8 @@ function scoreColor(score) {
     return "#590000";
   }
 }
-
 function truncate(str, n){
-   if (str === null) {
+  if (str === null || str === undefined) {
     return "Null"
   }
   return (str.length > n) ? str.substr(0, n-1) + '&hellip;' : str;
@@ -280,8 +279,6 @@ function MangaPage(result) {
     menuBgChange(thumbnail)
 
 }
-
-
 
 function menuBgChange(Imgurl)
 {
@@ -510,7 +507,6 @@ function noMangaNews() {
     <div class="reviewerImgDiv">
       <h1>This Manga Dosn't have any News...<h1/>
       <p>Sorry D:<p/>
-      <p>Tehee<p/>
     </div>
     `;
     commentDiv.innerHTML = CommentsReviewInnerHTML;
@@ -524,7 +520,6 @@ function noMangaRecommendations() {
     <div class="reviewerImgDiv">
       <h1>This Manga Dosn't have any Recommendations yet...<h1/>
       <p>Sorry D:<p/>
-      <p>Tehee<p/>
     </div>
     `;
     commentDiv.innerHTML = CommentsReviewInnerHTML;
@@ -538,7 +533,6 @@ function noPageGallery() {
     <div class="reviewerImgDiv">
       <h1>This Manga Dosn't have any Gallery yet...<h1/>
       <p>Sorry D:<p/>
-      <p>Tehee<p/>
     </div>
     `;
     commentDiv.innerHTML = CommentsReviewInnerHTML;
@@ -552,7 +546,6 @@ function noPageComments() {
     <div class="reviewerImgDiv">
       <h1>This Manga Dosn't have any Comments yet...<h1/>
       <p>Sorry D:<p/>
-      <p>Tehee<p/>
     </div>
     `;
     commentDiv.innerHTML = CommentsReviewInnerHTML;
@@ -566,7 +559,6 @@ function noPageCharachter() {
     <div class="reviewerImgDiv">
       <h1>This Manga Dosn't have any Charachters(?) yet...<h1/>
       <p>Sorry D:<p/>
-      <p>Tehee<p/>
     </div>
     `;
     commentDiv.innerHTML = CommentsReviewInnerHTML;
