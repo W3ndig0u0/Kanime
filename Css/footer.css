@@ -101,6 +101,11 @@ footer .logo:active {
   min-width: 260px;
 }
 
+.txtb::placeholder {
+  color: #293043;
+  opacity: 1;
+}
+
 .btn {
   padding: 18px 40px;
   font-size: 16px;
