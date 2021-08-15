@@ -1,6 +1,8 @@
 const base_url = "https://api.jikan.moe/v3";
 let pageNr = 1;
 
+const searchResults = document.getElementById("searchResults");
+
 function searchAnime(event) {
     event.preventDefault();
 
@@ -46,8 +48,6 @@ function searchAnime(event) {
 }
 
 function updateDom(data) {
-    const searchResults = document.getElementById("search-results");
-
     const animeByCategories = data
         .reduce((acc, anime) => {
             const { type } = anime;
@@ -62,7 +62,7 @@ function updateDom(data) {
     .sort((a, b) => a.episodes - b.episodes)
     .map(anime => {
         return `
-        <div class="imgRow2">
+        <div class="animeCard" >
             <div onclick="animeSelect(${anime.mal_id})" class="imgCard animeCard">
                 <div class="cardImage">
                     <img src="${anime.image_url}">
@@ -86,10 +86,11 @@ function updateDom(data) {
         <h3><span>${key.toUpperCase()}</span></h3>
             <div class="imgRow2">${animesHTML}</div>
         </div>
+        <div class="space2"></div>
         </section>
         `   
     }).join("");
-
+    
     document.querySelector('.airing').style.display = "none";
     document.querySelector('.shop').style.display = "none";
     document.querySelector('.newsSection').style.display = "none";
@@ -102,9 +103,7 @@ function updateDom(data) {
     document.querySelector('.reviews').style.display = "none";
     document.querySelector('.shop').style.display = "none";
     console.log("smile2");
-
 }
-
 
 
 function truncate(str, n){
@@ -120,28 +119,7 @@ function animeSelect(id){
     console.log(id)
     window.location = "../Html/Anime.html"
     return false;
-  }
-  
-  function personSelect(id){
-    sessionStorage.setItem("personId", id);
-    console.log(id)
-    window.location = "../Html/Person.html"
-    return false;
-  }
-  
-  function mangaSelect(id){
-    sessionStorage.setItem("mangaId", id);
-    console.log(id)
-    window.location = "../Html/Manga.html"
-    return false;
-  }
-  
-  function charSelect(id){
-    sessionStorage.setItem("charId", id);
-    console.log(id)
-    window.location = "../Html/Char.html"
-    return false;
-  }
+}
 
 function pageLoaded() {
     const form = document.getElementById('search_form');
