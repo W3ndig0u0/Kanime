@@ -216,24 +216,31 @@ function truncate(str, n) {
   return str.length > n ? str.substr(0, n - 1) + "&hellip;" : str;
 }
 
-function animeSelect(id) {
+function animeSelect(id){
   sessionStorage.setItem("AnimeID", id);
-  console.log(id);
-  window.location = "../Html/Anime.html";
+  console.log(id)
+  window.location = "../Html/Anime.html"
   return false;
 }
 
-function personSelect(id) {
+function personSelect(id){
   sessionStorage.setItem("personId", id);
-  console.log(id);
-  window.location = "../Html/Person.html";
+  console.log(id)
+  window.location = "../Html/Person.html"
   return false;
 }
 
-function mangaSelect(id) {
+function mangaSelect(id){
   sessionStorage.setItem("mangaId", id);
-  console.log(id);
-  window.location = "../Html/Manga.html";
+  console.log(id)
+  window.location = "../Html/Manga.html"
+  return false;
+}
+
+function charSelect(id){
+  sessionStorage.setItem("charId", id);
+  console.log(id)
+  window.location = "../Html/Char.html"
   return false;
 }
 

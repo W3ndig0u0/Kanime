@@ -574,6 +574,34 @@ function noPageCharachter() {
 }
 
 
+function animeSelect(id){
+  sessionStorage.setItem("AnimeID", id);
+  console.log(id)
+  window.location = "../Html/Anime.html"
+  return false;
+}
+
+function personSelect(id){
+  sessionStorage.setItem("personId", id);
+  console.log(id)
+  window.location = "../Html/Person.html"
+  return false;
+}
+
+function mangaSelect(id){
+  sessionStorage.setItem("mangaId", id);
+  console.log(id)
+  window.location = "../Html/Manga.html"
+  return false;
+}
+
+function charSelect(id){
+  sessionStorage.setItem("charId", id);
+  console.log(id)
+  window.location = "../Html/Char.html"
+  return false;
+}
+
 getMangaGallery();
 getMangaRecommendations();
 getMangaNews();
