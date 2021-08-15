@@ -91,20 +91,8 @@ function updateDom(data) {
         `   
     }).join("");
     
-    document.querySelector('.airing').style.display = "none";
-    document.querySelector('.shop').style.display = "none";
-    document.querySelector('.newsSection').style.display = "none";
-    document.querySelector('.genreSelect').style.display = "none";
-    document.querySelector('.upComming').style.display = "none";
-    document.querySelector('.topAnime').style.display = "none";
-    document.querySelector('.topManga').style.display = "none";
-    document.querySelector('.topNovel').style.display = "none";
-    document.querySelector('.topChar').style.display = "none";
-    document.querySelector('.reviews').style.display = "none";
-    document.querySelector('.shop').style.display = "none";
-    console.log("smile2");
+    document.querySelector('.main').style.display = "none";
 }
-
 
 function truncate(str, n){
     if (str === undefined || null) {
