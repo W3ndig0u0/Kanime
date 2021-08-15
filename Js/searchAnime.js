@@ -107,11 +107,11 @@ function updateDom(data) {
 
 
 function truncate(str, n){
-    if (str === null) {
-     return "Null"
-   }
-   return (str.length > n) ? str.substr(0, n-1) + '&hellip;' : str;
- };
+//     if (str === null) {
+//      return "Null"
+//    }
+//    return (str.length > n) ? str.substr(0, n-1) + '&hellip;' : str;
+};
   
 
 function animeSelect(id){
