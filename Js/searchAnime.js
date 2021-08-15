@@ -92,6 +92,8 @@ function updateDom(data) {
     }).join("");
     
     document.querySelector('.main').style.display = "none";
+    document.querySelector('.specialPage').style.display = "none";
+    document.querySelector('.specialPage').style.display = "none";
 }
 
 function truncate(str, n){
