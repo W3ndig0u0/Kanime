@@ -2,7 +2,7 @@
   --white: hsl(0, 0%, 97%);
   --footer-white: hsl(10, 10%, 100%);
 
-  --lighter-bg: rgba(34, 50, 68, 0.94);
+  --lighter-bg: hsla(212, 33%, 25%, 0.94);
   --light-bg: hsla(212, 33%, 15%, 0.94);
   --dark-bg: hsla(230, 25%, 8%, 0.95);
   --footer-dark: hsla(230, 25%, 10%, 0.94);
@@ -51,6 +51,11 @@ body .reviewInfo,
 body .h3,
 body .cardInfo {
   color: var(--dark-bg);
+}
+
+/* !shop */
+body .genre {
+  border-left: 1px solid black;
 }
 
 /* !about */
@@ -180,6 +185,11 @@ body.dark-theme .pagination a {
   color: var(--footer-white);
 }
 
+/* !shop */
+body.dark-theme .genre {
+  border-left: 1px solid white;
+}
+
 /* !dark */
 @media (prefers-color-scheme: dark) {
   body {
@@ -274,6 +284,11 @@ body.dark-theme .pagination a {
     color: var(--footer-white);
   }
 
+  /* !shop */
+  body .genre {
+    border-left: 1px solid white;
+  }
+
   /* !light */
   body.light-theme {
     background: var(--white);
@@ -353,5 +368,9 @@ body.dark-theme .pagination a {
 
   body.light-theme .pagination a {
     color: var(--footer-dark);
+  }
+  /* !shop */
+  body.light-theme .genre {
+    border-left: 1px solid black;
   }
 }

@@ -1,5 +1,15 @@
-window.addEventListener('DOMContentLoaded', (event) => {
+document.querySelector("header").style.display = "none";
+document.querySelector("main").style.display = "none";
+document.querySelector("footer").style.display = "none";
+
+window.addEventListener("load", (event) => {
   setTimeout(function (){
-    console.log('DOM fully loaded and parsed');
-  }, 1000)
+    document.querySelector(".loader").parentElement.removeChild(document.querySelector(".loader"));
+    document.querySelector("header").style.display = "block";
+    document.querySelector("main").style.display = "block";
+    document.querySelector("footer").style.display = "block";
+    setTimeout(function (){
+      document.querySelector("body").classList.add("ani") 
+    }, 100)
+  }, 2000)
 });

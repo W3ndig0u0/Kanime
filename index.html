@@ -143,7 +143,11 @@
 
 <body>
 
-  <header id="header">
+  <div class="loader">
+    <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+  </div>
+
+  <header id="header" >
     <div class="menu fade">
       <nav class="menu-content">
         <div class="left logo"><a href="./index.html">Kanime</a></div>
@@ -240,8 +244,6 @@
     <section class="upComming">
       <div class="imgSection">
         <h3><span>Upcoming Anime</span></h3>
-        <span class="prev" onclick="PrevSlider()">&#10094;</span>
-        <span class="next" onclick="NextSlider()">&#10095;</span>
         <div class="slider">
           <div class="upComingAnime">
           </div>
@@ -254,8 +256,6 @@
     <section class="topAnime">
       <div class="imgSection">
         <h3><span>Top Anime</span></h3>
-        <span class="prev" onclick="PrevSlider()">&#10094;</span>
-        <span class="next" onclick="NextSlider()">&#10095;</span>
         <div class="slider">
           <div class="topAnimeJs"></div>
       </div>
@@ -266,8 +266,6 @@
     <section class="topManga">
       <div class="imgSection">
         <h3><span>Top Manga & Light Novel</span></h3>
-        <span class="prev" onclick="PrevSlider()">&#10094;</span>
-        <span class="next" onclick="NextSlider()">&#10095;</span>
         <div class="slider">
           <div class="topMangaJs"></div>
       </div>
@@ -279,8 +277,6 @@
     <section class="topNovel">
       <div class="imgSection">
         <h3><span>Top Novels</span></h3>
-        <span class="prev" onclick="PrevSlider()">&#10094;</span>
-        <span class="next" onclick="NextSlider()">&#10095;</span>
         <div class="slider">
           <div class="topNovelJs"></div>
       </div>

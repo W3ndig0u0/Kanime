@@ -23,11 +23,11 @@
 }
 
 .genre {
-  padding-top: 5rem;
   border-left: 1px solid black;
   padding-left: 2rem;
   padding-right: 2rem;
 }
+
 .genre h4 {
   font-size: 2rem;
 }
