@@ -263,13 +263,16 @@ function charSelect(id){
   return false;
 }
 
+
 function menuBgChange(Imgurl)
 {
   const menuBgColor1 = " rgba(2, 49, 90, 0.88),";
   const menuBgColor2 = " rgba(2, 49, 90, 0.78) ";
   const menuBg = "linear-gradient(to bottom," + menuBgColor1 + menuBgColor2 + "), url("+ Imgurl +")";
+
   document.querySelector(".menuAnimePage").style.backgroundImage = menuBg;
 }
+
 
 
 function personGallery(result) {

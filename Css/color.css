@@ -1,6 +1,6 @@
 :root {
-  --white: hsl(0, 0%, 97%);
-  --footer-white: hsl(10, 10%, 100%);
+  --white: hsl(0, 0%, 100%);
+  --footer-white: hsl(0, 0%, 95%);
 
   --lighter-bg: hsla(212, 33%, 25%, 0.94);
   --light-bg: hsla(212, 33%, 15%, 0.94);
@@ -173,7 +173,7 @@ body.dark-theme .newsLetter2 .newsCardInfo2 h2 {
 }
 
 body.dark-theme .newsLetter2 .newsCardInfo2 p {
-  color: var(--footer-dark);
+  color: #900d00;
 }
 
 body.dark-theme .newsLetter2:hover,
@@ -272,7 +272,7 @@ body.dark-theme .genre {
   }
 
   body .newsLetter2 .newsCardInfo2 p {
-    color: var(--footer-dark);
+    color: #900d00;
   }
 
   body .newsLetter2:hover,

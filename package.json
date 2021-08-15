@@ -1,0 +1,19 @@
+{
+  "name": "kanime",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/W3ndig0u0/Kanime.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/W3ndig0u0/Kanime/issues"
+  },
+  "homepage": "https://github.com/W3ndig0u0/Kanime#readme"
+}

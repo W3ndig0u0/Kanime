@@ -9,7 +9,7 @@ window.addEventListener("load", (event) => {
     document.querySelector("main").style.display = "block";
     document.querySelector("footer").style.display = "block";
     setTimeout(function (){
-      document.querySelector("body").classList.add("ani") 
+      // document.body.classList.add("ani")
     }, 100)
-  }, 2000)
+  }, 1000)
 });
