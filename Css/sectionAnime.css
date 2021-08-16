@@ -71,7 +71,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
   margin: 0 auto;
-  grid-gap: 2rem;
+  grid-gap: 3rem;
 }
 
 .airingAnimeJs .imgRow2 {

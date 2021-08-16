@@ -1,4 +1,5 @@
 let animeCards = document.getElementsByClassName("animeCard");
+let gallery = document.getElementsByClassName("vcCard2");
 
 setTimeout(function(){
   for (let i = 0; i < animeCards.length; i++) {
@@ -7,6 +8,21 @@ setTimeout(function(){
   }
 },1000)
 
+
+function click(event) {
+  if ((event.target.childNodes[5] !== undefined))
+  {
+    if (event.target.childNodes[5].classList.contains("playWrapper"))
+    {
+        event.target.parentNode.childNodes[5].style.opacity = "1";
+    }
+  }
+  
+  else if(event.target.classList.contains("playWrapper"))
+    {
+      event.target.style.opacity = "1";
+    }
+}
 
 function hoverCardIn(event) {
   if ((event.target.childNodes[5] !== undefined))

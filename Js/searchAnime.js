@@ -1,6 +1,3 @@
-const base_url = "https://api.jikan.moe/v3";
-let pageNr = 1;
-
 const searchResults = document.getElementById("searchResults");
 
 function searchAnime(event) {
@@ -10,10 +7,10 @@ function searchAnime(event) {
     const query = form.get("search");
 
     const urls = [
-        `${base_url}/search/anime?q=${query}&page=${pageNr}`, 
-        `${base_url}/search/manga?q=${query}&page=${pageNr}`, 
-        `${base_url}/search/character?q=${query}&page=${pageNr}`,
-        `${base_url}/search/person?q=${query}&page=${pageNr}`
+        `https://api.jikan.moe/v3/search/anime?q=${query}`, 
+        `https://api.jikan.moe/v3/search/manga?q=${query}`, 
+        `https://api.jikan.moe/v3/search/character?q=${query}`,
+        `https://api.jikan.moe/v3/search/person?q=${query}`
     ];
 
         Promise.all(urls.map(url =>
