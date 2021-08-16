@@ -43,7 +43,7 @@ auth.onAuthStateChanged(user => {
         // signed in
         whenSignedIn.className = "not-hidden";
         whenSignedOut.className = "hidden";
-        userImg.innerHTML = `<img class="user-img" src="${user.photoURL}">`;
+        userImg.innerHTML = `<img class="userProfile" src="${user.photoURL}">`;
         userDetails.innerHTML = `<h3 class="name">Welcome ${user.displayName}!</h3>`;
     } 
     else {

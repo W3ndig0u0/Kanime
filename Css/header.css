@@ -184,7 +184,7 @@
   clear: left;
 }
 
-.userImg {
+.userProfile {
   width: 4rem;
   height: 4rem;
   border: 2px solid #0583f2;
@@ -193,7 +193,7 @@
   transition: 200ms;
 }
 
-.userimg:hover {
+.userProfile:hover {
   border: 4px solid #0583f2;
 }
 
