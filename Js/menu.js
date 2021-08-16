@@ -56,6 +56,6 @@ auth.onAuthStateChanged(user => {
 });
 
 
-document.querySelector('.drop').onclick = () => {
+document.querySelector('.userimg').onclick = () => {
   document.querySelector(".dropdown-item").classList.toggle("active");
 }
