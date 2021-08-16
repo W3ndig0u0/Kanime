@@ -169,7 +169,7 @@
 
 #whenSignedOut.not-hidden {
   display: block;
-  float: left;
+  /* float: left; */
   clear: left;
 }
 
