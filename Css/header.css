@@ -179,10 +179,9 @@
   clear: left;
 }
 
-.userimg {
+.userImg {
   width: 7rem;
   height: 7rem;
-
   border: 2px solid #0583f2;
   border-radius: 50%;
   transition: 200ms;
