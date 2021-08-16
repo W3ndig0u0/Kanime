@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/W3ndig0u0/Kanime/issues"
   },
-  "homepage": "https://github.com/W3ndig0u0/Kanime#readme"
+  "homepage": "https://github.com/W3ndig0u0/Kanime#readme",
+  "dependencies": {
+    "firebase": "^8.9.1"
+  }
 }

@@ -109,6 +109,25 @@
 }
   </script>
 
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-auth.js"></script>
+
+  <script>
+    var firebaseConfig = {
+      apiKey: "AIzaSyDowqyL9ZQIOivG1UbBgFiTtydnmL3RZIQ",
+      authDomain: "kanime-6a602.firebaseapp.com",
+      projectId: "kanime-6a602",
+      storageBucket: "kanime-6a602.appspot.com",
+      messagingSenderId: "474455861263",
+      appId: "1:474455861263:web:0f4921183a9801b8c89b7a",
+      measurementId: "G-1XQ7HJZG9X"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.auth();
+  </script>
+
   <!-- !ads -->
   <script data-ad-client="ca-pub-4214057914932039" async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>

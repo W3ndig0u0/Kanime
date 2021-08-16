@@ -30,7 +30,6 @@ const signInBtnGoogle = document.getElementById('signInBtnGoogle');
 const userDetails = document.getElementById('userDetails');
 const userImg = document.getElementById('userImg');
 
-
 const googleProvider = new firebase.auth.GoogleAuthProvider();
 
 /// Sign in event handlers
