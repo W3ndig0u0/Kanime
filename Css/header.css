@@ -36,6 +36,10 @@
   height: 5rem;
 }
 
+.firstMenu {
+  align-items: center;
+}
+
 .menu-content li {
   display: inline-block;
   padding: 0% 20px;
@@ -180,10 +184,11 @@
 }
 
 .userImg {
-  width: 7rem;
-  height: 7rem;
+  width: 4rem;
+  height: 4rem;
   border: 2px solid #0583f2;
   border-radius: 50%;
+  align-items: center;
   transition: 200ms;
 }
 
