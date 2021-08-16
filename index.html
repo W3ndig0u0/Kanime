@@ -155,9 +155,23 @@
               <a href="#" aria-label="Search"><i class="fa fa-search search-btn"></i> </a>
             </li>
             <li>
-              <a href="javascript:void(0)" aria-label="User"><i class="fa fa-user"></i> </a>
-            </li>
 
+              <div id="whenSignedOut">
+                <a href="javascript:void(0)" aria-label="User" id="signInBtnGoogle" class="login" ><i class="fa fa-user"></i> </a>
+              </div>
+
+              <div id="whenSignedIn">
+                <a href="javascript:void(0)" aria-label="User" id="userImg"><i class="fa fa-user drop"></i> </a>
+                <div class="dropdown-item">
+                  <span id="userDetails"></span>
+                  <span>Profile</span>
+                  <span>Favorites</span>
+                  <span id="signOutBtn" class="signOut">Logout</span>
+                </div>
+              </div>
+
+            </li>
+            
             <div id="myModal" class="modal">
               <div class="modal-content">
                 <form id="search_form">

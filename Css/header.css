@@ -157,3 +157,93 @@
     right: 35px;
   }
 }
+
+/* !login */
+#whenSignedOut.hidden {
+  display: none;
+}
+
+#whenSignedIn.hidden {
+  display: none;
+}
+
+#whenSignedOut.not-hidden {
+  display: block;
+  float: left;
+  clear: left;
+}
+
+#whenSignedIn.not-hidden {
+  display: block;
+  float: left;
+  clear: left;
+}
+
+.dropdown-item {
+  width: 15vw;
+  opacity: 0;
+  z-index: 0;
+  display: none;
+  background: white;
+  /* color: #212121; */
+  border-top: 3px solid black;
+
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-shadow: 0 10px 20px -8px rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+}
+
+.dropdown-item.active {
+  z-index: 99999999999999999;
+  opacity: 1;
+  display: block;
+  transition: 500ms;
+}
+
+.dropdown-item span {
+  display: block;
+  cursor: pointer;
+  margin-top: 1rem;
+  text-align: center;
+  justify-content: center;
+  transition: 500ms ease-in-out;
+}
+
+.dropdown-item span:not(:first-child):hover {
+  transition: 300ms ease-in;
+  color: var(--blue);
+}
+
+.dropdown-item span:last-of-type:hover {
+  transition: 300ms ease-in;
+}
+
+.dropdown-item span:not(:first-child)::before {
+  content: "»   ";
+  font-size: 24px;
+  opacity: 0;
+  margin-left: -40px;
+  transition: 0.7s;
+}
+
+.dropdown-item span:last-of-type::before {
+  content: "»   ";
+  font-size: 32px;
+  opacity: 0;
+  margin-left: -60px;
+  transition: 0.5s;
+}
+
+.dropdown-item span:not(:first-child):hover {
+  padding-right: 8px;
+  padding-left: 18px;
+}
+
+.dropdown-item span:not(:first-child):hover::before {
+  opacity: 1;
+  margin-left: 1rem;
+}
