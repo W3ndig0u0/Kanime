@@ -174,13 +174,11 @@
 
 #whenSignedOut.not-hidden {
   display: block;
-  /* float: left; */
   clear: left;
 }
 
 #whenSignedIn.not-hidden {
   display: block;
-  /* float: left; */
   clear: left;
 }
 
