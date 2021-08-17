@@ -4,12 +4,9 @@ const whenSignedIn = document.getElementById('whenSignedIn');
 const whenSignedOut = document.getElementById('whenSignedOut');
 
 const signInBtnGoogle = document.getElementById('signInBtnGoogle');
-const signOutBtnFaebook = document.getElementById('signOutBtnFaebook');
 
 const userDetails = document.getElementById('userDetails');
 const userImg = document.getElementById('userImg');
-
-
 const googleProvider = new firebase.auth.GoogleAuthProvider();
 
 /// Sign in event handlers
