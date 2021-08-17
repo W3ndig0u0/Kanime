@@ -32,10 +32,9 @@ const userImg = document.getElementById('userImg');
 
 const googleProvider = new firebase.auth.GoogleAuthProvider();
 
-/// Sign in event handlers
+// ! Sign in event handlers
 
 signInBtnGoogle.onclick = () => auth.signInWithPopup(googleProvider);
-
 signOutBtn.onclick = () => auth.signOut();
 
 auth.onAuthStateChanged(user => {
