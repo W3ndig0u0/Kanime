@@ -27,14 +27,15 @@ auth.onAuthStateChanged(user => {
         // not signed in
         whenSignedIn.className = "hidden";
         whenSignedOut.className = "not-hidden";
-        userDetails.innerHTML = '';
         userImg.innerHTML = '';
+        userDetails.innerHTML = '';
     }
 });
 
-userImg.onclick = () => {
+document.getElementsByClassName("user-img").onclick = () => {
     document.querySelector(".dropdown-item").classList.toggle("active");
 }
+
 // !menu
 
 function openNavbar() {
