@@ -1,19 +1,21 @@
-
-// !login
 const auth = firebase.auth();
 
 const whenSignedIn = document.getElementById('whenSignedIn');
 const whenSignedOut = document.getElementById('whenSignedOut');
+
 const signInBtnGoogle = document.getElementById('signInBtnGoogle');
+const signOutBtnFaebook = document.getElementById('signOutBtnFaebook');
 
 const userDetails = document.getElementById('userDetails');
 const userImg = document.getElementById('userImg');
 
+
 const googleProvider = new firebase.auth.GoogleAuthProvider();
 
-// ! Sign in event handlers
+/// Sign in event handlers
 
 signInBtnGoogle.onclick = () => auth.signInWithPopup(googleProvider);
+
 signOutBtn.onclick = () => auth.signOut();
 
 auth.onAuthStateChanged(user => {
@@ -21,23 +23,21 @@ auth.onAuthStateChanged(user => {
         // signed in
         whenSignedIn.className = "not-hidden";
         whenSignedOut.className = "hidden";
-        userImg.innerHTML = `<img class="user-Img" src="${user.photoURL}">`;
-        userDetails.innerHTML = `<h1 class="name">Welcome ${user.displayName}!</h1>`;
+        userImg.innerHTML = `<img class="user-img" src="${user.photoURL}">`;
+        userDetails.innerHTML = `<h3 class="name">Welcome ${user.displayName}!</h3>`;
     } 
     else {
         // not signed in
         whenSignedIn.className = "hidden";
         whenSignedOut.className = "not-hidden";
-        userImg.innerHTML = '';
         userDetails.innerHTML = '';
+        userImg.innerHTML = '';
     }
 });
 
-
-document.querySelector('.user-Img')?.onclick = () => {
-  document.querySelector(".dropdown-item").classList.toggle("active");
+userImg.onclick = () => {
+    document.querySelector(".dropdown-item").classList.toggle("active");
 }
-
 // !menu
 
 function openNavbar() {
