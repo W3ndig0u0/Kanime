@@ -308,6 +308,7 @@
   .imgRow2 {
     grid-template-columns: repeat(auto-fill, minmax(7rem, 1fr));
     column-gap: 2rem;
+    grid-gap: 2rem;
     padding-right: 1rem;
   }
 
