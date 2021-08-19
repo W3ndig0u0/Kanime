@@ -36,6 +36,16 @@ document.getElementsByClassName("user-img").onclick = () => {
     document.querySelector(".dropdown-item").classList.toggle("active");
 }
 
+document.getElementsByClassName("userImg").onclick = () => {
+    document.querySelector(".dropdown-item").classList.toggle("active");
+}
+
+setTimeout(function (){
+    console.log(document.getElementsByClassName("user-img"));
+    console.log(document.querySelector("user-img"));
+}, 100)
+
+
 // !menu
 
 function openNavbar() {
