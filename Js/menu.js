@@ -20,14 +20,14 @@ auth.onAuthStateChanged(user => {
         // signed in
         whenSignedIn.className = "not-hidden";
         whenSignedOut.className = "hidden";
-        userImg.src = user.photoURL;
+        userImg.innerHTML = `<img class="user-img" src="${user.photoURL}">`;
         userDetails.innerHTML = `<h3 class="name">Welcome ${user.displayName}!</h3>`;
     } 
     else {
         // not signed in
         whenSignedIn.className = "hidden";
         whenSignedOut.className = "not-hidden";
-        userImg.src = '';
+        userImg.innerHTML = '';
         userDetails.innerHTML = '';
     }
 });
@@ -40,10 +40,10 @@ document.getElementsByClassName("userImg").onclick = () => {
     document.querySelector(".dropdown-item").classList.toggle("active");
 }
 
-setInterval(function (){
-    console.log(document.getElementsByClassName("dropdown-item"));
-    console.log(document.querySelector(".userImg"));
-}, 5000)
+setTimeout(function (){
+    console.log(document.getElementsByClassName("user-img"));
+    console.log(document.querySelector("user-img"));
+}, 100)
 
 
 // !menu

@@ -17,15 +17,22 @@ window.addEventListener("load", (event) => {
 
 function favoritesAnime(){
 
+  var FavoriteAnimes = localStorage.getItem('AnimeDataKey');
+  
   if (document.querySelector(".heart").checked === true) {
+    
+    FavoriteAnimes = [animeId]
     localStorage.setItem('checked ' + animeId, true);
-    localStorage.setItem("Favorites " + animeId, animeId);
+    localStorage.setItem('AnimeDataKey', JSON.stringify(FavoriteAnimes ));
+    console.log(localStorage.getItem('AnimeDataKey'));
   }
+
   else
   {
-    localStorage.setItem('checked ' + animeId, false);
-    localStorage.removeItem("Favorites " + animeId);
+    localStorage.removeItem('checked ' + animeId, true);
+    localStorage.removeItem('AnimeDataKey', JSON.stringify(FavoriteAnimes ));
   }
+
   const checked = localStorage.getItem('checked ' + animeId);
 
   console.log(checked == "true")
