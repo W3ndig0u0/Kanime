@@ -20,14 +20,14 @@ auth.onAuthStateChanged(user => {
         // signed in
         whenSignedIn.className = "not-hidden";
         whenSignedOut.className = "hidden";
-        userImg.innerHTML = `<img class="user-img" src="${user.photoURL}">`;
+        userImg.src = user.photoURL;
         userDetails.innerHTML = `<h3 class="name">Welcome ${user.displayName}!</h3>`;
     } 
     else {
         // not signed in
         whenSignedIn.className = "hidden";
         whenSignedOut.className = "not-hidden";
-        userImg.innerHTML = '';
+        userImg.src = '';
         userDetails.innerHTML = '';
     }
 });
@@ -41,8 +41,8 @@ document.getElementsByClassName("userImg").onclick = () => {
 }
 
 setInterval(function (){
-    console.log(document.getElementsByClassName("user-img"));
-    console.log(document.querySelector("user-img"));
+    console.log(document.getElementsByClassName("dropdown-item"));
+    console.log(document.querySelector(".userImg"));
 }, 5000)
 
 
