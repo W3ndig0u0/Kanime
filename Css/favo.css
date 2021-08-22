@@ -51,6 +51,14 @@
   cursor: pointer;
   width: 100%;
   object-fit: cover;
+  transition: 300ms;
+}
+
+.charFavo img:hover,
+.mangaFavo img:hover,
+.animeFavo img:hover {
+  border: 2px solid #f27d16;
+  transform: scale(1.05);
 }
 
 .imgRow3 {

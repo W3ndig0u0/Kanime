@@ -1,3 +1,7 @@
+.genreSelect {
+  height: max-content;
+}
+
 .recentAnime {
   margin-top: 7rem;
 }
