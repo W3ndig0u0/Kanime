@@ -1,5 +1,6 @@
 .genreSelect {
   height: max-content;
+  position: relative;
 }
 
 .recentAnime {
