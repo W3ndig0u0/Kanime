@@ -20,12 +20,12 @@ function favoritesAnime(){
   if (document.querySelector(".heart").checked === true) {
 
     localStorage.setItem('checked ' + animeId, true);
-    localStorage.setItem("Favorite Animes:", animeId);
+    localStorage.setItem("Favorite Animes " + animeId,  animeId);
   }
   else
   {
     localStorage.removeItem('checked ' + animeId, true);
-    localStorage.removeItem("Favorite Animes:", animeId);
+    localStorage.removeItem("Favorite Animes " + animeId, animeId);
   }
 
   const checked = localStorage.getItem('checked ' + animeId);
@@ -37,12 +37,12 @@ function favoritesManga(){
 
   if (document.querySelector(".heart").checked === true) {
     localStorage.setItem('checked ' + mangaId, true);
-    localStorage.setItem("Favorites Manga", mangaId);
+    localStorage.setItem("Favorites Manga " + mangaId, mangaId);
   }
   else
   {
     localStorage.removeItem('checked ' + mangaId, true);
-    localStorage.removeItem("Favorites Manga ", mangaId);
+    localStorage.removeItem("Favorites Manga " + mangaId, mangaId);
   }
   const checked = localStorage.getItem('checked ' + mangaId);
 
@@ -54,12 +54,12 @@ function favoritesChar(){
 
   if (document.querySelector(".heart").checked === true) {
     localStorage.setItem('checked ' + charId, true);
-    localStorage.setItem("Favorites Char", charId);
+    localStorage.setItem("Favorites Char " + charId, charId);
   }
   else
   {
     localStorage.removeItem('checked ' + charId, true);
-    localStorage.removeItem("Favorites Char", charId);
+    localStorage.removeItem("Favorites Char " + charId, charId);
   }
   const checked = localStorage.getItem('checked ' + charId);
 
@@ -70,12 +70,12 @@ function favoritesPerson(){
 
   if (document.querySelector(".heart").checked === true) {
     localStorage.setItem('checked ' + personId, true);
-    localStorage.setItem("Favorites Person", personId);
+    localStorage.setItem("Favorites Person " + personId, personId);
   }
   else
   {
     localStorage.removeItem('checked ' + personId, true);
-    localStorage.removeItem("Favorites Person", personId);
+    localStorage.removeItem("Favorites Person " + personId, personId);
   }
   const checked = localStorage.getItem('checked ' + personId);
 
