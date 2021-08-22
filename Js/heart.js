@@ -1,17 +1,21 @@
 let animeId = sessionStorage.getItem("AnimeID");
+let mangaId = sessionStorage.getItem("mangaId");
 let personId = sessionStorage.getItem("personId");
 let charId = sessionStorage.getItem("charId");
 
+
+
 window.addEventListener("load", (event) => {
   setTimeout(function (){
-      if (localStorage.getItem('checked ' + animeId) == "true") {
+      if (localStorage.getItem('checked ' + animeId) == "true" || localStorage.getItem('checked ' + mangaId) == "true" || localStorage.getItem('checked ' + charId) == "true" || localStorage.getItem('checked ' + personId) == "true")
+       {
         document.querySelector(".heart").checked = true;
       }
       else
       {  
         document.querySelector(".heart").checked = false;
       }
-    }, 1550)
+    }, 1600)
 });
 
 

@@ -4,7 +4,6 @@ function getManga() {
   fetch("https://api.jikan.moe/v3/manga/" + mangaId)
   .then(response => response.json())
   .then(result => {
-    console.log(result);
     MangaPage(result);
   })
   .catch(error => {

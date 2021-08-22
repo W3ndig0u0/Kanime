@@ -43,7 +43,7 @@ document.getElementsByClassName("userImg").onclick = () => {
 setTimeout(function (){
     console.log(document.getElementsByClassName("user-img"));
     console.log(document.querySelector("user-img"));
-}, 100)
+}, 5000)
 
 
 // !menu

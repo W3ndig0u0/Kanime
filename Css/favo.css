@@ -1,0 +1,62 @@
+.aboutSection {
+  width: 85%;
+  margin: 1rem auto;
+  height: auto;
+  background: transparent;
+  font-family: "Open Sans", sans-serif;
+}
+
+.favo {
+  padding: 5%;
+  margin: 0 auto;
+}
+
+.charFavo,
+.animeFavo,
+.mangaFavo {
+  color: #fff;
+  background-color: hsla(230, 25%, 10%, 0.94);
+  border-radius: 10px;
+  padding: 2rem;
+  margin-bottom: 4rem !important;
+}
+
+.charFavo div,
+.mangaFavo div,
+.animeFavo div {
+  border-radius: 10px;
+  width: 8rem;
+}
+
+.charFavo div p,
+.mangaFavo div p,
+.animeFavo div p {
+  /* display: none; */
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.charFavo div span,
+.mangaFavo div span,
+.animeFavo div span {
+  /* display: none; */
+  opacity: 0.8;
+  font-size: 12px;
+}
+
+.charFavo img,
+.mangaFavo img,
+.animeFavo img {
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+  object-fit: cover;
+}
+
+.imgRow3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(7rem, 1fr));
+  margin: 0 auto;
+  grid-gap: 2rem;
+  justify-items: center;
+}

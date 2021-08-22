@@ -65,6 +65,7 @@
   justify-content: space-between;
   margin: 0 auto;
   grid-gap: 2rem;
+  justify-items: center;
 }
 
 .imgRow2 {
@@ -72,6 +73,7 @@
   grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
   margin: 0 auto;
   grid-gap: 3rem;
+  justify-items: center;
 }
 
 .airingAnimeJs .imgRow2 {
