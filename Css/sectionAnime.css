@@ -47,6 +47,13 @@
   font-family: "Open Sans", sans-serif;
 }
 
+.topManga,
+.topNovel,
+.topAnime,
+.upComming {
+  margin-top: 8rem;
+}
+
 .newsSection,
 .reviews {
   padding-top: 3rem;
@@ -63,16 +70,16 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 0 auto;
   grid-gap: 2rem;
+  margin: 0 auto;
   justify-items: center;
 }
 
 .imgRow2 {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
-  margin: 0 auto;
   grid-gap: 3rem;
+  margin: 0 auto;
   justify-items: center;
 }
 
