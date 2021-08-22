@@ -26,6 +26,7 @@ function favoritesAnime(){
   {
     localStorage.removeItem('checked ' + animeId, true);
     localStorage.removeItem("Favorite Animes " + animeId, animeId);
+    // localStorage.clear();
   }
 
   const checked = localStorage.getItem('checked ' + animeId);
