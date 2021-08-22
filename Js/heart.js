@@ -17,25 +17,19 @@ window.addEventListener("load", (event) => {
 
 function favoritesAnime(){
 
-  var FavoriteAnimes = localStorage.getItem('AnimeDataKey');
-  
   if (document.querySelector(".heart").checked === true) {
-    
-    FavoriteAnimes = [animeId]
-    localStorage.setItem('checked ' + animeId, true);
-    localStorage.setItem('AnimeDataKey', JSON.stringify(FavoriteAnimes ));
-    console.log(localStorage.getItem('AnimeDataKey'));
-  }
 
+    localStorage.setItem('checked ' + animeId, true);
+    localStorage.setItem("Favorite Animes:", animeId);
+  }
   else
   {
     localStorage.removeItem('checked ' + animeId, true);
-    localStorage.removeItem('AnimeDataKey', JSON.stringify(FavoriteAnimes ));
+    localStorage.removeItem("Favorite Animes:", animeId);
   }
 
   const checked = localStorage.getItem('checked ' + animeId);
 
-  console.log(checked == "true")
   console.log(localStorage);
 }
 
@@ -43,12 +37,12 @@ function favoritesManga(){
 
   if (document.querySelector(".heart").checked === true) {
     localStorage.setItem('checked ' + mangaId, true);
-    localStorage.setItem("Favorites Manga" + mangaId, mangaId);
+    localStorage.setItem("Favorites Manga", mangaId);
   }
   else
   {
-    localStorage.setItem('checked ' + mangaId, false);
-    localStorage.removeItem("Favorites Manga " + mangaId);
+    localStorage.removeItem('checked ' + mangaId, true);
+    localStorage.removeItem("Favorites Manga ", mangaId);
   }
   const checked = localStorage.getItem('checked ' + mangaId);
 
@@ -60,16 +54,15 @@ function favoritesChar(){
 
   if (document.querySelector(".heart").checked === true) {
     localStorage.setItem('checked ' + charId, true);
-    localStorage.setItem("Favorites " + charId, charId);
+    localStorage.setItem("Favorites Char", charId);
   }
   else
   {
-    localStorage.setItem('checked ' + charId, false);
-    localStorage.removeItem("Favorites " + charId);
+    localStorage.removeItem('checked ' + charId, true);
+    localStorage.removeItem("Favorites Char", charId);
   }
   const checked = localStorage.getItem('checked ' + charId);
 
-  console.log(checked == "true")
   console.log(localStorage);
 }
 
@@ -77,15 +70,14 @@ function favoritesPerson(){
 
   if (document.querySelector(".heart").checked === true) {
     localStorage.setItem('checked ' + personId, true);
-    localStorage.setItem("Favorites " + personId, personId);
+    localStorage.setItem("Favorites Person", personId);
   }
   else
   {
-    localStorage.setItem('checked ' + personId, false);
-    localStorage.removeItem("Favorites " + personId);
+    localStorage.removeItem('checked ' + personId, true);
+    localStorage.removeItem("Favorites Person", personId);
   }
   const checked = localStorage.getItem('checked ' + personId);
 
-  console.log(checked == "true")
   console.log(localStorage);
 }
