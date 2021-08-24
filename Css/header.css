@@ -167,7 +167,7 @@
 }
 
 #whenSignedIn.hidden {
-  display: none;
+  /* display: none; */
 }
 
 #whenSignedOut.not-hidden {

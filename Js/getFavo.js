@@ -57,6 +57,7 @@ function AnimeCommentsPage(result) {
 
     const img = result.image_url;
     const animeID = result.mal_id;
+    const message = result.message;
     
     // !Skapar html
     const CommentsReviewInnerHTML = 
@@ -81,6 +82,7 @@ function MangaCommentsPage(result) {
 
     const img = result.image_url;
     const animeID = result.mal_id;
+    const message = result.message;
     
     // !Skapar html
     const CommentsReviewInnerHTML = 
@@ -102,6 +104,7 @@ function CharCommentPage(result) {
 
     const img = result.image_url;
     const animeID = result.mal_id;
+    const message = result.message;
     
     // !Skapar html
     const CommentsReviewInnerHTML = 
@@ -109,6 +112,7 @@ function CharCommentPage(result) {
     <div onclick="charSelect(${animeID})">
       <img class="reviewerImg" src=${img} alt=${content}>
         <p>${truncate(content, 30)}</p>
+        <p>${truncate(message, 30)}</p>
     </div>
     `;
     commentDiv.innerHTML = CommentsReviewInnerHTML;
