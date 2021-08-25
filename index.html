@@ -159,71 +159,55 @@
     <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
   </div>
 
-  <header id="header" >
+  <header id="header">
     <div class="menu fade">
       <nav class="menu-content">
-        <div class="left logo"><a href="./index.html">Kanime</a></div>
+        <div class="left logo"><a href="../index.html">Kanime</a></div>
         <div class="right">
           <ul class="firstMenu">
-            <li><a href="index.html">Anime</a></li>
-            <li><a href="Html/shop.html">Shop</a></li>
-            <li><a href="Html/review.html">Review</a></li>
-            <li><a href="Html/news.html">News</a></li>
-            <li><a href="Html/about.html">About</a></li>
-            <li>
-              <a href="#" aria-label="Search"><i class="fa fa-search search-btn"></i> </a>
-            </li>
-            <li>
+              <li><a href="../index.html">Anime</a></li>
+              <li><a href="../Html/shop.html">Shop</a></li>
+              <li><a href="../Html/review.html">Review</a></li>
+              <li><a href="../Html/news.html">News</a></li>
+              <li><a href="../Html/about.html">About</a></li>
+              <li>
+                <a href="#" aria-label="Search"><i class="fa fa-search search-btn"></i> </a>
+              </li>
+              <li>
+                <a href="#" aria-label="Search"><i class="fa fa-user"></i> </a>
+              </li>
 
-              <div id="whenSignedOut">
-                <a href="javascript:void(0)" aria-label="User" id="signInBtnGoogle" class="login" ><i class="fa fa-user"></i> </a>
-              </div>
-
-              <div id="whenSignedIn">
-                <a href="javascript:void(0)" aria-label="User" id="userImg"><i class="drop"></i></a>
-                <div class="dropdown-item">
-                  <span id="userDetails"></span>
-                  <span><a href="Html/favorite.html">Favorites</a></span>
-                  <span id="signOutBtn" class="signOut">Logout</span>
+              <div id="myModal" class="modal">
+                <div class="modal-content">
+                  <form id="search_form">
+                    <input placeholder="Search..." name="search" id="search" autocomplete="off" type="text"
+                      class="validate search-bar" required />
+                  </form>
                 </div>
               </div>
-
-            </li>
-            
-            <div id="myModal" class="modal">
-              <div class="modal-content">
-                <form id="search_form">
-                  <input placeholder="Search..." name="search" id="search" autocomplete="off" type="text"
-                    class="validate search-bar" re  quired />
-                </form>
-              </div>
-            </div>
-            <li>
-              <div class="navButton" id="navButton" onclick="openNavbar()">
-                ☰
-              </div>
-            </li>
-          </ul>
+              <li>
+                <div class="navButton" id="navButton" onclick="openNavbar()">
+                  ☰
+                </div>
+              </li>
+            </ul>
 
           <div class="hamburgerNav" id="hamburgerNavbarLinks">
-            <div class="closeButton" id="closeButton" onclick="closeNavbar()">
-              X
-            </div>
+            <div class="closeButton" id="closeButton" onclick="closeNavbar()"> ☰</div>
 
             <div class="hamburgerNavContent">
               <ul>
                 <li>
                   <a href="#" aria-label="User"><i class="fa fa-user"></i> </a>
                 </li>
-                <li><a href="index.html">Anime</a></li>
-                <li><a href="Html/shop.html">Shop</a></li>
-                <li><a href="Html/review.html">Review</a></li>
-                <li><a href="Html/news.html">News</a></li>
-                <li><a href="Html/about.html">About</a></li>
+                <li><a href="../index.html">Anime</a></li>
+                <li><a href="../Html/shop.html">Shop</a></li>
+                <li><a href="../Html/review.html">Review</a></li>
+                <li><a href="../Html/news.html">News</a></li>
+                <li><a href="../Html/about.html">About</a></li>
               </ul>
             </div>
           </div>
-          
         </div>
       </nav>
 
