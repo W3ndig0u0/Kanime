@@ -6,7 +6,6 @@ html {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  background-color: #f8f8ff;
   scroll-behavior: smooth;
   width: 100vw;
   transition: background 1s ease-in-out;

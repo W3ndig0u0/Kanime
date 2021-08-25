@@ -5,7 +5,7 @@
   padding-bottom: 3rem;
 }
 
-.card {
+.menu .card {
   position: relative;
   height: auto;
   margin: auto;
@@ -70,13 +70,13 @@
   width: 20%;
 }
 
-.card img {
+.menu .card img {
   object-fit: cover;
   width: 100%;
   height: 100%;
 }
 
-.card h2 {
+.menu .card h2 {
   letter-spacing: 1px;
   margin: 10px 0;
   font-size: 2rem;
