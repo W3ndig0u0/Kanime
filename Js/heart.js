@@ -46,6 +46,7 @@ function favoritesManga(){
   }
   else
   {
+    
     localStorage.removeItem('checked ' + mangaId, true);
     localStorage.removeItem("Favorites Manga " + mangaId, mangaId);
   }
