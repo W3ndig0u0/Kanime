@@ -1,5 +1,5 @@
 let animeId = sessionStorage.getItem("AnimeID");
-let mangaId = sessionStorage.getItem("mangaId");
+let mangaIdHeart = sessionStorage.getItem("mangaId");
 let personId = sessionStorage.getItem("personId");
 let charId = sessionStorage.getItem("charId");
 
@@ -7,7 +7,7 @@ let charId = sessionStorage.getItem("charId");
 
 window.addEventListener("load", (event) => {
   setTimeout(function (){
-      if (localStorage.getItem('checked ' + animeId) == "true" || localStorage.getItem('checked ' + mangaId) == "true" || localStorage.getItem('checked ' + charId) == "true" || localStorage.getItem('checked ' + personId) == "true")
+      if (localStorage.getItem('checked ' + animeId) == "true" || localStorage.getItem('checked ' + mangaIdHeart) == "true" || localStorage.getItem('checked ' + charId) == "true" || localStorage.getItem('checked ' + personId) == "true")
        {
         document.querySelector(".heart").checked = true;
       }
@@ -41,16 +41,16 @@ function favoritesAnime(){
 function favoritesManga(){
 
   if (document.querySelector(".heart").checked === true) {
-    localStorage.setItem('checked ' + mangaId, true);
-    localStorage.setItem("Favorites Manga " + mangaId, mangaId);
+    localStorage.setItem('checked ' + mangaIdHeart, true);
+    localStorage.setItem("Favorites Manga " + mangaIdHeart, mangaIdHeart);
   }
   else
   {
-    
-    localStorage.removeItem('checked ' + mangaId, true);
-    localStorage.removeItem("Favorites Manga " + mangaId, mangaId);
+
+    localStorage.removeItem('checked ' + mangaIdHeart, true);
+    localStorage.removeItem("Favorites Manga " + mangaIdHeart, mangaIdHeart);
   }
-  const checked = localStorage.getItem('checked ' + mangaId);
+  const checked = localStorage.getItem('checked ' + mangaIdHeart);
 
   console.log(localStorage);
 }
