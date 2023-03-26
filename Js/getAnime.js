@@ -1,7 +1,7 @@
 function getAnime() {
   let animeId = sessionStorage.getItem("AnimeID");
   
-  fetch("https://api.jikan.moe/v3/anime/" + animeId)
+  fetch("https://api.jikan.moe/v4/anime/" + animeId)
   .then(response => response.json())
   .then(result => {
     console.log(result);
@@ -16,7 +16,7 @@ function getAnime() {
 function getAnimeComments() {
   let animeId = sessionStorage.getItem("AnimeID");
   
-  fetch("https://api.jikan.moe/v3/anime/" + animeId + "/reviews/1")
+  fetch("https://api.jikan.moe/v4/anime/" + animeId + "/reviews/1")
   .then(response => response.json())
   .then(result => {
     if (result.reviews.length === 0) {
@@ -35,7 +35,7 @@ function getAnimeComments() {
 
 function getAnimeStaff() {
   let animeId = sessionStorage.getItem("AnimeID");
-  fetch("https://api.jikan.moe/v3/anime/" + animeId + "/characters_staff")
+  fetch("https://api.jikan.moe/v4/anime/" + animeId + "/characters_staff")
   .then(response => response.json())
   .then(result => {
     if (result.staff.length === 0) {
@@ -56,7 +56,7 @@ function getAnimeStaff() {
 function getAnimeGallery() {
   let animeId = sessionStorage.getItem("AnimeID");
   
-  fetch("https://api.jikan.moe/v3/anime/" + animeId + "/pictures")
+  fetch("https://api.jikan.moe/v4/anime/" + animeId + "/pictures")
   .then(response => response.json())
   .then(result => {
     if (result.pictures.length === 0) {
@@ -73,7 +73,7 @@ function getAnimeGallery() {
 function getAnimeRecommendations() {
   let animeId = sessionStorage.getItem("AnimeID");
   
-  fetch("https://api.jikan.moe/v3/anime/" + animeId + "/recommendations")
+  fetch("https://api.jikan.moe/v4/anime/" + animeId + "/recommendations")
   .then(response => response.json())
   .then(result => {
     if (result.recommendations.length === 0) {
@@ -90,7 +90,7 @@ function getAnimeRecommendations() {
 function getAnimeNews() {
   let animeId = sessionStorage.getItem("AnimeID");
   
-  fetch("https://api.jikan.moe/v3/anime/" + animeId + "/news")
+  fetch("https://api.jikan.moe/v4/anime/" + animeId + "/news")
   .then(response => response.json())
   .then(result => {
     if (result.articles.length === 0) {

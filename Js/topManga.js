@@ -25,8 +25,8 @@ fetch(TOP_MANGA_URL)
     const TopMangaSection = document.createElement('section');
     TopMangaSection.classList.add('imgRow');
 
-      for (let i = 0; i < 15; i++) {
-      // for (let i = 0; i < result.top.length; i++) {
+      // for (let i = 0; i < 5; i++) {
+      for (let i = 0; i < result.data.length; i++) {
       
     const TopMangaDiv = document.createElement('div');
     TopMangaDiv.classList.add('imgRow');

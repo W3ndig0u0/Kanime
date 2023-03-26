@@ -1,7 +1,7 @@
 function getChar() {
   let charId = sessionStorage.getItem("charId");
 
-  fetch("https://api.jikan.moe/v3/character/" + charId)
+  fetch("https://api.jikan.moe/v4/characters/" + charId)
     .then((response) => response.json())
     .then((result) => {
         CharPage(result);
@@ -23,7 +23,7 @@ function getChar() {
 function getCharGallery() {
   let charId = sessionStorage.getItem("charId");
 
-  fetch("https://api.jikan.moe/v3/character/" + charId + "/pictures")
+  fetch("https://api.jikan.moe/v4/characters/" + charId + "/pictures")
     .then((response) => response.json())
     .then((result) => {
       console.log(result);

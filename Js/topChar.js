@@ -26,7 +26,7 @@ fetch(TOP_CHAR_URL)
     TopCharSection.classList.add('imgRow2');
 
       // for (let i = 0; i < 10; i++) {
-    for (let i = 0; i <= 15; i++) {
+    for (let i = 0; i < result.data.length; i++) {
       // console.log(result.data[i])
       
     const TopCharDiv = document.createElement('div');
@@ -49,7 +49,7 @@ fetch(TOP_CHAR_URL)
           <img
           src=${thumbnail}
           alt=${newTitle}/>
-            <div class="epTag">D: ${favorites}</div>
+            <div class="epTag">❤️ ${favorites}</div>
             <div class="playWrapper">
             </div>
           </div>

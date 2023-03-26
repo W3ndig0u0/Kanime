@@ -25,7 +25,7 @@ fetch(TOP_UPCOMING_ANIME_URL)
     const upCommingSection = document.createElement('section');
     upCommingSection.classList.add('imgRow');
 
-      for (let i = 0; i < 15; i++) {
+      for (let i = 0; i < result.data.length; i++) {
       // for (let i = 0; i < result.anime.length; i++) {
       
     const upCommingDiv = document.createElement('div');
@@ -40,6 +40,8 @@ fetch(TOP_UPCOMING_ANIME_URL)
       const id = result.data[i].mal_id;
       const title = result.data[i].title;
       const type = result.data[i].type;
+      const rank = result.data[i].popularity;
+  
 
     const newTitle = capitalizeFirstLetter(title);
     // const newNewTitle = AnimeNameConverter(newTitle);

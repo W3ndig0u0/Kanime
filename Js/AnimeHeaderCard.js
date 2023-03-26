@@ -18,10 +18,11 @@ function animeSelect(id){
   return false;
 }
 
-fetch("https://api.jikan.moe/v4/recommendations/anime/" + dayName)
+fetch("https://api.jikan.moe/v4/schedules/" + dayName)
   .then(response => response.json())
   .then(result => {
     createAnimeHeaderNewsCard(result);
+
   });
 
   function dateConverser(date) {
@@ -37,11 +38,13 @@ fetch("https://api.jikan.moe/v4/recommendations/anime/" + dayName)
   function createAnimeHeaderNewsCard(result) {
     if (result == null) return;
 
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < result.data.length; i++) {
+    
+      
     const headerNewsSection = document.createElement('section');
     headerNewsSection.classList.add('newsCards');
 
-    console.log(result.data[i]);
+    // console.log(result);
   
     const id = result.data[i].mal_id;
     const thumbnail = result.data[i].images.jpg.large_image_url;

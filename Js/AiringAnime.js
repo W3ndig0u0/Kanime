@@ -14,17 +14,18 @@ fetch("https://api.jikan.moe/v4/seasons/now")
 
   function animeSelect(id){
     sessionStorage.setItem("AnimeID", id);
+    window.location.assign("../Html/Anime.html");
     console.log(id)
-    // window.location = "../Html/Anime.html"
     return false;
   }
 
+  
 
   function createSeasonAnimeCard(result) {
     const TopCharSection = document.createElement('section');
     TopCharSection.classList.add('imgRow2');
 
-    for (let i = 0; i < 15; i++) {
+    for (let i = 0; i < result.data.length; i++) {
     // for (let i = 0; i < result.length; i++) {
       
     const TopCharDiv = document.createElement('div');
@@ -32,6 +33,8 @@ fetch("https://api.jikan.moe/v4/seasons/now")
     const id = result.data[i].mal_id;
     const title = result.data[i].title;
     const type = result.data[i].type;
+
+    const rank = result.data[i].rank;
 
     const newTitle = capitalizeFirstLetter(title);
     // const newNewTitle = AnimeNameConverter(newTitle);
@@ -45,6 +48,7 @@ fetch("https://api.jikan.moe/v4/seasons/now")
           src=${thumbnail}
           alt=${newTitle}/>
           <div class="${type}Tag tag">${type}</div>
+          <div class="epTag">Rank: ${rank}</div>
           <div class="playWrapper">
           </div>          
           </div>
