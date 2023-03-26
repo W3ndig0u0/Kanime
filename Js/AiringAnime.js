@@ -1,4 +1,4 @@
-fetch("https://api.jikan.moe/v3/top/anime/1/airing")
+fetch("https://api.jikan.moe/v4/seasons/now")
   .then(response => response.json())
   .then(result => {
     createSeasonAnimeCard(result);
@@ -15,7 +15,7 @@ fetch("https://api.jikan.moe/v3/top/anime/1/airing")
   function animeSelect(id){
     sessionStorage.setItem("AnimeID", id);
     console.log(id)
-    window.location = "../Html/Anime.html"
+    // window.location = "../Html/Anime.html"
     return false;
   }
 
@@ -24,17 +24,17 @@ fetch("https://api.jikan.moe/v3/top/anime/1/airing")
     const TopCharSection = document.createElement('section');
     TopCharSection.classList.add('imgRow2');
 
-    // for (let i = 0; i < 20; i++) {
-    for (let i = 0; i < result.top.length; i++) {
+    for (let i = 0; i < 15; i++) {
+    // for (let i = 0; i < result.length; i++) {
       
     const TopCharDiv = document.createElement('div');
-    const thumbnail = result.top[i].image_url;
-    const id = result.top[i].mal_id;
-    const title = result.top[i].title;
-    const type = result.top[i].type;
+    const thumbnail = result.data[i].images.webp.large_image_url;
+    const id = result.data[i].mal_id;
+    const title = result.data[i].title;
+    const type = result.data[i].type;
 
     const newTitle = capitalizeFirstLetter(title);
-    const newNewTitle = AnimeNameConverter(newTitle);
+    // const newNewTitle = AnimeNameConverter(newTitle);
   
     // !Skapar html
     const recentInnerHTML = 
@@ -43,19 +43,23 @@ fetch("https://api.jikan.moe/v3/top/anime/1/airing")
       <div class="cardImage">
           <img
           src=${thumbnail}
-          alt=${newNewTitle}/>
+          alt=${newTitle}/>
           <div class="${type}Tag tag">${type}</div>
           <div class="playWrapper">
           </div>          
           </div>
           <div class="cardInfo">
-            <span class="cardTitle">${truncate(newNewTitle,35)}</span>
+            <span class="cardTitle">${truncate(newTitle,35)}</span>
         </div>
       </div>
       `;
           
       TopCharDiv.innerHTML = recentInnerHTML;
-      TopCharSection.appendChild(TopCharDiv)
-      document.querySelector(".airingAnimeJs").appendChild(TopCharSection)
+      TopCharSection.appendChild(TopCharDiv);
+      var airingAnime = document.querySelector(".airingAnimeJs");
+      
+      if (airingAnime != null) {
+        airingAnime.appendChild(TopCharSection);
+      }
     }
   }

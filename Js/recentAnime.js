@@ -24,6 +24,7 @@ fetch(RECENT_ANIME_RSS_URL)
       var ep =  ep.split('#')[1]
       return ep
   }
+  
   function AnimeNameConverter(ep) {
       var ep =  ep.split('#')[0]
       return ep
@@ -52,7 +53,7 @@ fetch(RECENT_ANIME_RSS_URL)
     recentDivContainer.appendChild(recentDivLeaderboard)
     recentDivLeaderboard.appendChild(recentDiv);
 
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 7; i++) {
     const thumbnail = result.items[i].thumbnail;
     const title = result.items[i].title;
     const id = result.items[i].link;

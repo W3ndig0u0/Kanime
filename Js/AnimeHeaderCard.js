@@ -14,67 +14,46 @@ function truncate(str, n){
 function animeSelect(id){
   sessionStorage.setItem("AnimeID", id);
   console.log(id)
-  window.location = "../Html/Anime.html"
+  // window.location = "../Html/Anime.html"
   return false;
 }
 
-fetch("https://api.jikan.moe/v3/schedule/" + dayName)
+fetch("https://api.jikan.moe/v4/recommendations/anime/" + dayName)
   .then(response => response.json())
   .then(result => {
-    // !INTE BRA!!! HITTA ETT Bättre SÄTT
-    switch (dayName) {
-      case "sunday":
-        createAnimeHeaderNewsCard(result.sunday);
-      break;
-      case "monday":
-        createAnimeHeaderNewsCard(result.monday);
-      break;
-      case "tuesday":
-        createAnimeHeaderNewsCard(result.tuesday);
-      break;
-      case "wednesday":
-        createAnimeHeaderNewsCard(result.wednesday);
-      break;
-      case "thursday":
-        createAnimeHeaderNewsCard(result.thursday);
-      break;
-      case "friday":
-        createAnimeHeaderNewsCard(result.friday);
-      break;
-      case "saturday":
-        createAnimeHeaderNewsCard(result.saturday);
-      break;
-    }
+    createAnimeHeaderNewsCard(result);
   });
 
   function dateConverser(date) {
-    var str = date;
-    var hour =  str.slice(11,16);
-    
-    return ["Airing Today At: " + hour]
+    if (date == null) return;
+    return ["Airing Today At: " + date]
   }
 
   function capitalizeFirstLetter(string) {
+    if (string == null) return;
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
   
   function createAnimeHeaderNewsCard(result) {
-    for (let i = 0; i < result.length; i++) {
+    if (result == null) return;
+
+    for (let i = 0; i < 6; i++) {
     const headerNewsSection = document.createElement('section');
     headerNewsSection.classList.add('newsCards');
-    
+
+    console.log(result.data[i]);
   
-    const id = result[i].mal_id;
-    const thumbnail = result[i].image_url;
-    const title = result[i].title;
-    const scores = result[i].score;
-    const genre = result[i].genres[0]?.name;
-    const genre2 = result[i].genres[1]?.name;
+    const id = result.data[i].mal_id;
+    const thumbnail = result.data[i].images.jpg.large_image_url;
+    const title = result.data[i].title;
+    const scores = result.data[i].score;
+    const genre = result.data[i].genres[0]?.name;
+    const genre2 = result.data[i].genres[1]?.name;
 
-    const type = result[i].type;
-    const synopsis = result[i].synopsis;
+    const type = result.data[i].type;
+    const synopsis = result.data[i].synopsis;
 
-    const pubDate = result[i].airing_start;
+    const pubDate = result.data[i].broadcast.string;
     const newPubDate = dateConverser(pubDate);
   
     // !Skapar html
@@ -98,7 +77,7 @@ fetch("https://api.jikan.moe/v3/schedule/" + dayName)
           src=${thumbnail}
           alt=${capitalizeFirstLetter(title)}/>
           <p onclick="animeSelect(${id})" class="animeCard source">Learn More</p>
-          <p><i class="fa fa-calendar"></i> ${newPubDate}</p>
+          <p><i class="fa fa-calendar"></i> ${pubDate}</p>
           <h5>${truncate(capitalizeFirstLetter(synopsis), 170)}</h5>
 
           <div>
@@ -117,6 +96,9 @@ fetch("https://api.jikan.moe/v3/schedule/" + dayName)
       `;
           
       headerNewsSection.innerHTML = newsInnerHTML;
-      document.querySelector(".AnimeCardsJs").appendChild(headerNewsSection)
+      var AnimeCards = document.querySelector(".AnimeCardsJs");
+      if (AnimeCards != null) {
+        AnimeCards.appendChild(headerNewsSection)
+      }
     }
   }

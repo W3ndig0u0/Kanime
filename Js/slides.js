@@ -22,7 +22,7 @@ function showSlides(n) {
   if (n > slides.length) {sliderIndex = 1}
   if (n < 1) {sliderIndex = slides.length}
 
-  for (i = 0; i < slides.length; i++) {
+  for (let i = 0; i < slides.length; i++) {
       slides[i].style.display = "none";
       card[i].className = card[i].className.replace(" ani", "");
   }

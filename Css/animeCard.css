@@ -220,7 +220,7 @@
   text-transform: uppercase;
   border-radius: 0px 10px 0px 10px;
   padding: 0.2rem;
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
 .mangaTag {
@@ -231,7 +231,7 @@
   text-transform: uppercase;
   border-radius: 0px 10px 0px 10px;
   padding: 0.2rem;
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
 .lnTag {
@@ -242,7 +242,7 @@
   text-transform: uppercase;
   border-radius: 0px 10px 0px 10px;
   padding: 0.2rem;
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
 .new {
@@ -316,5 +316,5 @@
   text-transform: uppercase;
   border-radius: 10px 0px 10px 0px;
   padding: 0.2rem;
-  font-size: 1rem;
+  font-size: 0.9rem;
 }

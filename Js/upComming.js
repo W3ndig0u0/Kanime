@@ -1,9 +1,8 @@
-const TOP_UPCOMING_ANIME_URL = "https://api.jikan.moe/v3/season/later";
+const TOP_UPCOMING_ANIME_URL = "https://api.jikan.moe/v4/seasons/upcoming";
 
 fetch(TOP_UPCOMING_ANIME_URL)
   .then(response => response.json())
   .then(result => {
-    // console.log(result.anime);
     createTopCommingAnimeCard(result);
   });
 
@@ -18,7 +17,7 @@ fetch(TOP_UPCOMING_ANIME_URL)
   function animeSelect(id){
     sessionStorage.setItem("AnimeID", id);
     console.log(id)
-    window.location = "../Html/Anime.html"
+    // window.location = "../Html/Anime.html"
     return false;
   }
 
@@ -26,24 +25,24 @@ fetch(TOP_UPCOMING_ANIME_URL)
     const upCommingSection = document.createElement('section');
     upCommingSection.classList.add('imgRow');
 
-    if (undefined !== result.anime && result.anime.length) {
-      // for (let i = 0; i < 25; i++) {
-      for (let i = 0; i < result.anime.length; i++) {
+      for (let i = 0; i < 15; i++) {
+      // for (let i = 0; i < result.anime.length; i++) {
       
     const upCommingDiv = document.createElement('div');
     upCommingDiv.classList.add('imgRow');
     
-    const thumbnail = result.anime[i].image_url;
-    const title = result.anime[i].title;
-    const type = result.anime[i].type;
-    const id = result.anime[i].mal_id;
+    // for (let i = 0; i < 20; i++) {
+      // console.log(result.data[i])
 
-    const rank = result.anime[i].rank;
-    const score = result.anime[i].score;
-    const startDate = result.anime[i].start_date;
+      // for (let i = 0; i < result.length; i++) {    
+      const TopCharDiv = document.createElement('div');
+      const thumbnail = result.data[i].images.webp.large_image_url;
+      const id = result.data[i].mal_id;
+      const title = result.data[i].title;
+      const type = result.data[i].type;
 
     const newTitle = capitalizeFirstLetter(title);
-    const newNewTitle = AnimeNameConverter(newTitle);
+    // const newNewTitle = AnimeNameConverter(newTitle);
   
     // !Skapar html
     const recentInnerHTML = 
@@ -52,14 +51,14 @@ fetch(TOP_UPCOMING_ANIME_URL)
       <div class="cardImage">
           <img
           src=${thumbnail}
-          alt=${newNewTitle}/>
+          alt=${newTitle}/>
             <div class="${type}Tag tag">${type}</div>
             <div></div>
             <div class="playWrapper">
             </div>          
           </div>
             <div class="cardInfo">
-            <span class="cardTitle">${truncate(newNewTitle, 35)}</span>
+            <span class="cardTitle">${truncate(newTitle, 35)}</span>
               <p class="cardSynopsis"></p>
               <p class="cardScore">/10⭐</p>
         </div>
@@ -67,8 +66,10 @@ fetch(TOP_UPCOMING_ANIME_URL)
       `;
           
       upCommingDiv.innerHTML = recentInnerHTML;
-      upCommingSection.appendChild(upCommingDiv)
-      document.querySelector(".upComingAnime").appendChild(upCommingSection)
+      upCommingSection.appendChild(upCommingDiv);
+      var upComingAnime = document.querySelector(".upComingAnime");
+      if (upComingAnime != null) {
+        upComingAnime.appendChild(upCommingSection)
     }
   }
 }

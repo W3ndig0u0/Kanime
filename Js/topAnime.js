@@ -1,4 +1,4 @@
-const TOP_ANIME_URL = "https://api.jikan.moe/v3/top/anime/1/bypopularity";
+const TOP_ANIME_URL = "https://api.jikan.moe/v4/top/anime";
 
 fetch(TOP_ANIME_URL)
   .then(response => response.json())
@@ -16,7 +16,7 @@ fetch(TOP_ANIME_URL)
   function animeSelect(id){
     sessionStorage.setItem("AnimeID", id);
     console.log(id)
-    window.location = "../Html/Anime.html"
+    // window.location = "../Html/Anime.html"
     return false;
   }
 
@@ -25,22 +25,22 @@ fetch(TOP_ANIME_URL)
     const TopAnimeSection = document.createElement('section');
     TopAnimeSection.classList.add('imgRow');
 
-    if (undefined !== result.top && result.top.length) {
       // for (let i = 0; i < 10; i++) {
-      for (let i = 0; i < result.top.length; i++) {
+    for (let i = 0; i < 10; i++) {
       
     const TopAnimeDiv = document.createElement('div');
     TopAnimeDiv.classList.add('imgRow');
-    
-    const thumbnail = result.top[i].image_url;
-    const title = result.top[i].title;
-    const type = result.top[i].type;
-    const id = result.top[i].mal_id;
 
-    const rank = result.top[i].rank;
+    const thumbnail = result.data[i].images.webp.large_image_url;
+    const id = result.data[i].mal_id;
+    const title = result.data[i].title;
+    const type = result.data[i].type;
+
+    const rank = result.data[i].rank;
 
     const newTitle = capitalizeFirstLetter(title);
-    const newNewTitle = AnimeNameConverter(newTitle);
+
+    // const newNewTitle = AnimeNameConverter(newTitle);
   
     // !Skapar html
     const recentInnerHTML = 
@@ -49,21 +49,23 @@ fetch(TOP_ANIME_URL)
       <div class="cardImage">
           <img
           src=${thumbnail}
-          alt=${newNewTitle}/>
+          alt=${newTitle}/>
             <div class="${type}Tag tag">${type}</div>
             <div class="epTag">Rank: ${rank}</div>
               <div class="playWrapper">
               </div>
             </div>
             <div class="cardInfo">
-            <span class="cardTitle">${truncate(newNewTitle, 35)}</span>
+            <span class="cardTitle">${truncate(newTitle, 35)}</span>
         </div>
       </div>
       `;
           
       TopAnimeDiv.innerHTML = recentInnerHTML;
       TopAnimeSection.appendChild(TopAnimeDiv)
-      document.querySelector(".topAnimeJs").appendChild(TopAnimeSection)
+      var topAnime = document.querySelector(".topAnimeJs");
+      if (topAnime != null) {
+        topAnime.appendChild(TopAnimeSection)
     }
   }
 }

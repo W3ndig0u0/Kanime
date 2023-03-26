@@ -1,4 +1,4 @@
-const TOP_CHAR_URL = "https://api.jikan.moe/v3/top/characters";
+const TOP_CHAR_URL = "https://api.jikan.moe/v4/top/characters";
 
 fetch(TOP_CHAR_URL)
   .then(response => response.json())
@@ -13,7 +13,7 @@ fetch(TOP_CHAR_URL)
   function charSelect(id){
     sessionStorage.setItem("charId", id);
     console.log(id)
-    window.location = "../Html/Char.html"
+    // window.location = "../Html/Char.html"
     return false;
   }  
   
@@ -25,20 +25,21 @@ fetch(TOP_CHAR_URL)
     const TopCharSection = document.createElement('section');
     TopCharSection.classList.add('imgRow2');
 
-    if (undefined !== result.top && result.top.length) {
       // for (let i = 0; i < 10; i++) {
-      for (let i = 0; i < result.top.length; i++) {
+    for (let i = 0; i <= 15; i++) {
+      // console.log(result.data[i])
       
     const TopCharDiv = document.createElement('div');
-    
-    const thumbnail = result.top[i].image_url;
-    const id = result.top[i].mal_id;
-    const title = result.top[i].title;
 
-    const rank = result.top[i].rank;
+    const thumbnail = result.data[i].images.webp.image_url;
+    const id = result.data[i].mal_id;
+    const title = result.data[i].name;
+
+    const favorites = result.data[i].favorites;
+    // const rank = i;
 
     const newTitle = capitalizeFirstLetter(title);
-    const newNewTitle = AnimeNameConverter(newTitle);
+    // const newNewTitle = AnimeNameConverter(newTitle);
   
     // !Skapar html
     const recentInnerHTML = 
@@ -47,20 +48,22 @@ fetch(TOP_CHAR_URL)
       <div class="cardImage">
           <img
           src=${thumbnail}
-          alt=${newNewTitle}/>
-            <div class="epTag">Rank: ${rank}</div>
+          alt=${newTitle}/>
+            <div class="epTag">D: ${favorites}</div>
             <div class="playWrapper">
             </div>
           </div>
             <div class="cardInfo">
-            <span class="cardTitle">${truncate(newNewTitle, 30)}</span>
+            <span class="cardTitle">${truncate(newTitle, 30)}</span>
         </div>
       </div>
       `;
           
       TopCharDiv.innerHTML = recentInnerHTML;
       TopCharSection.appendChild(TopCharDiv)
-      document.querySelector(".topCharJs").appendChild(TopCharSection)
+      var topChar = document.querySelector(".topCharJs");
+      if (topChar != null) {
+        topChar.appendChild(TopCharSection)
     }
   }
 }

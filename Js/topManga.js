@@ -1,4 +1,4 @@
-const TOP_MANGA_URL = "https://api.jikan.moe/v3/top/manga/1/bypopularity";
+const TOP_MANGA_URL = "https://api.jikan.moe/v4/top/manga";
 
 fetch(TOP_MANGA_URL)
   .then(response => response.json())
@@ -17,7 +17,7 @@ fetch(TOP_MANGA_URL)
   function mangaSelect(id){
     sessionStorage.setItem("mangaId", id);
     console.log(id)
-    window.location = "../Html/Manga.html"
+    // window.location = "../Html/Manga.html"
     return false;
   }
 
@@ -25,22 +25,22 @@ fetch(TOP_MANGA_URL)
     const TopMangaSection = document.createElement('section');
     TopMangaSection.classList.add('imgRow');
 
-    if (undefined !== result.top && result.top.length) {
-      // for (let i = 0; i < 10; i++) {
-      for (let i = 0; i < result.top.length; i++) {
+      for (let i = 0; i < 15; i++) {
+      // for (let i = 0; i < result.top.length; i++) {
       
     const TopMangaDiv = document.createElement('div');
     TopMangaDiv.classList.add('imgRow');
+    // console.log(result)
     
-    const thumbnail = result.top[i].image_url;
-    const id = result.top[i].mal_id;
-    const title = result.top[i].title;
-    const type = result.top[i].type;
+    const thumbnail = result.data[i].images.webp.large_image_url;
+    const id = result.data[i].mal_id;
+    const title = result.data[i].title;
+    const type = result.data[i].type;
 
-    const rank = result.top[i].rank;
+    const rank = result.data[i].rank;
 
     const newTitle = capitalizeFirstLetter(title);
-    const newNewTitle = AnimeNameConverter(newTitle);
+    // const newNewTitle = AnimeNameConverter(newTitle);
   
     // !Skapar html
     const recentInnerHTML = 
@@ -49,21 +49,23 @@ fetch(TOP_MANGA_URL)
       <div class="cardImage">
           <img
           src=${thumbnail}
-          alt=${newNewTitle}/>
+          alt=${newTitle}/>
             <div class="${type}Tag tag">${type}</div>
             <div class="epTag">Rank: ${rank}</div>
             <div class="playWrapper">
             </div>
           </div>
             <div class="cardInfo">
-            <span class="cardTitle">${truncate(newNewTitle, 35)}</span>
+            <span class="cardTitle">${truncate(newTitle, 35)}</span>
         </div>
       </div>
       `;
           
       TopMangaDiv.innerHTML = recentInnerHTML;
       TopMangaSection.appendChild(TopMangaDiv)
-      document.querySelector(".topMangaJs").appendChild(TopMangaSection)
+      var topMangaSection = document.querySelector(".topMangaJs");
+      if (topMangaSection != null) {
+        topMangaSection.appendChild(TopMangaSection)
     }
   }
 }
