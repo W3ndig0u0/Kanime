@@ -318,3 +318,12 @@
   padding: 0.2rem;
   font-size: 0.9rem;
 }
+
+.galleryImg .zoomed{
+  position: absolute !important;
+  /* margin: auto; */
+  /* display: block; */
+  /* height: 40vh; */
+  margin-top: 10vh;
+  overflow-y: auto;
+}

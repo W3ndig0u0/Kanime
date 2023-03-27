@@ -1,23 +1,14 @@
 function getChar() {
   let charId = sessionStorage.getItem("charId");
 
-  fetch("https://api.jikan.moe/v4/characters/" + charId)
+  fetch("https://api.jikan.moe/v4/characters/" + charId + "/full")
     .then((response) => response.json())
     .then((result) => {
         CharPage(result);
+        CharAnime(result);
+        CharManga(result);
+        CharVC(result);
     })
-    .catch((error) => {
-      console.log(error);
-      const commentDiv = document.querySelector('.animePageCommentsSection');
-      // !Skapar html
-      commentDiv.innerHTML = 
-      `
-      <div class="reviewerImgDiv">
-        <h1>Something Went Wrong, please refresh the site<h1/>
-        <p>Sorry D:<p/>
-      </div>
-      `;
-    });
 }
 
 function getCharGallery() {
@@ -26,28 +17,9 @@ function getCharGallery() {
   fetch("https://api.jikan.moe/v4/characters/" + charId + "/pictures")
     .then((response) => response.json())
     .then((result) => {
-      console.log(result);
-      if (result.pictures.length === 0) {
-        noCharPageGallery();
-      }
         CharPageGallery(result);
     });
 }
-
-function noCharPageGallery() {
-  const commentDiv = document.createElement('div');
-    // !Skapar html
-    const CommentsReviewInnerHTML = 
-    `
-    <div class="reviewerImgDiv">
-      <h1>This Character Dosn't have any Gallery yet...<h1/>
-      <p>Sorry D:<p/>
-    </div>
-    `;
-    commentDiv.innerHTML = CommentsReviewInnerHTML;
-    document.querySelector(".charGallery").appendChild(commentDiv)
-}
-
 
 function CharPage(result) {
   const AnimePageSection = document.createElement("section");
@@ -56,117 +28,23 @@ function CharPage(result) {
 
   const galleryAnimeDiv3 = document.createElement("div");
   galleryAnimeDiv3.classList.add("imgRow2");
-  // !vc
-  for (let i = 0; i < result.voice_actors.length; i++) {
-    const personAnime = document.createElement("div");
-    personAnime.classList.add("vcCard");
 
-    const AnimeThumbnail = result.voice_actors[i].image_url;
-    const AnimeTitle = result.voice_actors[i].name;
-    const AnimeId = result.voice_actors[i].mal_id;
-    const language = result.voice_actors[i].language;
+  console.log(result)
 
-    const MovieInnerHTML = `
-        <div onclick="personSelect(${AnimeId})" class="imgCard animeCard">
-        <div class="cardImage">
-            <img
-            src=${AnimeThumbnail}
-            alt=${AnimeTitle}       
-            <div</div>
-            <div class="playWrapper">
-            </div>          
-            </div>
-            <div class="cardInfo">
-              <h2 class="cardTitle">${truncate(AnimeTitle, 25)}</h2>
-              <p> ${language} Role</p>
-          </div>
-        </div>
-      `;
 
-    personAnime.innerHTML = MovieInnerHTML;
-    galleryAnimeDiv3.appendChild(personAnime);
-    document.querySelector(".CharVoiceActors").appendChild(galleryAnimeDiv3);
+  const thumbnail = result.data.images.jpg.image_url;
+
+  const title = result.data.name;
+  const titleJp = result.data.name_kanji;
+  const MalURL = result.data.url;
+
+  const members = result.data.favorites;
+  const synopsis = result.data.about;
+  var AnimeTitle = result.data.nicknames[0];
+
+  for (let i = 1; i < result.data.nicknames.length; i++) {
+     AnimeTitle += " " + result.data.nicknames[i];  
   }
-
-  //!manga
-  const galleryAnimeDiv = document.createElement("div");
-  galleryAnimeDiv.classList.add("imgRow2");
-
-  for (let i = 0; i < result.mangaography.length; i++) {
-    const personAnime = document.createElement("div");
-    personAnime.classList.add("vcCard");
-
-    const AnimeThumbnail = result.mangaography[i].image_url;
-    const AnimeTitle = result.mangaography[i].name;
-    const AnimeId = result.mangaography[i].mal_id;
-
-    const role = result.mangaography[i].role;
-
-    const MovieInnerHTML = `
-          <div onclick="mangaSelect(${AnimeId})" class="imgCard animeCard">
-          <div class="cardImage">
-              <img
-              src=${AnimeThumbnail}
-              alt=${AnimeTitle}       
-              <div</div>
-              <div class="playWrapper">
-              </div>          
-              </div>
-              <div class="cardInfo">
-                <h2 class="cardTitle">${truncate(AnimeTitle, 25)}</h2>
-                <p> ${role} Role</p>
-            </div>
-          </div>
-        `;
-
-    personAnime.innerHTML = MovieInnerHTML;
-    galleryAnimeDiv.appendChild(personAnime);
-    document.querySelector(".charManga").appendChild(galleryAnimeDiv);
-  }
-
-  // !anime
-  const galleryAnimeDiv2 = document.createElement("div");
-  galleryAnimeDiv2.classList.add("imgRow2");
-
-  for (let i = 0; i < result.animeography.length; i++) {
-    const personAnime = document.createElement("div");
-    personAnime.classList.add("vcCard");
-  
-    const AnimeThumbnail = result.animeography[i].image_url;
-    const AnimeTitle = result.animeography[i].name;
-    const AnimeId = result.animeography[i].mal_id;
-    const role = result.animeography[i].role;
-
-    const MovieInnerHTML = `
-          <div onclick="animeSelect(${AnimeId})" class="imgCard animeCard">
-          <div class="cardImage">
-              <img
-              src=${AnimeThumbnail}
-              alt=${AnimeTitle}       
-              <div</div>
-              <div class="playWrapper">
-              </div>
-              </div>
-              <div class="cardInfo">
-                <h2 class="cardTitle">${truncate(AnimeTitle, 25)}</h2>
-                <p> ${role} Role</p>
-            </div>
-          </div>
-        `;
-
-    personAnime.innerHTML = MovieInnerHTML;
-    galleryAnimeDiv2.appendChild(personAnime);
-    document.querySelector(".charMovies").appendChild(galleryAnimeDiv2);
-  }
-
-  const thumbnail = result.image_url;
-
-  const title = result.name;
-  const titleJp = result.name_kanji;
-  const MalURL = result.url;
-
-  const members = result.member_favorites;
-  const synopsis = result.about;
 
   // !Skapar html
   const PageInnerHTML = `
@@ -232,8 +110,12 @@ function CharPage(result) {
                 </svg>
               </label>
             </div>
-          </div>
-
+            </div>
+            <div >
+            <h1>Imagine not fixing CSS 😂💀 </h1>
+            <span class="beforeState charNickName">NickNames: </span>
+            <span class="state">${AnimeTitle}</span>
+            </div>
             </div>
           </div>
         </div>
@@ -248,7 +130,7 @@ function CharPage(result) {
           </div>
           <div>
             <span class="beforeState">Birthday: </span>
-            <span class="state">Null</span>
+            <span class="state">Return Birthday... ;(</span>
           </div>
           </div>
           <div>
@@ -269,7 +151,11 @@ function CharPage(result) {
 
   AnimePageDiv.innerHTML = PageInnerHTML;
   AnimePageSection.appendChild(AnimePageDiv);
-  document.querySelector(".charPage").appendChild(AnimePageSection);
+
+  var charPage = document.querySelector(".charPage");
+  if (charPage == null) return;
+  charPage.appendChild(AnimePageSection);
+
   menuBgChange(thumbnail);
 }
 
@@ -279,37 +165,27 @@ function truncate(str, n){
   }
   return (str.length > n) ? str.substr(0, n-1) + '&hellip;' : str;
 };
-function animeSelect(id){
-  sessionStorage.setItem("AnimeID", id);
-  console.log(id)
-  window.location = "../Html/Anime.html"
-  return false;
-}
 
-function personSelect(id){
-  sessionStorage.setItem("personId", id);
-  console.log(id)
-  window.location = "../Html/Person.html"
-  return false;
-}
+function cutWord(str, end){
+  if (str === null || str === undefined) {
+    return "Null"
+  }
 
-function mangaSelect(id){
-  sessionStorage.setItem("mangaId", id);
-  console.log(id)
-  window.location = "../Html/Manga.html"
-  return false;
-}
+  // !FIXA SÅ ATT DET RETURNAR FÖDELSE
+  var index = str.indexOf("Birthdate:");
+  var indexEnds = str.lastIndexOf('(');
 
-function charSelect(id){
-  sessionStorage.setItem("charId", id);
-  console.log(id)
-  window.location = "../Html/Char.html"
-  return false;
-}
+  var birthday = str.split(index, indexEnds);
+
+  birthday =   str.split("Birthdate:").pop()[0];
+
+  return birthday;
+};
+
 
 function menuBgChange(Imgurl) {
-  const menuBgColor1 = " rgba(2, 49, 90, 0.88),";
-  const menuBgColor2 = " rgba(2, 49, 90, 0.78) ";
+  const menuBgColor1 = " rgba(2, 49, 90, 0.8), ";
+  const menuBgColor2 = " rgba(2, 49, 90, 0.9)";
   const menuBg =
     "linear-gradient(to bottom," +
     menuBgColor1 +
@@ -317,32 +193,192 @@ function menuBgChange(Imgurl) {
     "), url(" +
     Imgurl +
     ")";
-  document.querySelector(".menuAnimePage").style.backgroundImage = menuBg;
+    
+    var bg = document.querySelector(".menuAnimePage");
+    if (bg == null) return
+    bg.style.backgroundImage = menuBg
 }
 
 function CharPageGallery(result) {
-  for (let i = 0; i < result.pictures.length; i++) {
+  for (let i = 0; i < result.data.length; i++) {
     const galleryAnime = document.createElement("div");
     galleryAnime.classList.add("vcCard2");
 
-    const AnimeThumbnail = result.pictures[i].small;
+    const galleryImg = result.data[i].jpg.image_url;
 
     const MovieInnerHTML = `
           <div class="imgCard animeCard">
           <div class="cardImage">
               <img
-              src=${AnimeThumbnail}
-              alt=${AnimeThumbnail}       
+              src=${galleryImg}
+              alt=${galleryImg}       
             </div>
           </div>
         `;
 
     galleryAnime.innerHTML = MovieInnerHTML;
-    document.querySelector(".charGallery").appendChild(galleryAnime);
+    var gallery = document.querySelector(".charGallery");
+    if (gallery == null) return
+    gallery.appendChild(galleryAnime);
+  }
+
+  // TODO zoom in image
+  // document.querySelector(".galleryImg").addEventListener('click', function(e) {
+    // const target = e.target;
+    // if (target == null) return;      
+    // target.classList.toggle('zoomed')
+  // })
+}
+
+function CharAnime(result) {
+  const charAnimeDiv = document.createElement("div");
+  charAnimeDiv.classList.add("imgRow2");
+
+  // for (let i = 0; i < result.data.anime.length; i++) {
+  for (let i = 0; i < result.data.anime.length; i++) {
+    const charAnime = document.createElement("div");
+    charAnime.classList.add("vcCard");
+    const resultAnime = result.data.anime[i];
+
+    const AnimeThumbnail = resultAnime.anime.images.webp.large_image_url;
+    const AnimeTitle = resultAnime.anime.title;
+    const AnimeId = resultAnime.anime.mal_id;
+    const role = resultAnime.role
+    
+    const MovieInnerHTML = `
+          <div onclick="animeSelect(${AnimeId})" class="imgCard animeCard">
+          <div class="cardImage">
+              <img
+              src=${AnimeThumbnail}
+              alt=${AnimeTitle}       
+              <div</div>
+              <div class="tvTag tag">TV</div>
+              <div class="playWrapper">
+              </div>
+              </div>
+              <div class="cardInfo">
+                <h2 class="cardTitle">${truncate(AnimeTitle, 25)}</h2>
+                <p>Role: ${role} Character</p>
+            </div>
+          </div>
+        `;
+
+    charAnime.innerHTML = MovieInnerHTML;
+    charAnimeDiv.appendChild(charAnime);
+    const charMovies = document.querySelector(".charMovies");
+    if (charMovies == null) return;
+    charMovies.appendChild(charAnimeDiv);
   }
 }
 
+function CharManga(result) {
+  const charMangaDiv = document.createElement("div");
+  charMangaDiv.classList.add("imgRow2");
 
+  for (let i = 0; i < result.data.manga.length; i++) {
+  // for (let i = 0; i < 15; i++) {
+    const charManga = document.createElement("div");
+    charManga.classList.add("vcCard");
+    const resultManga = result.data.manga[i];
+
+    const MangaThumbnail = resultManga.manga.images.webp.large_image_url;
+    const MangaTitle = resultManga.manga.title;
+    const MangaId = resultManga.manga.mal_id;
+    const role = resultManga.role
+    
+    const MovieInnerHTML = `
+          <div onclick="mangaSelect(${MangaId})" class="imgCard MangaCard">
+          <div class="cardImage">
+              <img
+              src=${MangaThumbnail}
+              alt=${MangaTitle}       
+              <div</div>
+              <div class="MangaTag tag">Manga</div>
+              <div class="playWrapper">
+              </div>
+              </div>
+              <div class="cardInfo">
+                <h2 class="cardTitle">${truncate(MangaTitle, 25)}</h2>
+                <p>Role: ${role} Character</p>
+            </div>
+          </div>
+        `;
+
+    charManga.innerHTML = MovieInnerHTML;
+    charMangaDiv.appendChild(charManga);
+    const charMovies = document.querySelector(".charManga");
+    if (charMovies == null) return;
+    charMovies.appendChild(charMangaDiv);
+  }
+}
+
+function CharVC(result) {
+  const charPersonDiv = document.createElement("div");
+  charPersonDiv.classList.add("imgRow2");
+
+  for (let i = 0; i < result.data.voices.length; i++) {
+  // for (let i = 0; i < 15; i++) {
+    const charPerson = document.createElement("div");
+    charPerson.classList.add("vcCard");
+    const resultPerson = result.data.voices[i];
+
+    const PersonThumbnail = resultPerson.person.images.jpg.image_url;
+    const PersonTitle = resultPerson.person.name;
+    const PersonId = resultPerson.person.mal_id;
+    const language = resultPerson.language
+    
+    const MovieInnerHTML = `
+          <div onclick="personSelect(${PersonId})" class="imgCard PersonCard">
+          <div class="cardImage">
+              <img
+              src=${PersonThumbnail}
+              alt=${PersonTitle}       
+              <div</div>
+              <div class="playWrapper">
+              </div>
+              </div>
+              <div class="cardInfo">
+                <h2 class="cardTitle">${truncate(PersonTitle, 25)}</h2>
+                <p>Language: ${language} Character</p>
+            </div>
+          </div>
+        `;
+
+    charPerson.innerHTML = MovieInnerHTML;
+    charPersonDiv.appendChild(charPerson);
+    const charVoiceActors = document.querySelector(".CharVoiceActors");
+    if (charVoiceActors == null) return;
+    charVoiceActors.appendChild(charPersonDiv);
+  }
+}
+
+function animeSelect(id){
+  sessionStorage.setItem("AnimeID", id);
+  console.log(id)
+  window.location.assign("../Html/Anime.html");
+  return false;
+}
+
+function personSelect(id){
+  sessionStorage.setItem("personId", id);
+  console.log(id)
+  window.location.assign("../Html/Person.html");
+  return false;
+}
+
+function mangaSelect(id){
+  sessionStorage.setItem("mangaId", id);
+  console.log(id)
+  window.location.assign("../Html/Manga.html");
+  return false;
+}
+
+function charSelect(id){
+  sessionStorage.setItem("charId", id);
+  console.log(id)
+  window.location.assign("../Html/Char.html");
+  return false;
+}
 
 getChar();
 getCharGallery();

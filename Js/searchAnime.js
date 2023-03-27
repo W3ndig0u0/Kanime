@@ -1,4 +1,4 @@
-const searchResults = document.getElementById("searchResults");
+// const searchResults = document.getElementById("searchResults");
 
 function searchAnime(event) {
     event.preventDefault();

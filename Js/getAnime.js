@@ -534,6 +534,7 @@ function AnimeRecommendations(result) {
     const AnimeTitle = result.recommendations[i].title;
     const AnimeId = result.recommendations[i].mal_id;
     const role = result.recommendations[i].recommendation_count;
+    
 
     const MovieInnerHTML = `
           <div onclick="animeSelect(${AnimeId})" class="imgCard animeCard">
