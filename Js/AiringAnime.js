@@ -10,16 +10,7 @@ fetch("https://api.jikan.moe/v4/seasons/now")
   
   function truncate(str, n){
     return (str.length > n) ? str.substr(0, n-1) + '&hellip;' : str;
-  };
-
-  function animeSelect(id){
-    sessionStorage.setItem("AnimeID", id);
-    window.location.assign("../Html/Anime.html");
-    console.log(id)
-    return false;
-  }
-
-  
+  };  
 
   function createSeasonAnimeCard(result) {
     const TopCharSection = document.createElement('section');
@@ -66,4 +57,11 @@ fetch("https://api.jikan.moe/v4/seasons/now")
         airingAnime.appendChild(TopCharSection);
       }
     }
+  }
+
+  function animeSelect(id){
+    sessionStorage.setItem("AnimeID", id);
+    window.location.assign("../Html/Anime.html");
+    console.log(id)
+    return false;
   }

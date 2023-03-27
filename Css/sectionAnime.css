@@ -83,6 +83,11 @@
   justify-items: center;
 }
 
+.imgRow2 .charDiv{
+  margin-bottom: 3rem;
+
+}
+
 .airingAnimeJs .imgRow2 {
   padding-right: 0rem;
 }

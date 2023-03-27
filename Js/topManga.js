@@ -14,13 +14,6 @@ fetch(TOP_MANGA_URL)
     return (str.length > n) ? str.substr(0, n-1) + '&hellip;' : str;
   };
 
-  function mangaSelect(id){
-    sessionStorage.setItem("mangaId", id);
-    console.log(id)
-    // window.location = "../Html/Manga.html"
-    return false;
-  }
-
   function createTopMangaCard(result) {
     const TopMangaSection = document.createElement('section');
     TopMangaSection.classList.add('imgRow');
@@ -68,4 +61,12 @@ fetch(TOP_MANGA_URL)
         topMangaSection.appendChild(TopMangaSection)
     }
   }
+}
+
+
+function mangaSelect(id){
+  sessionStorage.setItem("mangaId", id);
+  console.log(id)
+  window.location.assign("../Html/Manga.html");
+  return false;
 }

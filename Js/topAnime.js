@@ -13,14 +13,6 @@ fetch(TOP_ANIME_URL)
     return (str.length > n) ? str.substr(0, n-1) + '&hellip;' : str;
   };
 
-  function animeSelect(id){
-    sessionStorage.setItem("AnimeID", id);
-    console.log(id)
-    // window.location = "../Html/Anime.html"
-    return false;
-  }
-
-
   function createTopAnimeCard(result) {
     const TopAnimeSection = document.createElement('section');
     TopAnimeSection.classList.add('imgRow');
@@ -68,4 +60,11 @@ fetch(TOP_ANIME_URL)
         topAnime.appendChild(TopAnimeSection)
     }
   }
+}
+
+function animeSelect(id){
+  sessionStorage.setItem("AnimeID", id);
+  console.log(id)
+  window.location.assign("../Html/Anime.html");
+  return false;
 }

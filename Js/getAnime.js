@@ -4,52 +4,32 @@ function getAnime() {
   fetch("https://api.jikan.moe/v4/anime/" + animeId)
   .then(response => response.json())
   .then(result => {
-    console.log(result);
       AnimePage(result);
-  })
-  .catch(error => {
-    console.error(error);
-    getAnime();
   })
 }
 
-function getAnimeComments() {
+function getAnimeChar() {
   let animeId = sessionStorage.getItem("AnimeID");
   
-  fetch("https://api.jikan.moe/v4/anime/" + animeId + "/reviews/1")
+  fetch("https://api.jikan.moe/v4/anime/" + animeId + "/characters")
   .then(response => response.json())
   .then(result => {
-    if (result.reviews.length === 0) {
-      noPageComments();
+    if (result.data.length === 0) {
+      noPageCharachter();
     }
     else{
-      AnimeCommentsPage(result.reviews);
+      AnimeCharPage(result);
     }
-  })
-  .catch(error => {
-    console.error(error);
-    getAnimeComments();
   })
 }
 
 
 function getAnimeStaff() {
   let animeId = sessionStorage.getItem("AnimeID");
-  fetch("https://api.jikan.moe/v4/anime/" + animeId + "/characters_staff")
+  fetch("https://api.jikan.moe/v4/anime/" + animeId + "/staff")
   .then(response => response.json())
   .then(result => {
-    if (result.staff.length === 0) {
-      noPageStaff();
-    }
-      
-    if (result.characters.length === 0) {
-      noPageCharachter();
-    }
     AnimePageStaff(result);
-  })
-  .catch(error => {
-    console.error(error);
-    getAnimeStaff();
   })
 }
 
@@ -59,15 +39,13 @@ function getAnimeGallery() {
   fetch("https://api.jikan.moe/v4/anime/" + animeId + "/pictures")
   .then(response => response.json())
   .then(result => {
-    if (result.pictures.length === 0) {
+    if (result.data.length === 0) {
       noPageGallery();
     }
+    else{
       AnimePageGallery(result);
+    }
   })  
-  .catch(error => {
-    console.error(error);
-    getAnimeGallery();
-  })
 }
 
 function getAnimeRecommendations() {
@@ -76,14 +54,7 @@ function getAnimeRecommendations() {
   fetch("https://api.jikan.moe/v4/anime/" + animeId + "/recommendations")
   .then(response => response.json())
   .then(result => {
-    if (result.recommendations.length === 0) {
-      noAnimeRecommendations();
-    }
       AnimeRecommendations(result);
-  })
-  .catch(error => {
-    console.error(error);
-    getAnimeRecommendations();
   })
 }
 
@@ -93,14 +64,27 @@ function getAnimeNews() {
   fetch("https://api.jikan.moe/v4/anime/" + animeId + "/news")
   .then(response => response.json())
   .then(result => {
-    if (result.articles.length === 0) {
-      noAnimeNews();
+    if (result.data.length === 0) {
+      noAnimeNewsletter();
     }
+    else{
       AnimeNews(result);
+    }
   })
-  .catch(error => {
-    console.error(error);
-    getAnimeNews();
+}
+
+function getAnimeReview() {
+  let animeId = sessionStorage.getItem("AnimeID");
+  
+  fetch("https://api.jikan.moe/v4/anime/" + animeId + "/reviews")
+  .then(response => response.json())
+  .then(result => {
+    if (result.data.length === 0) {
+      noAnimeReview();
+    }
+    else{
+      AnimeReview(result);
+    }
   })
 }
 
@@ -149,42 +133,41 @@ function AnimePage(result) {
   const AnimePageDiv = document.createElement('div');
   AnimePageDiv.classList.add('statePage');
   
-  const thumbnail = result.image_url;
+  const thumbnail = result.data.images.jpg.large_image_url;
 
-  const titleEn = result.title_english;
-  const title = result.title;
+  const titleJp = result.data.title_japanese;
+  const title = result.data.title_english;
 
-  const type = result.type;
-  const aired = result.aired.string;
-  const broadcast = result.broadcast;
-  const ep = result.episodes;
-  const source = result.source;
-  const status = result.status;
-  const premiered = result.premiered;
-  const MalURL = result.url;
-  const duration = result.duration;
+  const type = result.data.type;
+  const aired = result.data.aired.string;
+  const status = result.data.status;
+  const ep = result.data.episodes;
+  const source = result.data.source;
+  const rating = result.data.rating;
+  const MalURL = result.data.url;
+  const duration = result.data.duration;
 
-  const producers = result.producers[0]?.name;
-  const studio = result.studios[0]?.name;
+  const producers = result.data.producers[0]?.name;
+  const studio = result.data.studios[0]?.name;
 
-  const genres = result.genres[0]?.name;
-  const genres1 = result.genres[1]?.name;
-  const genres2 = result.genres[2]?.name;
+  const genres = result.data.genres[0]?.name;
+  const genres1 = result.data.genres[1]?.name;
+  const genres2 = result.data.genres[2]?.name;
 
-  const rank = result.rank;
-  const popularity = result.popularity;
-  const members = result.members;
+  const rank = result.data.rank;
+  const popularity = result.data.popularity;
+  const members = result.data.members;
 
-  const score = result.score;
+  const score = result.data.score;
   const ColorScore = scoreColor(score);
 
-  const scored_by = result.scored_by;
-  const synopsis = result.synopsis;
+  const scored_by = result.data.scored_by;
+  const synopsis = result.data.synopsis;
 
-  const trailer_url = result.trailer_url;
+  const trailer_url = result.data.trailer.embed_url;
 
   const newTitle = capitalizeFirstLetter(title);
-  const newTitleEn = capitalizeFirstLetter(titleEn);
+  const newTitleEn = capitalizeFirstLetter(titleJp);
 
   // !Skapar html
   const PageInnerHTML = 
@@ -201,7 +184,7 @@ function AnimePage(result) {
         <div class="titleFlex">
           <div class="titles">
             <p class="title">${newTitle}</p>
-            <p class="titleJp">${newTitleEn}</p>
+            <p class="titleJp">${titleJp}</p>
 
             <div id="main-content">
           <div>
@@ -307,16 +290,16 @@ function AnimePage(result) {
 
         <div class="animeInfo">
           <div>
-            <span class="beforeState">Premiered: </span>
-            <span class="state">${premiered}</span>
+            <span class="beforeState">Rating: </span>
+            <span class="state">${rating}</span>
           </div>
           <div>
-            <span class="beforeState">Airing: </span>
+            <span class="beforeState">Aired: </span>
             <span class="state">${aired}</span>
           </div>
           <div>
-            <span class="beforeState">Broadcast: </span>
-            <span class="state">${broadcast}</span>
+            <span class="beforeState">Airing Status: </span>
+            <span class="state">${status}</span>
           </div>
         </div>
 
@@ -355,7 +338,7 @@ function AnimePage(result) {
 
     AnimePageDiv.innerHTML = PageInnerHTML;
     AnimePageSection.appendChild(AnimePageDiv)
-    document.querySelector(".animePage").appendChild(AnimePageSection)
+    document.querySelector(".animePage")?.appendChild(AnimePageSection)
     document.querySelector(".score").style.backgroundColor = ColorScore;
     menuBgChange(thumbnail)
 }
@@ -379,133 +362,102 @@ function dateConverser(dates) {
   var newDate =  str.slice(5);
   var mounth =  12;
 
-  if (newmounth =  newDate.slice(0,1) == "0") {
-    var mounth =  newDate.slice(1,2);
-  }
-  else{
-    var mounth =  newDate.slice(0,2);
-  }
   var date =  newDate.slice(3,5);
-  var hour =  newDate.slice(6,11);
+  var year =  str.slice(0,4);
 
-  return [date + " " +  monthNames[mounth - 1] + ", " + hour]
+  return [date + " " +  monthNames[mounth - 1] + ", " + year]
 
 }
 
 
-function AnimeCommentsPage(result) {
-  for (let i = 0; i < result.length; i++) {
-  const commentDiv = document.createElement('div');
-  commentDiv.classList.add("commentDiv")
-    const content = result[i].content;
-    const date = result[i].date;
-    const votes = result[i].helpful_count;
-    const reviewerImg = result[i].reviewer.image_url;
-    const reviewerName = result[i].reviewer.username;
-    const url = result[i].reviewer.url;
-    
-    // !Skapar html
-    const CommentsReviewInnerHTML = 
-    `
-    <div class="reviewerImgDiv">
-      <a href=${url} target="_blank" title="noopener">
-        <img class="reviewerImg" src=${reviewerImg} alt=${reviewerName + date}>
-        <p class="reviewName">${reviewerName}</p>
-        <a/>
-      </div>
-      
-      <div class="reviewInfo">
-      <div class="reviewInfoTop">
-        <span class="reviewDate">${dateConverser(date)}</span>
-      </div>
-        <p class="revireContent">${truncate(content, 900)}</p>
-    </div>
-    `;
-    commentDiv.innerHTML = CommentsReviewInnerHTML;
-    document.querySelector(".animePageComments")?.appendChild(commentDiv)
+function AnimeCharPage(result) {
+  const TopCharSection = document.createElement('section');
+  TopCharSection.classList.add('imgRow2');
+
+  // for (let i = 0; i < result.data.length; i++) {
+    for (let i = 0; i < 20; i++) {
+      const charDiv = document.createElement('div');
+  charDiv.classList.add("charDiv")
+
+  const charThumbnail = result.data[i].character.images.jpg.image_url;
+  const charName = result.data[i].character.name;
+  const charUrl = result.data[i].character.url;
+  const charId = result.data[i].character.mal_id;
+  const charFavorites = result.data[i].favorites;
+  const charRoles = result.data[i].role;
+  // const language = result.data[i].language
+  
+  const charInnerHTML = `
+        <div onclick="charSelect(${charId})" class="imgCard PersonCard">
+        <div class="cardImage">
+            <img
+            src=${charThumbnail}
+            alt=${charName}       
+            <div</div>
+            <div class="playWrapper">
+            </div>
+            </div>
+            <div class="cardInfo">
+              <h2 class="cardTitle">${truncate(charName, 20)}</h2>
+              <p>${charRoles} Character</p>
+          </div>
+        </div>
+      `;
+
+
+    charDiv.innerHTML = charInnerHTML;
+    TopCharSection.appendChild(charDiv);
+    document.querySelector(".animePageChar")?.appendChild(TopCharSection)
   }
 }
 
 function AnimePageStaff(result) {
-  // !char
-  const galleryAnimeDiv2 = document.createElement("div");
-  galleryAnimeDiv2.classList.add("imgRow2");
-  for (let i = 0; i < result.characters.length; i++) {
-    const CharAnime = document.createElement("div");
-    CharAnime.classList.add("vcCard");
+  const staffAnimeDiv = document.createElement("div");
+  staffAnimeDiv.classList.add("imgRow2");
+  for (let i = 0; i < 10; i++) {
+    // for (let i = 0; i < result.data.length; i++) {
+      const staffAnime = document.createElement("div");
+    staffAnime.classList.add("vcCard");
 
-    const AnimeThumbnail = result.characters[i].image_url;
-    const AnimeTitle = result.characters[i].name;
-    const AnimeId = result.characters[i].mal_id;
-    const role = result.characters[i].role;
+    const staffThumbnail = result.data[i].person.images.jpg.image_url;
+    const staffName = result.data[i].person.name;
+    const staffId = result.data[i].person.mal_id;
+    const staffRoles = result.data[i].positions;
 
-    const MovieInnerHTML = `
-          <div onclick="charSelect(${AnimeId})" class="imgCard animeCard">
+    const StaffInnerHTML = `
+          <div onclick="personSelect(${staffId})" class="imgCard animeCard">
           <div class="cardImage">
               <img
-              src=${AnimeThumbnail}
-              alt=${AnimeTitle}       
+              src=${staffThumbnail}
+              alt=${staffThumbnail}       
               <div</div>
               <div class="playWrapper">
               </div>
               </div>
               <div class="cardInfo">
-                <h2 class="cardTitle">${truncate(AnimeTitle, 25)}</h2>
-                <p> ${role} Role</p>
+                <h2 class="cardTitle">${truncate(staffName, 25)}</h2>
+                <p> ${staffRoles}</p>
             </div>
           </div>
         `;
 
-    CharAnime.innerHTML = MovieInnerHTML;
-    galleryAnimeDiv2.appendChild(CharAnime);
-    document.querySelector(".animePageChar").appendChild(galleryAnimeDiv2);
-  }
-
-  // !staff
-  const galleryAnimeDiv = document.createElement("div");
-  galleryAnimeDiv.classList.add("imgRow2");
-
-  for (let i = 0; i < result.staff.length; i++) {
-    const StaffAnime = document.createElement("div");
-    StaffAnime.classList.add("vcCard");
-
-    const AnimeThumbnail = result.staff[i].image_url;
-    const AnimeTitle = result.staff[i].name;
-    const AnimeId = result.staff[i].mal_id;
-    const role = result.staff[i].positions[0];
-
-    const MovieInnerHTML = `
-          <div onclick="personSelect(${AnimeId})" class="imgCard animeCard">
-          <div class="cardImage">
-              <img
-              src=${AnimeThumbnail}
-              alt=${AnimeTitle}       
-              <div</div>
-              <div class="playWrapper">
-              </div>
-              </div>
-              <div class="cardInfo">
-                <h2 class="cardTitle">${truncate(AnimeTitle, 25)}</h2>
-                <p> ${role} Role</p>
-            </div>
-          </div>
-        `;
-
-    StaffAnime.innerHTML = MovieInnerHTML;
-    galleryAnimeDiv.appendChild(StaffAnime);
-    document.querySelector(".animePageStaff").appendChild(galleryAnimeDiv);
+    staffAnime.innerHTML = StaffInnerHTML;
+    staffAnimeDiv.appendChild(staffAnime);
+    document.querySelector(".animePageStaff")?.appendChild(staffAnimeDiv);
   }
 }
+
 
 function AnimePageGallery(result) {
   const galleryAnimeDiv = document.createElement("div");
   galleryAnimeDiv.classList.add("imgRow2");
 
-  for (let i = 0; i < result.pictures.length; i++) {
+  for (let i = 0; i < 10; i++) {
+    if (result.data[i] == null) return;
     const galleryAnime = document.createElement("div");
     galleryAnime.classList.add("vcCard2");
 
-    const AnimeThumbnail = result.pictures[i].small;
+    const AnimeThumbnail = result.data[i].jpg.large_image_url;
     const MovieInnerHTML = `
           <div class="imgCard animeCard">
           <div class="cardImage">
@@ -518,44 +470,7 @@ function AnimePageGallery(result) {
 
         galleryAnime.innerHTML = MovieInnerHTML;
         galleryAnimeDiv.appendChild(galleryAnime);
-    document.querySelector(".animePageGallery").appendChild(galleryAnimeDiv);
-  }
-}
-
-function AnimeRecommendations(result) {
-  const galleryAnimeDiv = document.createElement("div");
-  galleryAnimeDiv.classList.add("imgRow2");
-
-  for (let i = 0; i < result.recommendations.length; i++) {
-    const galleryAnime = document.createElement("div");
-    galleryAnime.classList.add("vcCard");
-
-    const AnimeThumbnail = result.recommendations[i].image_url;
-    const AnimeTitle = result.recommendations[i].title;
-    const AnimeId = result.recommendations[i].mal_id;
-    const role = result.recommendations[i].recommendation_count;
-    
-
-    const MovieInnerHTML = `
-          <div onclick="animeSelect(${AnimeId})" class="imgCard animeCard">
-          <div class="cardImage">
-              <img
-              src=${AnimeThumbnail}
-              alt=${AnimeTitle}       
-              <div</div>
-              <div class="playWrapper">
-              </div>
-              </div>
-              <div class="cardInfo">
-                <h2 class="cardTitle">${truncate(AnimeTitle, 25)}</h2>
-                <p>Remmendation Points: ${role}</p>
-            </div>
-          </div>
-        `;
-
-    galleryAnime.innerHTML = MovieInnerHTML;
-    galleryAnimeDiv.appendChild(galleryAnime);
-    document.querySelector(".animePageRecomendetions").appendChild(galleryAnimeDiv);
+    document.querySelector(".animePageGallery")?.appendChild(galleryAnimeDiv);
   }
 }
 
@@ -563,30 +478,31 @@ function AnimeNews(result) {
   const galleryAnimeDiv = document.createElement("div");
   galleryAnimeDiv.classList.add("newsRow");
 
-  for (let i = 0; i < result.articles.length; i++) {
+  // for (let i = 0; i < result.data.length; i++) {
+    for (let i = 0; i < 6; i++) {
+
     const galleryAnime = document.createElement("div");
     galleryAnime.classList.add("newsSection2");
 
-    const AnimeThumbnail = result.articles[i].image_url;
-    const AnimeTitle = result.articles[i].title;
-    const AnimeId = result.articles[i].mal_id;
-    const url = result.articles[i].url;
-    const author_name = result.articles[i].author_name;
-    const intro = result.articles[i].intro;
-    const date = result.articles[i].date;
+    const AnimeThumbnail = result.data[i].images.jpg.image_url;
+    const AnimeTitle = result.data[i].author_username;
+    const AnimeId = result.data[i].mal_id;
+    const url = result.data[i].url;
+    const excerpt = result.data[i].excerpt;
+    const date = result.data[i].date;
 
     const MovieInnerHTML = `
         <div class="newsLetter">
           <div class="newsImg">
             <img
             src=${AnimeThumbnail}
-            alt=${AnimeTitle}/>
+            alt=${AnimeThumbnail}/>
           </div>
           <div class="newsCardInfo">
             <a href=${url} target="_blank" rel="noopener" title=${url} aria-label=${AnimeTitle}>
-              <h2>${truncate(intro,90)}"</h2>
+              <h2>${truncate(excerpt,90)}"</h2>
             <a/>
-              <p>Source: ${author_name}</p>
+              <p>Source: ${AnimeTitle}</p>
               <h6><i class="fa fa-calendar"></i> ${dateConverser(date)}</h6>
           </div>
         </div>
@@ -594,23 +510,102 @@ function AnimeNews(result) {
 
     galleryAnime.innerHTML = MovieInnerHTML;
     galleryAnimeDiv.appendChild(galleryAnime);
-    document.querySelector(".animePageNews").appendChild(galleryAnimeDiv);
+    document.querySelector(".animePageNews")?.appendChild(galleryAnimeDiv);
   }
 }
 
-// !Fail Catches
+function AnimeRecommendations(result) {
+  const recAnimeSection = document.createElement('section');
+  recAnimeSection.classList.add('imgRow2');
 
-function noAnimeNews() {
-  const commentDiv = document.createElement('div');
-    const CommentsReviewInnerHTML = 
-    `
-    <div class="reviewerImgDiv">
-      <h1>This Anime Dosn't have any News...<h1/>
-      <p>Sorry D:<p/>
+  for (let i = 0; i < 20; i++) {
+  
+  const recAnimeDiv = document.createElement('div');
+  recAnimeDiv.classList.add('imgRow');
+
+  const thumbnail = result.data[i].entry.images.webp.large_image_url;
+  const id = result.data[i].entry.mal_id;
+  const title = result.data[i].entry.title;
+  const recommendations = result.data[i].votes;
+
+  const newTitle = capitalizeFirstLetter(title);
+
+  // const newNewTitle = AnimeNameConverter(newTitle);
+
+  // !Skapar html
+  const recentInnerHTML = 
+  `
+  <div onclick="animeSelect(${id})" class="imgCard animeCard ImgCardSlider">
+    <div class="cardImage">
+        <img
+        src=${thumbnail}
+        alt=${newTitle}/>
+          <div class="tvTag tag">TV</div>
+          <div class="epTag">Users: ${recommendations}</div>
+            <div class="playWrapper">
+            </div>
+          </div>
+          <div class="cardInfo">
+          <span class="cardTitle">${truncate(newTitle, 25)}</span>
+      </div>
     </div>
     `;
+        
+    recAnimeDiv.innerHTML = recentInnerHTML;
+    recAnimeSection.appendChild(recAnimeDiv)
+    var recAnime = document.querySelector(".animePageRecomendetions");
+    if (recAnime != null) {
+      recAnime.appendChild(recAnimeSection)
+  }
+}
+}
+
+
+function AnimeReview(result) {
+  const recAnimeSection = document.createElement('section');
+  recAnimeSection.classList.add('imgRow2');
+
+  for (let i = 0; i < 5; i++) {
+    console.log(result);
+  
+    const commentDiv = document.createElement('div');
+    commentDiv.classList.add("slideshow");
+    
+    const review = result.data[i].review;
+    const date = result.data[i].date;
+    const reviewerImg = result.data[i].user.images.jpg.image_url;
+    const reviewerName = result.data[i].user.username;
+    const spoiler = result.data[i].is_spoiler;
+
+    const type = result.data[i].type;
+    const score = result.data[i].score;
+    
+    // !Skapar html
+    const CommentsReviewInnerHTML = 
+    `
+    <div>
+        <div class="reviewContentAll">
+          <img class="thumbnail" src=${reviewerImg} alt=${reviewerName}"
+            alt="profile-img" />
+          <p class="reviewName">${reviewerName}</p>
+          <p class="reviewDate">${dateConverser(date)}</p>
+
+          <div class="reviewScroll">
+            <h2 class="reviewText">
+            ${truncate(review, 900)}
+            </h1> 
+          </div>
+              <p>${type}</p>
+              <p>${spoiler}</p>
+              <p>${score}</p>
+          </div>
+        </div>
+      </div>
+    `;
     commentDiv.innerHTML = CommentsReviewInnerHTML;
-    document.querySelector(".animePageNews").appendChild(commentDiv)
+    document.querySelector(".animePageComments")?.appendChild(commentDiv)
+  
+}
 }
 
 function noAnimeRecommendations() {
@@ -623,7 +618,33 @@ function noAnimeRecommendations() {
     </div>
     `;
     commentDiv.innerHTML = CommentsReviewInnerHTML;
-    document.querySelector(".animePageRecomendetions").appendChild(commentDiv)
+    document.querySelector(".animePageRecomendetions")?.appendChild(commentDiv)
+}
+
+function noAnimeReview() {
+  const commentDiv = document.createElement('div');
+    const CommentsReviewInnerHTML = 
+    `
+    <div class="reviewerImgDiv">
+      <h1>This Anime Dosn't have any Reviews yet...<h1/>
+      <p>Sorry D:<p/>
+    </div>
+    `;
+    commentDiv.innerHTML = CommentsReviewInnerHTML;
+    document.querySelector(".animePageComments")?.appendChild(commentDiv)
+}
+
+function noAnimeNewsletter() {
+  const commentDiv = document.createElement('div');
+    const CommentsReviewInnerHTML = 
+    `
+    <div class="reviewerImgDiv">
+      <h1>This Anime Dosn't have any News yet...<h1/>
+      <p>Sorry D:<p/>
+    </div>
+    `;
+    commentDiv.innerHTML = CommentsReviewInnerHTML;
+    document.querySelector(".animePageNews")?.appendChild(commentDiv)
 }
 
 function noPageGallery() {
@@ -636,20 +657,7 @@ function noPageGallery() {
     </div>
     `;
     commentDiv.innerHTML = CommentsReviewInnerHTML;
-    document.querySelector(".animePageGallery").appendChild(commentDiv)
-}
-
-function noPageComments() {
-  const commentDiv = document.createElement('div');
-    const CommentsReviewInnerHTML = 
-    `
-    <div class="reviewerImgDiv">
-      <h1>This Anime Dosn't have any Comments yet...<h1/>
-      <p>Sorry D:<p/>
-    </div>
-    `;
-    commentDiv.innerHTML = CommentsReviewInnerHTML;
-    document.querySelector(".animePageComments").appendChild(commentDiv)
+    document.querySelector(".animePageGallery")?.appendChild(commentDiv)
 }
 
 function noPageStaff() {
@@ -662,7 +670,7 @@ function noPageStaff() {
     </div>
     `;
     commentDiv.innerHTML = CommentsReviewInnerHTML;
-    document.querySelector(".animePageStaff").appendChild(commentDiv)
+    document.querySelector(".animePageStaff")?.appendChild(commentDiv)
 }
 
 function noPageCharachter() {
@@ -675,41 +683,51 @@ function noPageCharachter() {
     </div>
     `;
     commentDiv.innerHTML = CommentsReviewInnerHTML;
-    document.querySelector(".animePageChar").appendChild(commentDiv)
+    document.querySelector(".animePageChar")?.appendChild(commentDiv)
 }
 
 function animeSelect(id){
   sessionStorage.setItem("AnimeID", id);
   console.log(id)
-  window.location = "../Html/Anime.html"
+  window.location.assign("../Html/Anime.html");
   return false;
 }
 
 function personSelect(id){
   sessionStorage.setItem("personId", id);
   console.log(id)
-  window.location = "../Html/Person.html"
+  window.location.assign("../Html/Person.html");
   return false;
 }
 
 function mangaSelect(id){
   sessionStorage.setItem("mangaId", id);
   console.log(id)
-  window.location = "../Html/Manga.html"
+  window.location.assign("../Html/Manga.html");
   return false;
 }
 
 function charSelect(id){
   sessionStorage.setItem("charId", id);
   console.log(id)
-  window.location = "../Html/Char.html"
+  window.location.assign("../Html/Char.html");
   return false;
 }
 
+setTimeout(function(){
+  getAnime()
+  getAnimeChar()
+  getAnimeStaff()
+}, 300);
 
-getAnime();
-getAnimeComments();
-getAnimeStaff();
-getAnimeGallery();
-getAnimeRecommendations();
-getAnimeNews();
+setTimeout(function(){
+  getAnimeGallery()
+  getAnimeRecommendations()
+  getAnimeNews()
+}, 2500);
+
+
+setTimeout(function(){
+  getAnimeReview();
+}, 3000);
+
