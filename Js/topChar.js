@@ -1,10 +1,12 @@
 const TOP_CHAR_URL = "https://api.jikan.moe/v4/top/characters";
 
-fetch(TOP_CHAR_URL)
+function ShowTopCharacter(){
+  fetch(TOP_CHAR_URL)
   .then(response => response.json())
   .then(result => {
     createTopCharCard(result);
   });
+}
 
   function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -67,3 +69,8 @@ fetch(TOP_CHAR_URL)
     }
   }
 }
+
+
+setTimeout(function(){
+  ShowTopCharacter();
+}, 120);

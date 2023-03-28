@@ -54,7 +54,12 @@ function getAnimeRecommendations() {
   fetch("https://api.jikan.moe/v4/anime/" + animeId + "/recommendations")
   .then(response => response.json())
   .then(result => {
+    if (result.data.length === 0) {
+      noAnimeRecommendations();
+    }
+    else{
       AnimeRecommendations(result);
+    }
   })
 }
 

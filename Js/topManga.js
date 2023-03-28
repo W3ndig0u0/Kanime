@@ -1,10 +1,12 @@
 const TOP_MANGA_URL = "https://api.jikan.moe/v4/top/manga";
 
-fetch(TOP_MANGA_URL)
+function ShowTopManga() {
+  fetch(TOP_MANGA_URL)
   .then(response => response.json())
   .then(result => {
     createTopMangaCard(result);
   });
+}
 
   function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -70,3 +72,8 @@ function mangaSelect(id){
   window.location.assign("../Html/Manga.html");
   return false;
 }
+
+
+setTimeout(function(){
+  ShowTopManga();
+}, 120);

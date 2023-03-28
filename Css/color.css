@@ -145,8 +145,9 @@ body.dark-theme .cardInfo,
 body.dark-theme .h3,
 body.dark-theme .reviewInfo,
 body.dark-theme h1,
-body.dark-theme h3 {
-  color: var(--white);
+body.dark-theme h3, 
+body.dark-theme p {
+    color: var(--white);
 }
 
 /* !about */
@@ -321,7 +322,8 @@ body.dark-theme .genre {
     box-shadow: 20px 20px 0px -5px #00abff;
   }
 
-  body.light-theme .card h5 {
+  body.light-theme .card h5, 
+  body.light-theme p {
     color: black;
   }
 

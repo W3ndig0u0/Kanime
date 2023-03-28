@@ -17,8 +17,7 @@ fetch(TOP_UPCOMING_ANIME_URL)
   function animeSelect(id){
     sessionStorage.setItem("AnimeID", id);
     console.log(id)
-    // window.location = "../Html/Anime.html"
-    return false;
+    window.location.assign("../Html/Anime.html");
   }
 
   function createTopCommingAnimeCard(result) {

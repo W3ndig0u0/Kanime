@@ -14,16 +14,17 @@ function truncate(str, n){
 function animeSelect(id){
   sessionStorage.setItem("AnimeID", id);
   console.log(id)
-  // window.location = "../Html/Anime.html"
+  window.location.assign("../Html/Anime.html");
   return false;
 }
 
-fetch("https://api.jikan.moe/v4/schedules/" + dayName)
+function ShowAnimeHeaderCard(){
+  fetch("https://api.jikan.moe/v4/schedules/" + dayName)
   .then(response => response.json())
   .then(result => {
     createAnimeHeaderNewsCard(result);
-
   });
+}
 
   function dateConverser(date) {
     if (date == null) return;
@@ -105,3 +106,6 @@ fetch("https://api.jikan.moe/v4/schedules/" + dayName)
       }
     }
   }
+
+  ShowAnimeHeaderCard();
+

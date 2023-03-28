@@ -2,6 +2,8 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   font-family: "Open Sans", sans-serif;
+  text-align: center;
+
 }
 
 .miss .grid h1 {
@@ -9,15 +11,11 @@
 }
 
 .miss .grid p {
-  font-size: 2rem;
-}
-
-.miss .p {
-  font-size: 18px !important;
+  font-size: 3rem;
 }
 
 .miss .img {
-  width: 25rem;
+  width: 30rem;
 }
 
 /* !min mobil */
