@@ -112,7 +112,6 @@ function CharPage(result) {
             </div>
             </div>
             <div >
-            <h1>Imagine not fixing CSS 😂💀 </h1>
             <span class="beforeState charNickName">NickNames: </span>
             <span class="state">${AnimeTitle}</span>
             </div>
@@ -253,12 +252,14 @@ function CharAnime(result) {
               alt=${AnimeTitle}       
               <div</div>
               <div class="tvTag tag">TV</div>
+              <div class="epTag roleTag">${role.toUpperCase()}</div>
+
+  
               <div class="playWrapper">
               </div>
               </div>
               <div class="cardInfo">
                 <h2 class="cardTitle">${truncate(AnimeTitle, 25)}</h2>
-                <p>Role: ${role} Character</p>
             </div>
           </div>
         `;
@@ -294,12 +295,12 @@ function CharManga(result) {
               alt=${MangaTitle}       
               <div</div>
               <div class="MangaTag tag">Manga</div>
+              <div class="epTag roleTag">${role.toUpperCase()}</div>
               <div class="playWrapper">
               </div>
               </div>
               <div class="cardInfo">
                 <h2 class="cardTitle">${truncate(MangaTitle, 25)}</h2>
-                <p>Role: ${role} Character</p>
             </div>
           </div>
         `;
@@ -334,12 +335,13 @@ function CharVC(result) {
               src=${PersonThumbnail}
               alt=${PersonTitle}
               <div</div>
+              <div class="epTag langTag">${language.toUpperCase()}</div>
+              <div class="vaTag tag">VA</div>
               <div class="playWrapper">
               </div>
               </div>
               <div class="cardInfo">
                 <h2 class="cardTitle">${truncate(PersonTitle, 25)}</h2>
-                <p>Language: ${language} Character</p>
             </div>
           </div>
         `;

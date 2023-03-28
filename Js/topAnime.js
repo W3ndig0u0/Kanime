@@ -74,4 +74,4 @@ function animeSelect(id){
 
 setTimeout(function(){
   ShowTopAnime();
-}, 1500);
+}, 3000);

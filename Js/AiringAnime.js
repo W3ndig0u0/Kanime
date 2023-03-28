@@ -1,8 +1,10 @@
+function ShowAiring(){
 fetch("https://api.jikan.moe/v4/seasons/now")
   .then(response => response.json())
   .then(result => {
     createSeasonAnimeCard(result);
   });
+}
 
   function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -65,3 +67,5 @@ fetch("https://api.jikan.moe/v4/seasons/now")
     console.log(id)
     return false;
   }
+
+  ShowAiring();

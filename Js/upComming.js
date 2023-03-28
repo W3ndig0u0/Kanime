@@ -1,10 +1,12 @@
 const TOP_UPCOMING_ANIME_URL = "https://api.jikan.moe/v4/seasons/upcoming";
 
+function ShowUpcoming() {
 fetch(TOP_UPCOMING_ANIME_URL)
   .then(response => response.json())
   .then(result => {
     createTopCommingAnimeCard(result);
   });
+}
 
   function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -74,3 +76,5 @@ fetch(TOP_UPCOMING_ANIME_URL)
     }
   }
 }
+
+ShowUpcoming();

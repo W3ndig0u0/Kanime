@@ -257,6 +257,19 @@
   height: 100px;
 }
 
+
+.epTag {
+  background-color: #900d00;
+  position: absolute;
+  bottom: 0px;
+  color: #eee;
+  right: 0;
+  text-transform: uppercase;
+  border-radius: 10px 0px 10px 0px;
+  padding: 0.2rem;
+  font-size: 0.9rem;
+}
+
 .MovieTag,
 .movieTag {
   background-color: #a90042;
@@ -313,16 +326,16 @@
   background-color: #EC4829;
 }
 
-.epTag {
-  background-color: #900d00;
-  position: absolute;
-  bottom: 0px;
-  color: #eee;
-  right: 0;
-  text-transform: uppercase;
-  border-radius: 10px 0px 10px 0px;
-  padding: 0.2rem;
-  font-size: 0.9rem;
+.langTag{
+  background-color: #FF85A1
+}
+
+.vaTag{
+  background-color: #14BAE6;
+}
+
+.roleTag{
+  background-color: #F11F70
 }
 
 .galleryImg .zoomed{

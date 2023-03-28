@@ -74,7 +74,6 @@ function updateDom(data) {
         <div class="cardImage">
                     <img src="${animeImg}">
                     
-                    <div class="${key}Tag tag">${key}</div>
                     <div class="epTag">${rankTitle}: ${rank}</div>
                     <div class="${key}Tag tag">${key.toUpperCase()}</div>
                     <div class="playWrapper">

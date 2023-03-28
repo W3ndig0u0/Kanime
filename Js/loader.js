@@ -11,5 +11,5 @@ window.addEventListener("load", (event) => {
     setTimeout(function (){
       // document.body.classList.add("ani")
     }, 100)
-  }, 1500)
+  }, 3000)
 });

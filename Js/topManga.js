@@ -76,4 +76,4 @@ function mangaSelect(id){
 
 setTimeout(function(){
   ShowTopManga();
-}, 1500);
+}, 3000);

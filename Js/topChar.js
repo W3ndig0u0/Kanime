@@ -51,7 +51,8 @@ function ShowTopCharacter(){
           <img
           src=${thumbnail}
           alt=${newTitle}/>
-            <div class="epTag">❤️ ${favorites}</div>
+           <div class="charTag tag">Char</div>
+            <div class="epTag tvTag">❤️ ${favorites}</div>
             <div class="playWrapper">
             </div>
           </div>
@@ -73,4 +74,4 @@ function ShowTopCharacter(){
 
 setTimeout(function(){
   ShowTopCharacter();
-}, 1600);
+}, 3000);

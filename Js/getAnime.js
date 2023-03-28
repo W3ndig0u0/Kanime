@@ -399,12 +399,13 @@ function AnimeCharPage(result) {
             src=${charThumbnail}
             alt=${charName}       
             <div</div>
+            <div class="epTag roleTag">${charRoles.toUpperCase()}</div>
+            <div class="charTag tag">Char</div>
             <div class="playWrapper">
             </div>
             </div>
             <div class="cardInfo">
               <h2 class="cardTitle">${truncate(charName, 20)}</h2>
-              <p>${charRoles} Character</p>
           </div>
         </div>
       `;
@@ -723,16 +724,16 @@ setTimeout(function(){
   getAnime()
   getAnimeChar()
   getAnimeStaff()
-}, 300);
+}, 900);
 
 setTimeout(function(){
   getAnimeGallery()
-  getAnimeRecommendations()
   getAnimeNews()
-}, 2500);
+}, 2000);
 
 
 setTimeout(function(){
+  getAnimeRecommendations()
   getAnimeReview();
-}, 3000);
+}, 3100);
 
