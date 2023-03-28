@@ -53,7 +53,7 @@ fetch(RECENT_ANIME_RSS_URL)
     recentDivContainer.appendChild(recentDivLeaderboard)
     recentDivLeaderboard.appendChild(recentDiv);
 
-    for (let i = 0; i < 12; i++) {
+    for (let i = 0; i < 15; i++) {
     const thumbnail = result.items[i].thumbnail;
     const title = result.items[i].title;
     const id = result.items[i].link;
@@ -85,6 +85,6 @@ fetch(RECENT_ANIME_RSS_URL)
       
       recentDiv.appendChild(recentLi);
       recentSection.appendChild(recentDivContainer);
-      document.querySelector(".recentAnime").appendChild(recentSection);
+      document.querySelector(".recentAnime")?.appendChild(recentSection);
     }
   }

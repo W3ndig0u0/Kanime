@@ -286,7 +286,8 @@
 .manhwaTag {
   background-color: #d975aa;
 }
-.manhuaTag {
+.manhuaTag,
+.ManhuaTag  {
   background-color: #4f0113;
 }
 .ONATag,
@@ -294,7 +295,8 @@
   background-color: #900d00;
 }
 
-.one-shotTag {
+.one-shotTag,
+.One-shotTag {
   background-color: #db886c;
 }
 
@@ -305,6 +307,10 @@
 .UnknownTag,
 .undefinedTag {
   background-color: darkslategray;
+}
+.characterTag,
+.charTag {
+  background-color: #EC4829;
 }
 
 .epTag {

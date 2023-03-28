@@ -73,4 +73,4 @@ function ShowTopCharacter(){
 
 setTimeout(function(){
   ShowTopCharacter();
-}, 120);
+}, 1600);

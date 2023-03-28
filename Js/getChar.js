@@ -332,7 +332,7 @@ function CharVC(result) {
           <div class="cardImage">
               <img
               src=${PersonThumbnail}
-              alt=${PersonTitle}       
+              alt=${PersonTitle}
               <div</div>
               <div class="playWrapper">
               </div>

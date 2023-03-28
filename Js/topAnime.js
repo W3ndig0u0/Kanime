@@ -1,10 +1,12 @@
 const TOP_ANIME_URL = "https://api.jikan.moe/v4/top/anime";
 
-fetch(TOP_ANIME_URL)
+function ShowTopAnime(){
+  fetch(TOP_ANIME_URL)
   .then(response => response.json())
   .then(result => {
     createTopAnimeCard(result);
   });
+}
 
   function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -68,3 +70,8 @@ function animeSelect(id){
   window.location.assign("../Html/Anime.html");
   return false;
 }
+
+
+setTimeout(function(){
+  ShowTopAnime();
+}, 1500);
