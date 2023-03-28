@@ -31,6 +31,19 @@ function searchAnime(event) {
 
 }
 
+const typeToSelectFn = {
+    "TV": animeSelect,
+    "Movie": animeSelect,
+    "OVA": animeSelect,
+    "ONA": animeSelect,
+    "Manga": mangaSelect,
+    "Manhwa": mangaSelect,
+    "Manhua": mangaSelect,
+    "Light Novel": mangaSelect,
+    "One-shot": mangaSelect,
+    "char": charSelect,
+  }
+
 function updateDom(data) {
     const animeByCategories = data.reduce((acc, anime) => {
             let { type } = anime;
@@ -46,18 +59,19 @@ function updateDom(data) {
     searchResults.innerHTML = Object.keys(animeByCategories).map(key => {
         
     const animesHTML = animeByCategories[key]
-    .sort((a, b) => a.rank - b.rank)
+    .sort((a, b) => a.score - b.score)
     .map(anime => {
 
         let title = anime.title ?? anime.name;
         let animeImg = anime.images?.jpg.large_image_url ?? anime.images?.jpg.image_url;
-        let rank = anime?.rank;
+        let rank = anime.rank;
         let rankTitle = "Rank"
-
+        const selectFn = typeToSelectFn[key];
+        
         return `
         <div class="animeCard" >
-            <div onclick="animeSelect(${anime.mal_id})" class="imgCard animeCard">
-                <div class="cardImage">
+        <div onclick="${() => selectFn(anime.mal_id)}" class="imgCard animeCard">
+        <div class="cardImage">
                     <img src="${animeImg}">
                     
                     <div class="${key}Tag tag">${key}</div>
@@ -96,30 +110,17 @@ function updateDom(data) {
     const menuBg = "linear-gradient(to bottom," + menuBgColor1 + menuBgColor2 + "), url("+ Imgurl +")";
 
     const menuAnimePage = document.querySelector(".menuAnimePage");
-    if (menuBg != null) {
-        menuBg.style.backgroundImage = menuBg;
-        menuBg.style.background = menuBg;
+
+    if (menuAnimePage !== null|| menuAnimePage !== undefined) {
+        menuAnimePage.style.backgroundImage = menuBg;
+        menuAnimePage.style.background = menuBg;
     }
 }
-
-function truncate(str, n){
-    if (str === null || str === undefined) {
-      return "Null"
-    }
-    return (str.length > n) ? str.substr(0, n-1) + '&hellip;' : str;
-};
-
 
 function animeSelect(id){
     sessionStorage.setItem("AnimeID", id);
     console.log(id)
     window.location.assign("../Html/Anime.html");
-  }
-  
-  function personSelect(id){
-    sessionStorage.setItem("personId", id);
-    console.log(id)
-    window.location.assign("../Html/Person.html");
   }
   
   function mangaSelect(id){
@@ -133,6 +134,15 @@ function animeSelect(id){
     console.log(id)
     window.location.assign("../Html/Char.html");
   }
+
+
+function truncate(str, n){
+    if (str === null || str === undefined) {
+      return "Null"
+    }
+    return (str.length > n) ? str.substr(0, n-1) + '&hellip;' : str;
+};
+
 
 function pageLoaded() {
     const form = document.getElementById('search_form');
