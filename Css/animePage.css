@@ -14,7 +14,7 @@
   font-family: "Open Sans", sans-serif;
   width: 100%;
   margin: 0 auto;
-  padding: 5%;
+  padding: 1%;
 }
 
 .animeTop {
@@ -29,7 +29,6 @@
 
 .animeBottom,
 .synopsis {
-  padding-top: 2rem;
   background-color: #0583f2;
   color: white;
 }
@@ -145,6 +144,10 @@
   margin: 1rem;
 }
 
+.animePageWrapper{
+  display: none;
+}
+
 .statePage .beforeState {
   font-size: 1.3em;
   font-weight: bold;
@@ -195,15 +198,6 @@
   object-fit: cover !important;
 }
 
-.iframe {
-  width: 75%;
-  display: block;
-  margin: 0 auto;
-  padding-bottom: 1rem;
-  font-size: 2rem;
-  padding-top: 1rem;
-}
-
 .iframe button {
   cursor: pointer;
   display: block;
@@ -229,22 +223,25 @@
   transition: 300ms;
 }
 
-.iframe .iframeContainer {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  padding-top: 56.25%;
+.animeBottom .pageTypeWrapper{
+  width: 80%;
+  margin: 0 auto;
 }
 
-.iframe .iframeContainer iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
+.animeBottom .pageType{
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 1.4em;
+}
+
+.animeBottom .pageType p{
+  cursor: pointer;
+  transition: 200ms;
+}
+
+.animeBottom .pageType p:hover,
+.animeBottom .pageType p:active{
+    color: #f27d16 ;
 }
 
 .vcCard {

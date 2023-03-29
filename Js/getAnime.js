@@ -343,13 +343,25 @@ function AnimePage(result) {
         </div>
       </div>
     <div class="iframe">
-      <h2>Trailer:</h2>
         <div class="iframeContainer"> 
-          <iframe src=${trailer_url} title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
         <button>
           <a href=${MalURL} title="MyAnimeList Link" target="_blank">MyAnimeList Link</a> 
         </button>
+        <div class="pageTypeWrapper">
+          <div class="pageType">
+            <p >Overview</p>
+            <p >Video</p>
+            <p onclick="showType('recomendetion')">Relations</p>
+            <p onclick="showType('characters')">Characters</p>
+            <p onclick="showType('staff')">Staff</p>
+            <p>Stats</p>
+            <p onclick="showType('news')">News</p>
+            <p onclick="showType('gallery')">Gallery</p>
+            <p onclick="showType('reviews')">Reviews</p>
+            </div>
+          </div>
+        </div>
+        
       </div>
     </div>
   </div>
@@ -363,6 +375,79 @@ function AnimePage(result) {
     menuBgChange(thumbnail)
 }
 
+//?Gömmer andra elemet i sidan när de ej e tryckta
+function showType(type){
+  const typeBlocks = document.getElementsByClassName(type);
+  const allBlocks = document.querySelectorAll('.characters, .realations, .staff, .news, .gallery, .reviews, .recomendetion');
+
+  if (typeBlocks[0].style.display === 'block') {
+    for (let i = 0; i < typeBlocks.length; i++) {
+      typeBlocks[i].style.display = 'none';
+    }
+  } else {
+    allBlocks.forEach(block => {
+      if (block.style.display === 'block' && !block.classList.contains(type)) {
+        block.style.display = 'none';
+      }
+    });
+
+    for (let i = 0; i < typeBlocks.length; i++) {
+      typeBlocks[i].style.display = 'block';
+    }
+    hideOtherTypes(type);
+  }
+
+  toggleType();
+}
+
+function hideOtherTypes(selectedType) {
+  const allTypes = ['characters', 'realations', 'staff', 'news', 'gallery', 'reviews', 'recomendetion'];
+  for (let i = 0; i < allTypes.length; i++) {
+    const type = allTypes[i];
+    if (type !== selectedType) {
+      const typeBlocks = document.getElementsByClassName(type);
+      for (let j = 0; j < typeBlocks.length; j++) {
+        typeBlocks[j].style.display = 'none';
+      }
+    }
+  }
+}
+
+function toggleType(){
+  const animeChar = document.querySelector('.characters');
+  const animeRelations = document.querySelector('.realations');
+  const animeStaff = document.querySelector('.staff');
+  const animeNews = document.querySelector('.news');
+  const animeGallery = document.querySelector('.gallery');
+  const animeReviews = document.querySelector('.reviews');
+  const animeRecomendetion = document.querySelector('.recomendetion');
+
+  if (animeStaff.style.display === "block") {
+    getAnimeStaff();
+  }
+  if (animeNews.style.display === "block") {
+    getAnimeNews();
+  }  
+  if (animeRelations.style.display === "block") {
+    getAnimeRelations();
+  }
+  if (animeChar.style.display === "block") {
+    getAnimeChar();
+
+  }
+  if (animeGallery.style.display === "block") {
+    getAnimeGallery();
+
+  }
+  if (animeReviews.style.display === "block") {
+    getAnimeReview();
+    
+  }
+  if (animeRecomendetion.style.display === "block") {
+    getAnimeRecommendations();
+    
+  }
+}
 
 function menuBgChange(Imgurl)
 {
@@ -638,11 +723,8 @@ function AnimeRelations(result) {
       relAnimeSection.appendChild(relAnimeDiv)
 
     }
-
     var recAnime = document.querySelector(".animePageRelations");
     recAnime?.appendChild(relAnimeSection)
-
-
   }
 }
 
@@ -809,21 +891,4 @@ function charSelect(id){
   window.location.assign("../Html/Char.html");
 }
 
-setTimeout(function(){
-  getAnime()
-  getAnimeChar()
-  getAnimeStaff()
-}, 1000);
-
-setTimeout(function(){
-  getAnimeGallery()
-  getAnimeNews()
-  getAnimeRelations();
-}, 2100);
-
-
-setTimeout(function(){
-  getAnimeRecommendations()
-  getAnimeReview();
-}, 3300);
-
+getAnime()
