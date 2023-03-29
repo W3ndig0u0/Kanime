@@ -50,7 +50,7 @@
   display: block;
   border-radius: 15px;
   width: auto;
-  height: auto;
+  height: 30rem;
   object-fit: cover;
   margin: 0 auto;
   box-shadow: 4px 6px 8px 2px rgba(0, 0, 0, 0.1);
@@ -183,7 +183,7 @@
 }
 
 .scoreNumber {
-  font-size: 5rem;
+  font-size: 4em;
 }
 
 .statePage .score .state {
@@ -207,7 +207,8 @@
 
 .animeBottom .pageType{
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  flex-wrap: wrap;
   font-size: 1.4em;
 }
 
@@ -360,14 +361,23 @@
   .AnimePageImg {
     position: unset;
   }
+  
+  .scoreNumber {
+    font-size: 3em;
+  }
+  
+
+  .statePage .score .beforeState{
+    color: white;
+    font-size: 1.3rem;
+  }
+
 
   .animeInfo {
     padding: 1rem;
     margin: 2rem;
     display: block;
-    border: 3px solid #002680;
     word-wrap: break-word;
-    text-align: center;
   }
 
   .animeInfo div {
@@ -444,6 +454,12 @@
 }
 
 @media screen and (max-width: 540px) {
+  
+  .AnimePageImg {
+    height: 20rem;
+  }
+
+
   .statePage .titles {
     padding: 5%;
     margin: 0 auto;
