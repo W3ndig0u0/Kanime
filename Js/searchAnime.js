@@ -69,7 +69,7 @@ function updateDom(data) {
         const selectFn = typeToSelectFn[key];
         
         return `
-        <div class="animeCard" >
+        <div class="imgRow" >
         <div onclick="${() => selectFn(anime.mal_id)}" class="imgCard animeCard">
         <div class="cardImage">
                     <img src="${animeImg}">

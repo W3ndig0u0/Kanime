@@ -46,8 +46,7 @@ function ShowTopAnime(){
           alt=${newTitle}/>
             <div class="${type}Tag tag">${type}</div>
             <div class="epTag">Rank: ${rank}</div>
-              <div class="playWrapper">
-              </div>
+              <div class="playWrapper"></div>
             </div>
             <div class="cardInfo">
             <span class="cardTitle">${truncate(newTitle, 35)}</span>

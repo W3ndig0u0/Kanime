@@ -379,8 +379,8 @@ function AnimeCharPage(result) {
   const TopCharSection = document.createElement('section');
   TopCharSection.classList.add('imgRow2');
 
-  // for (let i = 0; i < result.data.length; i++) {
-    for (let i = 0; i < 20; i++) {
+  for (let i = 0; i < result.data.length; i++) {
+    // for (let i = 0; i < 20; i++) {
       const charDiv = document.createElement('div');
   charDiv.classList.add("charDiv")
 
@@ -400,7 +400,7 @@ function AnimeCharPage(result) {
             alt=${charName}       
             <div</div>
             <div class="epTag roleTag">${charRoles.toUpperCase()}</div>
-            <div class="charTag tag">Char</div>
+            <div class="charTag tag">CHAR</div>
             <div class="playWrapper">
             </div>
             </div>
@@ -420,8 +420,8 @@ function AnimeCharPage(result) {
 function AnimePageStaff(result) {
   const staffAnimeDiv = document.createElement("div");
   staffAnimeDiv.classList.add("imgRow2");
-  for (let i = 0; i < 10; i++) {
-    // for (let i = 0; i < result.data.length; i++) {
+  // for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < result.data.length; i++) {
       const staffAnime = document.createElement("div");
     staffAnime.classList.add("vcCard");
 
@@ -437,12 +437,12 @@ function AnimePageStaff(result) {
               src=${staffThumbnail}
               alt=${staffThumbnail}       
               <div</div>
+              <div class="tag vaTag">${staffRoles}</div>
               <div class="playWrapper">
               </div>
               </div>
               <div class="cardInfo">
                 <h2 class="cardTitle">${truncate(staffName, 25)}</h2>
-                <p> ${staffRoles}</p>
             </div>
           </div>
         `;
@@ -458,12 +458,15 @@ function AnimePageGallery(result) {
   const galleryAnimeDiv = document.createElement("div");
   galleryAnimeDiv.classList.add("imgRow2");
 
-  for (let i = 0; i < 10; i++) {
+  // for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < result.data.length; i++) {
+
     if (result.data[i] == null) return;
     const galleryAnime = document.createElement("div");
     galleryAnime.classList.add("vcCard2");
 
     const AnimeThumbnail = result.data[i].jpg.large_image_url;
+
     const MovieInnerHTML = `
           <div class="imgCard animeCard">
           <div class="cardImage">
@@ -471,8 +474,10 @@ function AnimePageGallery(result) {
               src=${AnimeThumbnail}
               alt=${AnimeThumbnail}       
             </div>
+            <div class="doujinshiTag tag">IMG</div>
           </div>
         `;
+
 
         galleryAnime.innerHTML = MovieInnerHTML;
         galleryAnimeDiv.appendChild(galleryAnime);
@@ -484,8 +489,8 @@ function AnimeNews(result) {
   const galleryAnimeDiv = document.createElement("div");
   galleryAnimeDiv.classList.add("newsRow");
 
-  // for (let i = 0; i < result.data.length; i++) {
-    for (let i = 0; i < 6; i++) {
+  for (let i = 0; i < result.data.length; i++) {
+    // for (let i = 0; i < 6; i++) {
 
     const galleryAnime = document.createElement("div");
     galleryAnime.classList.add("newsSection2");
@@ -524,7 +529,8 @@ function AnimeRecommendations(result) {
   const recAnimeSection = document.createElement('section');
   recAnimeSection.classList.add('imgRow2');
 
-  for (let i = 0; i < 20; i++) {
+  // for (let i = 0; i < 20; i++) {
+  for (let i = 0; i < result.data.length; i++) {
   
   const recAnimeDiv = document.createElement('div');
   recAnimeDiv.classList.add('imgRow');
@@ -548,8 +554,7 @@ function AnimeRecommendations(result) {
         alt=${newTitle}/>
           <div class="tvTag tag">TV</div>
           <div class="epTag">Users: ${recommendations}</div>
-            <div class="playWrapper">
-            </div>
+          <div class="playWrapper">
           </div>
           <div class="cardInfo">
           <span class="cardTitle">${truncate(newTitle, 25)}</span>
@@ -572,7 +577,7 @@ function AnimeReview(result) {
   recAnimeSection.classList.add('imgRow2');
 
   for (let i = 0; i < 5; i++) {
-    console.log(result);
+    // console.log(result);
   
     const commentDiv = document.createElement('div');
     commentDiv.classList.add("slideshow");

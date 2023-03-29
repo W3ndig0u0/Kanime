@@ -7,10 +7,10 @@ function anime() {
     if (key.includes("Favorite Animes ")) {
       animeNr = localStorage.getItem(key);
       animeStorage.innerHTML = animeNr;
-      fetch("https://api.jikan.moe/v3/anime/" + animeStorage.innerHTML)
+
+      fetch("https://api.jikan.moe/v4/anime/" + animeNr)
       .then(response => response.json())
       .then(result => {
-        console.log(result);
           AnimeCommentsPage(result);
       })
     }
@@ -24,7 +24,7 @@ function manga() {
     if (key.includes("Favorites Manga ")) {
       mangaNr = localStorage.getItem(key);
       mangaStorage.innerHTML = mangaNr;
-      fetch("https://api.jikan.moe/v3/manga/" + mangaStorage.innerHTML)
+      fetch("https://api.jikan.moe/v4/manga/" + mangaStorage.innerHTML)
       .then(response => response.json())
       .then(result => {
         console.log(result);
@@ -39,7 +39,7 @@ function char() {
     if (key.includes("Favorites Char ")) {
       charNr = localStorage.getItem(key);
       charStorage.innerHTML = charNr;
-      fetch("https://api.jikan.moe/v3/character/" + charStorage.innerHTML)
+      fetch("https://api.jikan.moe/v4/characters/" + charStorage.innerHTML)
       .then(response => response.json())
       .then(result => {
         console.log(result);
@@ -51,13 +51,11 @@ function char() {
 
 function AnimeCommentsPage(result) {
     const commentDiv = document.createElement('div');
-    const content = result.title;
-    const type = result.type;
-    const premiered = result.premiered;
-
-    const img = result.image_url;
-    const animeID = result.mal_id;
-    const message = result.message;
+    const type = result.data.type;
+    const premiered = result.data.year;
+    const img = result.data.images.webp.large_image_url;
+    const animeID = result.data.mal_id;
+    const content = result.data.title_english ?? result.data.title;
     
     // !Skapar html
     const CommentsReviewInnerHTML = 
@@ -100,19 +98,21 @@ function MangaCommentsPage(result) {
 
 function CharCommentPage(result) {
     const commentDiv = document.createElement('div');
-    const content = result.name;
 
-    const img = result.image_url;
-    const animeID = result.mal_id;
-    const message = result.message;
-    
+
+    const premiered = result.data.year;
+    const animeID = result.data.mal_id;
+    const content = result.data.title_english ?? result.data.title;
+    const img = result.data.images.jpg.image_url;
+    const title = result.data?.name_en ?? result.data?.name;
+
     // !Skapar html
     const CommentsReviewInnerHTML = 
     `
     <div onclick="charSelect(${animeID})">
-      <img class="reviewerImg" src=${img} alt=${content}>
+      <img class="reviewerImg" src=${img} alt=${title}>
+        <p>${truncate(title, 30)}</p>
         <p>${truncate(content, 30)}</p>
-        <p>${truncate(message, 30)}</p>
     </div>
     `;
     commentDiv.innerHTML = CommentsReviewInnerHTML;

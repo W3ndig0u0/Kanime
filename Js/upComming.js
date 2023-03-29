@@ -32,16 +32,11 @@ fetch(TOP_UPCOMING_ANIME_URL)
     const upCommingDiv = document.createElement('div');
     upCommingDiv.classList.add('imgRow');
     
-    // for (let i = 0; i < 20; i++) {
-      // console.log(result.data[i])
-
-      // for (let i = 0; i < result.length; i++) {    
-      const TopCharDiv = document.createElement('div');
-      const thumbnail = result.data[i].images.webp.large_image_url;
-      const id = result.data[i].mal_id;
-      const title = result.data[i].title;
-      const type = result.data[i].type;
-      const rank = result.data[i].popularity;
+    const thumbnail = result.data[i].images.webp.large_image_url;
+    const id = result.data[i].mal_id;
+    const title = result.data[i].title;
+    const type = result.data[i].type;
+    const rank = result.data[i].popularity;
   
 
     const newTitle = capitalizeFirstLetter(title);
@@ -50,20 +45,17 @@ fetch(TOP_UPCOMING_ANIME_URL)
     // !Skapar html
     const recentInnerHTML = 
     `
-    <div onclick="animeSelect(${id})" class="imgCard animeCard ImgCardSlider">
+    <div onclick="animeSelect(${id})" class="imgCard animeCard  ImgCardSlider">
       <div class="cardImage">
           <img
           src=${thumbnail}
           alt=${newTitle}/>
             <div class="${type}Tag tag">${type}</div>
-            <div></div>
-            <div class="playWrapper">
-            </div>          
+            <div class="epTag">Rank: ${rank}</div>
+            <div class="playWrapper"></div>          
           </div>
             <div class="cardInfo">
             <span class="cardTitle">${truncate(newTitle, 35)}</span>
-              <p class="cardSynopsis"></p>
-              <p class="cardScore">/10⭐</p>
         </div>
       </div>
       `;

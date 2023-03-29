@@ -1,6 +1,6 @@
 .menuAnimePage {
   transition: 300ms;
-  background-position: right top -25rem;
+  /* background-position: bottom; */
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -30,7 +30,7 @@
 .animeBottom,
 .synopsis {
   padding-top: 2rem;
-  background-color: hsl(208, 96%, 48%);
+  background-color: #0583f2;
   color: white;
 }
 
@@ -65,6 +65,8 @@
   font-size: 2.3rem;
   font-weight: bold;
   margin-block-end: 0em;
+  color: white;
+
 }
 
 .statePage .titleJp {
@@ -73,6 +75,8 @@
   margin-block-end: 1em;
   font-weight: italic;
   opacity: 0.7;
+  color: white;
+
 }
 
 .statePage .rankInfo {
@@ -101,27 +105,28 @@
 
 .statePage .synopsis .rankInfo {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   flex-wrap: wrap;
   margin-block-end: 0rem;
+  font-size: 1.5rem;
   padding: 2rem;
   margin: 2rem auto;
 }
 
 .statePage .synopsis h2 {
-  font-size: 2.1rem;
+  font-size: 1.4em;
   padding-top: 2rem;
   padding-bottom: 1rem;
   text-align: center;
 }
 
 .statePage .synopsis p {
-  text-align: center;
   font-weight: normal;
-  font-size: 1.3rem;
-  padding-bottom: 1rem;
+  font-size: 1.1rem;
+  padding-bottom: 2rem;
   padding-top: 1rem;
-  width: 90%;
+  width: 95%;
+  opacity: 0.7;
   margin: 0 auto;
 }
 
@@ -134,16 +139,19 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  margin-right: 1rem;
   border-radius: 10px 10px;
-  border: 3px solid #002680;
+  border: 1px solid #FF85A1;
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.15);
   margin: 1rem;
 }
 
 .statePage .beforeState {
-  font-size: 1.2em;
+  font-size: 1.3em;
   font-weight: bold;
   margin-block-end: 0em;
+  color:#f27d16;
+  opacity: 1;
+  text-decoration: underline;
 }
 
 .statePage .state {
@@ -151,19 +159,26 @@
   color: white;
 }
 
+.statePage .score .beforeState{
+  color: white;
+  font-size: 2rem;
+}
+
+
 .statePage .score {
   color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1rem;
+  padding: 2rem 2.5rem;
+  margin-bottom: 5rem;
   border-radius: 10px;
   box-shadow: 4px 6px 8px 2px rgba(0, 0, 0, 0.2);
   opacity: 1;
 }
 
 .scoreNumber {
-  font-size: 2em;
+  font-size: 5rem;
 }
 
 .statePage .score .state {
@@ -195,7 +210,8 @@
   padding: 1rem;
   font-size: 2rem;
   margin: 1rem auto;
-  transition: 300ms;
+  margin-top: 5rem;
+  transition: 250ms;
   text-align: center;
   border: 0px;
   background-color: #f27d16;
@@ -229,7 +245,6 @@
   width: 100%;
   height: 100%;
   border: none;
-  padding-bottom: 3rem;
 }
 
 .vcCard {

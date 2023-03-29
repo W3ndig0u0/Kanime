@@ -34,7 +34,7 @@ function CharPage(result) {
 
   const thumbnail = result.data.images.jpg.image_url;
 
-  const title = result.data.name;
+  const title = result.data?.name_en ?? result.data?.name;
   const titleJp = result.data.name_kanji;
   const MalURL = result.data.url;
 
@@ -60,7 +60,7 @@ function CharPage(result) {
           <div class="titleFlex">
             <div class="titles">
               <p class="title">${title}</p>
-              <p class="titleEn">${titleJp}</p>
+              <p class="titleJp">${titleJp}</p>
 
               
             <div id="main-content">
@@ -212,6 +212,7 @@ function CharPageGallery(result) {
               src=${galleryImg}
               alt=${galleryImg}       
             </div>
+            <div class="doujinshiTag tag">IMG</div>
           </div>
         `;
 
@@ -220,13 +221,6 @@ function CharPageGallery(result) {
     if (gallery == null) return
     gallery.appendChild(galleryAnime);
   }
-
-  // TODO zoom in image
-  // document.querySelector(".galleryImg").addEventListener('click', function(e) {
-    // const target = e.target;
-    // if (target == null) return;      
-    // target.classList.toggle('zoomed')
-  // })
 }
 
 function CharAnime(result) {

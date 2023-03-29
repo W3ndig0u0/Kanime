@@ -3,8 +3,6 @@ let mangaIdHeart = sessionStorage.getItem("mangaId");
 let personId = sessionStorage.getItem("personId");
 let charId = sessionStorage.getItem("charId");
 
-
-
 window.addEventListener("load", (event) => {
   setTimeout(function (){
       if (localStorage.getItem('checked ' + animeId) == "true" || localStorage.getItem('checked ' + mangaIdHeart) == "true" || localStorage.getItem('checked ' + charId) == "true" || localStorage.getItem('checked ' + personId) == "true")
