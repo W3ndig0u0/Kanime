@@ -221,6 +221,10 @@
     color: #f27d16 ;
 }
 
+.charGallery {
+  margin: 4rem auto
+}
+
 .vcCard {
   padding-top: 5rem;
 }

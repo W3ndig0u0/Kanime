@@ -67,13 +67,14 @@ function ShowAnimeDownload(result) {
     const episodesPlayHTML = `
     <div class="iframeContainer">
      <h5>${streamingService}</h5>
-     <button name="sandbox" class="adsRemoveBtn">LMAOOO</button>
-     <iframe name="framez" src="${animeUrl}" frameborder="0" allowfullscreen></iframe>
+     <button class="adsRemoveBtn sandbox">LMAOOO</button>
+     <iframe id="framez" scrolling="no" src="${animeUrl}" frameborder="0" allowfullscreen></iframe>
     </div>
     `;
 
     episodesPlay.innerHTML = episodesPlayHTML;
     animeVideo?.appendChild(episodesPlay);
+    removeAds();
   }
 }
 
@@ -127,20 +128,17 @@ function ShowAnimeInfo(result){
   getAnimeVideoDownload(episodeOne);
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-  const button = document.getElementsByName('sandbox')[0];
-  const iframe = document.getElementsByName('framez')[0];
-  
-  if (button == undefined|| iframe == undefined) return;
+function removeAds(){
+var button = document.getElementsByClassName("sandbox")[0]
+  var iframe = document.getElementsByClassName("framez")[0]
+  button.addEventListener('click',sndbx,false);
 
-  button.addEventListener('click', function() {
-    const iframeSrc = iframe.src;
-    if (iframe.sandbox) {
-      iframe.removeAttribute('sandbox');
-    } else {
-      iframe.sandbox = 'allow-forms allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation';
-    }
-    iframe.src = '';
-    iframe.src = iframeSrc;
-  });
-});
+  function sndbx(){
+  var nibba = document.getElementById("framez").src;
+  if(iframe.sandbox == 'allow-forms allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation'){
+  document.getElementById("framez").removeAttribute("sandbox"); 
+  }
+  frames['framez'].location.href=nibba;
+  iframe.sandbox = 'allow-forms allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation';
+  }
+} 
