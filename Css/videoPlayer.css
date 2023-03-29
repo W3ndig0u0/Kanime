@@ -1,0 +1,42 @@
+.animePageCommentsSection .video {
+  margin-bottom: 5rem;
+}
+
+.animeDownloadInfo{
+  margin-top: 10rem;
+
+}
+
+.animePageCommentsSection .buttonRow{
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.buttonRow button{
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .buttonRow button {
+    font-size: 24px;
+    min-width: 196px;
+  }
+}
+
+.animePageCommentsSection .animePageVideo iframe{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.animePageCommentsSection .iframeContainer{
+  position: relative;
+  overflow: hidden;
+  width: 80%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+  margin: 2rem auto;
+}

@@ -86,6 +86,32 @@ h3:after {
   z-index: 1;
 }
 
+button {
+  cursor: pointer;
+  display: block;
+  padding: 1rem;
+  margin: 1rem auto;
+  margin-top: 5rem;
+  transition: 250ms;
+  text-align: center;
+  border: 0px;
+  background-color: #f27d16;
+  border-radius: 14px;
+  box-shadow: 4px 6px 8px 2px rgba(0, 0, 0, 0.2);
+  color: white;
+  opacity: 1;
+}
+
+ button a {
+  color: white;
+}
+
+ button:hover {
+  opacity: 0.7;
+  transition: 300ms;
+}
+
+
 .space2 {
   padding-bottom: 6rem;
 }

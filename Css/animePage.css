@@ -200,31 +200,6 @@
   object-fit: cover !important;
 }
 
-.iframe button {
-  cursor: pointer;
-  display: block;
-  padding: 1rem;
-  font-size: 2rem;
-  margin: 1rem auto;
-  margin-top: 5rem;
-  transition: 250ms;
-  text-align: center;
-  border: 0px;
-  background-color: #f27d16;
-  border-radius: 14px;
-  box-shadow: 4px 6px 8px 2px rgba(0, 0, 0, 0.2);
-  opacity: 1;
-}
-
-.iframe button a {
-  color: white;
-}
-
-.iframe button:hover {
-  opacity: 0.8;
-  transition: 300ms;
-}
-
 .animeBottom .pageTypeWrapper{
   width: 80%;
   margin: 0 auto;

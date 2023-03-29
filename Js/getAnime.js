@@ -1,5 +1,6 @@
 let fetchedTypes = {};
 let thumbnailGlobal;
+let titleGlobal;
 
 function getAnime() {
   let animeId = sessionStorage.getItem("AnimeID");
@@ -153,6 +154,29 @@ function getAnimeReview() {
   }
 }
 
+
+function getAnimeID(){
+  let animeId = sessionStorage.getItem("Video");
+
+    if (!fetchedTypes["Video"]) {
+      fetchedTypes["Video"] = true;
+      fetch("https://api.consumet.org/anime/gogoanime/" + titleGlobal + "?page=1")
+      .then(response => response.json())
+      .then(result => {
+        if (result === undefined || result.data?.length === 0) {
+         // noFindAnimeVideo()
+        }
+        else{
+          findAnimeVideo(result);
+        }
+      })
+    } else {
+      console.log("AnimeRelations type already fetched");
+    }
+}
+
+  
+
 function capitalizeFirstLetter(string) {
   if (string === null) {
     return undefined;
@@ -203,6 +227,7 @@ function AnimePage(result) {
 
   const titleJp = result.data.title_japanese;
   const title = result.data.title_english ?? result.data.title;
+  titleGlobal = title;
 
   const type = result.data.type;
   const aired = result.data.aired.string;
@@ -394,7 +419,7 @@ function AnimePage(result) {
         <div class="pageTypeWrapper">
           <div class="pageType">
             <p >Overview</p>
-            <p >Video</p>
+            <p onclick="showType('video')">Video</p>
             <p onclick="showType('relations')">Relations</p>
             <p onclick="showType('recomendetion')">Recomendetion</p>
             <p onclick="showType('characters')">Characters</p>
@@ -423,7 +448,7 @@ function AnimePage(result) {
 //?Gömmer andra elemet i sidan när de ej e tryckta
 function showType(type){
   const typeBlocks = document.getElementsByClassName(type);
-  const allBlocks = document.querySelectorAll('.characters, .realations, .staff, .news, .gallery, .reviews, .recomendetion');
+  const allBlocks = document.querySelectorAll('.characters, .realations, .staff, .news, .gallery, .reviews, .recomendetion, .video');
 
   if (typeBlocks[0].style.display === 'block') {
     return; // if the type is already displayed, don't do anything
@@ -464,6 +489,7 @@ function toggleType(){
   const animeGallery = document.querySelector('.gallery');
   const animeReviews = document.querySelector('.reviews');
   const animeRecomendetion = document.querySelector('.recomendetion');
+  const animeVideo = document.querySelector('.video');
 
   if (animeStaff.style.display === "block") {
     getAnimeStaff();
@@ -489,6 +515,51 @@ function toggleType(){
   if (animeRecomendetion.style.display === "block") {
     getAnimeRecommendations();
   }
+  if (animeVideo.style.display === "block") {
+    getAnimeID();
+  }
+}
+
+function findAnimeVideo(result){
+  const shearchResult = document.querySelector(".searchingShow");
+  // !Tar bort det gamla search
+  while (shearchResult?.firstChild) {
+    shearchResult.removeChild(shearchResult.firstChild);
+  }
+
+  const animeInfo = document.createElement("div");
+  animeInfo.className = "imgRow2";
+
+  for (let i = 0; i < result.results.length; i++) {
+
+  const animeEpisodes= document.createElement("span");
+
+  const animeTitle = result.results[i].title;
+  const animeId = result.results[i].id
+  const image = result.results[i].image
+
+  const AnimeInfoInnerHTML = `
+    <div onclick="onClickAnime(this.id)" id="${animeId}" class="imgCard PersonCard">
+    <div class="cardImage">
+        <img
+        src=${image}
+        alt=${animeId}       
+        <div</div>
+        <div class="tvTag tag">TV</div>
+        <div class="playWrapper">
+        </div>
+        </div>
+        <div class="cardInfo">
+          <h2 class="cardTitle">${truncate(animeTitle, 60)}</h2>
+      </div>
+    </div>
+  `;  
+
+  animeEpisodes.innerHTML = AnimeInfoInnerHTML;
+  animeInfo.appendChild(animeEpisodes);
+  document.querySelector(".animeShow")?.appendChild(animeInfo)
+  initializeAnimeCards();
+  }
 }
 
 function menuBgChange(Imgurl)
@@ -498,6 +569,16 @@ function menuBgChange(Imgurl)
   const menuBg = "linear-gradient(to bottom," + menuBgColor1 + menuBgColor2 + "), url("+ Imgurl +")";
 
   document.querySelector(".menuAnimePage").style.backgroundImage = menuBg;
+}
+
+
+// !Tar bort "", [, ] och ,
+function removeSign(genres){
+  const s = genres.replace(/[""]/g, '');
+  const s1 = s.replace("[", '');
+  const s2 = s1.replace("]", '');
+  const s3 = s2.replace(/[,]/g, ' ');
+  return s3
 }
 
 function dateConverser(dates) {
@@ -830,8 +911,7 @@ function AnimeReview(result) {
     commentDiv.innerHTML = CommentsReviewInnerHTML;
     document.querySelector(".animePageComments")?.appendChild(commentDiv)
     initializeAnimeCards();
-
-}
+  }
 }
 
 function noAnimeRecommendations() {
@@ -949,4 +1029,4 @@ function charSelect(id){
   window.location.assign("../Html/Char.html");
 }
 
-getAnime()
+getAnime();
