@@ -1,7 +1,7 @@
 let mangaId = sessionStorage.getItem("mangaId");
 function getManga() {
   
-  fetch("https://api.jikan.moe/v3/manga/" + mangaId)
+  fetch("https://api.jikan.moe/v4/manga/" + mangaId)
   .then(response => response.json())
   .then(result => {
     MangaPage(result);
@@ -14,7 +14,7 @@ function getManga() {
 
 function getMangaChar() {
 
-  fetch("https://api.jikan.moe/v3/manga/" + mangaId + "/characters")
+  fetch("https://api.jikan.moe/v4/manga/" + mangaId + "/characters")
   .then(response => response.json())
   .then(result => {
     if (result.characters.length === 0) {
@@ -30,7 +30,7 @@ function getMangaChar() {
 }
 
 function getMangaGallery() {
-  fetch("https://api.jikan.moe/v3/manga/" + mangaId + "/pictures")
+  fetch("https://api.jikan.moe/v4/manga/" + mangaId + "/pictures")
   .then(response => response.json())
   .then(result => {
     if (result.pictures.length === 0) {
@@ -46,7 +46,7 @@ function getMangaGallery() {
 
 function getMangaRecommendations() {
   
-  fetch("https://api.jikan.moe/v3/manga/" + mangaId + "/recommendations")
+  fetch("https://api.jikan.moe/v4/manga/" + mangaId + "/recommendations")
   .then(response => response.json())
   .then(result => {
     if (result.recommendations.length === 0) {
@@ -64,7 +64,7 @@ function getMangaRecommendations() {
 function getMangaComments() {
   let mangaId = sessionStorage.getItem("mangaId");
   
-  fetch("https://api.jikan.moe/v3/manga/" + mangaId + "/reviews/1")
+  fetch("https://api.jikan.moe/v4/manga/" + mangaId + "/reviews/1")
   .then(response => response.json())
   .then(result => {
     if (result.reviews.length === 0) {
@@ -80,7 +80,7 @@ function getMangaComments() {
 function getMangaNews() {
   let mangaId = sessionStorage.getItem("mangaId");
   
-  fetch("https://api.jikan.moe/v3/manga/" + mangaId + "/news")
+  fetch("https://api.jikan.moe/v4/manga/" + mangaId + "/news")
   .then(response => response.json())
   .then(result => {
     if (result.articles.length === 0) {
@@ -613,35 +613,29 @@ function noPageCharachter() {
     document.querySelector(".mangaPageChar").appendChild(commentDiv)
 }
 
-
 function animeSelect(id){
+  sessionStorage.clear();
   sessionStorage.setItem("AnimeID", id);
-  console.log(id)
-  window.location = "../Html/Anime.html"
-  return false;
+  window.location.assign("../Html/Anime.html");
 }
 
 function personSelect(id){
+  sessionStorage.clear();
   sessionStorage.setItem("personId", id);
-  console.log(id)
-  window.location = "../Html/Person.html"
-  return false;
+  window.location.assign("../Html/Person.html");
 }
 
 function mangaSelect(id){
+  sessionStorage.clear();
   sessionStorage.setItem("mangaId", id);
-  console.log(id)
-  window.location = "../Html/Manga.html"
-  return false;
+  window.location.assign("../Html/Manga.html");
 }
 
 function charSelect(id){
+  sessionStorage.clear();
   sessionStorage.setItem("charId", id);
-  console.log(id)
-  window.location = "../Html/Char.html"
-  return false;
+  window.location.assign("../Html/Char.html");
 }
-
 getMangaGallery();
 getMangaRecommendations();
 getMangaNews();

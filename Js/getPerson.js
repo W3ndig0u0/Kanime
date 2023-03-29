@@ -247,33 +247,28 @@ function truncate(str, n){
 };
 
 function animeSelect(id){
+  sessionStorage.clear();
   sessionStorage.setItem("AnimeID", id);
-  console.log(id)
-  window.location = "../Html/Anime.html"
-  return false;
+  window.location.assign("../Html/Anime.html");
 }
 
 function personSelect(id){
+  sessionStorage.clear();
   sessionStorage.setItem("personId", id);
-  console.log(id)
-  window.location = "../Html/Person.html"
-  return false;
+  window.location.assign("../Html/Person.html");
 }
 
 function mangaSelect(id){
+  sessionStorage.clear();
   sessionStorage.setItem("mangaId", id);
-  console.log(id)
-  window.location = "../Html/Manga.html"
-  return false;
+  window.location.assign("../Html/Manga.html");
 }
 
 function charSelect(id){
+  sessionStorage.clear();
   sessionStorage.setItem("charId", id);
-  console.log(id)
-  window.location = "../Html/Char.html"
-  return false;
+  window.location.assign("../Html/Char.html");
 }
-
 function menuBgChange(Imgurl)
 {
   const menuBgColor1 = " rgba(2, 49, 90, 0.88),";

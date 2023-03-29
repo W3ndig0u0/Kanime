@@ -29,9 +29,6 @@ function CharPage(result) {
   const galleryAnimeDiv3 = document.createElement("div");
   galleryAnimeDiv3.classList.add("imgRow2");
 
-  console.log(result)
-
-
   const thumbnail = result.data.images.jpg.image_url;
 
   const title = result.data?.name_en ?? result.data?.name;
@@ -112,8 +109,8 @@ function CharPage(result) {
             </div>
             </div>
             <div >
-            <span class="beforeState charNickName">NickNames: </span>
-            <span class="state">${AnimeTitle}</span>
+            <span class="beforeState charNickName">NickNames:</span>
+            <span class="state"> ${AnimeTitle}</span>
             </div>
             </div>
           </div>
@@ -124,17 +121,17 @@ function CharPage(result) {
       <div class="synopsis">
         <div class="rankInfo">
           <div>
-            <span class="beforeState">Favorites: </span>
-            <span class="state">${members}</span>
+            <span class="beforeState">Favorites:</span>
+            <span class="state"> ${members}</span>
           </div>
           <div>
-            <span class="beforeState">Birthday: </span>
-            <span class="state">Return Birthday... ;(</span>
+            <span class="beforeState">Birthday:</span>
+            <span class="state"> Return Birthday...</span>
           </div>
           </div>
           <div>
-          <h2 class="beforeState">About: </h2>  
-          <p class="state">${synopsis}</p>
+          <h2 class="beforeState">About:</h2>  
+          <p class="state"> ${synopsis}</p>
       </div>
   
         <div class="iframe">
@@ -349,26 +346,26 @@ function CharVC(result) {
 }
 
 function animeSelect(id){
+  sessionStorage.clear();
   sessionStorage.setItem("AnimeID", id);
-  console.log(id)
   window.location.assign("../Html/Anime.html");
 }
 
 function personSelect(id){
+  sessionStorage.clear();
   sessionStorage.setItem("personId", id);
-  console.log(id)
   window.location.assign("../Html/Person.html");
 }
 
 function mangaSelect(id){
+  sessionStorage.clear();
   sessionStorage.setItem("mangaId", id);
-  console.log(id)
   window.location.assign("../Html/Manga.html");
 }
 
 function charSelect(id){
+  sessionStorage.clear();
   sessionStorage.setItem("charId", id);
-  console.log(id)
   window.location.assign("../Html/Char.html");
 }
 

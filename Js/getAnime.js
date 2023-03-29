@@ -14,11 +14,26 @@ function getAnimeChar() {
   fetch("https://api.jikan.moe/v4/anime/" + animeId + "/characters")
   .then(response => response.json())
   .then(result => {
-    if (result.data.length === 0) {
+    if (result === undefined || result.data?.length === 0) {
       noPageCharachter();
     }
     else{
       AnimeCharPage(result);
+    }
+  })
+}
+
+function getAnimeRelations() {
+  let animeId = sessionStorage.getItem("AnimeID");
+  
+  fetch("https://api.jikan.moe/v4/anime/" + animeId + "/relations")
+  .then(response => response.json())
+  .then(result => {
+    if (result === undefined || result.data?.length === 0) {
+      noAnimeRelations();
+    }
+    else{
+      AnimeRelations(result);
     }
   })
 }
@@ -39,7 +54,7 @@ function getAnimeGallery() {
   fetch("https://api.jikan.moe/v4/anime/" + animeId + "/pictures")
   .then(response => response.json())
   .then(result => {
-    if (result.data.length === 0) {
+    if (result?.data === undefined || result?.data?.length === 0) {
       noPageGallery();
     }
     else{
@@ -54,7 +69,7 @@ function getAnimeRecommendations() {
   fetch("https://api.jikan.moe/v4/anime/" + animeId + "/recommendations")
   .then(response => response.json())
   .then(result => {
-    if (result.data.length === 0) {
+    if (result?.data === undefined || result?.data?.length === 0) {
       noAnimeRecommendations();
     }
     else{
@@ -69,7 +84,7 @@ function getAnimeNews() {
   fetch("https://api.jikan.moe/v4/anime/" + animeId + "/news")
   .then(response => response.json())
   .then(result => {
-    if (result.data.length === 0) {
+    if (result?.data === undefined || result?.data?.length === 0) {
       noAnimeNewsletter();
     }
     else{
@@ -84,7 +99,7 @@ function getAnimeReview() {
   fetch("https://api.jikan.moe/v4/anime/" + animeId + "/reviews")
   .then(response => response.json())
   .then(result => {
-    if (result.data.length === 0) {
+    if (result?.data === undefined || result?.data?.length === 0) {
       noAnimeReview();
     }
     else{
@@ -97,7 +112,7 @@ function capitalizeFirstLetter(string) {
   if (string === null) {
     return undefined;
   }
-  return string.charAt(0).toUpperCase() + string.slice(1);
+  return string?.charAt(0).toUpperCase() + string?.slice(1);
 }
 
 function scoreColor(score) {
@@ -242,7 +257,7 @@ function AnimePage(result) {
 
           </div>
           <div class="score">
-            <span class="beforeState">Score: </span>
+            <span class="beforeState">Score:</span>
             <span class="state scoreNumber">${score}</span>
             <span class="state">${scored_by} Users</span>
           </div>
@@ -254,21 +269,21 @@ function AnimePage(result) {
     <div class="synopsis">     
         <div class="rankInfo">
         <div>
-            <span class="beforeState">Ranked: </span>
-            <span class="state">${rank}</span>
+            <span class="beforeState">Ranked:</span>
+            <span class="state"> ${rank}</span>
           </div>
           <div>
-            <span class="beforeState">Popularity: </span>
-            <span class="state">${popularity}</span>
+            <span class="beforeState">Popularity:</span>
+            <span class="state"> ${popularity}</span>
           </div>
           <div>
-            <span class="beforeState">Members: </span>
-            <span class="state">${members}</span>
+            <span class="beforeState">Members:</span>
+            <span class="state"> ${members}</span>
           </div>
         </div>
           <div>
-          <h2 class="beforeState">Synopsis: </h2>  
-          <p class="state">${synopsis}</p>
+          <h2 class="beforeState">Synopsis:</h2>  
+          <p class="state"> ${synopsis}</p>
         </div>
       </div>
     
@@ -276,54 +291,54 @@ function AnimePage(result) {
       <div>
         <div class="animeInfo">
           <div>
-            <span class="beforeState">Type: </span>
-            <span class="state">${type}</span>
+            <span class="beforeState">Type:</span>
+            <span class="state"> ${type}</span>
           </div>
           <div>
-            <span class="beforeState">Genres: </span>
-            <span class="state">${genres}, ${genres1}, ${genres2}</span>
+            <span class="beforeState">Genres:</span>
+            <span class="state"> ${genres}, ${genres1}, ${genres2}</span>
           </div>
           <div>
-            <span class="beforeState">Status: </span>
-            <span class="state">${status}</span>
+            <span class="beforeState">Status:</span>
+            <span class="state"> ${status}</span>
           </div>
           <div>
             <span class="beforeState">Total Eps:</span>
-            <span class="state">${ep}</span>
+            <span class="state"> ${ep}</span>
           </div>
         </div>
 
         <div class="animeInfo">
           <div>
-            <span class="beforeState">Rating: </span>
-            <span class="state">${rating}</span>
+            <span class="beforeState">Rating:</span>
+            <span class="state"> ${rating}</span>
           </div>
           <div>
-            <span class="beforeState">Aired: </span>
-            <span class="state">${aired}</span>
+            <span class="beforeState">Aired:</span>
+            <span class="state"> ${aired}</span>
           </div>
           <div>
-            <span class="beforeState">Airing Status: </span>
-            <span class="state">${status}</span>
+            <span class="beforeState">Airing Status:</span>
+            <span class="state"> ${status}</span>
           </div>
         </div>
 
         <div class="animeInfo">
           <div>
             <span class="beforeState">Source:</span>
-            <span class="state">${source}</span>
+            <span class="state"> ${source}</span>
           </div>
           <div>
-            <span class="beforeState">Studio: </span>
-            <span class="state">${studio}</span>
+            <span class="beforeState">Studio:</span>
+            <span class="state"> ${studio}</span>
           </div>
           <div>
-            <span class="beforeState">Producers: </span>
-            <span class="state">${producers}</span>
+            <span class="beforeState">Producers:</span>
+            <span class="state"> ${producers}</span>
           </div>
           <div>
-          <span class="beforeState">Ep Duration: </span>
-          <span class="state">${duration}</span>
+          <span class="beforeState">Ep Duration:</span>
+          <span class="state"> ${duration}</span>
           </div>
         </div>
       </div>
@@ -420,8 +435,8 @@ function AnimeCharPage(result) {
 function AnimePageStaff(result) {
   const staffAnimeDiv = document.createElement("div");
   staffAnimeDiv.classList.add("imgRow2");
-  // for (let i = 0; i < 10; i++) {
-    for (let i = 0; i < result.data.length; i++) {
+   for (let i = 0; i < 10; i++) {
+   // for (let i = 0; i < result.data.length; i++) {
       const staffAnime = document.createElement("div");
     staffAnime.classList.add("vcCard");
 
@@ -438,9 +453,9 @@ function AnimePageStaff(result) {
               alt=${staffThumbnail}       
               <div</div>
               <div class="tag vaTag">${staffRoles}</div>
-              <div class="playWrapper">
-              </div>
-              </div>
+              <div class="playWrapper"></div>
+            </div>
+
               <div class="cardInfo">
                 <h2 class="cardTitle">${truncate(staffName, 25)}</h2>
             </div>
@@ -564,11 +579,71 @@ function AnimeRecommendations(result) {
         
     recAnimeDiv.innerHTML = recentInnerHTML;
     recAnimeSection.appendChild(recAnimeDiv)
-    var recAnime = document.querySelector(".animePageRecomendetions");
-    if (recAnime != null) {
-      recAnime.appendChild(recAnimeSection)
+    const recAnime = document.querySelector(".animePageRecomendetions");
+    recAnime?.appendChild(recAnimeSection)
   }
-}
+} 
+
+function AnimeRelations(result) {
+  console.log(result)
+
+  for (let i = 0; i < result?.data?.length; i++) {
+
+  const relAnimeTypeDiv = document.createElement('div');
+  const relation = result.data[i]?.relation;
+
+  relAnimeTypeDiv.innerHTML =  `
+  <br>
+  <br>
+  <h3 class="titleComments">${relation}</h3>
+  <div class="${relation}"></div>
+  <br>
+  `;
+
+  const relAnimeSection = document.createElement('section');
+  relAnimeSection.classList.add('a');
+  
+  relAnimeSection.appendChild(relAnimeTypeDiv)
+  
+  const relAnimeDiv = document.createElement('div');
+  relAnimeDiv.classList.add('imgRow');
+  
+  for (let j = 0; j < result.data[j]?.entry.length; j++) {
+    const thumbnail = "https://assets.reedpopcdn.com/Genshin-Impact-anime.jpg/BROK/resize/1200x1200%3E/format/jpg/quality/70/Genshin-Impact-anime.jpg";
+    const id = result.data[i]?.entry[j]?.mal_id;
+    const title = result.data[i]?.entry[j]?.name;
+    const type = result.data[i]?.entry[j]?.type;
+
+    const newTitle = capitalizeFirstLetter(title);
+
+    // !Skapar html
+    const relInnerHTML = 
+    `
+    <div onclick="${type}Select(${id})" class="imgCard animeCard ImgCardSlider">
+      <div class="cardImage">
+          <img
+          src=${thumbnail}
+          alt=${newTitle}/>
+          <div class="epTag">${relation}</div>
+            <div class="${type}Tag tag">${type}</div>
+            <div class="playWrapper">
+            </div>
+            <div class="cardInfo">
+            <span class="cardTitle">${truncate(newTitle, 25)}</span>
+        </div>
+      </div>
+      `;
+
+      relAnimeDiv.innerHTML += relInnerHTML;
+      relAnimeSection.appendChild(relAnimeDiv)
+
+    }
+
+    var recAnime = document.querySelector(".animePageRelations");
+    recAnime?.appendChild(relAnimeSection)
+
+
+  }
 }
 
 
@@ -697,48 +772,58 @@ function noPageCharachter() {
     document.querySelector(".animePageChar")?.appendChild(commentDiv)
 }
 
+function noAnimeRelations(){
+  const relationDiv = document.createElement('div');
+  const relationInnerHTML = 
+  `
+  <div class="reviewerImgDiv">
+    <h1>This Anime Dosn't have any Relations(?) yet...<h1/>
+  </div>
+  `;
+  relationDiv.innerHTML = relationInnerHTML;
+  document.querySelector(".animePageRelations")?.appendChild(relationDiv)
+}
+
+
 function animeSelect(id){
+  sessionStorage.clear();
   sessionStorage.setItem("AnimeID", id);
-  console.log(id)
   window.location.assign("../Html/Anime.html");
-  return false;
 }
 
 function personSelect(id){
+  sessionStorage.clear();
   sessionStorage.setItem("personId", id);
-  console.log(id)
   window.location.assign("../Html/Person.html");
-  return false;
 }
 
 function mangaSelect(id){
+  sessionStorage.clear();
   sessionStorage.setItem("mangaId", id);
-  console.log(id)
   window.location.assign("../Html/Manga.html");
-  return false;
 }
 
 function charSelect(id){
+  sessionStorage.clear();
   sessionStorage.setItem("charId", id);
-  console.log(id)
   window.location.assign("../Html/Char.html");
-  return false;
 }
 
 setTimeout(function(){
   getAnime()
   getAnimeChar()
   getAnimeStaff()
-}, 900);
+}, 1000);
 
 setTimeout(function(){
   getAnimeGallery()
   getAnimeNews()
-}, 2000);
+  getAnimeRelations();
+}, 2100);
 
 
 setTimeout(function(){
   getAnimeRecommendations()
   getAnimeReview();
-}, 3100);
+}, 3300);
 

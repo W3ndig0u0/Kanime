@@ -16,10 +16,15 @@ function hoverCardIn(event) {
 }
 
 function hoverCardOut(event) {
-    if (event.target.childNodes[1]?.childNodes[7]?.classList.contains("playWrapper"))
-    {
-      event.target.childNodes[1].childNodes[7].style.opacity = "0";
-    }
+  if (event.target.childNodes[1]?.childNodes[7]?.classList.contains("playWrapper"))
+  {
+    event.target.childNodes[1].childNodes[7].style.opacity = "0";
+  }    
+  else if (event.target.childNodes[1]?.childNodes[5]?.classList.contains("playWrapper"))
+  {
+    event.target.childNodes[1].childNodes[5].style.opacity = "0";
+  }
+
 }
 
 

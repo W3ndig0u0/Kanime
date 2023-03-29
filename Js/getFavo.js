@@ -42,7 +42,6 @@ function char() {
       fetch("https://api.jikan.moe/v4/characters/" + charStorage.innerHTML)
       .then(response => response.json())
       .then(result => {
-        console.log(result);
         CharCommentPage(result);          
       })
     }
@@ -124,24 +123,21 @@ function CharCommentPage(result) {
 
 
 function animeSelect(id){
+  sessionStorage.clear();
   sessionStorage.setItem("AnimeID", id);
-  console.log(id)
-  window.location = "../Html/Anime.html"
-  return false;
+  window.location.assign("../Html/Anime.html");
 }
 
 function mangaSelect(id){
+  sessionStorage.clear();
   sessionStorage.setItem("mangaId", id);
-  console.log(id)
-  window.location = "../Html/Manga.html"
-  return false;
+  window.location.assign("../Html/Manga.html");
 }
 
 function charSelect(id){
+  sessionStorage.clear();
   sessionStorage.setItem("charId", id);
-  console.log(id)
-  window.location = "../Html/Char.html"
-  return false;
+  window.location.assign("../Html/Char.html");
 }
 
 

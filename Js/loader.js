@@ -8,8 +8,5 @@ window.addEventListener("load", (event) => {
     document.querySelector("header").style.display = "block";
     document.querySelector("main").style.display = "block";
     document.querySelector("footer").style.display = "block";
-    setTimeout(function (){
-      // document.body.classList.add("ani")
-    }, 100)
-  }, 3000)
+  }, 3100)
 });

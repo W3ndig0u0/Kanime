@@ -62,10 +62,9 @@ fetch("https://api.jikan.moe/v4/seasons/now")
   }
 
   function animeSelect(id){
+    sessionStorage.clear();
     sessionStorage.setItem("AnimeID", id);
     window.location.assign("../Html/Anime.html");
-    console.log(id)
-    return false;
   }
 
   ShowAiring();
