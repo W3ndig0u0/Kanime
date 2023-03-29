@@ -1,7 +1,7 @@
 let animeCards = document.getElementsByClassName("imgCard");
 // let gallery = document.getElementsByClassName("vcCard2");
 
-function initializeAnimeCards() {
+ export function initializeAnimeCards() {
   for (let i = 0; i < animeCards.length; i++) {
     animeCards[i].addEventListener('mouseover', hoverCardIn)
     animeCards[i].addEventListener('mouseleave', hoverCardOut)

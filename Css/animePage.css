@@ -146,6 +146,8 @@
 
 .animePageWrapper{
   display: none;
+  padding: 2rem;
+  padding-bottom: 5rem;
 }
 
 .statePage .beforeState {

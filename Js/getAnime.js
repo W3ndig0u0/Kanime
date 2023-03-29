@@ -1,3 +1,5 @@
+import {initializeAnimeCards} from './AnimePage';
+
 let fetchedTypes = {};
 
 function getAnime() {
@@ -395,7 +397,8 @@ function AnimePage(result) {
           <div class="pageType">
             <p >Overview</p>
             <p >Video</p>
-            <p onclick="showType('recomendetion')">Relations</p>
+            <p onclick="showType('relations')">Relations</p>
+            <p onclick="showType('recomendetion')">Recomendetion</p>
             <p onclick="showType('characters')">Characters</p>
             <p onclick="showType('staff')">Staff</p>
             <p>Stats</p>
@@ -425,9 +428,7 @@ function showType(type){
   const allBlocks = document.querySelectorAll('.characters, .realations, .staff, .news, .gallery, .reviews, .recomendetion');
 
   if (typeBlocks[0].style.display === 'block') {
-    for (let i = 0; i < typeBlocks.length; i++) {
-      typeBlocks[i].style.display = 'none';
-    }
+    return; // if the type is already displayed, don't do anything
   } else {
     allBlocks.forEach(block => {
       if (block.style.display === 'block' && !block.classList.contains(type)) {
@@ -445,7 +446,7 @@ function showType(type){
 }
 
 function hideOtherTypes(selectedType) {
-  const allTypes = ['characters', 'realations', 'staff', 'news', 'gallery', 'reviews', 'recomendetion'];
+  const allTypes = ['characters', 'relations', 'staff', 'news', 'gallery', 'reviews', 'recomendetion'];
   for (let i = 0; i < allTypes.length; i++) {
     const type = allTypes[i];
     if (type !== selectedType) {
@@ -459,7 +460,7 @@ function hideOtherTypes(selectedType) {
 
 function toggleType(){
   const animeChar = document.querySelector('.characters');
-  const animeRelations = document.querySelector('.realations');
+  const animeRelations = document.querySelector('.relations');
   const animeStaff = document.querySelector('.staff');
   const animeNews = document.querySelector('.news');
   const animeGallery = document.querySelector('.gallery');
@@ -489,7 +490,6 @@ function toggleType(){
   }
   if (animeRecomendetion.style.display === "block") {
     getAnimeRecommendations();
-    
   }
 }
 
@@ -558,14 +558,15 @@ function AnimeCharPage(result) {
     charDiv.innerHTML = charInnerHTML;
     TopCharSection.appendChild(charDiv);
     document.querySelector(".animePageChar")?.appendChild(TopCharSection)
+    initializeAnimeCards();
   }
 }
 
 function AnimePageStaff(result) {
   const staffAnimeDiv = document.createElement("div");
   staffAnimeDiv.classList.add("imgRow2");
-   for (let i = 0; i < 10; i++) {
-   // for (let i = 0; i < result.data.length; i++) {
+
+  for (let i = 0; i < result.data.length; i++) {
       const staffAnime = document.createElement("div");
     staffAnime.classList.add("vcCard");
 
@@ -594,6 +595,8 @@ function AnimePageStaff(result) {
     staffAnime.innerHTML = StaffInnerHTML;
     staffAnimeDiv.appendChild(staffAnime);
     document.querySelector(".animePageStaff")?.appendChild(staffAnimeDiv);
+    initializeAnimeCards();
+
   }
 }
 
@@ -626,6 +629,8 @@ function AnimePageGallery(result) {
         galleryAnime.innerHTML = MovieInnerHTML;
         galleryAnimeDiv.appendChild(galleryAnime);
     document.querySelector(".animePageGallery")?.appendChild(galleryAnimeDiv);
+    initializeAnimeCards();
+
   }
 }
 
@@ -666,6 +671,8 @@ function AnimeNews(result) {
     galleryAnime.innerHTML = MovieInnerHTML;
     galleryAnimeDiv.appendChild(galleryAnime);
     document.querySelector(".animePageNews")?.appendChild(galleryAnimeDiv);
+    initializeAnimeCards();
+
   }
 }
 
@@ -710,6 +717,8 @@ function AnimeRecommendations(result) {
     recAnimeSection.appendChild(recAnimeDiv)
     const recAnime = document.querySelector(".animePageRecomendetions");
     recAnime?.appendChild(recAnimeSection)
+    initializeAnimeCards();
+
   }
 } 
 
@@ -769,6 +778,8 @@ function AnimeRelations(result) {
     }
     var recAnime = document.querySelector(".animePageRelations");
     recAnime?.appendChild(relAnimeSection)
+    initializeAnimeCards();
+
   }
 }
 
@@ -777,7 +788,7 @@ function AnimeReview(result) {
   const recAnimeSection = document.createElement('section');
   recAnimeSection.classList.add('imgRow2');
 
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < result.data.length; i++) {
     // console.log(result);
   
     const commentDiv = document.createElement('div');
@@ -816,7 +827,8 @@ function AnimeReview(result) {
     `;
     commentDiv.innerHTML = CommentsReviewInnerHTML;
     document.querySelector(".animePageComments")?.appendChild(commentDiv)
-  
+    initializeAnimeCards();
+
 }
 }
 
