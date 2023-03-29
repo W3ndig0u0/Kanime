@@ -1,6 +1,5 @@
-import {initializeAnimeCards} from './AnimePage';
-
 let fetchedTypes = {};
+let thumbnailGlobal;
 
 function getAnime() {
   let animeId = sessionStorage.getItem("AnimeID");
@@ -200,9 +199,10 @@ function AnimePage(result) {
   AnimePageDiv.classList.add('statePage');
   
   const thumbnail = result.data.images.jpg.large_image_url;
+  thumbnailGlobal = thumbnail;
 
   const titleJp = result.data.title_japanese;
-  const title = result.data.title_english;
+  const title = result.data.title_english ?? result.data.title;
 
   const type = result.data.type;
   const aired = result.data.aired.string;
@@ -229,8 +229,6 @@ function AnimePage(result) {
 
   const scored_by = result.data.scored_by;
   const synopsis = result.data.synopsis;
-
-  const trailer_url = result.data.trailer.embed_url;
 
   const newTitle = capitalizeFirstLetter(title);
   const newTitleEn = capitalizeFirstLetter(titleJp);
@@ -727,53 +725,57 @@ function AnimeRelations(result) {
 
   for (let i = 0; i < result?.data?.length; i++) {
 
-  const relAnimeTypeDiv = document.createElement('div');
-  const relation = result.data[i]?.relation;
+    const entry = result.data[i]?.entry;
 
-  relAnimeTypeDiv.innerHTML =  `
-  <br>
-  <br>
-  <h3 class="titleComments">${relation}</h3>
-  <div class="${relation}"></div>
-  <br>
-  `;
+    if (!entry || entry.length === 0) {
+      continue;
+    }
 
-  const relAnimeSection = document.createElement('section');
-  relAnimeSection.classList.add('a');
-  
-  relAnimeSection.appendChild(relAnimeTypeDiv)
-  
-  const relAnimeDiv = document.createElement('div');
-  relAnimeDiv.classList.add('imgRow');
-  
-  for (let j = 0; j < result.data[j]?.entry.length; j++) {
-    const thumbnail = "https://assets.reedpopcdn.com/Genshin-Impact-anime.jpg/BROK/resize/1200x1200%3E/format/jpg/quality/70/Genshin-Impact-anime.jpg";
-    const id = result.data[i]?.entry[j]?.mal_id;
-    const title = result.data[i]?.entry[j]?.name;
-    const type = result.data[i]?.entry[j]?.type;
+    const relAnimeTypeDiv = document.createElement('div');
+    const relation = result.data[i]?.relation;
 
-    const newTitle = capitalizeFirstLetter(title);
+    relAnimeTypeDiv.innerHTML =  `
+    <br>
+    <br>
+    <h3 class="titleComments">${relation}</h3>
+    <div class="${relation}"></div>
+    <br>
+    `;
 
-    // !Skapar html
-    const relInnerHTML = 
-    `
-    <div onclick="${type}Select(${id})" class="imgCard animeCard ImgCardSlider">
-      <div class="cardImage">
-          <img
-          src=${thumbnail}
-          alt=${newTitle}/>
-          <div class="epTag">${relation}</div>
-            <div class="${type}Tag tag">${type}</div>
-            <div class="playWrapper">
-            </div>
-            <div class="cardInfo">
-            <span class="cardTitle">${truncate(newTitle, 25)}</span>
+    const relAnimeSection = document.createElement('section');
+    relAnimeSection.classList.add('a');
+
+    relAnimeSection.appendChild(relAnimeTypeDiv)
+
+    const relAnimeDiv = document.createElement('div');
+    relAnimeDiv.classList.add('imgRow');
+
+    for (let j = 0; j < entry.length; j++) {
+      const id = entry[j]?.mal_id;
+      const title = entry[j]?.name;
+      const type = entry[j]?.type;
+      const newTitle = capitalizeFirstLetter(title);
+
+      // !Skapar html
+      const relInnerHTML = 
+      `
+      <div onclick="${type}Select(${id})" class="imgCard animeCard ImgCardSlider">
+        <div class="cardImage">
+            <img
+            src="${thumbnailGlobal}"
+            alt=${newTitle}/>
+            <div class="epTag">${relation}</div>
+              <div class="${type}Tag tag">${type}</div>
+              <div class="playWrapper">
+              </div>
+              <div class="cardInfo">
+              <span class="cardTitle">${truncate(newTitle, 50)}</span>
+          </div>
         </div>
-      </div>
-      `;
+        `;
 
-      relAnimeDiv.innerHTML += relInnerHTML;
-      relAnimeSection.appendChild(relAnimeDiv)
+        relAnimeDiv.innerHTML += relInnerHTML;
+        relAnimeSection.appendChild(relAnimeDiv)
 
     }
     var recAnime = document.querySelector(".animePageRelations");

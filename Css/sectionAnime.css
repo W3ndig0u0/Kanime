@@ -69,7 +69,6 @@
 .imgRow {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   grid-gap: 2rem;
   margin: 0 auto;
   justify-items: center;
@@ -85,7 +84,6 @@
 
 .imgRow2 .charDiv{
   margin-bottom: 3rem;
-
 }
 
 .airingAnimeJs .imgRow2 {

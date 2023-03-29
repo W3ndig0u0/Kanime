@@ -270,11 +270,8 @@
 }
 
 .titleComments:first-of-type {
-  margin-top: 0rem;
-}
-
-.gallery {
-  margin-bottom: 5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .reviewerImgDiv {
