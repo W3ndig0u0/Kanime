@@ -1,111 +1,155 @@
+let fetchedTypes = {};
+
 function getAnime() {
   let animeId = sessionStorage.getItem("AnimeID");
   
-  fetch("https://api.jikan.moe/v4/anime/" + animeId)
-  .then(response => response.json())
-  .then(result => {
-      AnimePage(result);
-  })
+  if (!fetchedTypes["Anime"]) {
+    fetchedTypes["Anime"] = true;
+    fetch("https://api.jikan.moe/v4/anime/" + animeId)
+    .then(response => response.json())
+    .then(result => {
+        AnimePage(result);
+    })
+  } else {
+    console.log("Anime type already fetched");
+  }
 }
 
 function getAnimeChar() {
   let animeId = sessionStorage.getItem("AnimeID");
   
-  fetch("https://api.jikan.moe/v4/anime/" + animeId + "/characters")
-  .then(response => response.json())
-  .then(result => {
-    if (result === undefined || result.data?.length === 0) {
-      noPageCharachter();
-    }
-    else{
-      AnimeCharPage(result);
-    }
-  })
+  if (!fetchedTypes["AnimeChar"]) {
+    fetchedTypes["AnimeChar"] = true;
+    fetch("https://api.jikan.moe/v4/anime/" + animeId + "/characters")
+    .then(response => response.json())
+    .then(result => {
+      if (result === undefined || result.data?.length === 0) {
+        noPageCharachter();
+      }
+      else{
+        AnimeCharPage(result);
+      }
+    })
+  } else {
+    console.log("AnimeChar type already fetched");
+  }
 }
 
 function getAnimeRelations() {
   let animeId = sessionStorage.getItem("AnimeID");
   
-  fetch("https://api.jikan.moe/v4/anime/" + animeId + "/relations")
-  .then(response => response.json())
-  .then(result => {
-    if (result === undefined || result.data?.length === 0) {
-      noAnimeRelations();
-    }
-    else{
-      AnimeRelations(result);
-    }
-  })
+  if (!fetchedTypes["AnimeRelations"]) {
+    fetchedTypes["AnimeRelations"] = true;
+    fetch("https://api.jikan.moe/v4/anime/" + animeId + "/relations")
+    .then(response => response.json())
+    .then(result => {
+      if (result === undefined || result.data?.length === 0) {
+        noAnimeRelations();
+      }
+      else{
+        AnimeRelations(result);
+      }
+    })
+  } else {
+    console.log("AnimeRelations type already fetched");
+  }
 }
 
 
 function getAnimeStaff() {
   let animeId = sessionStorage.getItem("AnimeID");
-  fetch("https://api.jikan.moe/v4/anime/" + animeId + "/staff")
-  .then(response => response.json())
-  .then(result => {
-    AnimePageStaff(result);
-  })
+  
+  if (!fetchedTypes["AnimeStaff"]) {
+    fetchedTypes["AnimeStaff"] = true;
+    fetch("https://api.jikan.moe/v4/anime/" + animeId + "/staff")
+    .then(response => response.json())
+    .then(result => {
+      AnimePageStaff(result);
+    })
+  } else {
+    console.log("AnimeStaff type already fetched");
+  }
 }
 
 function getAnimeGallery() {
   let animeId = sessionStorage.getItem("AnimeID");
   
-  fetch("https://api.jikan.moe/v4/anime/" + animeId + "/pictures")
-  .then(response => response.json())
-  .then(result => {
-    if (result?.data === undefined || result?.data?.length === 0) {
-      noPageGallery();
-    }
-    else{
-      AnimePageGallery(result);
-    }
-  })  
+  if (!fetchedTypes["AnimeGallery"]) {
+    fetchedTypes["AnimeGallery"] = true;
+    fetch("https://api.jikan.moe/v4/anime/" + animeId + "/pictures")
+    .then(response => response.json())
+    .then(result => {
+      if (result?.data === undefined || result?.data?.length === 0) {
+        noPageGallery();
+      }
+      else{
+        AnimePageGallery(result);
+      }
+    })  
+  } else {
+    console.log("AnimeGallery type already fetched");
+  }
 }
 
 function getAnimeRecommendations() {
   let animeId = sessionStorage.getItem("AnimeID");
   
-  fetch("https://api.jikan.moe/v4/anime/" + animeId + "/recommendations")
-  .then(response => response.json())
-  .then(result => {
-    if (result?.data === undefined || result?.data?.length === 0) {
-      noAnimeRecommendations();
-    }
-    else{
-      AnimeRecommendations(result);
-    }
-  })
+  if (!fetchedTypes["AnimeRecommendations"]) {
+    fetchedTypes["AnimeRecommendations"] = true;
+    fetch("https://api.jikan.moe/v4/anime/" + animeId + "/recommendations")
+    .then(response => response.json())
+    .then(result => {
+      if (result?.data === undefined || result?.data?.length === 0) {
+        noAnimeRecommendations();
+      }
+      else{
+        AnimeRecommendations(result);
+      }
+    })
+  } else {
+    console.log("AnimeRecommendations type already fetched");
+  }
 }
+
 
 function getAnimeNews() {
   let animeId = sessionStorage.getItem("AnimeID");
-  
-  fetch("https://api.jikan.moe/v4/anime/" + animeId + "/news")
-  .then(response => response.json())
-  .then(result => {
-    if (result?.data === undefined || result?.data?.length === 0) {
-      noAnimeNewsletter();
-    }
-    else{
-      AnimeNews(result);
-    }
-  })
+    
+  if (!fetchedTypes["AnimeNews"]) {
+    fetchedTypes["AnimeNews"] = true;
+    fetch("https://api.jikan.moe/v4/anime/" + animeId + "/news")
+    .then(response => response.json())
+    .then(result => {
+      if (result?.data === undefined || result?.data?.length === 0) {
+        noAnimeNewsletter();
+      }
+      else{
+        AnimeNews(result);
+      }
+    })
+  } else {
+    console.log("AnimeNews type already fetched");
+  }
 }
 
 function getAnimeReview() {
   let animeId = sessionStorage.getItem("AnimeID");
   
-  fetch("https://api.jikan.moe/v4/anime/" + animeId + "/reviews")
-  .then(response => response.json())
-  .then(result => {
-    if (result?.data === undefined || result?.data?.length === 0) {
-      noAnimeReview();
-    }
-    else{
-      AnimeReview(result);
-    }
-  })
+  if (!fetchedTypes["AnimeReview"]) {
+    fetchedTypes["AnimeReview"] = true;
+    fetch("https://api.jikan.moe/v4/anime/" + animeId + "/reviews")
+    .then(response => response.json())
+    .then(result => {
+      if (result?.data === undefined || result?.data?.length === 0) {
+        noAnimeReview();
+      }
+      else{
+        AnimeReview(result);
+      }
+    })
+  } else {
+    console.log("AnimeNews type already fetched");
+  }
 }
 
 function capitalizeFirstLetter(string) {
