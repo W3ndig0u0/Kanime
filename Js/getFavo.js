@@ -52,7 +52,7 @@ function char() {
 function AnimeCommentsPage(result) {
     const commentDiv = document.createElement('div');
     const type = result.data.type;
-    const premiered = result.data.year;
+    const premiered = result.data.year ?? "Not Released Yet";
     const img = result.data.images.webp.large_image_url;
     const animeID = result.data.mal_id;
     const content = result.data.title_english ?? result.data.title;
@@ -100,9 +100,9 @@ function CharCommentPage(result) {
     const commentDiv = document.createElement('div');
 
 
-    const premiered = result.data.year;
+    const favorites = result.data.favorites;
     const animeID = result.data.mal_id;
-    const content = result.data.title_english ?? result.data.title;
+    const content = result.data.name_kanji;
     const img = result.data.images.jpg.image_url;
     const title = result.data?.name_en ?? result.data?.name;
 
@@ -112,12 +112,15 @@ function CharCommentPage(result) {
     <div onclick="charSelect(${animeID})">
       <img class="reviewerImg" src=${img} alt=${title}>
         <p>${truncate(title, 30)}</p>
-        <p>${truncate(content, 30)}</p>
+        <span>${content}</span>
+        <br>
+        <span>❤️: ${favorites}</span>
     </div>
     `;
     commentDiv.innerHTML = CommentsReviewInnerHTML;
     document.getElementsByClassName("charFavo")[0].appendChild(commentDiv);
 }
+
 
 
 function animeSelect(id){
