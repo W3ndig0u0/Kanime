@@ -11,6 +11,7 @@ function getAnime() {
     .then(response => response.json())
     .then(result => {
         AnimePage(result);
+        console.log(result)
     })
   } else {
     console.log("Anime type already fetched");
@@ -160,7 +161,7 @@ function getAnimeID(){
 
     if (!fetchedTypes["Video"]) {
       fetchedTypes["Video"] = true;
-      fetch("https://api.consumet.org/anime/gogoanime/" + titleGlobal + "?page=1")
+      fetch("https://api.consumet.org/anime/gogoanime/" + removeSign(titleGlobal) + "?page=1")
       .then(response => response.json())
       .then(result => {
         if (result === undefined || result.data?.length === 0) {
@@ -168,6 +169,7 @@ function getAnimeID(){
         }
         else{
           findAnimeVideo(result);
+          console.log(result)
         }
       })
     } else {
@@ -227,7 +229,7 @@ function AnimePage(result) {
 
   const titleJp = result.data.title_japanese;
   const title = result.data.title_english ?? result.data.title;
-  titleGlobal = title;
+  titleGlobal = titleJp;
 
   const type = result.data.type;
   const aired = result.data.aired.string;
@@ -418,13 +420,11 @@ function AnimePage(result) {
         </button>
         <div class="pageTypeWrapper">
           <div class="pageType">
-            <p >Overview</p>
             <p onclick="showType('video')">Video</p>
             <p onclick="showType('relations')">Relations</p>
             <p onclick="showType('recomendetion')">Recomendetion</p>
             <p onclick="showType('characters')">Characters</p>
             <p onclick="showType('staff')">Staff</p>
-            <p>Stats</p>
             <p onclick="showType('news')">News</p>
             <p onclick="showType('gallery')">Gallery</p>
             <p onclick="showType('reviews')">Reviews</p>
@@ -521,6 +521,7 @@ function toggleType(){
 }
 
 function findAnimeVideo(result){
+  
   const shearchResult = document.querySelector(".searchingShow");
   // !Tar bort det gamla search
   while (shearchResult?.firstChild) {
@@ -531,10 +532,14 @@ function findAnimeVideo(result){
   animeInfo.className = "imgRow2";
 
   for (let i = 0; i < result.results.length; i++) {
-
   const animeEpisodes= document.createElement("span");
 
-  const animeTitle = result.results[i].title;
+  let animeTitle = result.results[i].title;
+  
+  if (result.results[i].title == "") { 
+     animeTitle = result.results[i].id;
+  }
+
   const animeId = result.results[i].id
   const image = result.results[i].image
 

@@ -16,7 +16,7 @@
   cursor: pointer;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) {  
   .buttonRow button {
     font-size: 24px;
     min-width: 196px;
@@ -29,7 +29,7 @@
   bottom: 0;
   right: 0;
   width: 100%;
-  height: 30rem;
+  height: 50rem;
 }
 
 .animePageCommentsSection .iframeContainer{

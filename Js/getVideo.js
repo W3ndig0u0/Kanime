@@ -34,6 +34,14 @@ function onClickEpisode(episodeID){
 // ?Ladda ned
 function ShowAnimeDownload(result) {
   const animeDownloadDiv = document.querySelector(".animeDownload");
+  //?Display bara vid mobil
+  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    animeDownloadDiv.style.display = "block"; // set display to block if user is on a mobile device
+  } else {
+    animeDownloadDiv.style.display = "none"; // set display to none if user is on a PC
+  }  
+  const AnimeDInnerHTML = `<div>The links leads to the episode video for mobiles in order to avoid ads!</div>`;
+  animeDownloadDiv.innerHTML = AnimeDInnerHTML;
 
     // !Tar bort det gamla infot
     while (animeDownloadDiv?.firstChild) {
@@ -53,6 +61,7 @@ function ShowAnimeDownload(result) {
 
 // ?Alla video spelare
   function ShowAnimeVideoAlternatives(result) {
+    console.log(result);
     const animeVideo = document.querySelector(".animePageVideo");
 
     // !Tar bort det gamla infot
@@ -64,22 +73,24 @@ function ShowAnimeDownload(result) {
     const episodesPlay = document.createElement("div");
     const streamingService = result[i].name
     const animeUrl = result[i].url
+    
+    // ?Show knapp
+
     const episodesPlayHTML = `
     <div class="iframeContainer">
      <h5>${streamingService}</h5>
-     <button class="adsRemoveBtn sandbox">LMAOOO</button>
      <iframe id="framez" scrolling="no" src="${animeUrl}" frameborder="0" allowfullscreen></iframe>
     </div>
     `;
 
     episodesPlay.innerHTML = episodesPlayHTML;
     animeVideo?.appendChild(episodesPlay);
-    removeAds();
   }
 }
 
 // ?Information
 function ShowAnimeInfo(result){
+
 
   const animeInfoDiv = document.querySelector(".animeDownloadInfo");
 
@@ -127,18 +138,3 @@ function ShowAnimeInfo(result){
   // ?Deafult till ep 1
   getAnimeVideoDownload(episodeOne);
 }
-
-function removeAds(){
-var button = document.getElementsByClassName("sandbox")[0]
-  var iframe = document.getElementsByClassName("framez")[0]
-  button.addEventListener('click',sndbx,false);
-
-  function sndbx(){
-  var nibba = document.getElementById("framez").src;
-  if(iframe.sandbox == 'allow-forms allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation'){
-  document.getElementById("framez").removeAttribute("sandbox"); 
-  }
-  frames['framez'].location.href=nibba;
-  iframe.sandbox = 'allow-forms allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation';
-  }
-} 
