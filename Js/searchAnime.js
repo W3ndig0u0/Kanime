@@ -63,6 +63,7 @@ function updateDom(data) {
             if (!type || typeof type !== "string") {
                 type = "char";
             }
+            
             if (acc[type] === undefined) acc[type] = [];
             acc[type].push(anime);
             return acc;
@@ -73,7 +74,7 @@ function updateDom(data) {
     searchResults.innerHTML = Object.keys(animeByCategories).map(key => {
         
     const animesHTML = animeByCategories[key]
-    .sort((a, b) => a.score - b.score)
+    .sort((a, b) => b.name - a.name)
     .map(anime => {
 
         let title = anime.title ?? anime.name;
