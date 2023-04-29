@@ -70,19 +70,29 @@ function ShowAnimeDownload(result) {
     }
 
     for (let i = 0; i < result.length; i++) {
-    const episodesPlay = document.createElement("div");
+    const sourceBtn = document.createElement("div");
+    const episodesPlay = document.createElement("div"); 
     const streamingService = result[i].name
     const animeUrl = result[i].url
-    
+    let sourceBtnHTML;
+
     // ?Show knapp
+    for (let i = 0; i < result.length; i++) {
+      sourceBtnHTML = `
+      <div class="epButton">
+        <button class="${streamingService}" onclick="onClickEpisode(this.className)">${streamingService}</button>
+      </div>
+      `;
+    }
 
     const episodesPlayHTML = `
-    <div class="iframeContainer">
+    <div class="iframeContainer ${streamingService}">
      <h5>${streamingService}</h5>
      <iframe id="framez" scrolling="no" src="${animeUrl}" frameborder="0" allowfullscreen></iframe>
     </div>
     `;
 
+    sourceBtn.innerHTML = sourceBtnHTML;
     episodesPlay.innerHTML = episodesPlayHTML;
     animeVideo?.appendChild(episodesPlay);
   }

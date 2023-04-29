@@ -384,8 +384,7 @@
     display: unset;
   }
 
-  .menu-content .firstMenu li:nth-of-type(5),
-  .menu-content .firstMenu li:nth-of-type(6) {
+  .menu-content .firstMenu li:nth-of-type(5) {
     display: none;
   }
 

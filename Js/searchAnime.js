@@ -23,6 +23,7 @@ function searchAnime(event) {
                 const totalData = [...DATA_ANIME,...DATA_MANGA, ...DATA_CHAR];
                 console.log(totalData);
                 updateDom(totalData)
+                clickCard();
             })
 
         function parseJSON(response) {
@@ -31,17 +32,29 @@ function searchAnime(event) {
 
 }
 
-const typeToSelectFn = {
-    "TV": animeSelect,
-    "Movie": animeSelect,
-    "OVA": animeSelect,
-    "ONA": animeSelect,
-    "Manga": mangaSelect,
-    "Manhwa": mangaSelect,
-    "Manhua": mangaSelect,
-    "Light Novel": mangaSelect,
-    "One-shot": mangaSelect,
-    "char": charSelect,
+function typeToSelectFn(genre, id){
+    console.log(id);
+    // if (genre === "TV") {
+    //     animeSelect(id)
+    // }  else if (genre === "Movie") {
+    //     animeSelect(id)
+    // }  else if (genre === "OVA") {
+    //     animeSelect(id)
+    // }  else if (genre === "ONA") {
+    //     animeSelect(id)
+    // }  
+    // if (genre === "Manga") {
+    //     mangaSelect(id)
+    // }  else if (genre === "Manhwa") {
+    //     mangaSelect(id)
+    // }  else if (genre === "Light Novel") {
+    //     mangaSelect(id)
+    // }  else if (genre === "One-shot") {
+    //     mangaSelect(id)
+    // }  
+    //  if (genre === "char") {
+    //     charSelect(id)
+    // }
   }
 
 function updateDom(data) {
@@ -55,6 +68,7 @@ function updateDom(data) {
             return acc;
             
         }, {});
+        
 
     searchResults.innerHTML = Object.keys(animeByCategories).map(key => {
         
@@ -65,16 +79,15 @@ function updateDom(data) {
         let title = anime.title ?? anime.name;
         let animeImg = anime.images?.jpg.large_image_url ?? anime.images?.jpg.image_url;
         let rank = anime.rank;
+        let id = anime.mal_id;
         let rankTitle = "Rank"
-        const selectFn = typeToSelectFn[key];
         
         return `
         <div class="imgRow" >
-        <div onclick="${() => selectFn(anime.mal_id)}" class="imgCard animeCard">
+        <div class="imgCard animeCard">
         <div class="cardImage">
                     <img src="${animeImg}">
-                    
-                    <div class="epTag">${rankTitle}: ${rank}</div>
+                    <div class="epTag key id">${rankTitle}: ${rank}</div>
                     <div class="${key}Tag tag">${key.toUpperCase()}</div>
                     <div class="playWrapper">
                     </div>
@@ -88,6 +101,7 @@ function updateDom(data) {
             </div>
         </div>
     `
+
     }).join("");
 
     return `
@@ -102,7 +116,8 @@ function updateDom(data) {
     
     document.querySelector('.main').style.display = "none";
     document.querySelector('.specialPage').style.display = "none";
-    
+
+
     const menuBgColor1 = " rgba(5, 131, 242, 0.85),";
     const menuBgColor2 = " rgba(5, 131, 242, 0.98) ";
     const Imgurl = "https://i.pinimg.com/originals/5f/12/b9/5f12b974076736afe4bfe170b36b5e89.jpg";
@@ -142,10 +157,24 @@ function truncate(str, n){
     return (str.length > n) ? str.substr(0, n-1) + '&hellip;' : str;
 };
 
-
 function pageLoaded() {
     const form = document.getElementById('search_form');
     form?.addEventListener("submit", searchAnime);
 }
+
+function clickCard(){
+const imgCard = document.querySelectorAll('.imgRow');
+
+for (let i = 0; i < animeCards.length; i++) {
+    imgCard[i].addEventListener('onclick', hoverCardIn)
+  }
+    // typeToSelectFn(key, id);
+}
+
+function hoverCardIn(event) {
+    console.log(event)
+ }
+
+
 
 window.addEventListener("load", pageLoaded);

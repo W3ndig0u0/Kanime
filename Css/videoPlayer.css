@@ -16,7 +16,8 @@
   cursor: pointer;
 }
 
-@media (min-width: 768px) {  
+@media (min-width: 768px) {
+  
   .buttonRow button {
     font-size: 24px;
     min-width: 196px;
