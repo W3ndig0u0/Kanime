@@ -33,6 +33,10 @@ function getAnimeChar() {
         AnimeCharPage(result);
       }
     })
+    .catch(error => {
+      console.error(error);
+      noPageCharachter();
+    })
   } else {
     console.log("AnimeChar type already fetched");
   }
@@ -53,11 +57,14 @@ function getAnimeRelations() {
         AnimeRelations(result);
       }
     })
+    .catch(error => {
+      console.error(error);
+      noAnimeRelations();
+    })
   } else {
     console.log("AnimeRelations type already fetched");
   }
 }
-
 
 function getAnimeStaff() {
   let animeId = sessionStorage.getItem("AnimeID");
@@ -68,6 +75,10 @@ function getAnimeStaff() {
     .then(response => response.json())
     .then(result => {
       AnimePageStaff(result);
+    })
+    .catch(error => {
+      console.error(error);
+      noPageStaff();
     })
   } else {
     console.log("AnimeStaff type already fetched");
@@ -88,6 +99,10 @@ function getAnimeGallery() {
       else{
         AnimePageGallery(result);
       }
+    })
+    .catch(error => {
+      console.error(error);
+      noPageGallery();
     })  
   } else {
     console.log("AnimeGallery type already fetched");
@@ -109,6 +124,10 @@ function getAnimeRecommendations() {
         AnimeRecommendations(result);
       }
     })
+    .catch(error => {
+      console.error(error);
+      noAnimeRecommendations();
+    })  
   } else {
     console.log("AnimeRecommendations type already fetched");
   }
@@ -130,6 +149,10 @@ function getAnimeNews() {
         AnimeNews(result);
       }
     })
+    .catch(error => {
+      console.error(error);
+      noAnimeNewsletter();
+    })  
   } else {
     console.log("AnimeNews type already fetched");
   }
@@ -150,6 +173,10 @@ function getAnimeReview() {
         AnimeReview(result);
       }
     })
+    .catch(error => {
+      console.error(error);
+      noAnimeReview();
+    })  
   } else {
     console.log("AnimeNews type already fetched");
   }
@@ -164,16 +191,17 @@ function getAnimeID(){
       fetch("https://api.consumet.org/anime/gogoanime/" + removeSign(titleGlobal) + "?page=1")
       .then(response => response.json())
       .then(result => {
-        if (result === undefined || result.data?.length === 0) {
-         // noFindAnimeVideo()
+        if (result === undefined || result.results?.length === 0) {
+         noFindAnimeVideo()
+         console.log(result)
+         console.log(titleGlobal)
         }
         else{
           findAnimeVideo(result);
           console.log(result)
+          console.log(titleGlobal)
         }
       })
-    } else {
-      console.log("AnimeRelations type already fetched");
     }
 }
 
@@ -821,7 +849,7 @@ function AnimeRelations(result) {
     const relation = result.data[i]?.relation;
 
     relAnimeTypeDiv.innerHTML =  `
-    <h3 class="titleComments">${relation}</h3>
+    <h3 class="titleComments titleSite">${relation}</h3>
     <div class="${relation}"></div>
     <br>
     `;
@@ -924,6 +952,7 @@ function noAnimeRecommendations() {
     `
     <div class="reviewerImgDiv">
       <h1>This Anime Dosn't have any Recommendations yet...<h1/>
+      <img alt="ERROR IMG" src="https://i.postimg.cc/k5MBnyPx/pngwing-com.png">
       <p>Sorry D:<p/>
     </div>
     `;
@@ -937,6 +966,7 @@ function noAnimeReview() {
     `
     <div class="reviewerImgDiv">
       <h1>This Anime Dosn't have any Reviews yet...<h1/>
+      <img alt="ERROR IMG" src="https://i.postimg.cc/k5MBnyPx/pngwing-com.png">
       <p>Sorry D:<p/>
     </div>
     `;
@@ -950,6 +980,7 @@ function noAnimeNewsletter() {
     `
     <div class="reviewerImgDiv">
       <h1>This Anime Dosn't have any News yet...<h1/>
+      <img alt="ERROR IMG" src="https://i.postimg.cc/k5MBnyPx/pngwing-com.png">
       <p>Sorry D:<p/>
     </div>
     `;
@@ -963,6 +994,7 @@ function noPageGallery() {
     `
     <div class="reviewerImgDiv">
       <h1>This Anime Dosn't have any Gallery yet...<h1/>
+      <img alt="ERROR IMG" src="https://i.postimg.cc/k5MBnyPx/pngwing-com.png">
       <p>Sorry D:<p/>
     </div>
     `;
@@ -976,6 +1008,7 @@ function noPageStaff() {
     `
     <div class="reviewerImgDiv">
       <h1>This Anime Dosn't have any Staff(?) yet...<h1/>
+      <img alt="ERROR IMG" src="https://i.postimg.cc/k5MBnyPx/pngwing-com.png">
       <p>Sorry D:<p/>
     </div>
     `;
@@ -989,6 +1022,7 @@ function noPageCharachter() {
     `
     <div class="reviewerImgDiv">
       <h1>This Anime Dosn't have any Charachters(?) yet...<h1/>
+      <img alt="ERROR IMG" src="https://i.postimg.cc/k5MBnyPx/pngwing-com.png">
       <p>Sorry D:<p/>
     </div>
     `;
@@ -1002,10 +1036,24 @@ function noAnimeRelations(){
   `
   <div class="reviewerImgDiv">
     <h1>This Anime Dosn't have any Relations(?) yet...<h1/>
+    <img alt="ERROR IMG" src="https://i.postimg.cc/k5MBnyPx/pngwing-com.png">
   </div>
   `;
   relationDiv.innerHTML = relationInnerHTML;
   document.querySelector(".animePageRelations")?.appendChild(relationDiv)
+}
+
+function noFindAnimeVideo(){
+  const videoDiv = document.createElement('div');
+  const videoInnerHTML = 
+  `
+  <div class="reviewerImgDiv">
+    <h1>Could not find any episodes of this Anime<h1/>
+    <img alt="ERROR IMG" src="https://i.postimg.cc/k5MBnyPx/pngwing-com.png">
+  </div>
+  `;
+  videoDiv.innerHTML = videoInnerHTML;
+  document.querySelector(".animeDownloadInfo")?.appendChild(videoDiv)
 }
 
 

@@ -1,36 +1,52 @@
+let fetchedTypes = {};
+let thumbnailGlobal;
+let titleGlobal;
+
 let mangaId = sessionStorage.getItem("mangaId");
 function getManga() {
   
+  if (!fetchedTypes["Manga"]) {
+    fetchedTypes["Manga"] = true;
   fetch("https://api.jikan.moe/v4/manga/" + mangaId)
   .then(response => response.json())
   .then(result => {
     MangaPage(result);
   })
+  } else {
+    console.log("Manga type already fetched");
+  }
 }
 
 
 function getMangaChar() {
-
+  if (!fetchedTypes["MangaChar"]) {
+    fetchedTypes["MangaChar"] = true;
   fetch("https://api.jikan.moe/v4/manga/" + mangaId + "/characters")
   .then(response => response.json())
   .then(result => {
     if (result.characters.length === 0) {
       noPageCharachter();
     }
-
     MangaPageChar(result);
-  })
+  }) 
   .catch(error => {
     console.error(error);
     noPageCharachter();
   })
+ } else {
+    console.log("Manga type already fetched");
+  }
 }
 
 function getMangaGallery() {
+  if (!fetchedTypes["MangaGallery"]) {
+    fetchedTypes["MangaGallery"] = true;
+
   fetch("https://api.jikan.moe/v4/manga/" + mangaId + "/pictures")
   .then(response => response.json())
   .then(result => {
-    if (result.pictures.length === 0) {
+    console.error(result);
+    if (result.data.length === 0) {
       noPageGallery();
     }
       MangaPageGallery(result);
@@ -38,11 +54,14 @@ function getMangaGallery() {
   .catch(error => {
     console.error(error);
     noPageGallery();
-  })
+  })} else {
+    console.log("Manga Gallery already fetched");
+  }
 }
 
 function getMangaRecommendations() {
-  
+  if (!fetchedTypes["MangaRecommendations"]) {
+    fetchedTypes["MangaRecommendations"] = true;
   fetch("https://api.jikan.moe/v4/manga/" + mangaId + "/recommendations")
   .then(response => response.json())
   .then(result => {
@@ -54,28 +73,38 @@ function getMangaRecommendations() {
   .catch(error => {
     console.error(error);
     noMangaRecommendations();
-  })
+  })} else {
+    console.log("Manga Recommendations already fetched");
+  }
 }
 
 
 function getMangaComments() {
+  if (!fetchedTypes["MangaComments"]) {
+    fetchedTypes["MangaComments"] = true;
   let mangaId = sessionStorage.getItem("mangaId");
   
-  fetch("https://api.jikan.moe/v4/manga/" + mangaId + "/reviews/1")
+  fetch("https://api.jikan.moe/v4/manga/" + mangaId + "/reviews")
   .then(response => response.json())
   .then(result => {
-    if (result.reviews.length === 0) {
-      noMangaCommentsPage();
+    if (result.length === 0) {
+      noPageComments();
     }
-    MangaCommentsPage(result.reviews);
+    MangaCommentsPage(result);
   })
   .catch(error => {
-    console.error(error);
-    noMangaCommentsPage();
+    console.log(error)
+    noPageComments();
   })
+  } else {
+    console.log("Manga Comments already fetched");
+  }
 }
 
 function getMangaNews() {
+  if (!fetchedTypes["MangaNews"]) {
+    fetchedTypes["MangaNews"] = true;
+
   let mangaId = sessionStorage.getItem("mangaId");
   
   fetch("https://api.jikan.moe/v4/manga/" + mangaId + "/news")
@@ -89,7 +118,10 @@ function getMangaNews() {
   .catch(error => {
     console.error(error);
     noMangaNews();
-  })
+  })  
+} else {
+    console.log("Manga News already fetched");
+  }
 }
 
 function capitalizeFirstLetter(string) {
@@ -135,7 +167,6 @@ function MangaPage(result) {
   const AnimePageSection = document.createElement('section');
   const AnimePageDiv = document.createElement('div');
   AnimePageDiv.classList.add('statePage');
-  console.log(result)
   
   const thumbnail = result.data.images.jpg.large_image_url ?? result.data.images.jpg.image_url;
 
@@ -144,7 +175,7 @@ function MangaPage(result) {
 
   const type = result.data.type;
   const aired = result.data.published?.string;
-  const demographics = result.data.demographics[0].name;
+  const demographics = result.data?.demographics[0]?.name;
   const volumes = result.data.volumes;
   const status = result.data.status;
   const MalURL = result.data.url;
@@ -316,7 +347,7 @@ function MangaPage(result) {
 
         <div class="pageTypeWrapper">
         <div class="pageType">
-          <p onclick="showType('chapter')">Chapters</p>
+          <p onclick="showType('chapters')">Chapters</p>
           <p onclick="showType('relations')">Relations</p>
           <p onclick="showType('recomendetion')">Recomendetion</p>
           <p onclick="showType('characters')">Characters</p>
@@ -376,7 +407,7 @@ function dateConverser(dates) {
 //?Gömmer andra elemet i sidan när de ej e tryckta
 function showType(type){
   const typeBlocks = document.getElementsByClassName(type);
-  const allBlocks = document.querySelectorAll('.characters, .realations, .news, .gallery, .reviews, .recomendetion, .chapters');
+  const allBlocks = document.querySelectorAll('.characters, .relations, .news, .gallery, .reviews, .recomendetion, .chapters');
 
   if (typeBlocks[0].style.display === 'block') {
     return; // if the type is already displayed, don't do anything
@@ -397,7 +428,7 @@ function showType(type){
 }
 
 function hideOtherTypes(selectedType) {
-  const allTypes = ['characters', 'relations', 'news', 'gallery', 'reviews', 'recomendetion'];
+  const allTypes = ['characters', 'relations', 'news', 'gallery', 'reviews', 'recomendetion', 'chapters'];
   for (let i = 0; i < allTypes.length; i++) {
     const type = allTypes[i];
     if (type !== selectedType) {
@@ -412,91 +443,83 @@ function hideOtherTypes(selectedType) {
 function toggleType(){
   const mangaChar = document.querySelector('.characters');
   const mangaRelations = document.querySelector('.relations');
-  const mangaStaff = document.querySelector('.staff');
   const mangaNews = document.querySelector('.news');
   const mangaGallery = document.querySelector('.gallery');
   const mangaReviews = document.querySelector('.reviews');
   const mangaRecomendetion = document.querySelector('.recomendetion');
   const mangaChapters = document.querySelector('.chapters');
 
-  if (mangaStaff.style.display === "block") {
-    getAnimeStaff();
-  }
-  if (mangaNews.style.display === "block") {
-    getAnimeNews();
+  if (mangaNews?.style.display === "block") {
+    getMangaNews();
   }  
-  if (mangaRelations.style.display === "block") {
-    getAnimeRelations();
+  if (mangaRelations?.style.display === "block") {
+    // getMangaRelations();
   }
-  if (mangaChar.style.display === "block") {
-    getAnimeChar();
+  if (mangaChar?.style.display === "block") {
+    getMangaChar();
 
   }
-  if (mangaGallery.style.display === "block") {
-    getAnimeGallery();
-
+  if (mangaGallery?.style.display === "block") {
+    getMangaGallery();
   }
-  if (mangaReviews.style.display === "block") {
-    getAnimeReview();
+
+  if (mangaReviews?.style.display === "block") {
+    getMangaComments();
     
   }
-  if (mangaRecomendetion.style.display === "block") {
+  if (mangaRecomendetion?.style.display === "block") {
     getAnimeRecommendations();
   }
-  if (mangaChapters.style.display === "block") {
-    getAnimeID();
+  if (mangaChapters?.style.display === "block") {
+    getManga();
   }
 }
 
 
 
 function MangaCommentsPage(result) {
-  for (let i = 0; i < result.length; i++) {
+
+  for (let i = 0; i < result.data.length; i++) {
+
   const commentDiv = document.createElement('div');
-  commentDiv.classList.add("commentDiv")
-    const content = result[i].content;
-    const date = result[i].date;
-    const votes = result[i].helpful_count;
-    const reviewerImg = result[i].reviewer.image_url;
-    const reviewerName = result[i].reviewer.username;
-    const url = result[i].reviewer.url;
+  commentDiv.classList.add("slideshow")
+
+    const review = result.data[i].review;
+    const date = result.data[i].date;
+    const reviewerImg = result.data[i].user.images.jpg.image_url;
+    const reviewerName = result.data[i].user.username;
+    const spoiler = result.data[i].is_spoiler;
+
+    const type = result.data[i].type;
+    const score = result.data[i].score;
+    
     
     // !Skapar html
     const CommentsReviewInnerHTML = 
     `
-    <div class="reviewerImgDiv">
-      <a href=${url} target="_blank" title="noopener">
-        <img class="reviewerImg" src=${reviewerImg} alt=${reviewerName + date}>
-        <p class="reviewName">${reviewerName}</p>
-        <a/>
+    <div>
+        <div class="reviewContentAll">
+          <img class="thumbnail" src=${reviewerImg} alt=${reviewerName}"
+            alt="profile-img" />
+          <p class="reviewName">${reviewerName}</p>
+          <p class="reviewDate">${dateConverser(date)}</p>
+
+          <div class="reviewScroll">
+            <h2 class="reviewText">
+            ${truncate(review, 900)}
+            </h1> 
+          </div>
+              <p>${type}</p>
+              <p>${spoiler}</p>
+              <p>${score}</p>
+          </div>
+        </div>
       </div>
-      
-      <div class="reviewInfo">
-      <div class="reviewInfoTop">
-        <span class="reviewDate">${dateConverser(date)}</span>
-      </div>
-        <p class="revireContent">${truncate(content, 900)}</p>
-    </div>
     `;
     commentDiv.innerHTML = CommentsReviewInnerHTML;
     document.querySelector(".mangaPageComments").appendChild(commentDiv)
   }
 }
-
-function noMangaCommentsPage() {
-  const commentDiv = document.createElement('div');
-    // !Skapar html
-    const CommentsReviewInnerHTML = 
-    `
-    <div class="reviewerImgDiv">
-      <h1>This Anime Dosn't have any Reviwes/Comments yet...<h1/>
-      <p>Sorry D:<p/>
-    </div>
-    `;
-    commentDiv.innerHTML = CommentsReviewInnerHTML;
-    document.querySelector(".mangaPageComments").appendChild(commentDiv)
-}
-
 
 function MangaPageChar(result) {
   // !char
@@ -539,11 +562,11 @@ function MangaPageGallery(result) {
   const galleryAnimeDiv = document.createElement("div");
   galleryAnimeDiv.classList.add("imgRow2");
 
-  for (let i = 0; i < result.pictures.length; i++) {
+  for (let i = 0; i < result.data.length; i++) {
     const galleryAnime = document.createElement("div");
     galleryAnime.classList.add("vcCard2");
 
-    const AnimeThumbnail = result.pictures[i].small;
+    const AnimeThumbnail = result.data[i].jpg.large_image_url ?? result.data[i].jpg.image_url;
     const MovieInnerHTML = `
           <div class="imgCard animeCard">
           <div class="cardImage">
@@ -636,14 +659,13 @@ function MangaNews(result) {
 }
 
 // !Fail Catches
-
 function noMangaNews() {
   const commentDiv = document.createElement('div');
     const CommentsReviewInnerHTML = 
     `
     <div class="reviewerImgDiv">
       <h1>This Manga Dosn't have any News...<h1/>
-      <p>Sorry D:<p/>
+      <img alt="ERROR IMG" src="https://i.postimg.cc/k5MBnyPx/pngwing-com.png">
     </div>
     `;
     commentDiv.innerHTML = CommentsReviewInnerHTML;
@@ -651,16 +673,16 @@ function noMangaNews() {
 }
 
 function noMangaRecommendations() {
-  const commentDiv = document.createElement('div');
-    const CommentsReviewInnerHTML = 
+  const recomendetion = document.createElement('div');
+    const recomendetionInnerHTML = 
     `
     <div class="reviewerImgDiv">
       <h1>This Manga Dosn't have any Recommendations yet...<h1/>
-      <p>Sorry D:<p/>
+      <img alt="ERROR IMG" src="https://i.postimg.cc/k5MBnyPx/pngwing-com.png">
     </div>
     `;
-    commentDiv.innerHTML = CommentsReviewInnerHTML;
-    document.querySelector(".mangaPageRecommendations").appendChild(commentDiv)
+    recomendetion.innerHTML = recomendetionInnerHTML;
+    document.querySelector(".mangaPageRecommendations")?.appendChild(recomendetion)
 }
 
 function noPageGallery() {
@@ -669,7 +691,7 @@ function noPageGallery() {
     `
     <div class="reviewerImgDiv">
       <h1>This Manga Dosn't have any Gallery yet...<h1/>
-      <p>Sorry D:<p/>
+      <img alt="ERROR IMG" src="https://i.postimg.cc/k5MBnyPx/pngwing-com.png">
     </div>
     `;
     commentDiv.innerHTML = CommentsReviewInnerHTML;
@@ -682,7 +704,7 @@ function noPageComments() {
     `
     <div class="reviewerImgDiv">
       <h1>This Manga Dosn't have any Comments yet...<h1/>
-      <p>Sorry D:<p/>
+      <img alt="ERROR IMG" src="https://i.postimg.cc/k5MBnyPx/pngwing-com.png">
     </div>
     `;
     commentDiv.innerHTML = CommentsReviewInnerHTML;
@@ -695,7 +717,7 @@ function noPageCharachter() {
     `
     <div class="reviewerImgDiv">
       <h1>This Manga Dosn't have any Characters yet...<h1/>
-      <p>Sorry D:<p/>
+      <img alt="ERROR IMG" src="https://i.postimg.cc/k5MBnyPx/pngwing-com.png">
     </div>
     `;
     commentDiv.innerHTML = CommentsReviewInnerHTML;
@@ -726,9 +748,4 @@ function charSelect(id){
   window.location.assign("../Html/Char.html");
 }
 
-getManga();
-getMangaGallery();
-getMangaRecommendations();
-getMangaNews();
-getMangaChar();
-getMangaComments();
+window.addEventListener("load", getManga);

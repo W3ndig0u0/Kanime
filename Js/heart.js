@@ -39,7 +39,7 @@ function favoritesAnime(){
 
 function favoritesManga(){
 
-  if (document.querySelector(".heart").checked === true) {
+  if (document.querySelector(".heart")?.checked === true) {
     localStorage.setItem('checked ' + mangaId, true);
     localStorage.setItem("Favorites Manga " + mangaId, mangaId);
   }

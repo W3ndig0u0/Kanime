@@ -32,29 +32,37 @@ function searchAnime(event) {
 
 }
 
-function typeToSelectFn(genre, id){
-    console.log(id);
-    // if (genre === "TV") {
-    //     animeSelect(id)
-    // }  else if (genre === "Movie") {
-    //     animeSelect(id)
-    // }  else if (genre === "OVA") {
-    //     animeSelect(id)
-    // }  else if (genre === "ONA") {
-    //     animeSelect(id)
-    // }  
-    // if (genre === "Manga") {
-    //     mangaSelect(id)
-    // }  else if (genre === "Manhwa") {
-    //     mangaSelect(id)
-    // }  else if (genre === "Light Novel") {
-    //     mangaSelect(id)
-    // }  else if (genre === "One-shot") {
-    //     mangaSelect(id)
-    // }  
-    //  if (genre === "char") {
-    //     charSelect(id)
-    // }
+function typeToSelectFn(info){
+    let infoArray = trimmer(info);
+    const genre = infoArray[0];
+    const id = infoArray[1];
+
+    if (genre === "TV") {
+        animeSelect(id)
+    }  else if (genre === "Movie") {
+        animeSelect(id)
+    }  else if (genre === "OVA") {
+        animeSelect(id)
+    }  else if (genre === "ONA") {
+        animeSelect(id)
+    }  
+    if (genre === "Manga") {
+        mangaSelect(id)
+    }  else if (genre === "Manhwa") {
+        mangaSelect(id)
+    }  else if (genre === "Light Novel") {
+        mangaSelect(id)
+    }  else if (genre === "One-shot") {
+        mangaSelect(id)
+    }  
+     if (genre === "char") {
+        charSelect(id)
+    }
+  }
+
+  function trimmer(str){
+    let words = str.split(',');
+    return words.map(word => word.trim());
   }
 
 function updateDom(data) {
@@ -85,7 +93,7 @@ function updateDom(data) {
         
         return `
         <div class="imgRow" >
-        <div class="imgCard animeCard">
+        <div class="imgCard animeCard" id="${key},${id}" onclick="typeToSelectFn(this.id)">
         <div class="cardImage">
                     <img src="${animeImg}">
                     <div class="epTag key id">${rankTitle}: ${rank}</div>
@@ -162,20 +170,5 @@ function pageLoaded() {
     const form = document.getElementById('search_form');
     form?.addEventListener("submit", searchAnime);
 }
-
-function clickCard(){
-const imgCard = document.querySelectorAll('.imgRow');
-
-for (let i = 0; i < animeCards.length; i++) {
-    imgCard[i].addEventListener('onclick', hoverCardIn)
-  }
-    // typeToSelectFn(key, id);
-}
-
-function hoverCardIn(event) {
-
-}
-
-
 
 window.addEventListener("load", pageLoaded);

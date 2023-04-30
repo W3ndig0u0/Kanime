@@ -80,9 +80,8 @@
 }
 
 .thumbnail {
-  height: 55px;
-  width: 55px;
-  border-radius: 50%;
+  padding-top: 1rem;
+  border-radius: 5%;
   display: block;
   margin: 30px auto;
   user-select: none;
