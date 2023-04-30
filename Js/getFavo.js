@@ -52,7 +52,7 @@ function AnimeCommentsPage(result) {
     const commentDiv = document.createElement('div');
     const type = result.data.type;
     const premiered = result.data.year ?? "Not Released Yet";
-    const img = result.data.images.webp.large_image_url;
+    const img = result.data.images.jpg.large_image_url ?? result.data.images.jpg.image_url;
     const animeID = result.data.mal_id;
     const content = result.data.title_english ?? result.data.title;
     
@@ -72,15 +72,16 @@ function AnimeCommentsPage(result) {
 
 function MangaCommentsPage(result) {
     const commentDiv = document.createElement('div');
-    const content = result.title;
-    const type = result.type;
-    const premiered = result.published.from;
+
+    const content = result.data.title;
+    const type = result.data.type;
+    const premiered = result.data.published.from;
     const premieredYear = premiered.substring(0, 4);
 
-    const img = result.image_url;
-    const animeID = result.mal_id;
-    const message = result.message;
-    
+    const img = result.data.images.jpg.large_image_url ?? result.data.images.jpg.image_url;
+    ;
+    const animeID = result.data.mal_id;
+
     // !Skapar html
     const CommentsReviewInnerHTML = 
     `
@@ -102,7 +103,7 @@ function CharCommentPage(result) {
     const favorites = result.data.favorites;
     const animeID = result.data.mal_id;
     const content = result.data.name_kanji;
-    const img = result.data.images.jpg.image_url;
+    const img = result.data.images.jpg.large_image_url ?? result.data.images.jpg.image_url;
     const title = result.data?.name_en ?? result.data?.name;
 
     // !Skapar html

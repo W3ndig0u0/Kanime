@@ -25,20 +25,26 @@
   <link rel="stylesheet" href="../Css/newsCard.css" />
   <link rel="stylesheet" href="../Css/color.css" />
 
-  
+
+  <!-- TODO:för manga knapparna, Designa om senare -->
+  <link rel="stylesheet" href="../Css/videoPlayer.css" />
+
+
 
   <link rel="stylesheet" href="../Css/mediaQueries.css" />
 
   <!-- !Api -->
   <script defer src="../Js/loader.js"></script>
-  <script defer src="../Js/searchAnime.js"></script>
   <script defer src="../Js/darkMode.js"></script>
+  <script defer src="../Js/AnimePage.js"></script>
   <script defer src="../Js/searchAnime.js"></script>
   <script defer src="../Js/scroll.js"></script>
   <script defer src="../Js/menu.js"></script>
   <script defer src="../Js/getManga.js"></script>
+  <script defer src="../Js/getMangaChap.js"></script>
   <script defer src="../Js/heart.js"></script>
-  <script defer src="../Js/AnimePage.js"></script>
+
+
 
   <link rel="shortcut icon" href="https://i.imgur.com/Bk4XUJx.png" />
 </head>
@@ -113,7 +119,16 @@
         
         <div class="chapters">
           <h3 class="titleComments titleSite">Chapters</h3>
-          <div class="mangaPageChap"></div>
+          <div class="mangaPageChap imgRow2"></div>
+          <div class="showMangaInfo"></div>
+          <div class="spinner">LOADING</div>
+          <div class="mangaChapters"></div>
+          <div class="mangaImg"></div>
+        </div>
+
+        <div class="animePageWrapper relations">
+          <h1 class="titleComments"></h1>
+          <div class="animePageRelations"></div>
         </div>
         
         <div class="animePageWrapper characters">

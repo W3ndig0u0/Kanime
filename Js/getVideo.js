@@ -34,12 +34,14 @@ function onClickEpisode(episodeID){
 // ?Ladda ned
 function ShowAnimeDownload(result) {
   const animeDownloadDiv = document.querySelector(".animeDownload");
+
   //?Display bara vid mobil
   if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
     animeDownloadDiv.style.display = "block"; // set display to block if user is on a mobile device
   } else {
     animeDownloadDiv.style.display = "none"; // set display to none if user is on a PC
   }  
+
   const AnimeDInnerHTML = `<div>The links leads to the episode video for mobiles in order to avoid ads!</div>`;
   animeDownloadDiv.innerHTML = AnimeDInnerHTML;
 
@@ -64,10 +66,11 @@ function ShowAnimeVideoAlternatives(result) {
   console.log(result);
   const animeVideo = document.querySelector(".animePageVideo");
   const animePageBtn = document.querySelector(".animePageBtn");
-  animePageBtn.classList.add("buttonRow");
-  animePageBtn.classList.add("buttonSource");
 
-  // Tar bort det gamla infot
+  animePageBtn?.classList.add("buttonRow");
+  animePageBtn?.classList.add("buttonSource");
+
+  //! Tar bort det gamla infot
   while (animeVideo?.firstChild) {
     animeVideo.removeChild(animeVideo.firstChild);
   }
@@ -81,6 +84,7 @@ function ShowAnimeVideoAlternatives(result) {
     const streamingService = result[i].name;
     const animeUrl = result[i].url;
     const buttonSource = document.createElement("div");
+    
 
    const buttonSourceHTML = `
    <div class="epButton">
@@ -121,12 +125,29 @@ function showPlayer(playerId) {
 // ?Information
 function ShowAnimeInfo(result){
 
+  const animeDownloadDiv = document.querySelector(".animeDownload");
   const animeInfoDiv = document.querySelector(".animeDownloadInfo");
+  const animeVideo = document.querySelector(".animePageVideo");
+  const animePageBtn = document.querySelector(".animePageBtn");
 
   // !Tar bort det gamla infot
   while (animeInfoDiv?.firstChild) {
     animeInfoDiv.removeChild(animeInfoDiv.firstChild);
   }
+
+  // !Tar bort det gamla infot
+  while (animeDownloadDiv?.firstChild) {
+    animeDownloadDiv.removeChild(animeDownloadDiv.firstChild);
+  }  
+  
+  while (animeVideo?.firstChild) {
+    animeVideo.removeChild(animeVideo.firstChild);
+  }
+  
+  while (animePageBtn?.firstChild) {
+    animePageBtn.removeChild(animePageBtn.firstChild);
+  }
+  
 
   const animeInfo = document.createElement("div");
   const animeEpisodes= document.createElement("div");

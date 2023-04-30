@@ -138,6 +138,7 @@ function CharPage(result) {
           <button>
             <a href=${MalURL} title="MyAnimeList Link" target="_blank">MyAnimeList Link</a> 
           </button>
+        <div><br></div>
         </div>
       </div>
       
@@ -223,6 +224,7 @@ function CharPageGallery(result) {
 function CharAnime(result) {
   const charAnimeDiv = document.createElement("div");
   charAnimeDiv.classList.add("imgRow2");
+  console.log(result)
 
   // for (let i = 0; i < result.data.anime.length; i++) {
   for (let i = 0; i < result.data.anime.length; i++) {

@@ -1,6 +1,7 @@
 let animeId = sessionStorage.getItem("AnimeID");
 let mangaId = sessionStorage.getItem("mangaId");
 let charId = sessionStorage.getItem("charId");
+
 // Update sessionStorage values
 let newAnimeId;
 let newMangaId;
@@ -38,8 +39,9 @@ function favoritesAnime(){
 }
 
 function favoritesManga(){
+  console.log(localStorage);
 
-  if (document.querySelector(".heart")?.checked === true) {
+  if (document.querySelector(".heart").checked === true) {
     localStorage.setItem('checked ' + mangaId, true);
     localStorage.setItem("Favorites Manga " + mangaId, mangaId);
   }
@@ -49,6 +51,7 @@ function favoritesManga(){
     localStorage.removeItem('checked ' + mangaId, true);
     localStorage.removeItem("Favorites Manga " + mangaId, mangaId);
   }
+
 }
 
 
