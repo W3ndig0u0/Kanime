@@ -31,30 +31,22 @@ function onClickChapter(ReadID){
 
 function ShowMangaChapter(result){
   const mangaChapDiv = document.querySelector(".mangaImg");
-  const spinner = document.querySelector(".spinner");
 
   // !Tar bort det gamla infot
   while (mangaChapDiv?.firstChild) {
     mangaChapDiv.removeChild(mangaChapDiv.firstChild);
   }
 
-  // Show spinner
-  spinner.style.display = "block";
-
   // ?Episoder knapp
   for (let i = 0; i < result.length; i++) {
     const chapterBtn = document.createElement("div");
-  
+    chapterBtn.classList.add("mangaChap")
     const img = `https://api.consumet.org/utils/image-proxy?url=${result[i].img}&referer=${result[i].img}`
-
     const chapterBtnInnerHTML =`<img src="${img}">`;
 
     chapterBtn.innerHTML = chapterBtnInnerHTML;
     mangaChapDiv?.appendChild(chapterBtn);
   }
-
-  // Hide spinner
-  spinner.style.display = "none";
 }
 
 

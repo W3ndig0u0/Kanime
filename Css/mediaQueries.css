@@ -266,6 +266,9 @@
   .newsImg2 img {
     width: 7rem;
   }
+  .animePageCommentsSection .buttonRow {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 /* !Smoll */
@@ -413,6 +416,17 @@
   .newsCardInfo h6,
   .newsCardInfo p {
     font-size: 0.6rem;
+  }
+
+  .animePageCommentsSection .buttonRow {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  button{
+    padding: 0.4rem 1rem;
+  }
+  .chapters{
+    padding: 0.1rem;
   }
 }
 

@@ -1,0 +1,23 @@
+.mangaChap{
+  width: 60%;
+  margin: 0 auto;
+
+
+}
+
+.mangaChap img{
+  /* width: 100%; */
+
+}
+
+
+/* !Mini Laptop */
+@media screen and (max-width: 1210px) {
+  .mangaChap{
+    width: auto;
+  }
+  
+  .mangaChap img{
+    width: 100%;
+  }
+}
