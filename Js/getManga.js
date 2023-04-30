@@ -98,6 +98,7 @@ function getMangaRecommendations() {
     if (result.data.length === 0) {
       noMangaRecommendations();
     }
+    console.log(result)
     MangaRecommendations(result);
   })
   .catch(error => {
@@ -674,12 +675,12 @@ function MangaRecommendations(result) {
     // !Skapar html
     const recentInnerHTML = 
     `
-    <div onclick="animeSelect(${id})" class="imgCard animeCard ImgCardSlider">
+    <div onclick="mangaSelect(${id})" class="imgCard animeCard ImgCardSlider">
       <div class="cardImage">
           <img
           src=${thumbnail}
           alt=${newTitle}/>
-            <div class="tvTag tag">TV</div>
+            <div class="MangaTag tag">Manga</div>
             <div class="epTag">Users: ${recommendations}</div>
             <div class="playWrapper">
             </div>
@@ -947,6 +948,7 @@ function charSelect(id){
 }
 
 getManga();
+getMangaID();
 window.addEventListener("load", getMangaID);
 
 
