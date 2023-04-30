@@ -6,9 +6,6 @@ function getManga() {
   .then(result => {
     MangaPage(result);
   })
-  .catch(error => {
-    getManga();
-  })
 }
 
 
@@ -25,7 +22,7 @@ function getMangaChar() {
   })
   .catch(error => {
     console.error(error);
-    getMangaChar();
+    noPageCharachter();
   })
 }
 
@@ -40,7 +37,7 @@ function getMangaGallery() {
   })
   .catch(error => {
     console.error(error);
-    getMangaGallery();
+    noPageGallery();
   })
 }
 
@@ -56,7 +53,7 @@ function getMangaRecommendations() {
   })
   .catch(error => {
     console.error(error);
-    getMangaRecommendations();
+    noMangaRecommendations();
   })
 }
 
@@ -73,7 +70,8 @@ function getMangaComments() {
     MangaCommentsPage(result.reviews);
   })
   .catch(error => {
-    getMangaComments();
+    console.error(error);
+    noMangaCommentsPage();
   })
 }
 
@@ -90,7 +88,7 @@ function getMangaNews() {
   })
   .catch(error => {
     console.error(error);
-    getMangaNews();
+    noMangaNews();
   })
 }
 
@@ -137,35 +135,35 @@ function MangaPage(result) {
   const AnimePageSection = document.createElement('section');
   const AnimePageDiv = document.createElement('div');
   AnimePageDiv.classList.add('statePage');
+  console.log(result)
   
-  const thumbnail = result.image_url;
+  const thumbnail = result.data.images.jpg.large_image_url ?? result.data.images.jpg.image_url;
 
-  const titleEn = result.title_japanese;
-  const title = result.title;
+  const titleEn = result.data.title_japanese;
+  const title = result.data.title;
 
-  const type = result.type;
-  const aired = result.published.string;
-  const chapters = result.chapters;
-  const volumes = result.volumes;
-  const status = result.status;
-  const MalURL = result.url;
+  const type = result.data.type;
+  const aired = result.data.published?.string;
+  const demographics = result.data.demographics[0].name;
+  const volumes = result.data.volumes;
+  const status = result.data.status;
+  const MalURL = result.data.url;
 
-  const producers = result.authors[0]?.name;
-  const studio = result.authors[1]?.name;
+  const producers = result.data.authors[0]?.name;
+  const studio = result.data.authors[1]?.name;
 
-  const genres = result.genres[0]?.name;
-  const genres1 = result.genres[1]?.name;
-  const genres2 = result.genres[2]?.name;
+  const genres = result.data.genres[0]?.name;
+  const genres1 = result.data.genres[1]?.name;
 
-  const rank = result.rank;
-  const popularity = result.popularity;
-  const members = result.members;
+  const rank = result.data.rank;
+  const popularity = result.data.popularity;
+  const members = result.data.members;
 
-  const score = result.score;
+  const score = result.data.score;
   const ColorScore = scoreColor(score);
 
-  const scored_by = result.scored_by;
-  const synopsis = result.synopsis;
+  const scored_by = result.data.scored_by;
+  const synopsis = result.data.synopsis;
 
   const newTitle = capitalizeFirstLetter(title);
   const newTitleEn = capitalizeFirstLetter(titleEn);
@@ -277,7 +275,7 @@ function MangaPage(result) {
           </div>
           <div>
             <span class="beforeState">Genres: </span>
-            <span class="state">${genres}, ${genres1}, ${genres2}</span>
+            <span class="state">${genres}, ${genres1}</span>
           </div>
           <div>
             <span class="beforeState">Status: </span>
@@ -295,8 +293,8 @@ function MangaPage(result) {
             <span class="state">${volumes}</span>
           </div>
           <div>
-            <span class="beforeState">Total Chapters:</span>
-            <span class="state">${chapters}</span>
+            <span class="beforeState">Demographics:</span>
+            <span class="state">${demographics}</span>
           </div>
         </div>
 
@@ -315,6 +313,21 @@ function MangaPage(result) {
         <button>
           <a href=${MalURL} title="MyAnimeList Link" target="_blank">MyAnimeList Link</a> 
         </button>
+
+        <div class="pageTypeWrapper">
+        <div class="pageType">
+          <p onclick="showType('chapter')">Chapters</p>
+          <p onclick="showType('relations')">Relations</p>
+          <p onclick="showType('recomendetion')">Recomendetion</p>
+          <p onclick="showType('characters')">Characters</p>
+          <p onclick="showType('news')">News</p>
+          <p onclick="showType('gallery')">Gallery</p>
+          <p onclick="showType('reviews')">Reviews</p>
+          </div>
+        </div>
+      </div>
+      
+
       </div>
     </div>
   </div>
@@ -359,6 +372,82 @@ function dateConverser(dates) {
   return [date + " " +  monthNames[mounth - 1] + ", " + hour]
 
 }
+
+//?Gömmer andra elemet i sidan när de ej e tryckta
+function showType(type){
+  const typeBlocks = document.getElementsByClassName(type);
+  const allBlocks = document.querySelectorAll('.characters, .realations, .news, .gallery, .reviews, .recomendetion, .chapters');
+
+  if (typeBlocks[0].style.display === 'block') {
+    return; // if the type is already displayed, don't do anything
+  } else {
+    allBlocks.forEach(block => {
+      if (block.style.display === 'block' && !block.classList.contains(type)) {
+        block.style.display = 'none';
+      }
+    });
+
+    for (let i = 0; i < typeBlocks.length; i++) {
+      typeBlocks[i].style.display = 'block';
+    }
+    hideOtherTypes(type);
+  }
+
+  toggleType();
+}
+
+function hideOtherTypes(selectedType) {
+  const allTypes = ['characters', 'relations', 'news', 'gallery', 'reviews', 'recomendetion'];
+  for (let i = 0; i < allTypes.length; i++) {
+    const type = allTypes[i];
+    if (type !== selectedType) {
+      const typeBlocks = document.getElementsByClassName(type);
+      for (let j = 0; j < typeBlocks.length; j++) {
+        typeBlocks[j].style.display = 'none';
+      }
+    }
+  }
+}
+
+function toggleType(){
+  const mangaChar = document.querySelector('.characters');
+  const mangaRelations = document.querySelector('.relations');
+  const mangaStaff = document.querySelector('.staff');
+  const mangaNews = document.querySelector('.news');
+  const mangaGallery = document.querySelector('.gallery');
+  const mangaReviews = document.querySelector('.reviews');
+  const mangaRecomendetion = document.querySelector('.recomendetion');
+  const mangaChapters = document.querySelector('.chapters');
+
+  if (mangaStaff.style.display === "block") {
+    getAnimeStaff();
+  }
+  if (mangaNews.style.display === "block") {
+    getAnimeNews();
+  }  
+  if (mangaRelations.style.display === "block") {
+    getAnimeRelations();
+  }
+  if (mangaChar.style.display === "block") {
+    getAnimeChar();
+
+  }
+  if (mangaGallery.style.display === "block") {
+    getAnimeGallery();
+
+  }
+  if (mangaReviews.style.display === "block") {
+    getAnimeReview();
+    
+  }
+  if (mangaRecomendetion.style.display === "block") {
+    getAnimeRecommendations();
+  }
+  if (mangaChapters.style.display === "block") {
+    getAnimeID();
+  }
+}
+
 
 
 function MangaCommentsPage(result) {
@@ -558,7 +647,7 @@ function noMangaNews() {
     </div>
     `;
     commentDiv.innerHTML = CommentsReviewInnerHTML;
-    document.querySelector(".animePageNews").appendChild(commentDiv)
+    document.querySelector(".mangaPageNews").appendChild(commentDiv)
 }
 
 function noMangaRecommendations() {
@@ -584,7 +673,7 @@ function noPageGallery() {
     </div>
     `;
     commentDiv.innerHTML = CommentsReviewInnerHTML;
-    document.querySelector(".animePageGallery").appendChild(commentDiv)
+    document.querySelector(".mangaPageGallery").appendChild(commentDiv)
 }
 
 function noPageComments() {
@@ -597,7 +686,7 @@ function noPageComments() {
     </div>
     `;
     commentDiv.innerHTML = CommentsReviewInnerHTML;
-    document.querySelector(".animePageComments").appendChild(commentDiv)
+    document.querySelector(".mangaPageComments").appendChild(commentDiv)
 }
 
 function noPageCharachter() {
@@ -605,7 +694,7 @@ function noPageCharachter() {
     const CommentsReviewInnerHTML = 
     `
     <div class="reviewerImgDiv">
-      <h1>This Manga Dosn't have any Charachters(?) yet...<h1/>
+      <h1>This Manga Dosn't have any Characters yet...<h1/>
       <p>Sorry D:<p/>
     </div>
     `;
@@ -636,9 +725,10 @@ function charSelect(id){
   sessionStorage.setItem("charId", id);
   window.location.assign("../Html/Char.html");
 }
+
+getManga();
 getMangaGallery();
 getMangaRecommendations();
 getMangaNews();
 getMangaChar();
-getManga();
 getMangaComments();

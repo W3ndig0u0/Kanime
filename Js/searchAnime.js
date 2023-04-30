@@ -173,8 +173,8 @@ for (let i = 0; i < animeCards.length; i++) {
 }
 
 function hoverCardIn(event) {
-    console.log(event)
- }
+
+}
 
 
 

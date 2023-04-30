@@ -56,7 +56,6 @@
 
 .newsSection,
 .reviews {
-  padding-top: 3rem;
   padding-bottom: 3rem;
 }
 
@@ -88,4 +87,9 @@
 
 .airingAnimeJs .imgRow2 {
   padding-right: 0rem;
+}
+
+.relationRow{
+  margin: 0 auto;
+  margin-top: 3rem;
 }

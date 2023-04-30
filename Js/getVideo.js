@@ -60,47 +60,66 @@ function ShowAnimeDownload(result) {
 }
 
 // ?Alla video spelare
-  function ShowAnimeVideoAlternatives(result) {
-    console.log(result);
-    const animeVideo = document.querySelector(".animePageVideo");
+function ShowAnimeVideoAlternatives(result) {
+  console.log(result);
+  const animeVideo = document.querySelector(".animePageVideo");
+  const animePageBtn = document.querySelector(".animePageBtn");
+  animePageBtn.classList.add("buttonRow");
+  animePageBtn.classList.add("buttonSource");
 
-    // !Tar bort det gamla infot
-    while (animeVideo?.firstChild) {
-      animeVideo.removeChild(animeVideo.firstChild);
-    }
+  // Tar bort det gamla infot
+  while (animeVideo?.firstChild) {
+    animeVideo.removeChild(animeVideo.firstChild);
+  }
+  
+  while (animePageBtn?.firstChild) {
+    animePageBtn.removeChild(animePageBtn.firstChild);
+  }
 
-    for (let i = 0; i < result.length; i++) {
-    const sourceBtn = document.createElement("div");
-    const episodesPlay = document.createElement("div"); 
-    const streamingService = result[i].name
-    const animeUrl = result[i].url
-    let sourceBtnHTML;
+  for (let i = 0; i < result.length; i++) {
+    const episodesPlay = document.createElement("div");
+    const streamingService = result[i].name;
+    const animeUrl = result[i].url;
+    const buttonSource = document.createElement("div");
 
-    // ?Show knapp
-    for (let i = 0; i < result.length; i++) {
-      sourceBtnHTML = `
-      <div class="epButton">
-        <button class="${streamingService}" onclick="onClickEpisode(this.className)">${streamingService}</button>
-      </div>
-      `;
-    }
+   const buttonSourceHTML = `
+   <div class="epButton">
+   <button class="${streamingService} "onclick="showPlayer(this.className)">${streamingService}</button>
+   </div>
+   `;
+   buttonSource.innerHTML = buttonSourceHTML; 
+
 
     const episodesPlayHTML = `
-    <div class="iframeContainer ${streamingService}">
-     <h5>${streamingService}</h5>
-     <iframe id="framez" scrolling="no" src="${animeUrl}" frameborder="0" allowfullscreen></iframe>
-    </div>
+      <div class="iframeContainer ${streamingService}" iframe"${streamingService}">
+        <h5>${streamingService}</h5>
+        <iframe id="framez" scrolling="no" src="${animeUrl}" frameborder="0" allowfullscreen></iframe>
+      </div>
     `;
 
-    sourceBtn.innerHTML = sourceBtnHTML;
     episodesPlay.innerHTML = episodesPlayHTML;
+    animePageBtn?.appendChild(buttonSource);
     animeVideo?.appendChild(episodesPlay);
   }
 }
 
+function showPlayer(playerId) {
+
+  const players = document.querySelectorAll('.iframeContainer');
+  for (let i = 0; i < players.length; i++) {
+    players[i].style.display = 'none';
+  }
+
+  const player = document.getElementsByClassName(playerId);
+  console.log(player[1]);
+
+  player[1].style.display = 'block';
+  
+}
+
+
 // ?Information
 function ShowAnimeInfo(result){
-
 
   const animeInfoDiv = document.querySelector(".animeDownloadInfo");
 

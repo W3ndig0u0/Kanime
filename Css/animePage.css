@@ -147,7 +147,8 @@
 .animePageWrapper {
   display: none;
   padding: 2rem;
-  padding-bottom: 5rem;
+  padding-top: 0rem;
+  padding-bottom: 10rem;
 }
 
 .statePage .beforeState {
@@ -250,7 +251,7 @@
 }
 
 .titleComments:first-of-type {
-  margin-top: 2rem;
+  margin-top: 0rem;
   margin-bottom: 2rem;
 }
 

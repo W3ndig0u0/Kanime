@@ -64,6 +64,7 @@ h3 span,
 .h3 span {
   background-color: transparent;
   padding-right: 10px;
+  padding-top: 3rem;
 }
 
 li {

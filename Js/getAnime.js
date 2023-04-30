@@ -413,14 +413,14 @@ function AnimePage(result) {
           </div>
         </div>
       </div>
-    <div class="iframe">
-        <div class="iframeContainer"> 
+    <div>
+        <div class="buttonContainer"> 
         <button>
           <a href=${MalURL} title="MyAnimeList Link" target="_blank">MyAnimeList Link</a> 
         </button>
         <div class="pageTypeWrapper">
           <div class="pageType">
-            <p onclick="showType('video')">Video</p>
+            <p onclick="showType('video')">Episode</p>
             <p onclick="showType('relations')">Relations</p>
             <p onclick="showType('recomendetion')">Recomendetion</p>
             <p onclick="showType('characters')">Characters</p>
@@ -469,7 +469,7 @@ function showType(type){
 }
 
 function hideOtherTypes(selectedType) {
-  const allTypes = ['characters', 'relations', 'staff', 'news', 'gallery', 'reviews', 'recomendetion'];
+  const allTypes = ['characters', 'relations', 'staff', 'news', 'gallery', 'reviews', 'recomendetion', ,'video'];
   for (let i = 0; i < allTypes.length; i++) {
     const type = allTypes[i];
     if (type !== selectedType) {
@@ -821,8 +821,6 @@ function AnimeRelations(result) {
     const relation = result.data[i]?.relation;
 
     relAnimeTypeDiv.innerHTML =  `
-    <br>
-    <br>
     <h3 class="titleComments">${relation}</h3>
     <div class="${relation}"></div>
     <br>
@@ -834,6 +832,7 @@ function AnimeRelations(result) {
     relAnimeSection.appendChild(relAnimeTypeDiv)
 
     const relAnimeDiv = document.createElement('div');
+    relAnimeDiv.classList.add('relationRow');
     relAnimeDiv.classList.add('imgRow');
 
     for (let j = 0; j < entry.length; j++) {
@@ -845,7 +844,7 @@ function AnimeRelations(result) {
       // !Skapar html
       const relInnerHTML = 
       `
-      <div onclick="${type}Select(${id})" class="imgCard animeCard ImgCardSlider">
+      <div onclick="${type}Select(${id})" class="imgCard animeCard ImgCardSlider relationCard">
         <div class="cardImage">
             <img
             src="${thumbnailGlobal}"
@@ -855,7 +854,7 @@ function AnimeRelations(result) {
               <div class="playWrapper">
               </div>
               <div class="cardInfo">
-              <span class="cardTitle">${truncate(newTitle, 50)}</span>
+              <span class="cardTitle">${truncate(newTitle, 30)}</span>
           </div>
         </div>
         `;
@@ -1035,3 +1034,5 @@ function charSelect(id){
 }
 
 getAnime();
+
+window.addEventListener("load", getAnimeID);
