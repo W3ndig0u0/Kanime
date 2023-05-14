@@ -128,9 +128,7 @@ footer .logo:active {
   .footer-container {
     max-width: 600px;
   }
-  footer .logo {
-    margin: 0 auto;
-  }
+
   .right-col {
     width: 100%;
     margin-bottom: 30px;
@@ -141,6 +139,15 @@ footer .logo:active {
     text-align: center;
     margin-bottom: 70px;
   }
+  
+  footer .logo {
+    padding-top: 1rem;
+    width: 100%;
+  }
+
+  footer{
+    padding: 0px;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -148,5 +155,15 @@ footer .logo:active {
     margin: 0;
     width: 100%;
     margin-top: 20px;
+  }
+}
+
+
+@media screen and (max-width: 450px) {
+  .social-media {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    align-items: center;
+    gap: 0.8em 1em;
   }
 }

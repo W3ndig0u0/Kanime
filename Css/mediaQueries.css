@@ -41,6 +41,20 @@
     padding: 0.2rem;
     font-size: 1rem;
   }
+
+  .menu .card p {
+    font-size: 0.7em;
+  }
+
+  .menu .card h5 {
+    font-size: 0.7em;
+  }
+
+  .menu .card h2 {
+    font-size: 1.5em;
+  }
+  
+
 }
 
 @media screen and (max-width: 1050px) {
@@ -96,6 +110,21 @@
   .animePageCommentsSection .buttonRow {
     grid-template-columns: repeat(3, 1fr);
   }
+  .menu .card p {
+    font-size: 0.7em;
+  }
+
+  .menu .card h5 {
+    font-size: 0.8em;
+  }
+
+  .menu .card h2 {
+    font-size: 1.1em;
+  }
+  
+  .menu .card .source {
+  font-size: 0.6em;
+  }
 }
 
 
@@ -128,6 +157,23 @@
   }
   .leaderboard .head{
     font-size: 1rem;
+  }
+
+   
+  .menu .card p {
+    font-size: 0.6em;
+  }
+
+  .menu .card h5 {
+    font-size: 0.7em;
+  }
+
+  .menu .card h2 {
+    font-size: 0.9em;
+  }
+  
+  .menu .card .source {
+  font-size: 0.5em;
   }
 }
 
@@ -171,6 +217,10 @@
     font-size: 0.7rem;
   }
 
+  .card h2 {
+    font-size: 1rem;
+  }
+
   .navButton {
     display: flex !important;
   }
@@ -187,6 +237,20 @@
   .menu-content {
     padding: 0px 7%;
   }
+
+     
+  .menu .card p {
+    font-size: 0.6em;
+  }
+
+  .menu .card h5 {
+    font-size: 0.5em;
+  }
+
+  .menu .card h2 {
+    font-size: 0.9em;
+  }
+  
 }
 
 @media screen and (max-width: 720px) {
@@ -200,13 +264,6 @@
 
   .prev {
     left: 6.5%;
-  }
-
-  .card {
-    display: block;
-    height: auto;
-    width: auto;
-    max-height: none;
   }
 
   .newsCard {
@@ -289,6 +346,35 @@
   .newsCardInfo h6 {
     font-size: 0.6rem;
   }
+
+  
+  .menu .card p {
+    font-size: 0.5em;
+  }
+  .menu .card .source {
+    font-size: 1em;
+  }
+
+  .menu .card h5 {
+    font-size: 0.6em;
+  }
+
+  .menu .card h2 {
+    font-size: 1em;
+    margin-top: 1rem;
+  }  
+
+  .menu .card {
+    display: block;
+  }
+
+  .menu .card img {
+    height: 20vh;
+    border-radius: 10px;
+  }
+  .card-info {
+    padding: 30px;
+  }
 }
 
 @media screen and (max-width: 560px) {
@@ -351,6 +437,35 @@
 
   .animePageCommentsSection .buttonRow {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .menu .card p {
+    font-size: 0.7em;
+  }
+  .menu .card .source {
+    font-size: 0.9em;
+  }
+
+  .menu .card h5 {
+    font-size: 0.55em;
+  }
+
+  .menu .card h2 {
+    font-size: 1em;
+    margin-top: 1rem;
+  }  
+
+  .menu .card img {
+    height: 18vh;
+  }
+
+  .dot {
+    height: 13px;
+    width: 13px;
+  }
+  
+  .menu .card{
+    max-width: 95vw;
   }
 }
 
@@ -427,6 +542,10 @@
 
   .container {
     width: 300px;
+  }
+
+  .card-info {
+    padding: 30px;
   }
 }
 
@@ -552,6 +671,33 @@
   .titleComments{
     font-size: 1.8rem;
   }
+
+  .menu .card p {
+    font-size: 0.4em;
+  }
+  .menu .card .source {
+    font-size: 0.6em;
+  }
+
+  .menu .card h5 {
+    font-size: 0.5em;
+  }
+
+  .menu .card h2 {
+    font-size: 0.8em;
+  }  
+
+  .menu .card {
+    display: block;
+  }
+
+  .menu .card img {
+    height: 18vh;
+  }
+
+  .card-info {
+    padding: 30px;
+  }
 }
 @media screen and (max-width: 360px) {
   .statePage .synopsis p{
@@ -633,6 +779,25 @@
   .score .beforeState{
     font-size: 0.8rem;
   } 
+
+  .menu .card p {
+    font-size: 0.5em;
+  }
+  .menu .card .source {
+    font-size: 0.7em;
+  }
+
+  .menu .card h5 {
+    font-size: 0.55em;
+  }
+
+  .menu .card h2 {
+    font-size: 0.8em;
+  }  
+  
+  .menu .card{
+    max-width: 95vw;
+  }
 }
 
 @media screen and (max-width: 280px) {
@@ -704,6 +869,33 @@
     width: 80%;  
     margin: 2rem auto;
     border-radius: 10px;
+  }
+
+  .menu .card p {
+    font-size: 0.4em;
+  }
+  .menu .card .source {
+    font-size: 0.5em;
+  }
+
+  .menu .card h5 {
+    font-size: 0.5em;
+  }
+
+  .menu .card h2 {
+    font-size: 0.5em;
+  }  
+
+  .menu .card img {
+    height: 18vh;
+  }
+
+  .menu .card{
+    max-width: 95vw;
+  }
+
+  .card-info {
+    padding: 20px;
   }
 
 }
