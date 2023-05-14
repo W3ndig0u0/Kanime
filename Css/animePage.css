@@ -339,8 +339,38 @@
   text-align: center;
 }
 
-@media screen and (max-width: 960px) {
-  .statePage .animePageFlex {
+@media screen and (max-width: 1400px) {
+
+  .statePage .titleFlex {
+    display: unset;
+    padding-bottom: 0;
+    margin-block-end: 0rem;
+    text-align: center;  
+  }
+  
+  .statePage .titles,
+  #main-content {
+    max-width: 90%;
+    margin: 2rem auto;
+  }
+  
+
+  .statePage .score {
+    width: 180px;
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .scoreNumber {
+    font-size: 3em;
+  }
+
+
+}
+  @media screen and (max-width: 960px) {
+    .statePage .animePageFlex {
     display: unset;
   }
 

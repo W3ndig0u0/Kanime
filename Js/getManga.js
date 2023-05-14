@@ -948,7 +948,6 @@ function charSelect(id){
 }
 
 getManga();
-getMangaID();
 window.addEventListener("load", getMangaID);
 
 

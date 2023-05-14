@@ -27,7 +27,6 @@ function manga() {
       fetch("https://api.jikan.moe/v4/manga/" + mangaStorage.innerHTML)
       .then(response => response.json())
       .then(result => {
-        console.log(result);
         MangaCommentsPage(result);          
       })
     }
@@ -50,11 +49,11 @@ function char() {
 
 function AnimeCommentsPage(result) {
     const commentDiv = document.createElement('div');
-    const type = result.data.type;
+    const type = result.data?.type;
     const premiered = result.data.year ?? "Not Released Yet";
-    const img = result.data.images.jpg.large_image_url ?? result.data.images.jpg.image_url;
-    const animeID = result.data.mal_id;
-    const content = result.data.title_english ?? result.data.title;
+    const img = result.data.images.jpg?.large_image_url ?? result.data.images.jpg?.image_url;
+    const animeID = result.data?.mal_id;
+    const content = result.data.title_english ?? result.data?.title;
     
     // !Skapar html
     const CommentsReviewInnerHTML = 
@@ -73,14 +72,14 @@ function AnimeCommentsPage(result) {
 function MangaCommentsPage(result) {
     const commentDiv = document.createElement('div');
 
-    const content = result.data.title;
-    const type = result.data.type;
-    const premiered = result.data.published.from;
+    const content = result.data?.title;
+    const type = result.data?.type;
+    const premiered = result?.data.published?.from;
     const premieredYear = premiered.substring(0, 4);
 
-    const img = result.data.images.jpg.large_image_url ?? result.data.images.jpg.image_url;
+    const img = result.data.images.jpg?.large_image_url ?? result.data.images.jpg?.image_url;
     ;
-    const animeID = result.data.mal_id;
+    const animeID = result.data?.mal_id;
 
     // !Skapar html
     const CommentsReviewInnerHTML = 
@@ -100,10 +99,10 @@ function CharCommentPage(result) {
     const commentDiv = document.createElement('div');
 
 
-    const favorites = result.data.favorites;
-    const animeID = result.data.mal_id;
-    const content = result.data.name_kanji;
-    const img = result.data.images.jpg.large_image_url ?? result.data.images.jpg.image_url;
+    const favorites = result.data?.favorites;
+    const animeID = result.data?.mal_id;
+    const content = result.data?.name_kanji;
+    const img = result.data?.images.jpg?.large_image_url ?? result.data?.images.jpg?.image_url;
     const title = result.data?.name_en ?? result.data?.name;
 
     // !Skapar html

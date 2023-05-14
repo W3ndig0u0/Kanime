@@ -192,14 +192,14 @@ function getAnimeID(){
       .then(response => response.json())
       .then(result => {
         if (result === undefined || result.results?.length === 0) {
-         noFindAnimeVideo()
          console.log(result)
          console.log(titleGlobal)
+         noFindAnimeVideo()
         }
-        else{
-          findAnimeVideo(result);
+        else{          
           console.log(result)
           console.log(titleGlobal)
+          findAnimeVideo(result);
         }
       })
     }
@@ -549,7 +549,8 @@ function toggleType(){
 }
 
 function findAnimeVideo(result){
-  
+  console.log(result);
+
   const shearchResult = document.querySelector(".searchingShow");
   // !Tar bort det gamla search
   while (shearchResult?.firstChild) {
@@ -557,10 +558,11 @@ function findAnimeVideo(result){
   }
 
   const animeInfo = document.createElement("div");
-  animeInfo.className = "imgRow2";
+  animeInfo.className = "imgRow3";
 
+  
   for (let i = 0; i < result.results.length; i++) {
-  const animeEpisodes= document.createElement("span");
+  const animeEpisodes= document.createElement("div");
 
   let animeTitle = result.results[i].title;
   
@@ -570,12 +572,13 @@ function findAnimeVideo(result){
 
   const animeId = result.results[i].id
   const image = result.results[i].image
+  var imgSrcSpace = image.replace(/ /g, "%20");
 
   const AnimeInfoInnerHTML = `
     <div onclick="onClickAnime(this.id)" id="${animeId}" class="imgCard PersonCard">
     <div class="cardImage">
         <img
-        src=${image}
+        src=${imgSrcSpace}
         alt=${animeId}       
         <div</div>
         <div class="tvTag tag">TV</div>
@@ -583,7 +586,7 @@ function findAnimeVideo(result){
         </div>
         </div>
         <div class="cardInfo">
-          <h2 class="cardTitle">${truncate(animeTitle, 60)}</h2>
+          <span class="cardTitle">${truncate(animeTitle, 60)}</span>
       </div>
     </div>
   `;  
@@ -607,10 +610,10 @@ function menuBgChange(Imgurl)
 
 // !Tar bort "", [, ] och ,
 function removeSign(genres){
-  const s = genres.replace(/[""]/g, '');
-  const s1 = s.replace("[", '');
-  const s2 = s1.replace("]", '');
-  const s3 = s2.replace(/[,]/g, ' ');
+  const s = genres?.replace(/[""]/g, '');
+  const s1 = s?.replace("[", '');
+  const s2 = s1?.replace("]", '');
+  const s3 = s2?.replace(/[,]/g, ' ');
   return s3
 }
 
@@ -749,6 +752,7 @@ function AnimePageGallery(result) {
 function AnimeNews(result) {
   const galleryAnimeDiv = document.createElement("div");
   galleryAnimeDiv.classList.add("newsRow");
+  console.log(result);
 
   for (let i = 0; i < result.data.length; i++) {
     // for (let i = 0; i < 6; i++) {

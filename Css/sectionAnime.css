@@ -81,6 +81,15 @@
   justify-items: center;
 }
 
+
+.imgRow3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+  grid-gap: 4rem 3rem;
+  margin: 0 auto;
+  justify-items: center;
+}
+
 .imgRow2 .charDiv{
   margin-bottom: 3rem;
 }

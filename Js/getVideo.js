@@ -82,6 +82,7 @@ function ShowAnimeVideoAlternatives(result) {
   for (let i = 0; i < result.length; i++) {
     const episodesPlay = document.createElement("div");
     const streamingService = result[i].name;
+    const firstService = result[0]?.name;
     const animeUrl = result[i].url;
     const buttonSource = document.createElement("div");
     
@@ -93,7 +94,6 @@ function ShowAnimeVideoAlternatives(result) {
    `;
    buttonSource.innerHTML = buttonSourceHTML; 
 
-
     const episodesPlayHTML = `
       <div class="iframeContainer ${streamingService}" iframe"${streamingService}">
         <h5>${streamingService}</h5>
@@ -104,6 +104,7 @@ function ShowAnimeVideoAlternatives(result) {
     episodesPlay.innerHTML = episodesPlayHTML;
     animePageBtn?.appendChild(buttonSource);
     animeVideo?.appendChild(episodesPlay);
+    showPlayer(firstService);
   }
 }
 
@@ -116,7 +117,6 @@ function showPlayer(playerId) {
 
   const player = document.getElementsByClassName(playerId);
   console.log(player[1]);
-
   player[1].style.display = 'block';
   
 }
@@ -157,12 +157,12 @@ function ShowAnimeInfo(result){
   const type = result.type
   const genres = JSON.stringify(result.genres);
   const episodeOne = result.episodes[0].id;
-
+  let episodeNr;
   // ?Episoder knapp
   for (let i = 0; i < result.episodes.length; i++) {
     const episode = document.createElement("div");
 
-    const episodeNr = result.episodes[i].number;
+    episodeNr = result.episodes[i].number;
     const episodeID = result.episodes[i].id;
     const episodeInnerHTML = `
     <div class="epButton">
