@@ -367,6 +367,15 @@
 /* !Smoll */
 
 @media screen and (max-width: 480px) {
+  .statePage .state, 
+  .statePage .beforeState{
+    font-size: 1em;
+  }   
+  .score .state, 
+  .score .beforeState{
+    font-size: 1.5rem;
+  } 
+
   .tag {
     padding: 0.1rem;
     font-size: 0.7rem;
@@ -422,6 +431,10 @@
 }
 
 @media screen and (max-width: 462px) {
+  .statePage .synopsis p{
+    font-size: 0.9rem;
+  }
+
   .next {
     right: 2.5%;
   }
@@ -541,6 +554,23 @@
   }
 }
 @media screen and (max-width: 360px) {
+  .statePage .synopsis p{
+    font-size: 0.8rem;
+  }
+
+  .statePage .state, 
+  .statePage .beforeState{
+    font-size: 0.8em;
+  } 
+
+  .statePage .synopsis h2{
+    font-size: 1.5rem;
+  }
+
+  .score .state, 
+  .score .beforeState{
+    font-size: 1.5rem;
+  } 
 
   .imgCard {
     min-width: 5rem;
@@ -585,9 +615,34 @@
   .notFoundError h1{
     font-size: 0.8rem;
   }
+
+  
+  .AnimePageImg {
+    width: 75vw;
+  }
+
+  .statePage .title{
+    font-size: 1.2rem;
+  }
+  
+  .statePage .titleJp{
+    font-size: 0.9rem;
+  }
+
+  .score .state, 
+  .score .beforeState{
+    font-size: 0.8rem;
+  } 
 }
 
 @media screen and (max-width: 280px) {
+  .pageType p{
+    font-size: 10vw;
+  }
+  .animeInfo{
+    padding: 0 0rem;
+    margin: 1rem;
+  }
   .menu-content{
     font-size: 0.6rem;
   }

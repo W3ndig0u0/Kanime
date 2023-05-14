@@ -49,8 +49,8 @@
   z-index: 1;
   display: block;
   border-radius: 15px;
-  width: auto;
-  height: 30rem;
+  width: 20rem;
+  height: auto;
   object-fit: cover;
   margin: 0 auto;
   box-shadow: 4px 6px 8px 2px rgba(0, 0, 0, 0.1);
@@ -148,7 +148,7 @@
   display: none;
   padding: 2rem;
   padding-top: 0rem;
-  padding-bottom: 12rem;
+  padding-bottom: 5rem;
 }
 
 .chapters {
@@ -378,6 +378,10 @@
     display: unset;
   }
 
+  .AnimePageImg{
+    width: 50vw;
+  }
+
   .statePage .titles,
   #main-content {
     max-width: 90%;
@@ -402,10 +406,6 @@
   .statePage .rankInfo {
     margin: 0 auto;
     padding: 2rem;
-  }
-
-  .AnimePageImg {
-    position: unset;
   }
 
   .scoreNumber {
@@ -504,9 +504,17 @@
 @media screen and (max-width: 540px) {
 
   .AnimePageImg {
-    height: 20rem;
+    width: 65vw;
   }
 
+  .statePage .title{
+    font-size: 1.5rem;
+    margin-block-start: 0em;
+  }
+
+  .statePage .titleJp{
+    font-size: 1rem;
+  }
 
   .statePage .titles {
     padding: 5%;
