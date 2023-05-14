@@ -170,7 +170,6 @@
   position: absolute;
   left: 0;
   width: 100%;
-  height: max-content;
   visibility: hidden;
 
   padding: 8px;
@@ -233,7 +232,7 @@
   border-radius: 0px 10px 0px 10px;
   padding: 0.2rem;
   font-size: 0.9vw;
-  max-width: 50%;
+  max-width: 60%;
   max-height: 12%;
   overflow: clip;
 }

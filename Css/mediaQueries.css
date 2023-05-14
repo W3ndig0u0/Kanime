@@ -12,6 +12,10 @@
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
   }
+  
+  .animePageCommentsSection .buttonRow {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 /* !Mini Laptop */
@@ -66,6 +70,10 @@
 
   .newsCardInfo2 h2 {
     font-size: 1rem;
+  }
+  
+  .animePageCommentsSection .buttonRow {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -380,6 +388,7 @@
   .container {
     width: 280px;
   }
+
   .hamburgerNav ul li:first-of-type {
     display: unset;
   }
@@ -423,10 +432,21 @@
   }
 
   button{
-    padding: 0.4rem 1rem;
+    padding: 0.8rem 1rem;
   }
   .chapters{
     padding: 0.1rem;
+    padding-bottom: 5rem;
+  }
+
+  .mangaPageChap, .showMangaInfo{
+    padding: 0rem 2rem;
+    text-align: center;
+  }
+
+  .animeBottom .pageType {
+    display: unset;
+    text-align: center;
   }
 }
 
@@ -454,4 +474,9 @@
   .newsCardInfo p {
     font-size: 0.55rem;
   }
+  
+  .animePageCommentsSection .buttonRow {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
 }
