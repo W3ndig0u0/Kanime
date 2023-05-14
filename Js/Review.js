@@ -145,7 +145,7 @@ function noPageComments() {
   const commentDiv = document.createElement('div');
     const CommentsReviewInnerHTML = 
     `
-    <div class="reviewerImgDiv">
+    <div class="notFoundError">
       <h1>This Anime Dosn't have any Comments yet...<h1/>
       <p>Sorry D:<p/>
     </div>

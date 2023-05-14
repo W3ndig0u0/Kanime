@@ -448,7 +448,7 @@ function AnimePage(result) {
         </button>
         <div class="pageTypeWrapper">
           <div class="pageType">
-            <p onclick="showType('video')">Episode</p>
+            <p id="video" onclick="showType('video')">Episode</p>
             <p onclick="showType('relations')">Relations</p>
             <p onclick="showType('recomendetion')">Recomendetion</p>
             <p onclick="showType('characters')">Characters</p>
@@ -477,7 +477,6 @@ function AnimePage(result) {
 function showType(type){
   const typeBlocks = document.getElementsByClassName(type);
   const allBlocks = document.querySelectorAll('.characters, .realations, .staff, .news, .gallery, .reviews, .recomendetion, .video');
-
   if (typeBlocks[0].style.display === 'block') {
     return; // if the type is already displayed, don't do anything
   } else {
@@ -954,7 +953,7 @@ function noAnimeRecommendations() {
   const commentDiv = document.createElement('div');
     const CommentsReviewInnerHTML = 
     `
-    <div class="reviewerImgDiv">
+    <div class="notFoundError">
       <h1>This Anime Dosn't have any Recommendations yet...<h1/>
       <img alt="ERROR IMG" src="https://i.postimg.cc/k5MBnyPx/pngwing-com.png">
       <p>Sorry D:<p/>
@@ -968,7 +967,7 @@ function noAnimeReview() {
   const commentDiv = document.createElement('div');
     const CommentsReviewInnerHTML = 
     `
-    <div class="reviewerImgDiv">
+    <div class="notFoundError">
       <h1>This Anime Dosn't have any Reviews yet...<h1/>
       <img alt="ERROR IMG" src="https://i.postimg.cc/k5MBnyPx/pngwing-com.png">
       <p>Sorry D:<p/>
@@ -982,7 +981,7 @@ function noAnimeNewsletter() {
   const commentDiv = document.createElement('div');
     const CommentsReviewInnerHTML = 
     `
-    <div class="reviewerImgDiv">
+    <div class="notFoundError">
       <h1>This Anime Dosn't have any News yet...<h1/>
       <img alt="ERROR IMG" src="https://i.postimg.cc/k5MBnyPx/pngwing-com.png">
       <p>Sorry D:<p/>
@@ -996,7 +995,7 @@ function noPageGallery() {
   const commentDiv = document.createElement('div');
     const CommentsReviewInnerHTML = 
     `
-    <div class="reviewerImgDiv">
+    <div class="notFoundError">
       <h1>This Anime Dosn't have any Gallery yet...<h1/>
       <img alt="ERROR IMG" src="https://i.postimg.cc/k5MBnyPx/pngwing-com.png">
       <p>Sorry D:<p/>
@@ -1010,7 +1009,7 @@ function noPageStaff() {
   const commentDiv = document.createElement('div');
     const CommentsReviewInnerHTML = 
     `
-    <div class="reviewerImgDiv">
+    <div class="notFoundError">
       <h1>This Anime Dosn't have any Staff(?) yet...<h1/>
       <img alt="ERROR IMG" src="https://i.postimg.cc/k5MBnyPx/pngwing-com.png">
       <p>Sorry D:<p/>
@@ -1024,7 +1023,7 @@ function noPageCharachter() {
   const commentDiv = document.createElement('div');
     const CommentsReviewInnerHTML = 
     `
-    <div class="reviewerImgDiv">
+    <div class="notFoundError">
       <h1>This Anime Dosn't have any Charachters(?) yet...<h1/>
       <img alt="ERROR IMG" src="https://i.postimg.cc/k5MBnyPx/pngwing-com.png">
       <p>Sorry D:<p/>
@@ -1038,7 +1037,7 @@ function noAnimeRelations(){
   const relationDiv = document.createElement('div');
   const relationInnerHTML = 
   `
-  <div class="reviewerImgDiv">
+  <div class="notFoundError">
     <h1>This Anime Dosn't have any Relations(?) yet...<h1/>
     <img alt="ERROR IMG" src="https://i.postimg.cc/k5MBnyPx/pngwing-com.png">
   </div>
@@ -1051,7 +1050,7 @@ function noFindAnimeVideo(){
   const videoDiv = document.createElement('div');
   const videoInnerHTML = 
   `
-  <div class="reviewerImgDiv">
+  <div class="notFoundError">
     <h1>Could not find any episodes of this Anime<h1/>
     <img alt="ERROR IMG" src="https://i.postimg.cc/k5MBnyPx/pngwing-com.png">
   </div>
@@ -1088,3 +1087,4 @@ function charSelect(id){
 getAnime();
 
 window.addEventListener("load", getAnimeID);
+window.addEventListener('load', () => document.getElementById('video')?.click());

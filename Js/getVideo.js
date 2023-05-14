@@ -156,7 +156,12 @@ function ShowAnimeInfo(result){
   const animeId = result.id
   const type = result.type
   const genres = JSON.stringify(result.genres);
-  const episodeOne = result.episodes[0].id;
+  const episodeOne = result.episodes[0]?.id;
+
+  if (result.episodes[0]?.id === undefined) {
+    alert("The anime have not yet to be released");
+  }
+
   let episodeNr;
   // ?Episoder knapp
   for (let i = 0; i < result.episodes.length; i++) {

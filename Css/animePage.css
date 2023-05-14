@@ -265,13 +265,17 @@
   margin-top: 4rem !important;
 }
 
-.reviewerImgDiv {
+.notFoundError {
   margin-right: 1.5rem;
   display: flex;
   flex-direction: column;
   column-gap: 1rem;
   align-items: top;
   text-align: center;
+}
+
+.notFoundError img{
+  width: 80vw;
 }
 
 .reviewerImg {
@@ -530,7 +534,7 @@
     margin-bottom: 1rem;
   }
 
-  .reviewerImgDiv {
+  .notFoundError {
     margin: 0;
     margin-block-start: 3em;
   }
@@ -558,6 +562,15 @@
 
   .cardTitle {
     font-size: 0.7rem;
+  }
+
+  
+  .notFoundError h1{
+    font-size: 1rem;
+  }
+
+  .notFoundError img{
+    width: 90vw;
   }
 }
 

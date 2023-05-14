@@ -32,7 +32,7 @@ function noPageGalleryPerson() {
     // !Skapar html
     const CommentsReviewInnerHTML = 
     `
-    <div class="reviewerImgDiv">
+    <div class="notFoundError">
       <h1>This Person Dosn't have any gallery yet...<h1/>
       <p>Sorry D:<p/>
     </div>
@@ -46,7 +46,7 @@ function noPageActorPerson() {
     // !Skapar html
     const CommentsReviewInnerHTML = 
     `
-    <div class="reviewerImgDiv">
+    <div class="notFoundError">
       <h1>This Person Dosn't have any Roles...<h1/>
       <p>Sorry D:<p/>
     </div>

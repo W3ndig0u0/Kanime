@@ -417,7 +417,7 @@ function MangaPage(result) {
 
         <div class="pageTypeWrapper">
         <div class="pageType">
-          <p onclick="showType('chapters')">Chapters</p>
+          <p id="chapters" onclick="showType('chapters')">Chapters</p>
           <p onclick="showType('relations')">Relations</p>
           <p onclick="showType('recomendetion')">Recomendetion</p>
           <p onclick="showType('characters')">Characters</p>
@@ -802,7 +802,7 @@ function noMangaNews() {
   const commentDiv = document.createElement('div');
     const CommentsReviewInnerHTML = 
     `
-    <div class="reviewerImgDiv">
+    <div class="notFoundError">
       <h1>This Manga Dosn't have any News...<h1/>
       <img alt="ERROR IMG" src="https://i.postimg.cc/k5MBnyPx/pngwing-com.png">
     </div>
@@ -840,7 +840,8 @@ function findMangaChap(result){
     <div class="cardImage">
         <img
         src=${img}
-        alt=${title}       
+        alt=${title}
+        onload=this.src=${img}
         <div</div>
         <div class="MangaTag tag">Manga</div>
         <div class="playWrapper">
@@ -862,7 +863,7 @@ function noMangaRecommendations() {
   const recomendetion = document.createElement('div');
     const recomendetionInnerHTML = 
     `
-    <div class="reviewerImgDiv">
+    <div class="notFoundError">
       <h1>This Manga Dosn't have any Recommendations yet...<h1/>
       <img alt="ERROR IMG" src="https://i.postimg.cc/k5MBnyPx/pngwing-com.png">
     </div>
@@ -875,7 +876,7 @@ function noPageGallery() {
   const commentDiv = document.createElement('div');
     const CommentsReviewInnerHTML = 
     `
-    <div class="reviewerImgDiv">
+    <div class="notFoundError">
       <h1>This Manga Dosn't have any Gallery yet...<h1/>
       <img alt="ERROR IMG" src="https://i.postimg.cc/k5MBnyPx/pngwing-com.png">
     </div>
@@ -888,7 +889,7 @@ function noPageComments() {
   const commentDiv = document.createElement('div');
     const CommentsReviewInnerHTML = 
     `
-    <div class="reviewerImgDiv">
+    <div class="notFoundError">
       <h1>This Manga Dosn't have any Comments yet...<h1/>
       <img alt="ERROR IMG" src="https://i.postimg.cc/k5MBnyPx/pngwing-com.png">
     </div>
@@ -901,7 +902,7 @@ function noMangaRelations() {
   const commentDiv = document.createElement('div');
     const CommentsReviewInnerHTML = 
     `
-    <div class="reviewerImgDiv">
+    <div class="notFoundError">
       <h1>This Manga Dosn't have any Relations yet...<h1/>
       <img alt="ERROR IMG" src="https://i.postimg.cc/k5MBnyPx/pngwing-com.png">
     </div>
@@ -914,7 +915,7 @@ function noPageCharachter() {
   const commentDiv = document.createElement('div');
     const CommentsReviewInnerHTML = 
     `
-    <div class="reviewerImgDiv">
+    <div class="notFoundError">
       <h1>This Manga Dosn't have any Characters yet...<h1/>
       <img alt="ERROR IMG" src="https://i.postimg.cc/k5MBnyPx/pngwing-com.png">
     </div>
@@ -949,6 +950,7 @@ function charSelect(id){
 
 getManga();
 window.addEventListener("load", getMangaID);
+window.addEventListener('load', () => document.getElementById('chapters')?.click());
 
 
   

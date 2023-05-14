@@ -41,9 +41,12 @@ function ShowMangaChapter(result){
   for (let i = 0; i < result.length; i++) {
     const chapterBtn = document.createElement("div");
     chapterBtn.classList.add("mangaChap")
-    const img = `https://api.consumet.org/utils/image-proxy?url=${result[i].img}&referer=${result[i].img}`
-    const chapterBtnInnerHTML =`<img src="${img}">`;
-
+    const tempImg = "https://media.tenor.com/G6W5nikD-xsAAAAM/popteamepic-now-loading.gif";
+    const img = `https://api.consumet.org/utils/image-proxy?url=${result[i].img}&referer=${result[i].img}`;
+    
+    const chapterBtnInnerHTML = `
+      <img src="${tempImg}" onload="this.src='${img}'">
+    `;
     chapterBtn.innerHTML = chapterBtnInnerHTML;
     mangaChapDiv?.appendChild(chapterBtn);
   }
@@ -84,22 +87,27 @@ function ShowMangainfo(result){
 
   // ?Episoder knapp
   for (let i = 0; i < result.chapters.length; i++) {
-    const chapterBtn = document.createElement("div");
     
     const chapterNumber = result.chapters[i].chapterNumber;
     const volumeNumber = result.chapters[i].volumeNumber;
     const totalPages = result.chapters[i].pages;
     const chapID = result.chapters[i].id;
+    let chapterBtnInnerHTML = '';
+    if (totalPages > 0) {
+    const chapterBtn = document.createElement("div");
 
-    const chapterBtnInnerHTML = `
-    <div class="epButton">
-      <button class="${chapID}" onclick="onClickChapter(this.className)">Chap: ${chapterNumber}</button>
-    </div>
-    `;
+
+      chapterBtnInnerHTML = `
+        <div class="epButton">
+          <button class="${chapID}" onclick="onClickChapter(this.className)">Chap: ${chapterNumber}</button>
+        </div>
+      `;
 
     chapterBtn.innerHTML = chapterBtnInnerHTML;
     buttons.appendChild(chapterBtn);
     mangaChapters?.appendChild(buttons);
+  }
+    
   }
 
   const MangaInfoInnerHTML = `
