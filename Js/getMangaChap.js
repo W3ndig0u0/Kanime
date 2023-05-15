@@ -41,7 +41,7 @@ function ShowMangaChapter(result){
   for (let i = 0; i < result.length; i++) {
     const chapterBtn = document.createElement("div");
     chapterBtn.classList.add("mangaChap")
-    const tempImg = "https://media.tenor.com/G6W5nikD-xsAAAAM/popteamepic-now-loading.gif";
+    let tempImg = "https://media.tenor.com/G6W5nikD-xsAAAAM/popteamepic-now-loading.gif";
     const img = `https://api.consumet.org/utils/image-proxy?url=${result[i].img}&referer=${result[i].img}`;
     
     const chapterBtnInnerHTML = `

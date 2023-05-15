@@ -1087,5 +1087,10 @@ function charSelect(id){
 
 getAnime();
 
-// window.addEventListener("load", getAnimeID);
-// window.addEventListener('load', () => showType('video'));
+
+window.addEventListener('DOMContentLoaded', function() {
+  setTimeout(() => {
+    getAnimeID();
+    showType('video');
+  }, 200);
+});

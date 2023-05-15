@@ -24,10 +24,14 @@ function hoverCardOut(event) {
   {
     event.target.childNodes[1].childNodes[5].style.opacity = "0";
   }
+  else if (event.target.childNodes[1]?.childNodes[3]?.childNodes[3].classList.contains("playWrapper"))
+  {
+    event.target.childNodes[1]?.childNodes[3]?.childNodes[3]?.style.opacity = "0";
+  }
 
 }
 
 
 window.addEventListener('load', function() {
-  setTimeout(initializeAnimeCards, 4000);
+  setTimeout(initializeAnimeCards, 4300);
 });

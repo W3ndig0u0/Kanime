@@ -950,5 +950,10 @@ function charSelect(id){
 }
 
 getManga();
-// window.addEventListener("load", getMangaID);
-// window.addEventListener('load', () => showType('chapters'));
+
+window.addEventListener('DOMContentLoaded', function() {
+  setTimeout(() => {
+    getMangaID();
+    showType('chapters');
+  }, 200);
+});
