@@ -62,9 +62,9 @@ document.querySelector(".search-btn").onclick = function() {
     document.querySelector("body").style.overflowY = "hidden";
 }
 
-window.onclick = function(event) {
-    if (event.target == document.getElementById("myModal")) {
+window.addEventListener("click", function(event) {
+  if (event.target === document.getElementById("myModal")) {
       document.getElementById("myModal").style.display = "none";
       document.querySelector("body").style.overflowY = "auto";
-    }
-}
+  }
+});
