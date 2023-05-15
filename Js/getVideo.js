@@ -36,11 +36,11 @@ function ShowAnimeDownload(result) {
   const animeDownloadDiv = document.querySelector(".animeDownload");
 
   //?Display bara vid mobil
-  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-    animeDownloadDiv.style.display = "block"; // set display to block if user is on a mobile device
+  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Safari/i.test(navigator.userAgent)) {
+    animeDownloadDiv.style.display = "block"; // set display to block if user is on a mobile device or using Safari
   } else {
-    animeDownloadDiv.style.display = "none"; // set display to none if user is on a PC
-  }  
+    animeDownloadDiv.style.display = "none"; // set display to none if user is on a PC or using a non-supported mobile browser
+  }
 
   const AnimeDInnerHTML = `<div>The links leads to the episode video for mobiles in order to avoid ads!</div>`;
   animeDownloadDiv.innerHTML = AnimeDInnerHTML;
