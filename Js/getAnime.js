@@ -194,6 +194,7 @@ function getAnimeID(){
         if (result === undefined || result.results?.length === 0) {
          console.log(result)
          console.log(titleGlobal)
+         console.log("https://api.consumet.org/anime/gogoanime/" + removeSign(titleGlobal) + "?page=1")
          noFindAnimeVideo()
         }
         else{          
@@ -573,12 +574,12 @@ function findAnimeVideo(result){
   const image = result.results[i].image
   var imgSrcSpace = image.replace(/ /g, "%20");
 
+  var tempImg = thumbnailGlobal;
+
   const AnimeInfoInnerHTML = `
     <div onclick="onClickAnime(this.id)" id="${animeId}" class="imgCard PersonCard">
     <div class="cardImage">
-        <img
-        src=${imgSrcSpace}
-        alt=${animeId}       
+        <img src="${tempImg}" alt=${animeId} onload="this.src='${imgSrcSpace}'">  
         <div</div>
         <div class="tvTag tag">TV</div>
         <div class="playWrapper">
@@ -1086,5 +1087,5 @@ function charSelect(id){
 
 getAnime();
 
-window.addEventListener("load", getAnimeID);
-window.addEventListener('load', () => document.getElementById('video')?.click());
+// window.addEventListener("load", getAnimeID);
+// window.addEventListener('load', () => showType('video'));

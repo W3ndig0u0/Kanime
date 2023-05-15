@@ -20,17 +20,21 @@ function getMangaID() {
   if (!fetchedTypes["MangaID"]) {
     fetchedTypes["MangaID"] = true;
     fetch("https://api.consumet.org/manga/mangadex/" + removeSign(titleGlobal) + "?page=1")
-    .then(response => response.json())
-  .then(result => {
-    for (let index = 0; index < result.results.length; index++) {
-      console.log(result);
-      getMangadexID(result.results[index].id);
-    }
-  })
+      .then(response => response.json())
+      .then(result => {
+        for (let index = 0; index < result.results.length; index++) {
+          console.log(result);
+          getMangadexID(result.results[index].id);
+        }
+      })
+      .catch(error => {
+        console.error("Error fetching MangaID:", error);
+      });
   } else {
     console.log("MangaID type already fetched");
   }
 }
+
 
 function getMangadexID(id) {
   
@@ -223,10 +227,10 @@ function truncate(str, n){
 
 // !Tar bort "", [, ] och ,
 function removeSign(genres){
-  const s = genres.replace(/[""]/g, '');
-  const s1 = s.replace("[", '');
-  const s2 = s1.replace("]", '');
-  const s3 = s2.replace(/[,]/g, ' ');
+  const s = genres?.replace(/[""]/g, '');
+  const s1 = s?.replace("[", '');
+  const s2 = s1?.replace("]", '');
+  const s3 = s2?.replace(/[,]/g, ' ');
   return s3
 }
 
@@ -831,17 +835,14 @@ function findMangaChap(result){
   }
 
   const id = result.id
-  const image = thumbnailGlobal
+  const tempImg = thumbnailGlobal
   
   const img = `https://api.consumet.org/utils/image-proxy?url=${result.image}&referer=${result.image}`
 
   const AnimeInfoInnerHTML = `
     <div onclick="onClickManga(this.id)" id="${id}" class="imgCard PersonCard">
     <div class="cardImage">
-        <img
-        src=${img}
-        alt=${title}
-        onload=this.src=${img}
+        <img src="${tempImg}" alt=${title} onload="this.src='${img}'">
         <div</div>
         <div class="MangaTag tag">Manga</div>
         <div class="playWrapper">
@@ -949,8 +950,5 @@ function charSelect(id){
 }
 
 getManga();
-window.addEventListener("load", getMangaID);
-window.addEventListener('load', () => document.getElementById('chapters')?.click());
-
-
-  
+// window.addEventListener("load", getMangaID);
+// window.addEventListener('load', () => showType('chapters'));
