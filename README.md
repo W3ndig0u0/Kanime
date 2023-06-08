@@ -4,6 +4,11 @@ Kanime is a small project developed that provides information about anime, light
 
 Visit the Kanime website: [https://kanime.pages.dev/](https://kanime.pages.dev/)
 
+![image](https://github.com/W3ndig0u0/Kanime/assets/70271139/65cc1127-b23e-45e9-9fe3-e3b1bd448d62)
+
+![image](https://github.com/W3ndig0u0/Kanime/assets/70271139/72d77a6f-0f5a-441b-91fb-53b860444699)
+
+
 ## Features
 
 - **Anime Information**: Browse through a vast collection of anime titles and access detailed information about each series, including summaries, genres, release dates, and more.
