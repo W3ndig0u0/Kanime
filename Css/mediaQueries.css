@@ -16,6 +16,14 @@
   .animePageCommentsSection .buttonRow {
     grid-template-columns: repeat(4, 1fr);
   }
+
+  .newsCardInfo h2 {
+    font-size: 0.85rem;
+  }
+
+  .newsCardInfo h6 {
+    font-size: 0.7rem;
+  }
 }
 
 /* !Mini Laptop */
@@ -54,7 +62,17 @@
     font-size: 1.5em;
   }
   
+  .newsCardInfo h2 {
+    font-size: 0.7rem;
+  }
 
+  .newsCardInfo h6 {
+    font-size: 0.65rem;
+  }  
+  
+  .newsCardInfo p {
+    font-size: 0.65rem;
+  }
 }
 
 @media screen and (max-width: 1050px) {
@@ -269,7 +287,7 @@
   .newsCard {
     height: auto;
     width: 100%;
-    padding-bottom: 4rem;
+    padding-bottom: 2rem;
   }
 
   .card h2 {
@@ -369,11 +387,17 @@
   }
 
   .menu .card img {
-    height: 20vh;
+    height: 32vh;
     border-radius: 10px;
+    object-position: top center;
   }
+
   .card-info {
     padding: 30px;
+  }
+
+  .menu .card{
+    min-height: 70vh;
   }
 }
 
@@ -454,10 +478,6 @@
     font-size: 1em;
     margin-top: 1rem;
   }  
-
-  .menu .card img {
-    height: 18vh;
-  }
 
   .dot {
     height: 13px;
@@ -692,7 +712,7 @@
   }
 
   .menu .card img {
-    height: 18vh;
+    /* height: 18vh; */
   }
 
   .card-info {

@@ -421,13 +421,13 @@ function MangaPage(result) {
 
         <div class="pageTypeWrapper">
         <div class="pageType">
-          <p id="chapters" onclick="showType('chapters')">Chapters</p>
-          <p onclick="showType('relations')">Relations</p>
-          <p onclick="showType('recomendetion')">Recomendetion</p>
-          <p onclick="showType('characters')">Characters</p>
-          <p onclick="showType('news')">News</p>
-          <p onclick="showType('gallery')">Gallery</p>
-          <p onclick="showType('reviews')">Reviews</p>
+          <h4 id="chapters" onclick="showType('chapters')">Chapters</h4>
+          <h4 onclick="showType('relations')">Relations</h4>
+          <h4 onclick="showType('recomendetion')">Recomendetion</h4>
+          <h4 onclick="showType('characters')">Characters</h4>
+          <h4 onclick="showType('news')">News</h4>
+          <h4 onclick="showType('gallery')">Gallery</h4>
+          <h4 onclick="showType('reviews')">Reviews</h4>
           </div>
         </div>
       </div>

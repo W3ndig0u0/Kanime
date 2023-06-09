@@ -35,7 +35,6 @@ function getAnimeChar() {
     })
     .catch(error => {
       console.error(error);
-      noPageCharachter();
     })
   } else {
     console.log("AnimeChar type already fetched");
@@ -59,7 +58,6 @@ function getAnimeRelations() {
     })
     .catch(error => {
       console.error(error);
-      noAnimeRelations();
     })
   } else {
     console.log("AnimeRelations type already fetched");
@@ -78,7 +76,6 @@ function getAnimeStaff() {
     })
     .catch(error => {
       console.error(error);
-      noPageStaff();
     })
   } else {
     console.log("AnimeStaff type already fetched");
@@ -102,7 +99,6 @@ function getAnimeGallery() {
     })
     .catch(error => {
       console.error(error);
-      noPageGallery();
     })  
   } else {
     console.log("AnimeGallery type already fetched");
@@ -126,7 +122,6 @@ function getAnimeRecommendations() {
     })
     .catch(error => {
       console.error(error);
-      noAnimeRecommendations();
     })  
   } else {
     console.log("AnimeRecommendations type already fetched");
@@ -151,7 +146,6 @@ function getAnimeNews() {
     })
     .catch(error => {
       console.error(error);
-      noAnimeNewsletter();
     })  
   } else {
     console.log("AnimeNews type already fetched");
@@ -175,7 +169,6 @@ function getAnimeReview() {
     })
     .catch(error => {
       console.error(error);
-      noAnimeReview();
     })  
   } else {
     console.log("AnimeNews type already fetched");
@@ -449,14 +442,14 @@ function AnimePage(result) {
         </button>
         <div class="pageTypeWrapper">
           <div class="pageType">
-            <p id="video" onclick="showType('video')">Episode</p>
-            <p onclick="showType('relations')">Relations</p>
-            <p onclick="showType('recomendetion')">Recomendetion</p>
-            <p onclick="showType('characters')">Characters</p>
-            <p onclick="showType('staff')">Staff</p>
-            <p onclick="showType('news')">News</p>
-            <p onclick="showType('gallery')">Gallery</p>
-            <p onclick="showType('reviews')">Reviews</p>
+            <h4 id="video" onclick="showType('video')">Episode</h4>
+            <h4 onclick="showType('relations')">Relations</h4>
+            <h4 onclick="showType('recomendetion')">Recomendetion</h4>
+            <h4 onclick="showType('characters')">Characters</h4>
+            <h4 onclick="showType('staff')">Staff</h4>
+            <h4 onclick="showType('news')">News</h4>
+            <h4 onclick="showType('gallery')">Gallery</h4>
+            <h4 onclick="showType('reviews')">Reviews</h4>
             </div>
           </div>
         </div>
@@ -594,7 +587,7 @@ function findAnimeVideo(result){
   animeEpisodes.innerHTML = AnimeInfoInnerHTML;
   animeInfo.appendChild(animeEpisodes);
   document.querySelector(".animeShow")?.appendChild(animeInfo)
-  initializeAnimeCards();
+  //initializeAnimeCards();
   }
 }
 
@@ -673,7 +666,7 @@ function AnimeCharPage(result) {
     charDiv.innerHTML = charInnerHTML;
     TopCharSection.appendChild(charDiv);
     document.querySelector(".animePageChar")?.appendChild(TopCharSection)
-    initializeAnimeCards();
+    //initializeAnimeCards();
   }
 }
 
@@ -710,7 +703,7 @@ function AnimePageStaff(result) {
     staffAnime.innerHTML = StaffInnerHTML;
     staffAnimeDiv.appendChild(staffAnime);
     document.querySelector(".animePageStaff")?.appendChild(staffAnimeDiv);
-    initializeAnimeCards();
+    //initializeAnimeCards();
 
   }
 }
@@ -744,7 +737,7 @@ function AnimePageGallery(result) {
         galleryAnime.innerHTML = MovieInnerHTML;
         galleryAnimeDiv.appendChild(galleryAnime);
     document.querySelector(".animePageGallery")?.appendChild(galleryAnimeDiv);
-    initializeAnimeCards();
+    //initializeAnimeCards();
 
   }
 }
@@ -787,7 +780,7 @@ function AnimeNews(result) {
     galleryAnime.innerHTML = MovieInnerHTML;
     galleryAnimeDiv.appendChild(galleryAnime);
     document.querySelector(".animePageNews")?.appendChild(galleryAnimeDiv);
-    initializeAnimeCards();
+    //initializeAnimeCards();
 
   }
 }
@@ -833,7 +826,7 @@ function AnimeRecommendations(result) {
     recAnimeSection.appendChild(recAnimeDiv)
     const recAnime = document.querySelector(".animePageRecomendetions");
     recAnime?.appendChild(recAnimeSection)
-    initializeAnimeCards();
+    //initializeAnimeCards();
 
   }
 } 
@@ -897,7 +890,7 @@ function AnimeRelations(result) {
     }
     var recAnime = document.querySelector(".animePageRelations");
     recAnime?.appendChild(relAnimeSection)
-    initializeAnimeCards();
+    //initializeAnimeCards();
 
   }
 }
@@ -946,7 +939,7 @@ function AnimeReview(result) {
     `;
     commentDiv.innerHTML = CommentsReviewInnerHTML;
     document.querySelector(".animePageComments")?.appendChild(commentDiv)
-    initializeAnimeCards();
+    //initializeAnimeCards();
   }
 }
 

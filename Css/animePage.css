@@ -219,13 +219,15 @@
   font-size: 1.4em;
 }
 
-.animeBottom .pageType p {
+.animeBottom .pageType h4 {
   cursor: pointer;
   transition: 200ms;
+  font-weight: 400;
+  padding: 0.5rem;
 }
 
-.animeBottom .pageType p:hover,
-.animeBottom .pageType p:active {
+.animeBottom .pageType h4:hover,
+.animeBottom .pageType h4:active {
   color: #f27d16;
 }
 

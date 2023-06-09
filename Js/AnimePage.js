@@ -1,7 +1,7 @@
 let animeCards = document.getElementsByClassName("imgCard");
 // let gallery = document.getElementsByClassName("vcCard2");
 
-  function initializeAnimeCards() {
+function initializeAnimeCards() {
   for (let i = 0; i < animeCards.length; i++) {
     animeCards[i].addEventListener('mouseover', hoverCardIn)
     animeCards[i].addEventListener('mouseleave', hoverCardOut)
@@ -33,5 +33,5 @@ function hoverCardOut(event) {
 
 
 window.addEventListener('load', function() {
-  setTimeout(initializeAnimeCards, 4300);
+  setTimeout(initializeAnimeCards, 4200);
 });

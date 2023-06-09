@@ -10,7 +10,7 @@
   height: auto;
   margin: auto;
   background-color: #fff;
-  border-radius: 32px;
+  border-radius: 30px;
   box-shadow: 20px 20px 0px -5px #00abff;
   max-width: 75%;
   height: 55vh;
@@ -146,6 +146,7 @@
 .next {
   border-radius: 0 8px 8px 0;
 }
+
 .prev {
   border-radius: 8px 0 0 8px;
 }
