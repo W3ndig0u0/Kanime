@@ -1,13 +1,12 @@
 # Kanime
 
-Kanime is a small project developed that provides information about anime, light novels, and manga, allowing users to browse through various titles and view their respective content, episodes, or chapters. With Kanime, you can easily stay updated on your favorite anime series or dive into the world of manga and light novels.
+Kanime is a project developed that provides information about anime, light novels, and manga, allowing users to browse through various titles and view their respective content, episodes, or chapters. With Kanime, you can easily stay updated on your favorite anime series or dive into the world of manga and light novels.
 
 Visit the Kanime website: [https://kanime.pages.dev/](https://kanime.pages.dev/)
 
 ![image](https://github.com/W3ndig0u0/Kanime/assets/70271139/65cc1127-b23e-45e9-9fe3-e3b1bd448d62)
 
 ![image](https://github.com/W3ndig0u0/Kanime/assets/70271139/72d77a6f-0f5a-441b-91fb-53b860444699)
-
 
 ## Features
 
@@ -37,9 +36,3 @@ Contributions to Kanime are welcome and greatly appreciated. If you'd like to co
 5. Commit your changes and push them to your forked repository.
 
 6. Submit a pull request, providing a clear and concise description of your changes.
-
-## License
-
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT) - see the [LICENSE](LICENSE) file for details.
-
-We hope you enjoy using Kanime and look forward to your contributions!
